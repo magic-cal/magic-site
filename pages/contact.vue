@@ -46,14 +46,7 @@
           </v-menu>
           <v-textarea v-model="details" label="Event Details"> </v-textarea>
 
-          <v-btn
-            :disabled="!valid"
-            color="success"
-            class="mr-4"
-            @click="validate"
-          >
-            Send
-          </v-btn>
+          <v-btn color="success" class="mr-4" @click="sendEmail"> Send </v-btn>
         </v-form>
       </v-container>
     </v-col>
@@ -62,10 +55,12 @@
 
 <script lang="ts">
 import { computed, defineComponent, ref } from '@vue/composition-api'
+import { send as emailSend } from 'emailjs-com'
 
 export default defineComponent({
   name: 'Contact',
   setup() {
+    const form = ref<any>(null)
     const name = ref('')
     const phone = ref('')
     const email = ref('')
@@ -90,13 +85,40 @@ export default defineComponent({
       (v: string) => /.+@.+\..+/.test(v) || 'Please enter a valid email',
     ]
 
-    //  const sendEmail: (e :any) => {
-    //   emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.target, 'YOUR_USER_ID')
-    //     .then((result) => {
-    //         console.log('SUCCESS!', result.status, result.text);
-    //     }, (error) => {
-    //         console.log('FAILED...', error);
-    //     });
+    const validate = () => {
+      return form.value.validate()
+    }
+
+    const reset = () => {
+      return form.value.reset()
+    }
+    const sendEmail = () => {
+      if (!validate()) {
+        return
+      }
+      emailSend(
+        'service_j9477j5',
+        'template_vsrvm7q',
+        {
+          name: name.value,
+          phone: phone.value,
+          email: email.value,
+          venue: venue.value,
+          date: formattedDate.value,
+          details: details.value,
+        },
+        'user_B76eyVlaAaisRGhim1W5r'
+      ).then(
+        () => {
+          console.log('SUCCESS!')
+          alert('Sent')
+          reset()
+        },
+        (error) => {
+          console.log('FAILED...', error)
+        }
+      )
+    }
 
     return {
       name,
@@ -109,6 +131,10 @@ export default defineComponent({
       datePopup,
       formattedDate,
       details,
+      sendEmail,
+      form,
+      validate,
+      reset,
     }
   },
 })
