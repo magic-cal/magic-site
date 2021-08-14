@@ -24,7 +24,13 @@ export default {
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap',
+      },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -38,10 +44,11 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
+    // https://composition-api.nuxtjs.org/getting-started/setup
+    '@nuxtjs/composition-api/module',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -66,7 +73,7 @@ export default {
       themes: {
         dark: {
           primary: colors.blue.darken2,
-          accent: colors.grey.darken3,
+          accent: '#b12827',
           secondary: colors.amber.darken3,
           info: colors.teal.lighten1,
           warning: colors.amber.base,
