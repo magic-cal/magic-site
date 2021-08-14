@@ -26,7 +26,7 @@
           </div>
         </v-col>
         <v-col :cols="12" align="center">
-          <v-btn large outlined color="accent">
+          <v-btn large outlined color="accent" to="/contact" nuxt>
             Check Availability and Contact
           </v-btn>
         </v-col>

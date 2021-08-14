@@ -47,7 +47,7 @@
   transform: none !important;
   width: 100% !important;
   object-fit: cover;
-  height: 100vh !important;
+  height: 75vh !important;
 }
 
 .v-parallax__image {
