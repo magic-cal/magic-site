@@ -1,6 +1,6 @@
 <template>
   <v-app dark>
-    <v-navigation-drawer
+    <!-- <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
       :clipped="clipped"
@@ -23,14 +23,16 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
-    </v-navigation-drawer>
+    </v-navigation-drawer> -->
     <v-app-bar
       :clipped-left="clipped"
+      fixed-app-bar
       fixed
-      app
+      color="transparent"
+      flat
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-btn
+      <!-- <v-btn
         icon
         @click.stop="miniVariant = !miniVariant"
       >
@@ -48,19 +50,18 @@
       >
         <v-icon>mdi-minus</v-icon>
       </v-btn>
-      <v-toolbar-title v-text="title" />
       <v-spacer />
       <v-btn
         icon
         @click.stop="rightDrawer = !rightDrawer"
       >
         <v-icon>mdi-menu</v-icon>
-      </v-btn>
+      </v-btn> 
+      -->
+      <v-toolbar-title v-text="title" />
     </v-app-bar>
     <v-main>
-      <v-container>
         <Nuxt />
-      </v-container>
     </v-main>
     <v-navigation-drawer
       v-model="rightDrawer"
@@ -107,10 +108,10 @@ export default {
           to: '/inspire'
         }
       ],
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
-      title: 'Vuetify.js'
+      // miniVariant: false,
+      // right: true,
+      // rightDrawer: false,
+      title: 'Callum McClure Magician'
     }
   }
 }
