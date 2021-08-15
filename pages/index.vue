@@ -30,18 +30,58 @@ import { defineComponent } from '@vue/composition-api'
 export default defineComponent({
   setup() {
     const companyLogos = [
-      { src: '/Raddison.png', alt: 'Vuetify' },
-      { src: '/guildford-borough.png', alt: 'Vuetify' },
-      { src: '/BBC.jpg', alt: 'Vuetify' },
-      { src: '/Barclays.png', alt: 'Vuetify' },
-      { src: '/Independent.png', alt: 'Vuetify' },
-      { src: '/Age-UK.jpg', alt: 'Vuetify' },
-      { src: '/Marriott.png', alt: 'Vuetify' },
-      { src: '/Lloyds.png', alt: 'Vuetify' },
-      { src: '/GLive.jpg', alt: 'Vuetify' },
-      { src: '/Btg.jpg', alt: 'Vuetify' },
-      { src: '/CAM.jpg', alt: 'Vuetify' },
-      { src: '/Arqiva.jpg', alt: 'Vuetify' },
+      {
+        src: require('@/static/Raddison.png'),
+        alt: 'Raddison Logo',
+        hideOnXs: true,
+      },
+      {
+        src: require('@/static/guildford-borough.png'),
+        alt: 'Guildford Borough Council Logo',
+        hideOnXs: true,
+      },
+      { src: require('@/static/BBC.jpg'), alt: 'BBC Logo', hideOnXs: false },
+      {
+        src: require('@/static/Barclays.png'),
+        alt: 'Barclays Logo',
+        hideOnXs: false,
+      },
+      {
+        src: require('@/static/Independent.png'),
+        alt: 'The Independent Logo',
+        hideOnXs: false,
+      },
+      {
+        src: require('@/static/Age-UK.jpg'),
+        alt: 'AgeUk Logo',
+        hideOnXs: false,
+      },
+      {
+        src: require('@/static/Marriott.png'),
+        alt: 'Marriott Logo',
+        hideOnXs: false,
+      },
+      {
+        src: require('@/static/Lloyds.png'),
+        alt: 'Lloyds Logo',
+        hideOnXs: false,
+      },
+      {
+        src: require('@/static/GLive.jpg'),
+        alt: 'GLive Logo',
+        hideOnXs: true,
+      },
+      { src: require('@/static/Btg.jpg'), alt: 'BTG Logo', hideOnXs: true },
+      {
+        src: require('@/static/CAM.jpg'),
+        alt: 'Cambridge Logo',
+        hideOnXs: true,
+      },
+      {
+        src: require('@/static/Arqiva.jpg'),
+        alt: 'Arqiva Logo',
+        hideOnXs: true,
+      },
     ]
     return { companyLogos }
   },

@@ -23,11 +23,12 @@
 
 <script lang="ts">
 import { PropType } from '@nuxtjs/composition-api'
-import { defineComponent } from '@vue/composition-api'
+import { computed, defineComponent } from '@vue/composition-api'
 
 export interface ImageItem {
   alt?: String
   src: String
+  hideOnXs?: boolean
 }
 
 export default defineComponent({
@@ -47,6 +48,13 @@ export default defineComponent({
       default: () => [],
     },
   },
-  setup() {},
+  setup() {
+    // const filteredLogos = computed(() => {
+    //   return props.logos.filter((logo) => !logo.hideOnXs)
+    // })
+    return {
+      // filteredLogos,
+    }
+  },
 })
 </script>
