@@ -13,35 +13,41 @@
       <section-break-img />
       <!-- <royal-variety /> -->
       <about-snippet />
-
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
+      <card-reveal />
+      <company-carousel
+        title="Some of the Companies Callum has performed for"
+        :logos="companyLogos"
+        color="white"
+      />
+      <contact-section />
     </v-col>
   </v-row>
 </template>
+
+<script lang="ts">
+import { defineComponent } from '@vue/composition-api'
+
+export default defineComponent({
+  setup() {
+    const companyLogos = [
+      { src: '/Raddison.png', alt: 'Vuetify' },
+      { src: '/guildford-borough.png', alt: 'Vuetify' },
+      { src: '/Barclays.png', alt: 'Vuetify' },
+      { src: '/BBC.jpg', alt: 'Vuetify' },
+      { src: '/Independent.png', alt: 'Vuetify' },
+      { src: '/Age-UK.jpg', alt: 'Vuetify' },
+      { src: '/Arqiva.jpg', alt: 'Vuetify' },
+      { src: '/Lloyds.png', alt: 'Vuetify' },
+      { src: '/Btg.jpg', alt: 'Vuetify' },
+      { src: '/GLive.jpg', alt: 'Vuetify' },
+      { src: '/CAM.jpg', alt: 'Vuetify' },
+      { src: '/Marriott.png', alt: 'Vuetify' },
+    ]
+    return { companyLogos }
+  },
+})
+</script>
+
 <style scoped>
 .v-parallax {
   transform: none !important;
@@ -54,7 +60,7 @@
   margin: -100px 0px 0px -180px !important;
 }
 
->>> .v-parallax__content {
+* >>> .v-parallax__content {
   background: linear-gradient(45deg, black, transparent) !important;
 }
 </style>

@@ -20,7 +20,6 @@
       </v-list>
     </v-navigation-drawer>
     <v-app-bar :clipped-left="clipped" fixed-app-bar fixed app flat>
-      <!-- color="transparent" -->
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-toolbar-title to="/" v-text="title" />
     </v-app-bar>
@@ -77,3 +76,17 @@ export default defineComponent({
   },
 })
 </script>
+
+<style>
+/* Stopping phantom side space */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+  only screen and (-o-min-device-pixel-ratio: 3/2),
+  only screen and (min--moz-device-pixel-ratio: 1.5),
+  only screen and (min-device-pixel-ratio: 1.5) {
+  html,
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+}
+</style>
