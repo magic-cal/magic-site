@@ -10,7 +10,7 @@
           </v-col></v-row
         >
       </v-parallax>
-      <section-break-img />
+      <section-break-img size="125" />
       <!-- <royal-variety /> -->
       <about-snippet />
       <card-reveal />
@@ -32,16 +32,16 @@ export default defineComponent({
     const companyLogos = [
       { src: '/Raddison.png', alt: 'Vuetify' },
       { src: '/guildford-borough.png', alt: 'Vuetify' },
-      { src: '/Barclays.png', alt: 'Vuetify' },
       { src: '/BBC.jpg', alt: 'Vuetify' },
+      { src: '/Barclays.png', alt: 'Vuetify' },
       { src: '/Independent.png', alt: 'Vuetify' },
       { src: '/Age-UK.jpg', alt: 'Vuetify' },
-      { src: '/Arqiva.jpg', alt: 'Vuetify' },
-      { src: '/Lloyds.png', alt: 'Vuetify' },
-      { src: '/Btg.jpg', alt: 'Vuetify' },
-      { src: '/GLive.jpg', alt: 'Vuetify' },
-      { src: '/CAM.jpg', alt: 'Vuetify' },
       { src: '/Marriott.png', alt: 'Vuetify' },
+      { src: '/Lloyds.png', alt: 'Vuetify' },
+      { src: '/GLive.jpg', alt: 'Vuetify' },
+      { src: '/Btg.jpg', alt: 'Vuetify' },
+      { src: '/CAM.jpg', alt: 'Vuetify' },
+      { src: '/Arqiva.jpg', alt: 'Vuetify' },
     ]
     return { companyLogos }
   },
@@ -53,7 +53,7 @@ export default defineComponent({
   transform: none !important;
   width: 100% !important;
   object-fit: cover;
-  height: 75vh !important;
+  height: 85vh !important;
 }
 
 .v-parallax__image {

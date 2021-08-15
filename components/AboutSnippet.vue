@@ -26,7 +26,7 @@
           </div>
         </v-col>
         <v-col :cols="12" align="center">
-          <v-btn large outlined color="accent" to="/contact" nuxt>
+          <v-btn large outlined color="accent" @click="goToContact">
             Check Availability and Contact
           </v-btn>
         </v-col>
@@ -34,6 +34,29 @@
     </v-container>
   </v-sheet>
 </template>
+
+<script lang="ts">
+import { defineComponent } from '@vue/composition-api'
+
+export default defineComponent({
+  setup() {
+    const goToContact = () => {
+      const element = document.getElementById('contact')
+      if (element) {
+        element.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+          inline: 'nearest',
+        })
+      }
+    }
+    return {
+      goToContact,
+    }
+  },
+})
+</script>
+
 <style lang="scss" scoped>
 div {
   color: black;

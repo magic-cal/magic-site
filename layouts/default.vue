@@ -1,6 +1,6 @@
 <template>
   <v-app dark>
-    <v-navigation-drawer v-model="drawer" fixed app>
+    <!-- <v-navigation-drawer v-model="drawer" fixed app>
       <v-list>
         <v-list-item
           v-for="(item, i) in items"
@@ -18,15 +18,15 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
-    </v-navigation-drawer>
-    <v-app-bar :clipped-left="clipped" fixed-app-bar fixed app flat>
+    </v-navigation-drawer> -->
+    <!-- <v-app-bar :clipped-left="clipped" fixed-app-bar fixed app flat>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-toolbar-title to="/" v-text="title" />
-    </v-app-bar>
+    </v-app-bar> -->
     <v-main>
       <Nuxt />
     </v-main>
-    <v-navigation-drawer v-model="rightDrawer" :right="right" temporary fixed>
+    <!-- <v-navigation-drawer v-model="rightDrawer" :right="right" temporary fixed>
       <v-list>
         <v-list-item @click.native="right = !right">
           <v-list-item-action>
@@ -35,7 +35,7 @@
           <v-list-item-title>Switch drawer (click me)</v-list-item-title>
         </v-list-item>
       </v-list>
-    </v-navigation-drawer>
+    </v-navigation-drawer> -->
     <v-footer :absolute="!fixed" app>
       <span>&copy; Callum McClure {{ new Date().getFullYear() }}</span>
     </v-footer>

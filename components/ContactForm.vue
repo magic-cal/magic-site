@@ -2,6 +2,10 @@
     <v-row>
       <v-col :cols="12" :md="6">
         <v-card light>
+            <v-col>
+                For more information about Callum's performances, feel free to drop him a message or contact him on socail media. He aims to reply to all enquiries within 24 hours.
+            </v-col>
+           
           <v-col :cols="12"> Call on: 07481768042 </v-col>
           <v-col :cols="12"> Email: info@magic-cal.co.uk </v-col>
           <v-col :cols="12"> Based In Surrey and Happy to travel </v-col>
@@ -13,6 +17,10 @@
         <v-card light>
           <v-container>
             <v-form ref="form" v-model="valid" lazy-validation>
+                 <div id="contact" />
+                 <div>
+                     If you are looking to make your next event extra special, just leave some details and Callum will get back to you
+                 </div>
               <v-text-field
                 v-model="name"
                 label="Name *"
@@ -56,7 +64,7 @@
               </v-menu>
               <v-textarea v-model="details" label="Event Details"> </v-textarea>
 
-              <v-btn color="success" class="mr-4" @click="sendEmail">
+              <v-btn color="accent" class="mr-4" @click="sendEmail">
                 Send
               </v-btn>
             </v-form>
