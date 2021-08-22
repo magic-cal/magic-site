@@ -22,7 +22,7 @@
             entertainment to get people talking and outstanding slight of hand
             to make them go crazy. From years of refining his skills in
             performing to small parties and all the way to multi-national
-            corporate events, He is well suited to his style to any occasion.
+            corporate events, he can bring a sence of magic to any occasion.
           </div>
         </v-col>
         <v-col :cols="12" align="center">

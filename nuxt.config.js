@@ -8,7 +8,7 @@ export default {
   target: 'static',
 
   router: {
-    base: '/magic-site/',
+    base: '/',
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head

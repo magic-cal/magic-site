@@ -17,7 +17,7 @@
         </v-col>
         <v-col :cols="12"> Based In Surrey and Happy to travel </v-col>
         <v-col :cols="12">
-          Facebook: <a href="http://fb.me/MagicCal">fb.me/MagicCal</a>
+          Facebook: <a href="https://fb.me/MagicCal">fb.me/MagicCal</a>
         </v-col>
         <v-col :cols="12">
           Twitter:
