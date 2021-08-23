@@ -7,10 +7,10 @@
             <div class="display-4">Callum McClure</div>
             <div class="display-1">Multi-Award Winning Magician</div>
             <div class="display-5">Member of The Magic Circle</div>
-          </v-col></v-row
-        >
+          </v-col>
+        </v-row>
       </v-parallax>
-      <section-break-img size="125" />
+      <section-break-img :size="125" />
       <!-- <royal-variety /> -->
       <about-snippet />
       <card-reveal />
@@ -19,15 +19,20 @@
         :logos="companyLogos"
         color="white"
       />
+
       <contact-section />
+      <!-- <services-section title="Which Style of Magic" :services="services" /> -->
+      <!-- color="white" -->
     </v-col>
   </v-row>
 </template>
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
+import ServicesSection from '~/components/ServicesSection.vue'
 
 export default defineComponent({
+  components: { ServicesSection },
   setup() {
     const companyLogos = [
       {
@@ -35,16 +40,16 @@ export default defineComponent({
         alt: 'Raddison Logo',
         hideOnXs: true,
       },
-      {
-        src: require('@/static/guildford-borough.png'),
-        alt: 'Guildford Borough Council Logo',
-        hideOnXs: true,
-      },
       { src: require('@/static/BBC.jpg'), alt: 'BBC Logo', hideOnXs: false },
       {
         src: require('@/static/Barclays.png'),
         alt: 'Barclays Logo',
         hideOnXs: false,
+      },
+      {
+        src: require('@/static/Disney.png'),
+        alt: 'Disney Logo',
+        hideOnXs: true,
       },
       {
         src: require('@/static/Independent.png'),
@@ -83,7 +88,37 @@ export default defineComponent({
         hideOnXs: true,
       },
     ]
-    return { companyLogos }
+
+    const services = [
+      {
+        src: require('@/static/Raddison.png'),
+        alt: 'Raddison Logo',
+        hideOnXs: true,
+        details:
+          'Whether for an office party, fundraiser or entertaining clients, Magic really gets people talking. Businesses big and small love this personal, professional Magic.',
+        href: '/',
+        subtitle: 'Corporate Magic',
+      },
+      {
+        src: require('@/static/dollar-coins.jpg'),
+        alt: 'BBC Logo',
+        hideOnXs: false,
+        details:
+          'Magic that is right there, in front of your eyes. A personal, entertaining style of magic for small groups or tables',
+        href: '/',
+        subtitle: 'Close-Up/Table Magic',
+      },
+      {
+        src: require('@/static/Barclays.png'),
+        alt: 'Barclays Logo',
+        hideOnXs: false,
+        details:
+          'Make your special day more Magical. Let family and friends relax and share an expeience together. Between ceremony and reception or during meals, magic is perfect.',
+        href: '/',
+        subtitle: 'Wedding Day Magic',
+      },
+    ]
+    return { companyLogos, services }
   },
 })
 </script>

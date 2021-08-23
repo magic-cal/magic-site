@@ -23,7 +23,7 @@
 
 <script lang="ts">
 import { PropType } from '@nuxtjs/composition-api'
-import { computed, defineComponent } from '@vue/composition-api'
+import { defineComponent } from '@vue/composition-api'
 
 export interface ImageItem {
   alt?: String
