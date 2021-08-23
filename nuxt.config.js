@@ -9,6 +9,13 @@ export default {
 
   router: {
     base: '/',
+    extendRoutes(routes, resolve) {
+      routes.push({
+        name: 'catchAll',
+        path: '*',
+        component: resolve(__dirname, 'pages/index.vue'),
+      })
+    },
   },
 
   generate: {
