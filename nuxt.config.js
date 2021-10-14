@@ -51,7 +51,11 @@ export default {
         content:
           'Multi-Award winning Magician with over a decade of performing experience with specialities in performing close-up magic at Weddings, Dinners, Balls and Parties of all kinds.',
       },
-      { property: 'og:image', content: '' },
+      {
+        property: 'og:image',
+        content:
+          'https://www.magic-cal.co.uk/shuffle/callum_mcclure_shuffle.jpg',
+      },
 
       { property: 'twitter:card', content: 'summary_large_image' },
       { property: 'twitter:url', content: 'https://www.magic-cal.co.uk/' },
@@ -64,7 +68,11 @@ export default {
         content:
           'Multi-Award winning Magician with over a decade of performing experience with specialities in performing close-up magic at Weddings, Dinners, Balls and Parties of all kinds.',
       },
-      { property: 'twitter:image', content: '' },
+      {
+        property: 'twitter:image',
+        content:
+          'https://www.magic-cal.co.uk/shuffle/callum_mcclure_shuffle.jpg',
+      },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
