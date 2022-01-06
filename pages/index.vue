@@ -11,7 +11,7 @@
         </v-row>
       </v-parallax>
       <section-break-img :size="125" />
-      <!-- <royal-variety /> -->
+      <faqs-section />
       <about-snippet />
       <card-reveal />
       <company-carousel
@@ -29,10 +29,10 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
-import ServicesSection from '~/components/ServicesSection.vue'
+// import ServicesSection from '~/components/ServicesSection.vue'
 
 export default defineComponent({
-  components: { ServicesSection },
+  // components: { ServicesSection },
   setup() {
     const companyLogos = [
       {
