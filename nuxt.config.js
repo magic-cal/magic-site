@@ -3,7 +3,9 @@ import colors from 'vuetify/es5/util/colors'
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
-
+  server: {
+    port: 8080, // default: 3000
+  },
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
@@ -28,52 +30,52 @@ export default {
     htmlAttrs: {
       lang: 'en',
     },
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { name: 'title', content: 'Callum McClure Award-Winning Magician' },
-      {
-        hid: 'description',
-        name: 'description',
-        content:
-          'Multi-Award winning Magician with over a decade of performing experience with specialities in performing close-up magic at Weddings, Dinners, Balls and Parties of all kinds.',
-      },
-      { name: 'format-detection', content: 'telephone=no' },
+    // meta: [
+    //   { charset: 'utf-8' },
+    //   { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    //   { name: 'title', content: 'Callum McClure Award-Winning Magician' },
+    //   {
+    //     hid: 'description',
+    //     name: 'description',
+    //     content:
+    //       'Multi-Award winning Magician with over a decade of performing experience with specialities in performing close-up magic at Weddings, Dinners, Balls and Parties of all kinds.',
+    //   },
+    //   { name: 'format-detection', content: 'telephone=no' },
 
-      { property: 'og:type', content: 'website' },
-      { property: 'og:url', content: 'https://www.magic-cal.co.uk/' },
-      {
-        property: 'og:title',
-        content: 'Callum McClure Award-Winning Magician',
-      },
-      {
-        property: 'og:description',
-        content:
-          'Multi-Award winning Magician with over a decade of performing experience with specialities in performing close-up magic at Weddings, Dinners, Balls and Parties of all kinds.',
-      },
-      {
-        property: 'og:image',
-        content:
-          'https://www.magic-cal.co.uk/shuffle/callum_mcclure_shuffle.jpg',
-      },
+    //   { property: 'og:type', content: 'website' },
+    //   { property: 'og:url', content: 'https://www.magic-cal.co.uk/' },
+    //   {
+    //     property: 'og:title',
+    //     content: 'Callum McClure Award-Winning Magician',
+    //   },
+    //   {
+    //     property: 'og:description',
+    //     content:
+    //       'Multi-Award winning Magician with over a decade of performing experience with specialities in performing close-up magic at Weddings, Dinners, Balls and Parties of all kinds.',
+    //   },
+    //   {
+    //     property: 'og:image',
+    //     content:
+    //       'https://www.magic-cal.co.uk/shuffle/callum_mcclure_shuffle.jpg',
+    //   },
 
-      { property: 'twitter:card', content: 'summary_large_image' },
-      { property: 'twitter:url', content: 'https://www.magic-cal.co.uk/' },
-      {
-        property: 'twitter:title',
-        content: 'Callum McClure Award-Winning Magician',
-      },
-      {
-        property: 'twitter:description',
-        content:
-          'Multi-Award winning Magician with over a decade of performing experience with specialities in performing close-up magic at Weddings, Dinners, Balls and Parties of all kinds.',
-      },
-      {
-        property: 'twitter:image',
-        content:
-          'https://www.magic-cal.co.uk/shuffle/callum_mcclure_shuffle.jpg',
-      },
-    ],
+    //   { property: 'twitter:card', content: 'summary_large_image' },
+    //   { property: 'twitter:url', content: 'https://www.magic-cal.co.uk/' },
+    //   {
+    //     property: 'twitter:title',
+    //     content: 'Callum McClure Award-Winning Magician',
+    //   },
+    //   {
+    //     property: 'twitter:description',
+    //     content:
+    //       'Multi-Award winning Magician with over a decade of performing experience with specialities in performing close-up magic at Weddings, Dinners, Balls and Parties of all kinds.',
+    //   },
+    //   {
+    //     property: 'twitter:image',
+    //     content:
+    //       'https://www.magic-cal.co.uk/shuffle/callum_mcclure_shuffle.jpg',
+    //   },
+    // ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
