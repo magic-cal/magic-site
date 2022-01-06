@@ -11,7 +11,6 @@
         </v-row>
       </v-parallax>
       <section-break-img :size="125" />
-      <faqs-section />
       <about-snippet />
       <card-reveal />
       <company-carousel
@@ -19,6 +18,7 @@
         :logos="companyLogos"
         color="white"
       />
+      <faqs-section />
 
       <contact-section />
       <!-- <services-section title="Which Style of Magic" :services="services" /> -->

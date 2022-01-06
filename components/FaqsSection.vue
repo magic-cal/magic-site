@@ -14,9 +14,15 @@
             </v-col>
           </v-row>
         </v-col>
-        <v-col v-for="(faq, i) in faqs" :key="i" :cols="12">
-          <div>{{ faq.question }}</div>
-          <div>{{ faq.answer }}</div>
+        <v-col v-for="(faq, i) in faqs" :key="i" :cols="4" :xs="12">
+          <v-card light elevation="6">
+            <v-card-title class="accent--text">
+             {{ faq.question }}
+            </v-card-title>
+            <v-card-text>
+              {{ faq.answer }}
+            </v-card-text>
+          </v-card>
         </v-col>
       </v-row>
     </v-container>
@@ -31,8 +37,19 @@ export default defineComponent({
     return {
       faqs: [
         {
-          question: 'Question',
-          answer: 'Hello',
+          question: 'What type of magic do you perform?',
+          answer:
+            'Callum mainly performs Close-up magic: a way of performing personal magic without smoke or mirrors. Seeing the magic up close makes it that much more amazing. For a bigger event Callum performs his award-winning stage magic show (including smoke and mirrors).',
+        },
+        {
+          question: 'How far do you travel?',
+          answer:
+            'Callum mainly performs Close-up magic: a way of performing personal magic withought smoke or mirrors, which makes it even more amazing',
+        },
+        {
+          question: 'What style of magic do you perform?',
+          answer:
+            'Callum mainly performs Close-up magic: a way of performing personal magic withought smoke or mirrors, which makes it even more amazing',
         },
       ],
     }
