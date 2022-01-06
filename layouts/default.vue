@@ -36,9 +36,29 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer> -->
-    <v-footer :absolute="!fixed" app>
+    // <v-footer :absolute="!fixed" app>
+    //   <span>&copy; Callum McClure {{ new Date().getFullYear() }}</span>
+    // </v-footer>
+
+      <v-footer
+      :absolute="!fixed" app
+    color="primary lighten-1"
+    padless
+  >
+    <v-row
+      justify="center"
+      no-gutters
+    >
+      
+      <v-col
+        class="accent lighten-1 py-4 text-center white--text"
+        cols="12"
+      >
       <span>&copy; Callum McClure {{ new Date().getFullYear() }}</span>
-    </v-footer>
+
+      </v-col>
+    </v-row>
+  </v-footer>
   </v-app>
 </template>
 

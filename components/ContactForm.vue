@@ -27,7 +27,8 @@
     </v-col>
     <v-col :cols="12" :md="6">
       <v-card light>
-        <v-container>
+      <v-card-title>Contact</v-card-title>
+      <v-card-text>
           <v-form ref="form" v-model="valid" lazy-validation>
             <div id="contact" />
             <div>
@@ -75,7 +76,7 @@
 
             <v-btn color="accent" class="mr-4" @click="sendEmail"> Send </v-btn>
           </v-form>
-        </v-container>
+      </v-card-text>
       </v-card>
     </v-col>
   </v-row>
