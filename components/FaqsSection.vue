@@ -44,7 +44,7 @@ export default defineComponent({
         {
           question: 'How far do you travel?',
           answer:
-            'Callum mainly performs Close-up magic: a way of performing personal magic withought smoke or mirrors, which makes it even more amazing',
+            'He regularly performs across the UK and happy to travel to entertain. Callum has performed around the world to thousands of people.',
         },
         {
           question: 'What style of magic do you perform?',
