@@ -13,28 +13,26 @@
         </v-row>
       </v-parallax>
       <section-break-img :size="125" />
-      <!-- <royal-variety /> -->
       <about-snippet />
       <card-reveal />
 
-      <services-section title="Which Style of Magic" :services="services" />
       <company-carousel
         title="Some of the Companies Callum has performed for"
         :logos="companyLogos"
         color="white"
       />
+      <services-section title="Which Style of Magic" :services="services" />
+      <faqs-section />
+
       <contact-section />
-      <!-- color="white" -->
     </v-col>
   </v-row>
 </template>
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
-import ServicesSection from '~/components/ServicesSection.vue'
 
 export default defineComponent({
-  components: { ServicesSection },
   setup() {
     const companyLogos = [
       {
