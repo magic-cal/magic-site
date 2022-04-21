@@ -16,13 +16,13 @@
       <!-- <royal-variety /> -->
       <about-snippet />
       <card-reveal />
+
+      <services-section title="Which Style of Magic" :services="services" />
       <company-carousel
         title="Some of the Companies Callum has performed for"
         :logos="companyLogos"
         color="white"
       />
-
-      <services-section title="Which Style of Magic" :services="services" />
       <contact-section />
       <!-- color="white" -->
     </v-col>

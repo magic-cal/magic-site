@@ -3,9 +3,9 @@
     <v-container pa-0>
       <v-row>
         <v-col cols="12">
-          <h3 class="brand1--text display-1 py-8">
+          <h2 class="py-8">
             {{ title }}
-          </h3>
+          </h2>
         </v-col>
       </v-row>
       <v-row class="mx-auto pb-8">
@@ -26,9 +26,9 @@
             contain
             eager
           />
-          <div class="display-1 pb-2">
+          <h3 class="pb-2">
             {{ service.subtitle }}
-          </div>
+          </h3>
 
           <div>{{ service.details }}</div>
         </v-col>
