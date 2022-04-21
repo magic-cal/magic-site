@@ -14,7 +14,7 @@
             </v-col>
           </v-row>
         </v-col>
-        <v-expansion-panels light :multiple="!$vuetify.breakpoint.mobile">
+        <v-expansion-panels light :multiple="!$vuetify.breakpoint.xs">
           <v-col v-for="(faq, i) in faqs" :key="i" :cols="12" :sm="6" :md="4">
             <v-expansion-panel light elevation="6">
               <v-expansion-panel-header class="accent--text">
@@ -67,9 +67,9 @@ export default defineComponent({
           question: 'How do I book Callum for an event?',
           answer:
             '1. Get in touch with Callum via email or phone - Giving details of time, venue, number of guests and what the event is for.' +
-            '<br>2. Callum will contact you to confirm the details' +
-            '<br>3. Confirming the event' +
-            '<br>4. Enjoy the magic ',
+            '<br>2. Callum will contact you to confirm all the details and provide a quote' +
+            '<br>3. Booking of the event - when you are happy with the arrangements, we book the date in' +
+            '<br>4. Enjoy the magic',
         },
       ],
     }
