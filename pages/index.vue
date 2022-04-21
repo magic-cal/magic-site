@@ -25,17 +25,14 @@
       <faqs-section />
 
       <contact-section />
-      <!-- color="white" -->
     </v-col>
   </v-row>
 </template>
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
-// import ServicesSection from '~/components/ServicesSection.vue'
 
 export default defineComponent({
-  // components: { ServicesSection },
   setup() {
     const companyLogos = [
       {
