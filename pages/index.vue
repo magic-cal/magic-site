@@ -4,24 +4,27 @@
       <v-parallax id="dim" :src="require('@/static/shuffle-cropped1.jpg')">
         <v-row align="center">
           <v-col align="center">
-            <div class="display-4">Callum McClure</div>
-            <div class="display-1">Multi-Award Winning Magician</div>
-            <div class="display-5">Member of The Magic Circle</div>
+            <h1>
+              <div class="display-4">Callum McClure</div>
+              <div class="display-1">Multi-Award Winning Magician</div>
+              <div class="display-5">Member of The Magic Circle</div>
+            </h1>
           </v-col>
         </v-row>
       </v-parallax>
       <section-break-img :size="125" />
       <about-snippet />
       <card-reveal />
+
       <company-carousel
         title="Some of the Companies Callum has performed for"
         :logos="companyLogos"
         color="white"
       />
+      <services-section title="Which Style of Magic" :services="services" />
       <faqs-section />
 
       <contact-section />
-      <!-- <services-section title="Which Style of Magic" :services="services" /> -->
       <!-- color="white" -->
     </v-col>
   </v-row>
@@ -91,8 +94,8 @@ export default defineComponent({
 
     const services = [
       {
-        src: require('@/static/Raddison.png'),
-        alt: 'Raddison Logo',
+        src: require('@/static/square/officeParty.jpg'),
+        alt: 'Magic Office Party',
         hideOnXs: true,
         details:
           'Whether for an office party, fundraiser or entertaining clients, Magic really gets people talking. Businesses big and small love this personal, professional Magic.',
@@ -100,8 +103,8 @@ export default defineComponent({
         subtitle: 'Corporate Magic',
       },
       {
-        src: require('@/static/dollar-coins.jpg'),
-        alt: 'BBC Logo',
+        src: require('@/static/square/corporate.jpg'),
+        alt: 'Magic Corporate',
         hideOnXs: false,
         details:
           'Magic that is right there, in front of your eyes. A personal, entertaining style of magic for small groups or tables',
@@ -109,8 +112,8 @@ export default defineComponent({
         subtitle: 'Close-Up/Table Magic',
       },
       {
-        src: require('@/static/Barclays.png'),
-        alt: 'Barclays Logo',
+        src: require('@/static/square/wedding.jpg'),
+        alt: 'Magical Wedding',
         hideOnXs: false,
         details:
           'Make your special day more Magical. Let family and friends relax and share an expeience together. Between ceremony and reception or during meals, magic is perfect.',
@@ -137,5 +140,9 @@ export default defineComponent({
 
 * >>> .v-parallax__content {
   background: linear-gradient(45deg, black, transparent) !important;
+}
+
+h1 {
+  font-weight: normal;
 }
 </style>

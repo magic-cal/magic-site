@@ -1,5 +1,8 @@
 <template>
   <v-row>
+    <v-col :cols="12">
+      <h2>Contact Me</h2>
+    </v-col>
     <v-col :cols="12" :md="6">
       <v-card light>
         <v-col>

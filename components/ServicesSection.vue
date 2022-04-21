@@ -3,21 +3,33 @@
     <v-container pa-0>
       <v-row>
         <v-col cols="12">
-          <h3 class="brand1--text py-8 accent--text">
+          <h2 class="py-8">
             {{ title }}
-          </h3>
+          </h2>
         </v-col>
       </v-row>
-      <v-row class="mx-auto pb-8" justify="center" align="center">
-        <v-col v-for="service in services" :key="service.src" cols="4" sm="4">
+      <v-row class="mx-auto pb-8">
+        <v-col
+          v-for="service in services"
+          :key="service.src"
+          :cols="12"
+          :sm="4"
+          justify="center"
+          align="center"
+        >
           <v-img
-            class="service-img"
+            class="service-img rounded-circle"
             :src="service.src"
             :alt="service.alt"
-            max-height="150px"
+            max-height="200px"
+            max-width="200px"
             contain
             eager
           />
+          <h3 class="pb-2">
+            {{ service.subtitle }}
+          </h3>
+
           <div>{{ service.details }}</div>
         </v-col>
       </v-row>
