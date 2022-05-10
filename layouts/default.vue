@@ -1,28 +1,6 @@
 <template>
   <v-app dark>
-    <!-- <v-navigation-drawer v-model="drawer" fixed app>
-      <v-list>
-        <v-list-item
-          v-for="(item, i) in items"
-          :key="i"
-          :to="item.to"
-          router
-          exact
-          @click="drawer = !drawer"
-        >
-          <v-list-item-action>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title v-text="item.title" />
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer> -->
-    <!-- <v-app-bar :clipped-left="clipped" fixed-app-bar fixed app flat>
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-toolbar-title to="/" v-text="title" />
-    </v-app-bar> -->
+    <app-bar />
     <v-main>
       <Nuxt />
     </v-main>
@@ -36,29 +14,14 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer> -->
-    // <v-footer :absolute="!fixed" app>
-    //   <span>&copy; Callum McClure {{ new Date().getFullYear() }}</span>
-    // </v-footer>
 
-      <v-footer
-      :absolute="!fixed" app
-    color="primary lighten-1"
-    padless
-  >
-    <v-row
-      justify="center"
-      no-gutters
-    >
-      
-      <v-col
-        class="accent lighten-1 py-4 text-center white--text"
-        cols="12"
-      >
-      <span>&copy; Callum McClure {{ new Date().getFullYear() }}</span>
-
-      </v-col>
-    </v-row>
-  </v-footer>
+    <v-footer :absolute="!fixed" app color="primary lighten-1" padless>
+      <v-row justify="center" no-gutters>
+        <v-col class="accent lighten-1 py-4 text-center white--text" cols="12">
+          <span>&copy; Callum McClure {{ new Date().getFullYear() }}</span>
+        </v-col>
+      </v-row>
+    </v-footer>
   </v-app>
 </template>
 
