@@ -1,9 +1,9 @@
 <template>
   <v-container>
     <v-row>
-      <v-col>
+      <!-- <v-col>
         <v-img :src="require('@/static/shuffle-cropped.jpg')"> </v-img>
-      </v-col>
+      </v-col> -->
       <v-col>
         <contact-form />
       </v-col>
