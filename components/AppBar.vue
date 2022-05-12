@@ -1,24 +1,24 @@
 <template>
   <div>
-    <!-- <v-navigation-drawer v-model="drawer" fixed app>
+    <v-navigation-drawer v-model="drawer" fixed app right>
       <v-list>
         <v-list-item
-          v-for="(item, i) in items"
+          v-for="(page, i) in pages"
           :key="i"
-          :to="item.to"
+          :to="page.to"
           router
           exact
           @click="drawer = !drawer"
         >
           <v-list-item-action>
-            <v-icon>{{ item.icon }}</v-icon>
+            <v-icon>{{ page.icon }}</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title v-text="item.title" />
+            <v-list-item-title v-text="page.title" />
           </v-list-item-content>
         </v-list-item>
       </v-list>
-    </v-navigation-drawer> -->
+    </v-navigation-drawer>
     <v-app-bar
       app
       light
@@ -26,24 +26,31 @@
       elevation="0"
       color="white"
     >
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-toolbar-title to="/" class="pr-2" v-text="title" />
-      <v-btn
-        v-for="page in pages"
-        :key="page.title"
-        :to="page.to"
-        large
-        text
-        nuxt
-        plain
-        :ripple="false"
-        >{{ page.title }}</v-btn
-      >
+      <v-toolbar-title to="/" class="pr-2" nuxt v-text="title" />
+      <template v-if="!$vuetify.breakpoint.smAndDown">
+        <v-btn
+          v-for="page in pages"
+          :key="page.title"
+          :to="page.to"
+          large
+          text
+          nuxt
+          plain
+          :ripple="false"
+          >{{ page.title }}</v-btn
+        >
+      </template>
+
+      <v-spacer></v-spacer>
+      <v-app-bar-nav-icon
+        v-if="$vuetify.breakpoint.smAndDown"
+        @click.stop="drawer = !drawer"
+      />
     </v-app-bar>
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from '@vue/composition-api'
+import { defineComponent, ref } from '@vue/composition-api'
 
 export default defineComponent({
   name: 'AppBar',
@@ -55,7 +62,9 @@ export default defineComponent({
     },
   },
   setup() {
+    const drawer = ref(false)
     return {
+      drawer,
       title: 'Callum McClure Magician',
 
       pages: {
