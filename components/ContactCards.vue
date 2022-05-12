@@ -1,7 +1,7 @@
 <template>
   <v-row>
     <v-col :cols="12">
-      <h2>Contact Me</h2>
+      <h2 class="accent--text display-1">Contact Me</h2>
     </v-col>
     <v-col :cols="12" :md="6">
       <v-card light>
@@ -30,8 +30,8 @@
     </v-col>
     <v-col :cols="12" :md="6">
       <v-card light>
-      <v-card-title>Contact</v-card-title>
-      <v-card-text>
+        <v-card-title>Contact</v-card-title>
+        <v-card-text>
           <v-form ref="form" v-model="valid" lazy-validation>
             <div id="contact" />
             <div>
@@ -79,7 +79,7 @@
 
             <v-btn color="accent" class="mr-4" @click="sendEmail"> Send </v-btn>
           </v-form>
-      </v-card-text>
+        </v-card-text>
       </v-card>
     </v-col>
   </v-row>

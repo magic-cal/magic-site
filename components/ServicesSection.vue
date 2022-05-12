@@ -1,9 +1,9 @@
 <template>
-  <v-sheet :color="color" class="text-center mt-0">
+  <v-sheet :color="color" class="text-center mt-0" dark>
     <v-container pa-0>
       <v-row>
         <v-col cols="12">
-          <h2 class="py-8">
+          <h2 class="py-8 display-1">
             {{ title }}
           </h2>
         </v-col>
@@ -26,7 +26,7 @@
             contain
             eager
           />
-          <h3 class="pb-2">
+          <h3 class="pb-2 pt-4">
             {{ service.subtitle }}
           </h3>
 
