@@ -18,10 +18,26 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer> -->
-  <v-app-bar app light :inverted-scroll="hideOnScroll">
+  <v-app-bar
+    app
+    light
+    :inverted-scroll="hideOnScroll"
+    elevation="0"
+    color="white"
+  >
     <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-    <v-toolbar-title to="/" v-text="title" />
-    <v-btn v-for="page in pages" :key="page.title">{{ page.title }}</v-btn>
+    <v-toolbar-title to="/" v-text="title" class="pr-2" />
+    <v-btn
+      v-for="page in pages"
+      :key="page.title"
+      :to="page.to"
+      large
+      text
+      nuxt
+      plain
+      :ripple="false"
+      >{{ page.title }}</v-btn
+    >
   </v-app-bar>
 </template>
 <script lang="ts">
@@ -33,7 +49,7 @@ export default defineComponent({
     hideOnScroll: {
       type: Boolean,
       required: false,
-      default: true,
+      default: false,
     },
   },
   setup() {
@@ -50,6 +66,11 @@ export default defineComponent({
           title: 'About',
           icon: 'mdi-information',
           to: '/about',
+        },
+        faqs: {
+          title: 'FAQs',
+          icon: 'mdi-information',
+          to: '/faqs',
         },
         contact: {
           title: 'Contact',

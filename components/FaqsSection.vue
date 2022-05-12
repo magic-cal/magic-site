@@ -33,7 +33,7 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
-import { highlightedFaqs } from '~/content/faqs'
+import { highlightedFaqs } from '@/content/faqs'
 
 export default defineComponent({
   setup() {
