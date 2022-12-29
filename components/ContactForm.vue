@@ -5,7 +5,7 @@
       If you are looking to make your next event extra special, just leave some
       details and Callum will get back to you
     </div>
-    <v-text-field v-model="name" label="Name *" required></v-text-field>
+    <v-text-field v-model="name" label="Name *" required />
 
     <v-text-field
       v-model="email"
@@ -13,11 +13,10 @@
       label="E-mail *"
       required
       validate-on-blur
-    ></v-text-field>
+    />
 
-    <v-text-field v-model="phone" label="Phone"></v-text-field>
-
-    <v-text-field v-model="venue" label="Venue"></v-text-field>
+    <v-text-field v-model="phone" label="Phone" />
+    <v-text-field v-model="venue" label="Venue" />
     <v-menu
       v-model="datePopup"
       :close-on-content-click="false"
@@ -34,7 +33,7 @@
           readonly
           v-bind="attrs"
           v-on="on"
-        ></v-text-field>
+        />
       </template>
       <v-date-picker
         v-model="date"
@@ -92,7 +91,7 @@ export default defineComponent({
         return
       }
       emailSend(
-        'service_j9477j5',
+        'default_service',
         'template_vsrvm7q',
         {
           name: name.value,
@@ -110,7 +109,7 @@ export default defineComponent({
           reset()
         },
         (error) => {
-          console.log('FAILED...', error)
+          console.log('FAILED', error)
         }
       )
     }
