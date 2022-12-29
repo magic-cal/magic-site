@@ -147,6 +147,13 @@ export default {
     },
   },
 
+  // Environment variables
+  emailJs: {
+    user_id: process.env.EMAILJS_USER_ID,
+    service_id: process.env.EMAILJS_SERVICE_ID,
+    template_id: process.env.EMAILJS_TEMPLATE_ID,
+  },
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 }
