@@ -19,7 +19,7 @@
                 Deception: A unique blend of classic magic, technology and
                 robotics
               </v-col>
-              <v-col cols="12"> 5th - 15th August 2017 </v-col>
+              <v-col cols="12"> 5th - 15th August 2017 - 8.10pm (1h)</v-col>
               <v-col cols="12">
                 Combining classic magic with a modern and technological twist,
                 this brand new show is magic as you have never seen before.
