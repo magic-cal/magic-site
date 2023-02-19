@@ -95,31 +95,30 @@
                   <v-row>
                     <v-col cols="auto">
                       <div>Blackfish Productions</div>
-                      <nuxt-link to="https://www.blackfishproductions.co.uk/">
+                      <a href="https://www.blackfishproductions.co.uk/">
                         <v-img
                           :src="require('@/static/BlackfishProductions.png')"
                           class="thanks-logo"
                         />
-                      </nuxt-link>
+                      </a>
                     </v-col>
                     <v-col cols="auto">
                       <div>PBH Free Fringe</div>
-                      <nuxt-link to="https://freefringe.org.uk/">
+                      <a href="https://freefringe.org.uk/">
                         <v-img
                           :src="require('@/static/PBHFreeFringeLogo.jpg')"
                           class="thanks-logo"
                         />
-                      </nuxt-link>
+                      </a>
                     </v-col>
-                    <!-- The voodoo rooms -->
                     <v-col cols="auto">
                       <div>The Voodoo Rooms</div>
-                      <nuxt-link to="https://www.thevoodoorooms.com/">
+                      <a href="https://www.thevoodoorooms.com/">
                         <v-img
                           :src="require('@/static/VoodooRoomsLogo.jpg')"
                           class="thanks-logo"
                         />
-                      </nuxt-link>
+                      </a>
                     </v-col>
                   </v-row>
                 </v-col>
