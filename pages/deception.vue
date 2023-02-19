@@ -97,7 +97,7 @@
                       <div>Blackfish Productions</div>
                       <a href="https://www.blackfishproductions.co.uk/">
                         <v-img
-                          :src="require('@/static/BlackfishProductions.png')"
+                          :src="require('@/static/BlackFishProductions.png')"
                           class="thanks-logo"
                         />
                       </a>
