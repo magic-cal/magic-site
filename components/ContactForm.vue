@@ -1,6 +1,5 @@
 <template>
   <v-form ref="form" v-model="valid" lazy-validation light>
-    <div id="contact" />
     <div>
       If you are looking to make your next event extra special, just leave some
       details and Callum will get back to you

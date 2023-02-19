@@ -1,5 +1,5 @@
 <template>
-  <v-row>
+  <v-row id="contact">
     <v-col :cols="12">
       <h2 class="accent--text display-1">Contact Me</h2>
     </v-col>
@@ -33,7 +33,7 @@
         <v-card-title>Contact</v-card-title>
         <v-card-text>
           <v-form ref="form" v-model="valid" lazy-validation>
-            <div id="contact" />
+            <div />
             <div>
               If you are looking to make your next event extra special, just
               leave some details and Callum will get back to you
