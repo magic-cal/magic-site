@@ -90,7 +90,7 @@ export default defineComponent({
         return
       }
       emailSend(
-        'service_pi503sj',
+        'default_service',
         'template_vsrvm7q',
         {
           name: name.value,

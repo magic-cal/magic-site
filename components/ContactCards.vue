@@ -129,7 +129,7 @@ export default defineComponent({
         return
       }
       emailSend(
-        'service_j9477j5',
+        'default_service',
         'template_vsrvm7q',
         {
           name: name.value,
