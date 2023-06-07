@@ -38,7 +38,7 @@ export default {
         hid: 'description',
         name: 'description',
         content:
-          'Multi-Award winning Magician with over a decade of performing experience with specialities in performing close-up magic at Weddings, Dinners, Balls and Parties of all kinds.',
+          'Multi-Award winning Magician with over a decade of performing experience with specialties in performing close-up magic at Weddings, Dinners, Balls and Parties of all kinds.',
       },
       { name: 'format-detection', content: 'telephone=no' },
 
@@ -51,7 +51,7 @@ export default {
       {
         property: 'og:description',
         content:
-          'Multi-Award winning Magician with over a decade of performing experience with specialities in performing close-up magic at Weddings, Dinners, Balls and Parties of all kinds.',
+          'Multi-Award winning Magician with over a decade of performing experience with specialties in performing close-up magic at Weddings, Dinners, Balls and Parties of all kinds.',
       },
       {
         property: 'og:image',
