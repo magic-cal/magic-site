@@ -24,6 +24,10 @@ export default {
     fallback: '404.html',
   },
 
+  sitemap: {
+    hostname: process.env.hostname || 'https://www.magic-cal.co.uk/',
+  },
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Callum McClure Award-Winning Magician',
