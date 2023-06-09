@@ -26,6 +26,7 @@ export default {
 
   sitemap: {
     hostname: process.env.hostname || 'https://www.magic-cal.co.uk/',
+    exclude: ['/about'],
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
