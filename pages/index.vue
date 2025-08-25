@@ -91,15 +91,6 @@ export default defineComponent({
 
     const services = [
       {
-        src: require('@/static/square/officeParty.jpg'),
-        alt: 'Magic Office Party',
-        hideOnXs: true,
-        details:
-          'Whether for an office party, fundraiser or entertaining clients, Magic really gets people talking. Businesses big and small love this personal, professional Magic.',
-        href: '/',
-        subtitle: 'Corporate Magic',
-      },
-      {
         src: require('@/static/square/corporate.jpg'),
         alt: 'Magic Corporate',
         hideOnXs: false,
@@ -109,11 +100,20 @@ export default defineComponent({
         subtitle: 'Close-Up/Table Magic',
       },
       {
+        src: require('@/static/square/magicShowcase.jpg'),
+        alt: 'Magic Office Party',
+        hideOnXs: true,
+        details:
+          'Whether for an office party, fundraiser or entertaining clients, Magic really gets people talking. Businesses big and small love this personal, professional Magic.',
+        href: '/',
+        subtitle: 'Corporate Magic',
+      },
+      {
         src: require('@/static/square/wedding.jpg'),
         alt: 'Magical Wedding',
         hideOnXs: false,
         details:
-          'Make your special day more Magical. Let family and friends relax and share an expeience together. Between ceremony and reception or during meals, magic is perfect.',
+          'Make your special day more Magical. Let family and friends relax and share an experience together. Between ceremony and reception or during meals, magic is perfect.',
         href: '/',
         subtitle: 'Wedding Day Magic',
       },

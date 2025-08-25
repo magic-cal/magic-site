@@ -67,12 +67,7 @@ export default defineComponent({
     },
   },
   setup() {
-    // const filteredServices = computed(() => {
-    //   return props.services.filter((service) => !service.hideOnXs)
-    // })
-    return {
-      // filteredServices,
-    }
+    return {}
   },
 })
 </script>
