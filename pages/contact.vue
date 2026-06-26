@@ -1,10 +1,20 @@
 <template>
   <v-row>
     <v-col>
-      <heading-section
-        title="Contact"
-        subtitle="Enquire and check availability"
-      />
+      <v-sheet color="grey darken-4" dark class="py-12">
+        <v-container>
+          <v-row justify="center">
+            <v-col cols="12" md="8" class="text-center">
+              <h1 class="display-1 mb-2">Contact Callum — Get a Quote</h1>
+              <p class="headline">
+                Award-winning close-up magician for weddings, corporate events &amp;
+                parties. Check availability and get a no-obligation quote.
+              </p>
+            </v-col>
+          </v-row>
+        </v-container>
+      </v-sheet>
+
       <v-container py-12>
         <v-row justify="space-between">
           <v-col
@@ -13,27 +23,44 @@
             :order="$vuetify.breakpoint.smAndDown ? 2 : 0"
           >
             <v-row>
-              <v-col>
-                For more information about Callum's performances, feel free to
-                drop him a message or contact him on social media. He aims to
-                reply to all enquiries within 24 hours.
+              <v-col :cols="12">
+                <p class="body-1">
+                  For more information about Callum's performances, drop him a
+                  message and he'll come back to you within 24 hours with
+                  availability and a quote tailored to your event.
+                </p>
               </v-col>
 
               <v-col :cols="12">
-                Call on: <a href="tel:07481768042">07481768042</a>
+                <v-icon color="accent" small>mdi-phone</v-icon>
+                Call: <a href="tel:+447481768042">07481 768042</a>
               </v-col>
               <v-col :cols="12">
+                <v-icon color="accent" small>mdi-email</v-icon>
                 Email:
-                <a href="mailto:info@magic-cal.co.uk ">info@magic-cal.co.uk </a>
-              </v-col>
-              <v-col :cols="12"> Based In Surrey and Happy to travel </v-col>
-              <v-col :cols="12">
-                Facebook: <a href="https://fb.me/MagicCal">fb.me/MagicCal</a>
+                <a href="mailto:info@magic-cal.co.uk">info@magic-cal.co.uk</a>
               </v-col>
               <v-col :cols="12">
-                Twitter:
-                <a href="https://twitter.com/magic_cal">@Magic_Cal </a></v-col
-              >
+                <v-icon color="accent" small>mdi-map-marker</v-icon>
+                Based in London — available across Surrey, Guildford &amp; the South East
+              </v-col>
+              <v-col :cols="12">
+                <v-icon color="accent" small>mdi-facebook</v-icon>
+                <a href="https://www.facebook.com/MagicCal/" target="_blank" rel="noopener">facebook.com/MagicCal</a>
+              </v-col>
+              <v-col :cols="12">
+                <v-icon color="accent" small>mdi-instagram</v-icon>
+                <a href="https://www.instagram.com/mcclure_magic/" target="_blank" rel="noopener">@mcclure_magic</a>
+              </v-col>
+
+              <v-col :cols="12" class="mt-4">
+                <p class="body-2 grey--text">
+                  Looking for more info first?
+                  <nuxt-link to="/wedding-magician">Wedding magician</nuxt-link> ·
+                  <nuxt-link to="/corporate-magician">Corporate magician</nuxt-link> ·
+                  <nuxt-link to="/about">About Callum</nuxt-link>
+                </p>
+              </v-col>
             </v-row>
           </v-col>
 
@@ -53,3 +80,24 @@
     </v-col>
   </v-row>
 </template>
+
+<script lang="ts">
+import { defineComponent } from '@vue/composition-api'
+import { buildHead } from '~/utils/seo'
+import { localBusiness, breadcrumb } from '~/utils/schema'
+
+export default defineComponent({
+  head() {
+    return buildHead({
+      title: 'Contact | Callum McClure Magician — Get a Quote',
+      description:
+        'Get in touch with Callum McClure — award-winning close-up magician for weddings, corporate events and parties. Call 07481 768042 or send a message.',
+      path: '/contact',
+      jsonLd: [
+        localBusiness(),
+        breadcrumb([{ name: 'Contact', item: '/contact' }]),
+      ],
+    })
+  },
+})
+</script>
