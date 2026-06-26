@@ -18,7 +18,7 @@
       <v-container py-12>
         <v-row justify="space-between">
           <v-col
-            :cols="auto"
+            cols="auto"
             :md="4"
             :order="$vuetify.breakpoint.smAndDown ? 2 : 0"
           >

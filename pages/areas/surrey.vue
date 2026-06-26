@@ -114,15 +114,6 @@ import { defineComponent } from '@vue/composition-api'
 import { buildHead } from '~/utils/seo'
 import { localBusiness, breadcrumb } from '~/utils/schema'
 
-const surreySchema = () => {
-  const base = localBusiness()
-  return {
-    ...base,
-    areaServed: 'Surrey',
-    '@id': 'https://www.magic-cal.co.uk/#business-surrey',
-  }
-}
-
 export default defineComponent({
   setup() {
     return {}
@@ -134,7 +125,7 @@ export default defineComponent({
         'Award-winning Surrey magician covering Guildford, Woking, Farnham, Epsom, Dorking & beyond. Magic Circle close-up magic for weddings, corporate events and parties.',
       path: '/areas/surrey',
       jsonLd: [
-        surreySchema(),
+        localBusiness({ areaServed: 'Surrey', idSuffix: 'surrey' }),
         breadcrumb([{ name: 'Surrey', item: '/areas/surrey' }]),
       ],
     })

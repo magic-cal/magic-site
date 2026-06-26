@@ -97,25 +97,19 @@ export default defineComponent({
       { title: 'Guildford', to: '/areas/guildford' },
     ]
 
+    const mainIcons: Record<string, string> = {
+      '/wedding-magician': 'mdi-ring',
+      '/corporate-magician': 'mdi-briefcase',
+      '/party-magician': 'mdi-party-popper',
+      '/about': 'mdi-information',
+    }
+
     const allPages = [
       { title: 'Home', icon: 'mdi-home', to: '/' },
-      { title: 'Wedding Magician', icon: 'mdi-ring', to: '/wedding-magician' },
-      {
-        title: 'Corporate Magician',
-        icon: 'mdi-briefcase',
-        to: '/corporate-magician',
-      },
-      { title: 'Party Magician', icon: 'mdi-party-popper', to: '/party-magician' },
+      ...mainPages.map((p) => ({ ...p, icon: mainIcons[p.to] || 'mdi-cards' })),
       { title: 'Close-Up Magic', icon: 'mdi-cards', to: '/close-up-magician' },
-      { title: 'About', icon: 'mdi-information', to: '/about' },
-      {
-        title: 'Testimonials',
-        icon: 'mdi-star',
-        to: '/testimonials',
-      },
-      { title: 'Guildford', icon: 'mdi-map-marker', to: '/areas/guildford' },
-      { title: 'Surrey', icon: 'mdi-map-marker', to: '/areas/surrey' },
-      { title: 'London', icon: 'mdi-map-marker', to: '/areas/london' },
+      { title: 'Testimonials', icon: 'mdi-star', to: '/testimonials' },
+      ...areaPages.map((p) => ({ ...p, icon: 'mdi-map-marker' })),
       { title: 'Pricing', icon: 'mdi-currency-gbp', to: '/blog/how-much-does-a-wedding-magician-cost' },
       { title: 'Contact', icon: 'mdi-email', to: '/contact' },
     ]

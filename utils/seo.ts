@@ -1,5 +1,4 @@
-const SITE_URL = 'https://www.magic-cal.co.uk'
-const DEFAULT_IMAGE = `${SITE_URL}/shuffle/callum_mcclure_shuffle.jpg`
+import { SITE_URL, SITE_IMAGE } from '~/utils/constants'
 
 interface SeoOptions {
   title: string
@@ -12,11 +11,11 @@ interface SeoOptions {
 
 export const buildHead = (opts: SeoOptions) => {
   const url = `${SITE_URL}${opts.path}`
-  const image = opts.ogImage || DEFAULT_IMAGE
+  const image = opts.ogImage || SITE_IMAGE
   const ogType = opts.ogType || 'website'
 
-  const scripts = (opts.jsonLd || []).map((ld, i) => ({
-    hid: `ld-json-${i}`,
+  const scripts = (opts.jsonLd || []).map((ld: any) => ({
+    hid: `ld-json-${ld['@type'] || 'unknown'}`,
     type: 'application/ld+json',
     innerHTML: JSON.stringify(ld),
   }))
@@ -72,12 +71,8 @@ export const buildHead = (opts: SeoOptions) => {
       },
     ],
     script: scripts,
-    __dangerouslyDisableSanitizersByTagID: scripts.reduce(
-      (acc: Record<string, string[]>, s) => {
-        acc[s.hid] = ['innerHTML']
-        return acc
-      },
-      {}
+    __dangerouslyDisableSanitizersByTagID: Object.fromEntries(
+      scripts.map((s) => [s.hid, ['innerHTML']])
     ),
   }
 }

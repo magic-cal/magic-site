@@ -113,15 +113,6 @@ const services = [
   },
 ]
 
-const guildfordSchema = () => {
-  const base = localBusiness()
-  return {
-    ...base,
-    areaServed: 'Guildford',
-    '@id': 'https://www.magic-cal.co.uk/#business-guildford',
-  }
-}
-
 export default defineComponent({
   setup() {
     return { services }
@@ -133,9 +124,9 @@ export default defineComponent({
         'Local Guildford magician for weddings, corporate events & parties. Magic Circle member with roots in the GU area. Award-winning close-up magic — get a quote.',
       path: '/areas/guildford',
       jsonLd: [
-        guildfordSchema(),
+        localBusiness({ areaServed: 'Guildford', idSuffix: 'guildford' }),
         breadcrumb([
-          { name: 'Areas', item: '/areas/surrey' },
+          { name: 'Surrey', item: '/areas/surrey' },
           { name: 'Guildford', item: '/areas/guildford' },
         ]),
       ],

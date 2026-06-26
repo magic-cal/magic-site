@@ -80,6 +80,7 @@
               cols="12"
               sm="4"
               class="text-center"
+              :class="{ 'd-none d-sm-block': svc.hideOnXs }"
             >
               <v-img
                 class="service-img mx-auto"

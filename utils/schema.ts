@@ -1,17 +1,23 @@
-const SITE_URL = 'https://www.magic-cal.co.uk'
+import { SITE_URL, SITE_IMAGE } from '~/utils/constants'
+
 const PHONE = '+447481768042'
 const EMAIL = 'info@magic-cal.co.uk'
-const IMAGE = `${SITE_URL}/shuffle/callum_mcclure_shuffle.jpg`
+const AREA_SERVED = ['London', 'Guildford', 'Surrey', 'South East England']
 
-export const localBusiness = () => ({
+interface LocalBusinessOpts {
+  areaServed?: string | string[]
+  idSuffix?: string
+}
+
+export const localBusiness = (opts?: LocalBusinessOpts) => ({
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
-  '@id': `${SITE_URL}/#business`,
+  '@id': `${SITE_URL}/#business${opts?.idSuffix ? `-${opts.idSuffix}` : ''}`,
   name: 'Callum McClure Magician',
   description:
     'Award-winning close-up magician for weddings, corporate events and parties across London, Surrey and the South East.',
   url: `${SITE_URL}/`,
-  image: IMAGE,
+  image: SITE_IMAGE,
   telephone: PHONE,
   email: EMAIL,
   address: {
@@ -19,7 +25,7 @@ export const localBusiness = () => ({
     addressLocality: 'London',
     addressCountry: 'GB',
   },
-  areaServed: ['London', 'Guildford', 'Surrey', 'South East England'],
+  areaServed: opts?.areaServed ?? AREA_SERVED,
   founder: {
     '@type': 'Person',
     name: 'Callum McClure',
@@ -44,7 +50,7 @@ export const service = (
   serviceType,
   name,
   url: `${SITE_URL}${url}`,
-  areaServed: ['London', 'Guildford', 'Surrey', 'South East England'],
+  areaServed: AREA_SERVED,
   provider: {
     '@type': 'LocalBusiness',
     '@id': `${SITE_URL}/#business`,
@@ -98,7 +104,6 @@ export const article = (opts: {
   '@type': 'Article',
   headline: opts.headline,
   description: opts.description,
-  url: `${SITE_URL}${opts.url}`,
   datePublished: opts.datePublished,
   dateModified: opts.dateModified,
   author: {
@@ -107,15 +112,15 @@ export const article = (opts: {
     url: `${SITE_URL}/about`,
   },
   publisher: {
-    '@type': 'LocalBusiness',
+    '@type': 'Organization',
     '@id': `${SITE_URL}/#business`,
     name: 'Callum McClure Magician',
     logo: {
       '@type': 'ImageObject',
-      url: IMAGE,
+      url: SITE_IMAGE,
     },
   },
-  image: IMAGE,
+  image: SITE_IMAGE,
   mainEntityOfPage: {
     '@type': 'WebPage',
     '@id': `${SITE_URL}${opts.url}`,
@@ -127,7 +132,7 @@ export const personProfile = () => ({
   '@type': 'Person',
   name: 'Callum McClure',
   url: `${SITE_URL}/about`,
-  image: IMAGE,
+  image: SITE_IMAGE,
   jobTitle: 'Magician',
   description:
     'Multi-award-winning close-up magician and member of The Magic Circle, based in London and performing across Surrey and the South East.',
