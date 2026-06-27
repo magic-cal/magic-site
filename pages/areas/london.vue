@@ -109,6 +109,29 @@
         </v-row>
       </v-container>
     </v-sheet>
+
+    <v-sheet color="grey lighten-4" class="py-12">
+      <v-container>
+        <v-row justify="center">
+          <v-col cols="12" md="8">
+            <h2 class="display-1 mb-4 black--text">London Christmas party magician</h2>
+            <p class="body-1 black--text">
+              December is the busiest time of year for London events — and a magician
+              is one of the most effective ways to make your corporate Christmas party,
+              works night out or private celebration stand out.
+            </p>
+            <p class="body-1 black--text">
+              I perform at Christmas parties across the capital, from City hotel
+              ballrooms and Mayfair dining rooms to Southbank venues and Shoreditch
+              warehouses.
+              <nuxt-link to="/christmas-party-magician-london">
+                See my dedicated London Christmas party magician page →
+              </nuxt-link>
+            </p>
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-sheet>
   </div>
 </template>
 
@@ -123,9 +146,9 @@ export default defineComponent({
   },
   head() {
     return buildHead({
-      title: 'Magician in London | Award-Winning Close-Up Magic for Hire',
+      title: 'Magician in London | Close-Up Magician for Hire | Wedding & Corporate Magician London | Callum McClure',
       description:
-        'London close-up magician for weddings, corporate events and parties. Magic Circle member, performed for BBC News & the Royal Variety after-show party. Get a quote.',
+        'London-based close-up magician for weddings, corporate events, Christmas parties and private celebrations. Magic Circle member. BBC News. Royal Variety after-show party. Get a quote.',
       path: '/areas/london',
       jsonLd: [
         localBusiness({ areaServed: 'London', idSuffix: 'london' }),

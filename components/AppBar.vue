@@ -107,6 +107,7 @@ export default defineComponent({
     const allPages = [
       { title: 'Home', icon: 'mdi-home', to: '/' },
       ...mainPages.map((p) => ({ ...p, icon: mainIcons[p.to] || 'mdi-cards' })),
+      { title: 'Christmas Parties', icon: 'mdi-snowflake', to: '/christmas-party-magician' },
       { title: 'Close-Up Magic', icon: 'mdi-cards', to: '/close-up-magician' },
       { title: 'Testimonials', icon: 'mdi-star', to: '/testimonials' },
       ...areaPages.map((p) => ({ ...p, icon: 'mdi-map-marker' })),

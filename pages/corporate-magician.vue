@@ -127,6 +127,7 @@
             </p>
             <p class="body-1 black--text">
               See also:
+              <nuxt-link to="/christmas-party-magician">Christmas party magician</nuxt-link>,
               <nuxt-link to="/areas/surrey">magician in Surrey</nuxt-link>,
               <nuxt-link to="/areas/london">magician in London</nuxt-link>.
             </p>
@@ -186,7 +187,7 @@ const events = [
   {
     title: 'Christmas parties',
     detail:
-      "The season's busiest events; I'll keep your team buzzing all night.",
+      "The season's busiest events — from large company parties to works nights out. See my Christmas party magician page for more.",
   },
   {
     title: 'Product launches & brand activations',
@@ -219,9 +220,9 @@ export default defineComponent({
   },
   head() {
     return buildHead({
-      title: 'Corporate Magician Surrey | Events, Trade Shows & Parties',
+      title: 'Corporate Magician London & Surrey | Christmas Party Magician | Callum McClure',
       description:
-        'Professional corporate magician for Surrey & London — conferences, trade shows, client dinners & Christmas parties. Close-up magic that breaks the ice and gets people talking.',
+        'Award-winning corporate magician for London & Surrey — conferences, trade shows, client dinners & Christmas parties. Magic Circle member. Close-up magic that gets people talking.',
       path: '/corporate-magician',
       jsonLd: [
         service(

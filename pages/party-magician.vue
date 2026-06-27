@@ -101,6 +101,7 @@
             </p>
             <p class="body-1 black--text">
               See also:
+              <nuxt-link to="/christmas-party-magician">Christmas party magician</nuxt-link>,
               <nuxt-link to="/areas/guildford">magician in Guildford</nuxt-link>,
               <nuxt-link to="/areas/surrey">magician in Surrey</nuxt-link>.
             </p>
