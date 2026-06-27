@@ -25,17 +25,21 @@
       :inverted-scroll="hideOnScroll"
       elevation="0"
       color="white"
+      class="site-appbar"
     >
-      <v-toolbar-title to="/" class="pr-2" nuxt v-text="title" />
+      <v-toolbar-title to="/" class="pr-2 brand-title" nuxt v-text="title" />
+      <v-spacer></v-spacer>
       <template v-if="!$vuetify.breakpoint.smAndDown">
         <v-btn
           v-for="page in pages"
           :key="page.title"
           :to="page.to"
-          large
           text
           nuxt
           plain
+          exact
+          active-class="nav-active"
+          class="nav-link"
           :ripple="false"
           >{{ page.title }}</v-btn
         >
@@ -88,3 +92,34 @@ export default defineComponent({
   },
 })
 </script>
+
+<style lang="scss" scoped>
+.site-appbar {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.brand-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600;
+  font-size: 1.35rem;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+}
+
+.nav-link {
+  letter-spacing: 0.08em !important;
+  font-weight: 600;
+  position: relative;
+}
+
+// Gold underline indicator for the active page
+.nav-link.nav-active::after {
+  content: '';
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 10px;
+  height: 2px;
+  background: rgb(228, 186, 93);
+}
+</style>

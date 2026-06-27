@@ -15,11 +15,16 @@
           </v-col>
           <v-col :cols="12" :md="6">
             <v-row>
-              <v-col class="text-h4" cols="12">
-                Deception: A unique blend of classic magic, technology and
-                robotics
+              <v-col cols="12">
+                <div class="eyebrow">Edinburgh Festival Fringe</div>
+                <h2 class="deception-title">
+                  A unique blend of classic magic, technology and robotics
+                </h2>
               </v-col>
-              <v-col cols="12"> 5th - 15th August 2017 - 8.10pm (1h)</v-col>
+              <v-col cols="12" class="deception-meta">
+                <v-icon small left color="accent">mdi-calendar</v-icon>5th
+                &ndash; 15th August 2017 &middot; 8.10pm (1h)</v-col
+              >
               <v-col cols="12">
                 Combining classic magic with a modern and technological twist,
                 this brand new show is magic as you have never seen before.
@@ -32,7 +37,7 @@
               </v-col>
               <v-col cols="12">
                 <v-row>
-                  <v-col cols="12" class="text-h5">Press</v-col>
+                  <v-col cols="12" class="eyebrow">Press</v-col>
                   <v-col cols="12">
                     <v-btn
                       color="primary"
@@ -59,19 +64,24 @@
               <!-- Instagram images grid -->
               <v-col cols="12">
                 <v-row>
-                  <v-col cols="12" class="text-h5">Instagram</v-col>
+                  <v-col cols="12" class="eyebrow">Instagram</v-col>
                   <v-col cols="12">
                     <v-row>
                       <v-col cols="4">
-                        <v-img :src="require('@/static/DeceptionSquare.png')" />
+                        <v-img
+                          class="elevated-img"
+                          :src="require('@/static/DeceptionSquare.png')"
+                        />
                       </v-col>
                       <v-col cols="4">
                         <v-img
+                          class="elevated-img"
                           :src="require('@/static/RoyalMileFlyering.jpg')"
                         />
                       </v-col>
                       <v-col cols="4">
                         <v-img
+                          class="elevated-img"
                           :src="require('@/static/CloseUpPerformance.jpg')"
                         />
                       </v-col>
@@ -84,13 +94,14 @@
 
           <v-col cols="12" md="6">
             <v-img
+              class="elevated-img"
               :src="require('@/static/CallumMcClureDeceptionPoster.jpg')"
             />
           </v-col>
           <v-col :cols="12">
             <v-row>
               <v-row>
-                <v-col cols="12" class="text-h5">With thanks to:</v-col>
+                <v-col cols="12" class="eyebrow">With thanks to</v-col>
                 <v-col cols="12">
                   <v-row>
                     <v-col cols="auto">
@@ -131,10 +142,25 @@
   </v-row>
 </template>
 
-<style>
+<style scoped>
 .thanks-logo,
 .instagram-grid-image {
   max-width: 150px;
   max-height: 150px;
+  border-radius: 8px;
+}
+
+.deception-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(1.5rem, 4vw, 2.1rem);
+  line-height: 1.2;
+  color: #fff;
+}
+
+.deception-meta {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 600;
+  letter-spacing: 0.03em;
 }
 </style>

@@ -15,12 +15,54 @@
       </v-list>
     </v-navigation-drawer> -->
 
-    <v-footer :absolute="!fixed" app color="primary lighten-1" padless>
-      <v-row justify="center" no-gutters>
-        <v-col class="accent lighten-1 py-4 text-center white--text" cols="12">
-          <span>&copy; Callum McClure {{ new Date().getFullYear() }}</span>
-        </v-col>
-      </v-row>
+    <v-footer :absolute="!fixed" app padless class="site-footer">
+      <v-container class="py-10">
+        <v-row align="center" justify="space-between">
+          <v-col cols="12" md="5" class="text-center text-md-left">
+            <div class="footer-brand">Callum McClure</div>
+            <div class="footer-tagline">
+              Award-Winning Magician &middot; Member of The Magic Circle
+            </div>
+          </v-col>
+
+          <v-col cols="12" md="4" class="text-center">
+            <div class="footer-contact">
+              <a href="tel:07481768042">07481 768042</a>
+              <span class="footer-dot">&middot;</span>
+              <a href="mailto:info@magic-cal.co.uk">info@magic-cal.co.uk</a>
+            </div>
+            <div class="footer-location">Based in Surrey &mdash; happy to travel</div>
+          </v-col>
+
+          <v-col cols="12" md="3" class="text-center text-md-right">
+            <v-btn
+              icon
+              color="white"
+              href="https://fb.me/MagicCal"
+              target="_blank"
+              aria-label="Facebook"
+            >
+              <v-icon>mdi-facebook</v-icon>
+            </v-btn>
+            <v-btn
+              icon
+              color="white"
+              href="https://twitter.com/magic_cal"
+              target="_blank"
+              aria-label="Twitter"
+            >
+              <v-icon>mdi-twitter</v-icon>
+            </v-btn>
+          </v-col>
+        </v-row>
+
+        <v-divider class="footer-divider my-6"></v-divider>
+
+        <div class="footer-copy text-center">
+          &copy; Callum McClure {{ new Date().getFullYear() }}. All rights
+          reserved.
+        </div>
+      </v-container>
     </v-footer>
   </v-app>
 </template>
@@ -71,5 +113,48 @@ export default defineComponent({
     width: 100%;
     overflow-x: hidden;
   }
+}
+
+/* Elegant dark footer */
+.site-footer {
+  background:
+    linear-gradient(135deg, #1c1c22 0%, #24242e 60%, #1a1a20 100%) !important;
+  border-top: 1px solid rgba(228, 186, 93, 0.35);
+}
+.footer-brand {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #fff;
+}
+.footer-tagline {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  margin-top: 0.25rem;
+}
+.footer-contact a {
+  color: rgb(228, 186, 93) !important;
+  font-weight: 600;
+}
+.footer-contact a:hover {
+  color: #fff !important;
+}
+.footer-dot {
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0 0.5rem;
+}
+.footer-location {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+  margin-top: 0.35rem;
+}
+.footer-divider {
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+.footer-copy {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
 }
 </style>

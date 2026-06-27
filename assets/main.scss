@@ -86,3 +86,59 @@ section,
 .v-card {
   border-radius: 10px !important;
 }
+
+// ---------------------------------------------------------------------------
+// Shared design utilities for a cohesive, upscale magic aesthetic
+// ---------------------------------------------------------------------------
+
+// Small uppercase gold label used above section / page titles
+.eyebrow {
+  display: inline-block;
+  color: rgb(228, 186, 93);
+  text-transform: uppercase;
+  letter-spacing: 0.32em;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.8rem;
+  margin-bottom: 0.75rem;
+}
+
+// Short centred gold divider used under headings
+.gold-rule {
+  width: 64px;
+  height: 2px;
+  margin: 1.25rem auto 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgb(228, 186, 93),
+    transparent
+  );
+}
+
+// Section title: consistent serif heading sizing
+.section-title {
+  font-family: var(--font-heading) !important;
+  font-weight: 600;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  line-height: 1.2;
+}
+
+// Expansion panels (FAQs): softer, more deliberate
+.v-expansion-panel {
+  border-radius: 10px !important;
+  &::before {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06) !important;
+  }
+}
+.v-expansion-panel-header {
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+// Content imagery: gentle rounding + lift (opt-in via class)
+.elevated-img {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.18);
+}

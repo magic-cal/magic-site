@@ -2,17 +2,10 @@
   <v-sheet class="pb-6 pt-12" color="white">
     <v-container>
       <v-row>
-        <v-col :cols="12">
-          <v-row>
-            <v-col
-              :cols="12"
-              class="d-flex"
-              style="flex-direction: column"
-              align="center"
-            >
-              <div class="display-1 mb-1 flex-grow-1 accent--text">FAQs</div>
-            </v-col>
-          </v-row>
+        <v-col :cols="12" class="text-center pb-6">
+          <div class="eyebrow">Good to Know</div>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <div class="gold-rule"></div>
         </v-col>
         <v-expansion-panels light :multiple="!$vuetify.breakpoint.xs">
           <v-col v-for="(faq, i) in faqs" :key="i" :cols="12" :sm="6" :md="4">
@@ -45,7 +38,8 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-div {
-  color: black;
+.v-expansion-panel-header,
+.v-expansion-panel-content {
+  color: rgba(0, 0, 0, 0.82);
 }
 </style>
