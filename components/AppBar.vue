@@ -56,6 +56,15 @@
             </v-list-item>
           </v-list>
         </v-menu>
+        <v-btn
+          to="/wont-get-fooled-again"
+          large
+          text
+          nuxt
+          plain
+          :ripple="false"
+          >Live Show</v-btn
+        >
         <v-btn to="/contact" large text nuxt plain :ripple="false"
           >Get a Quote</v-btn
         >
@@ -108,6 +117,11 @@ export default defineComponent({
       { title: 'Home', icon: 'mdi-home', to: '/' },
       ...mainPages.map((p) => ({ ...p, icon: mainIcons[p.to] || 'mdi-cards' })),
       { title: 'Close-Up Magic', icon: 'mdi-cards', to: '/close-up-magician' },
+      {
+        title: 'Live Show',
+        icon: 'mdi-magic-staff',
+        to: '/wont-get-fooled-again',
+      },
       { title: 'Testimonials', icon: 'mdi-star', to: '/testimonials' },
       ...areaPages.map((p) => ({ ...p, icon: 'mdi-map-marker' })),
       { title: 'Pricing', icon: 'mdi-currency-gbp', to: '/blog/how-much-does-a-wedding-magician-cost' },

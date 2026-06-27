@@ -150,3 +150,65 @@ export const personProfile = () => ({
     '@id': `${SITE_URL}/#business`,
   },
 })
+
+interface EventOpts {
+  name: string
+  description: string
+  url: string
+  startDate?: string
+  endDate?: string
+  venueName?: string
+  venueLocality?: string
+  isFree?: boolean
+  ogImage?: string
+}
+
+export const theaterEvent = (opts: EventOpts) => {
+  const event: any = {
+    '@context': 'https://schema.org',
+    '@type': 'TheaterEvent',
+    name: opts.name,
+    description: opts.description,
+    url: `${SITE_URL}${opts.url}`,
+    image: opts.ogImage || SITE_IMAGE,
+    eventStatus: 'https://schema.org/EventScheduled',
+    eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+    performer: {
+      '@type': 'Person',
+      name: 'Callum McClure',
+      url: `${SITE_URL}/about`,
+    },
+    organizer: {
+      '@type': 'Organization',
+      '@id': `${SITE_URL}/#business`,
+      name: 'Callum McClure Magician',
+    },
+  }
+
+  if (opts.startDate) event.startDate = opts.startDate
+  if (opts.endDate) event.endDate = opts.endDate
+
+  if (opts.venueName) {
+    event.location = {
+      '@type': 'Place',
+      name: opts.venueName,
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: opts.venueLocality || 'Edinburgh',
+        addressCountry: 'GB',
+      },
+    }
+  }
+
+  if (opts.isFree) {
+    event.offers = {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'GBP',
+      availability: 'https://schema.org/InStock',
+      url: 'https://freefringe.org.uk/shows/callum-mcclure-wont-get-fooled-again/',
+    }
+  }
+
+  return event
+}
