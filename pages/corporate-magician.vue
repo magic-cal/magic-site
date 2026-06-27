@@ -127,6 +127,9 @@
             </p>
             <p class="body-1 black--text">
               See also:
+              <nuxt-link to="/after-dinner-magician">after dinner magician</nuxt-link>,
+              <nuxt-link to="/gala-dinner-magician">gala dinner magician</nuxt-link>,
+              <nuxt-link to="/awards-ceremony-magician">awards ceremony magician</nuxt-link>,
               <nuxt-link to="/christmas-party-magician">Christmas party magician</nuxt-link>,
               <nuxt-link to="/areas/surrey">magician in Surrey</nuxt-link>,
               <nuxt-link to="/areas/london">magician in London</nuxt-link>.

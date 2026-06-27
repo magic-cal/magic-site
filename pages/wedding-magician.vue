@@ -148,6 +148,8 @@
             </p>
             <p class="body-1 black--text mt-4">
               See also:
+              <nuxt-link to="/wedding-magician-surrey">wedding magician Surrey</nuxt-link>,
+              <nuxt-link to="/wedding-magician-london">wedding magician London</nuxt-link>,
               <nuxt-link to="/areas/surrey">magician in Surrey</nuxt-link>,
               <nuxt-link to="/areas/guildford">magician in Guildford</nuxt-link>,
               <nuxt-link to="/close-up-magician">close-up magic explained</nuxt-link>.

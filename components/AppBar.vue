@@ -42,6 +42,23 @@
         <v-menu offset-y>
           <template #activator="{ on, attrs }">
             <v-btn large text plain :ripple="false" v-bind="attrs" v-on="on">
+              Occasions <v-icon small>mdi-chevron-down</v-icon>
+            </v-btn>
+          </template>
+          <v-list>
+            <v-list-item
+              v-for="occasion in occasionPages"
+              :key="occasion.to"
+              :to="occasion.to"
+              nuxt
+            >
+              <v-list-item-title>{{ occasion.title }}</v-list-item-title>
+            </v-list-item>
+          </v-list>
+        </v-menu>
+        <v-menu offset-y>
+          <template #activator="{ on, attrs }">
+            <v-btn large text plain :ripple="false" v-bind="attrs" v-on="on">
               Areas <v-icon small>mdi-chevron-down</v-icon>
             </v-btn>
           </template>
@@ -91,6 +108,15 @@ export default defineComponent({
       { title: 'About', to: '/about' },
     ]
 
+    const occasionPages = [
+      { title: 'Christmas Parties', to: '/christmas-party-magician' },
+      { title: 'After Dinner', to: '/after-dinner-magician' },
+      { title: 'Gala Dinners', to: '/gala-dinner-magician' },
+      { title: 'Awards Ceremonies', to: '/awards-ceremony-magician' },
+      { title: 'Charity Balls', to: '/charity-ball-magician' },
+      { title: 'Table Magic', to: '/table-magician' },
+    ]
+
     const areaPages = [
       { title: 'London', to: '/areas/london' },
       { title: 'Surrey', to: '/areas/surrey' },
@@ -107,7 +133,7 @@ export default defineComponent({
     const allPages = [
       { title: 'Home', icon: 'mdi-home', to: '/' },
       ...mainPages.map((p) => ({ ...p, icon: mainIcons[p.to] || 'mdi-cards' })),
-      { title: 'Christmas Parties', icon: 'mdi-snowflake', to: '/christmas-party-magician' },
+      ...occasionPages.map((p) => ({ ...p, icon: 'mdi-silverware-fork-knife' })),
       { title: 'Close-Up Magic', icon: 'mdi-cards', to: '/close-up-magician' },
       { title: 'Testimonials', icon: 'mdi-star', to: '/testimonials' },
       ...areaPages.map((p) => ({ ...p, icon: 'mdi-map-marker' })),
@@ -119,6 +145,7 @@ export default defineComponent({
       drawer,
       title: 'Callum McClure Magician',
       mainPages,
+      occasionPages,
       areaPages,
       allPages,
     }
