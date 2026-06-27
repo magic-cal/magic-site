@@ -1,16 +1,31 @@
 <template>
   <v-row justify="center" align="center" no-gutters>
     <v-col cols="12" pa-0>
-      <v-parallax id="dim" :src="require('@/static/shuffle-cropped1.jpg')">
-        <v-row align="center">
-          <v-col align="center">
-            <h1>
-              <div class="display-4">Callum McClure</div>
-              <div class="display-1">Multi-Award Winning Magician</div>
-              <div class="display-5">Member of The Magic Circle</div>
-            </h1>
-          </v-col>
-        </v-row>
+      <v-parallax id="dim" class="hero" :src="require('@/static/shuffle-cropped1.jpg')">
+        <v-container class="hero-content fill-height">
+          <v-row align="center" justify="center" no-gutters>
+            <v-col cols="12" md="10" class="text-center">
+              <div class="hero-eyebrow">Award-Winning Close-Up Magician</div>
+              <h1 class="hero-title">Callum McClure</h1>
+              <div class="hero-sub">
+                Multi-Award Winning Magician &middot; Member of The Magic Circle
+              </div>
+              <div class="hero-badges">
+                <span class="hero-badge">The Magic Circle</span>
+                <span class="hero-badge">Multi-Award Winning</span>
+                <span class="hero-badge">10+ Years Experience</span>
+              </div>
+              <div class="hero-cta">
+                <v-btn large color="accent" depressed @click="goToContact">
+                  Check Availability
+                </v-btn>
+                <v-btn large outlined color="white" @click="goToServices">
+                  Explore the Magic
+                </v-btn>
+              </div>
+            </v-col>
+          </v-row>
+        </v-container>
       </v-parallax>
       <section-break-img :size="125" />
       <about-snippet />
@@ -21,7 +36,11 @@
         :logos="companyLogos"
         color="white"
       />
-      <services-section title="Which Style of Magic" :services="services" />
+      <services-section
+        id="services"
+        title="Which Style of Magic"
+        :services="services"
+      />
       <faqs-section />
 
       <contact-section />
@@ -34,6 +53,15 @@ import { defineComponent } from '@vue/composition-api'
 
 export default defineComponent({
   setup() {
+    const scrollTo = (id: string) => {
+      const element = document.getElementById(id)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+    }
+    const goToContact = () => scrollTo('contact')
+    const goToServices = () => scrollTo('services')
+
     const companyLogos = [
       {
         src: require('@/static/Raddison.png'),
@@ -118,28 +146,103 @@ export default defineComponent({
         subtitle: 'Wedding Day Magic',
       },
     ]
-    return { companyLogos, services }
+    return { companyLogos, services, goToContact, goToServices }
   },
 })
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .v-parallax {
   transform: none !important;
   width: 100% !important;
+  height: 90vh !important;
+  min-height: 540px;
+}
+
+// Properly cover the frame instead of the old hard-coded negative margins
+.v-parallax ::v-deep .v-parallax__image {
+  margin: 0 !important;
   object-fit: cover;
-  height: 85vh !important;
+  object-position: center 30%;
 }
 
-.v-parallax__image {
-  margin: -100px 0px 0px -180px !important;
+// Layered overlay: even darkening for legibility + subtle bottom vignette
+.v-parallax ::v-deep .v-parallax__content {
+  padding: 0 !important;
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.55) 0%,
+      rgba(0, 0, 0, 0.35) 45%,
+      rgba(0, 0, 0, 0.7) 100%
+    ),
+    radial-gradient(
+      ellipse at center,
+      rgba(0, 0, 0, 0.15) 0%,
+      rgba(0, 0, 0, 0.55) 100%
+    ) !important;
 }
 
-* >>> .v-parallax__content {
-  background: linear-gradient(45deg, black, transparent) !important;
+.hero-content {
+  position: relative;
+  z-index: 2;
 }
 
-h1 {
-  font-weight: normal;
+.hero-eyebrow {
+  color: rgb(228, 186, 93);
+  text-transform: uppercase;
+  letter-spacing: 0.32em;
+  font-size: clamp(0.7rem, 1.6vw, 0.95rem);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.hero-title {
+  color: #fff;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  line-height: 1.05;
+  font-size: clamp(2.75rem, 9vw, 6.5rem);
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.45);
+}
+
+.hero-sub {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: clamp(1rem, 2.6vw, 1.5rem);
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  margin-bottom: 1.75rem;
+}
+
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 2.25rem;
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 0.35rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 999px;
+  color: #fff;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  backdrop-filter: blur(2px);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.hero-cta .v-btn {
+  min-width: 200px;
 }
 </style>

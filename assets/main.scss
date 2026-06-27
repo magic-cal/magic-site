@@ -1,0 +1,88 @@
+// Global typography & polish
+// Keeps the existing brand palette (blue / red accent / amber) and focuses
+// on professional typography, spacing and component refinements.
+
+:root {
+  --font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.v-application {
+  font-family: var(--font-body) !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0.01em;
+
+  // Body copy: 400 instead of the thin 300 default reads far more professional
+  font-weight: 400;
+  line-height: 1.7;
+
+  // Headings: refined serif for an upscale, theatrical feel
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .display-1,
+  .display-2,
+  .display-3,
+  .display-4,
+  .headline,
+  .text-h1,
+  .text-h2,
+  .text-h3,
+  .text-h4,
+  .text-h5,
+  .text-h6,
+  .v-toolbar__title {
+    font-family: var(--font-heading) !important;
+    letter-spacing: 0.005em !important;
+    line-height: 1.2;
+  }
+
+  // Tighten the big hero/display sizes and give them weight
+  .display-1 {
+    font-weight: 500;
+  }
+  .display-2,
+  .display-3,
+  .display-4 {
+    font-weight: 600;
+  }
+}
+
+// Buttons: softer, more deliberate, less shouty
+.v-btn {
+  font-family: var(--font-body) !important;
+  letter-spacing: 0.08em !important;
+  text-transform: none !important;
+  font-weight: 600;
+  border-radius: 6px;
+}
+
+.v-btn--outlined {
+  border-width: 2px;
+}
+
+// Links inside content sheets
+a {
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+// Generous, even rhythm for body sections
+section,
+.v-sheet {
+  word-spacing: 0.02em;
+}
+
+// Cards: subtle lift instead of flat default
+.v-card {
+  border-radius: 10px !important;
+}
