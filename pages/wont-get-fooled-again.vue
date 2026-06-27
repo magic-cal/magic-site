@@ -143,9 +143,12 @@
               Edinburgh Festival Fringe — free entry
             </h2>
             <p class="body-1 black--text">
-              <em>Won't Get Fooled Again</em> is part of PBH's Free Fringe: there's
-              no ticket price, you simply turn up, and you decide what it was
-              worth on the way out. Seats go fast, so arrive early.
+              <em>Won't Get Fooled Again</em> runs <strong>8–12 August</strong> at
+              <strong>14:45</strong> in the Voodoo Rooms Ballroom (venue 68). It's
+              part of PBH's Free Fringe: no ticket and no booking — just turn up.
+              There's no set price; the artist may ask for a donation at the end,
+              so you decide what it was worth on the way out. The show is for
+              <strong>ages 18+</strong>, and seats go fast, so arrive early.
             </p>
             <v-btn
               x-large
@@ -209,11 +212,10 @@ import { defineComponent } from '@vue/composition-api'
 import { buildHead } from '~/utils/seo'
 import { theaterEvent, faqPage, breadcrumb } from '~/utils/schema'
 
-// TODO: confirm these with the Free Fringe listing once published.
 const details = {
-  dates: 'Aug 2026 (TBC)',
-  time: 'Time TBC',
-  venue: 'Venue TBC',
+  dates: '8–12 Aug',
+  time: '14:45 (50 min)',
+  venue: 'Voodoo Rooms',
   price: 'Free entry',
 }
 
@@ -247,15 +249,15 @@ const highlights = [
 const faqs = [
   {
     q: 'How much does it cost?',
-    a: "It's a Free Fringe show, so there's no ticket price. Entry is free and there's a bucket collection at the end — give what you thought it was worth.",
+    a: "It's a Free Fringe show, so there's no ticket price and no booking required. The artist may ask for a donation at the end — give what you thought it was worth.",
   },
   {
     q: 'Do I need to book in advance?',
-    a: 'Entry is first come, first served. Popular shows fill up, so it\'s worth arriving a little early to be sure of a seat.',
+    a: "No need to book — just turn up. Entry is first come, first served, so it's worth arriving a little early to be sure of a seat.",
   },
   {
-    q: 'Is the show suitable for all ages?',
-    a: "It's a fun, family-friendly hour of magic with a technological twist — enjoyable whether you're eight or eighty.",
+    q: 'Is there an age restriction?',
+    a: 'Yes — the show is for ages 18 and over.',
   },
   {
     q: 'Do I need to know anything about AI or VR to enjoy it?',
@@ -280,6 +282,9 @@ export default defineComponent({
           description:
             'A new magic show updating classic effects with artificial intelligence and virtual reality, at the Edinburgh Festival Fringe.',
           url: '/wont-get-fooled-again',
+          startDate: '2026-08-08T14:45:00+01:00',
+          endDate: '2026-08-12T15:35:00+01:00',
+          venueName: 'The Voodoo Rooms — Ballroom (venue 68)',
           venueLocality: 'Edinburgh',
           isFree: true,
         }),
