@@ -1,29 +1,25 @@
 <template>
   <div>
-    <v-sheet color="grey darken-4" dark class="py-16">
-      <v-container>
-        <v-row justify="center">
-          <v-col cols="12" md="8" class="text-center">
-            <h1 class="display-2 mb-4">Table Magician for Hire — London &amp; Surrey</h1>
-            <p class="headline mb-6">
+    <page-hero src="/perf1.jpg">
+          <div>
+            <h1 class="display-2 mb-4 white--text">Table Magician for Hire - London &amp; Surrey</h1>
+            <p class="headline mb-6 white--text">
               Close-up table magic for dinner parties, corporate dinners, wedding
               breakfasts and gala evenings. Jaw-dropping sleight of hand that
               happens right in front of your guests. Magic Circle member.
             </p>
-            <v-btn x-large color="accent" dark nuxt to="/contact">
+            <v-btn large color="accent" dark nuxt to="/contact">
               Hire a Table Magician
             </v-btn>
-          </v-col>
-        </v-row>
-      </v-container>
-    </v-sheet>
+          </div>
+        </page-hero>
 
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
           <v-col cols="12" md="8">
             <p class="body-1 black--text">
-              Table magic is close-up magic performed at seated dining tables — and
+              Table magic is close-up magic performed at seated dining tables - and
               it's among the most impressive and personal forms of entertainment you
               can add to any dinner event. No stage, no distance, no screen between
               the magician and the audience. Just extraordinary sleight of hand
@@ -31,7 +27,7 @@
               for tricks.
             </p>
             <p class="body-1 black--text">
-              I'm Callum McClure — an award-winning <strong>table magician</strong>
+              I'm Callum McClure - an award-winning <strong>table magician</strong>
               and member of <strong>The Magic Circle</strong>. I perform at the
               table for groups of four to twelve guests at a time, moving through
               dining rooms at corporate dinners, gala evenings, wedding breakfasts
@@ -49,10 +45,10 @@
             <h2 class="display-1 mb-6 black--text">What table magic looks like in practice</h2>
             <p class="body-1 black--text">
               I arrive at the table, introduce myself briefly, and then perform a
-              series of connected sleight-of-hand routines — typically five to ten
+              series of connected sleight-of-hand routines - typically five to ten
               minutes per table. Cards, coins, everyday objects: everything happens
               right there, in people's own hands, with objects they can examine.
-              There's nowhere to hide and nothing is prepared — the magic is real
+              There's nowhere to hide and nothing is prepared - the magic is real
               technique, not props.
             </p>
             <p class="body-1 black--text">
@@ -80,7 +76,7 @@
               </v-list-item>
             </v-list>
             <div class="text-center mt-8">
-              <v-btn x-large color="accent" dark nuxt to="/contact">
+              <v-btn large color="accent" dark nuxt to="/contact">
                 Book a Table Magician
               </v-btn>
             </div>
@@ -116,7 +112,7 @@ const events = [
   {
     title: 'Corporate dinner parties',
     detail:
-      'Client dinners, team meals and corporate entertainment evenings — close-up table magic impresses clients in a way that a venue or a menu alone cannot.',
+      'Client dinners, team meals and corporate entertainment evenings - close-up table magic impresses clients in a way that a venue or a menu alone cannot.',
   },
   {
     title: 'Wedding breakfasts',
@@ -126,17 +122,17 @@ const events = [
   {
     title: 'Gala dinners & black tie events',
     detail:
-      'Formal fundraising galas, industry awards and charity balls — table magic fills the gaps in the programme and keeps the room animated.',
+      'Formal fundraising galas, industry awards and charity balls - table magic fills the gaps in the programme and keeps the room animated.',
   },
   {
     title: 'Private dinner parties',
     detail:
-      'Intimate home dinners and restaurant private hires — for a group of eight or a party of eighty.',
+      'Intimate home dinners and restaurant private hires - for a group of eight or a party of eighty.',
   },
   {
     title: 'Restaurant private dining',
     detail:
-      'Private dining room hire for birthdays, anniversaries and celebrations — table magic makes the occasion feel genuinely special.',
+      'Private dining room hire for birthdays, anniversaries and celebrations - table magic makes the occasion feel genuinely special.',
   },
 ]
 

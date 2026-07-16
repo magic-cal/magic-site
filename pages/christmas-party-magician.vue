@@ -1,39 +1,35 @@
 <template>
   <div>
-    <v-sheet color="grey darken-4" dark class="py-16">
-      <v-container>
-        <v-row justify="center">
-          <v-col cols="12" md="8" class="text-center">
-            <h1 class="display-2 mb-4">Christmas Party Magician — London &amp; Surrey</h1>
-            <p class="headline mb-6">
+    <page-hero src="/action.jpg">
+          <div>
+            <h1 class="display-2 mb-4 white--text">Christmas Party Magician - London &amp; Surrey</h1>
+            <p class="headline mb-6 white--text">
               Award-winning close-up magic for corporate Christmas parties, works nights
               out and private celebrations. Magic Circle member. 10+ years.
             </p>
-            <v-btn x-large color="accent" dark nuxt to="/contact">
+            <v-btn large color="accent" dark nuxt to="/contact">
               Check Christmas Availability
             </v-btn>
-          </v-col>
-        </v-row>
-      </v-container>
-    </v-sheet>
+          </div>
+        </page-hero>
 
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
           <v-col cols="12" md="8">
             <p class="body-1 black--text">
-              Christmas parties are the biggest event of most companies' year — and a
+              Christmas parties are the biggest event of most companies' year - and a
               <strong>Christmas party magician</strong> is the single addition that
               gets people off their phones, away from their cliques and actually talking
               to each other.
             </p>
             <p class="body-1 black--text">
-              I'm Callum McClure — an award-winning close-up magician based in London,
+              I'm Callum McClure - an award-winning close-up magician based in London,
               and a member of <strong>The Magic Circle</strong>. I specialise in
               mix-and-mingle close-up magic that works inches from your guests' eyes,
               with borrowed objects and no setup at all. For over a decade I've made
               corporate Christmas parties, works nights out and private festive
-              celebrations genuinely memorable — from Mayfair hotel ballrooms to Surrey
+              celebrations genuinely memorable - from Mayfair hotel ballrooms to Surrey
               manor houses.
             </p>
           </v-col>
@@ -85,7 +81,7 @@
           <v-col cols="12" md="8">
             <h2 class="display-1 mb-4 black--text">London &amp; Surrey Christmas party venues</h2>
             <p class="body-1 black--text">
-              I perform at <strong>Christmas parties in London</strong> regularly — from
+              I perform at <strong>Christmas parties in London</strong> regularly - from
               hotel ballrooms in the City and Mayfair to private members' clubs and
               riverside venues in Southbank and Canary Wharf. For Surrey Christmas
               parties, I know venues like <strong>Pennyhill Park</strong>,
@@ -109,7 +105,7 @@
             <h2 class="display-1 mb-4 black--text">What to expect</h2>
             <p class="body-1 black--text">
               I arrive early, need no stage, no setup and no AV. During your drinks
-              reception or dinner I move table to table and group to group — the magic
+              reception or dinner I move table to table and group to group - the magic
               happens in people's own hands with borrowed objects. Routines are
               self-contained, so I can dip in and out of conversations without ever
               interrupting the programme.
@@ -118,12 +114,12 @@
               For most corporate Christmas parties I perform for 1.5 to 3 hours
               depending on guest numbers. I'll advise on timing when you get in touch.
               Branded and bespoke Christmas routines are also available for larger
-              events — see my
+              events - see my
               <nuxt-link to="/corporate-magician">corporate magician page</nuxt-link>
               for more.
             </p>
             <div class="text-center mt-8">
-              <v-btn x-large color="accent" dark nuxt to="/contact">
+              <v-btn outlined color="accent" nuxt to="/contact">
                 Get a Christmas Quote
               </v-btn>
             </div>
@@ -140,12 +136,12 @@
             <p class="body-1 black--text">
               Christmas party magicians typically cost between <strong>£350 and £1,500</strong>
               depending on the duration, number of guests, and your event date and location.
-              December dates book up fast — I'd recommend enquiring by October to secure
+              December dates book up fast - I'd recommend enquiring by October to secure
               your preferred slot.
             </p>
             <p class="body-1 black--text">
               <nuxt-link to="/blog/how-much-does-a-wedding-magician-cost">
-                Read the full magician pricing guide →
+                Read the full magician pricing guide
               </nuxt-link>
             </p>
           </v-col>
@@ -169,7 +165,7 @@
               </v-expansion-panel>
             </v-expansion-panels>
             <div class="text-center mt-8">
-              <v-btn x-large color="accent" dark nuxt to="/contact">
+              <v-btn large color="accent" dark nuxt to="/contact">
                 Check My Availability
               </v-btn>
             </div>
@@ -205,12 +201,12 @@ const reasons = [
   {
     title: 'Breaks the ice immediately',
     detail:
-      "People who've never met — or who only know each other from Zoom — relax and laugh together within minutes. Magic gives everyone an easy reason to talk.",
+      "People who've never met - or who only know each other from Zoom - relax and laugh together within minutes. Magic gives everyone an easy reason to talk.",
   },
   {
     title: 'Works with any format',
     detail:
-      'Standing drinks reception, seated dinner, or a mix of both — close-up magic adapts to however your party is running without any staging or setup.',
+      'Standing drinks reception, seated dinner, or a mix of both - close-up magic adapts to however your party is running without any staging or setup.',
   },
   {
     title: 'Memorable, not just entertaining',
@@ -228,7 +224,7 @@ const events = [
   {
     title: 'Corporate Christmas parties',
     detail:
-      'The full company event — drinks reception through to dinner and dancing. I typically perform during drinks and the first part of the evening.',
+      'The full company event - drinks reception through to dinner and dancing. I typically perform during drinks and the first part of the evening.',
   },
   {
     title: 'Works Christmas nights out',
@@ -250,7 +246,7 @@ const events = [
 const faqs = [
   {
     q: 'How far in advance should I book a Christmas party magician?',
-    a: "December weekends fill up quickly — often by September or October. If you're planning a November or early December event you may have more flexibility, but I'd always recommend booking as early as possible to secure your date.",
+    a: "December weekends fill up quickly - often by September or October. If you're planning a November or early December event you may have more flexibility, but I'd always recommend booking as early as possible to secure your date.",
   },
   {
     q: 'How long do you perform at a Christmas party?',
@@ -262,7 +258,7 @@ const faqs = [
   },
   {
     q: 'Can you do Christmas-themed magic?',
-    a: "I have routines that work especially well at festive events — and I can tailor the performance to the occasion. It's still close-up sleight of hand rather than props and costumes, but it lands perfectly at Christmas parties.",
+    a: "I have routines that work especially well at festive events - and I can tailor the performance to the occasion. It's still close-up sleight of hand rather than props and costumes, but it lands perfectly at Christmas parties.",
   },
   {
     q: 'Do you cover London and Surrey Christmas parties?',

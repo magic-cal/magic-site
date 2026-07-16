@@ -1,21 +1,17 @@
 <template>
   <div>
-    <v-sheet color="grey darken-4" dark class="py-16">
-      <v-container>
-        <v-row justify="center">
-          <v-col cols="12" md="8" class="text-center">
-            <h1 class="display-2 mb-4">Party Magician in Surrey</h1>
-            <p class="headline mb-6">
+    <page-hero src="/perf3.jpg">
+          <div>
+            <h1 class="display-2 mb-4 white--text">Party Magician in Surrey</h1>
+            <p class="headline mb-6 white--text">
               Award-winning close-up magic for birthdays, anniversaries and private
               celebrations across Surrey &amp; London. Magic Circle member.
             </p>
-            <v-btn x-large color="accent" dark nuxt to="/contact">
+            <v-btn large color="accent" dark nuxt to="/contact">
               Get a Quick Quote
             </v-btn>
-          </v-col>
-        </v-row>
-      </v-container>
-    </v-sheet>
+          </div>
+        </page-hero>
 
     <v-sheet color="white" class="py-12">
       <v-container>
@@ -23,8 +19,8 @@
           <v-col cols="12" md="8">
             <p class="body-1 black--text">
               Every great party needs a moment people remember the next morning. I'm
-              Callum McClure — an award-winning <strong>party magician in Surrey</strong>
-              and Magic Circle member — and I create those moments, mingling through your
+              Callum McClure - an award-winning <strong>party magician in Surrey</strong>
+              and Magic Circle member - and I create those moments, mingling through your
               guests with magic that happens right in their hands and gets the whole room
               talking.
             </p>
@@ -70,7 +66,7 @@
                 <v-list-item-icon><v-icon color="accent">mdi-account-group</v-icon></v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-subtitle class="text-wrap black--text">
-                    <strong>Magic for all ages</strong> — close-up magic is interactive
+                    <strong>Magic for all ages</strong> - close-up magic is interactive
                     and genuinely amazing whether your guests are 8 or 80.
                   </v-list-item-subtitle>
                 </v-list-item-content>
@@ -79,7 +75,7 @@
                 <v-list-item-icon><v-icon color="accent">mdi-bag-personal</v-icon></v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-subtitle class="text-wrap black--text">
-                    <strong>No setup, no fuss</strong> — I bring everything in my pockets
+                    <strong>No setup, no fuss</strong> - I bring everything in my pockets
                     and adapt to any space, indoors or out.
                   </v-list-item-subtitle>
                 </v-list-item-content>
@@ -96,8 +92,8 @@
           <v-col cols="12" md="8">
             <h2 class="display-1 mb-4 black--text">Available across Surrey &amp; London</h2>
             <p class="body-1 black--text">
-              Based in London and performing at parties across Surrey — Guildford,
-              Woking, Farnham, Epsom, Dorking and beyond — I'm always happy to travel.
+              Based in London and performing at parties across Surrey - Guildford,
+              Woking, Farnham, Epsom, Dorking and beyond - I'm always happy to travel.
             </p>
             <p class="body-1 black--text">
               See also:
@@ -106,7 +102,7 @@
               <nuxt-link to="/areas/surrey">magician in Surrey</nuxt-link>.
             </p>
             <div class="text-center mt-8">
-              <v-btn x-large color="accent" dark nuxt to="/contact">
+              <v-btn large color="accent" dark nuxt to="/contact">
                 Tell Me About Your Party
               </v-btn>
             </div>
@@ -143,17 +139,17 @@ import { buildHead } from '~/utils/seo'
 import { service, faqPage, breadcrumb } from '~/utils/schema'
 
 const events = [
-  'Milestone birthdays — 18ths, 30ths, 40ths, 50ths and beyond.',
-  'Anniversaries & family celebrations — magic that works for every age in the room.',
-  'Private dinner parties — intimate, jaw-dropping close-up magic between courses.',
-  'Garden parties & summer gatherings — I appear among your guests and start the wonder.',
-  'Hen & stag celebrations — a brilliant, unexpected ice-breaker.',
+  'Milestone birthdays - 18ths, 30ths, 40ths, 50ths and beyond.',
+  'Anniversaries & family celebrations - magic that works for every age in the room.',
+  'Private dinner parties - intimate, jaw-dropping close-up magic between courses.',
+  'Garden parties & summer gatherings - I appear among your guests and start the wonder.',
+  'Hen & stag celebrations - a brilliant, unexpected ice-breaker.',
 ]
 
 const faqs = [
   {
     q: 'Is close-up magic suitable for all ages?',
-    a: "Yes — that's its great strength. It's interactive, friendly and amazes children and adults alike, which makes it perfect for mixed-age parties.",
+    a: "Yes - that's its great strength. It's interactive, friendly and amazes children and adults alike, which makes it perfect for mixed-age parties.",
   },
   {
     q: 'How long do you perform for at a party?',
@@ -161,7 +157,7 @@ const faqs = [
   },
   {
     q: 'How much does a party magician cost?',
-    a: 'It depends on duration, date and location — get in touch and I\'ll send a quick, no-obligation quote.',
+    a: 'It depends on duration, date and location - get in touch and I\'ll send a quick, no-obligation quote.',
   },
   {
     q: 'Do you need any space or equipment?',

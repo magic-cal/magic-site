@@ -1,22 +1,18 @@
 <template>
   <div>
-    <v-sheet color="grey darken-4" dark class="py-16">
-      <v-container>
-        <v-row justify="center">
-          <v-col cols="12" md="8" class="text-center">
-            <h1 class="display-2 mb-4">Charity Ball Magician — London &amp; Surrey</h1>
-            <p class="headline mb-6">
+    <page-hero src="/perf3.jpg">
+          <div>
+            <h1 class="display-2 mb-4 white--text">Charity Ball Magician - London &amp; Surrey</h1>
+            <p class="headline mb-6 white--text">
               Award-winning close-up magic for charity balls, fundraising galas and
               black tie charity dinners. Gets guests in the mood to give.
               Magic Circle member.
             </p>
-            <v-btn x-large color="accent" dark nuxt to="/contact">
+            <v-btn large color="accent" dark nuxt to="/contact">
               Enquire About Your Charity Ball
             </v-btn>
-          </v-col>
-        </v-row>
-      </v-container>
-    </v-sheet>
+          </div>
+        </page-hero>
 
     <v-sheet color="white" class="py-12">
       <v-container>
@@ -24,14 +20,14 @@
           <v-col cols="12" md="8">
             <p class="body-1 black--text">
               Charity balls and fundraising galas work best when the whole room is
-              buzzing — and close-up magic is one of the most reliable ways to get
+              buzzing - and close-up magic is one of the most reliable ways to get
               there. It warms up a room faster than almost any other form of
               entertainment, gets strangers talking, and creates exactly the kind of
               generous, celebratory atmosphere that makes people open their wallets
               at the auction.
             </p>
             <p class="body-1 black--text">
-              I'm Callum McClure — an award-winning close-up magician and member of
+              I'm Callum McClure - an award-winning close-up magician and member of
               <strong>The Magic Circle</strong>. I've performed at charity balls,
               fundraising dinners and gala evenings for a range of organisations
               across London and Surrey, from drinks reception right through to the
@@ -75,7 +71,7 @@
               the auction.
             </p>
             <p class="body-1 black--text">
-              I can also work the room between the auction lots — keeping energy and
+              I can also work the room between the auction lots - keeping energy and
               attention high during the waiting periods that inevitably happen at
               charity ball fundraising events.
             </p>
@@ -86,7 +82,7 @@
               <nuxt-link to="/after-dinner-magician">after dinner magician</nuxt-link>.
             </p>
             <div class="text-center mt-8">
-              <v-btn x-large color="accent" dark nuxt to="/contact">
+              <v-btn large color="accent" dark nuxt to="/contact">
                 Get a Quote for Your Charity Ball
               </v-btn>
             </div>
@@ -126,7 +122,7 @@ const slots = [
   {
     title: 'Pre-dinner drinks & canapés',
     detail:
-      "Walk-around magic as guests arrive — breaks the ice between donors, supporters and volunteers who may not all know each other.",
+      "Walk-around magic as guests arrive - breaks the ice between donors, supporters and volunteers who may not all know each other.",
   },
   {
     title: 'Between courses at dinner',
@@ -136,7 +132,7 @@ const slots = [
   {
     title: 'During the silent auction',
     detail:
-      "While guests browse the auction lots, I move through the room — filling the natural lull and keeping people in a celebratory mood.",
+      "While guests browse the auction lots, I move through the room - filling the natural lull and keeping people in a celebratory mood.",
   },
   {
     title: 'Post-live-auction celebration',
@@ -148,7 +144,7 @@ const slots = [
 const faqs = [
   {
     q: 'Is close-up magic right for a charity ball?',
-    a: "It's one of the best choices. Close-up magic warms up a room fast — it gets strangers laughing and talking together, which creates the generous, celebratory atmosphere that makes charity balls work. It also fills the gaps in the programme naturally without requiring a compere or stage act.",
+    a: "It's one of the best choices. Close-up magic warms up a room fast - it gets strangers laughing and talking together, which creates the generous, celebratory atmosphere that makes charity balls work. It also fills the gaps in the programme naturally without requiring a compere or stage act.",
   },
   {
     q: 'Can you time your performance around the auction?',
@@ -160,7 +156,7 @@ const faqs = [
   },
   {
     q: 'Do you offer charity discounts?',
-    a: "Get in touch and tell me about your event — I'm always happy to have a conversation about registered charities and causes I'd like to support.",
+    a: "Get in touch and tell me about your event - I'm always happy to have a conversation about registered charities and causes I'd like to support.",
   },
   {
     q: 'Where do you cover charity balls?',

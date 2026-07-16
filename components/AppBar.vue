@@ -26,7 +26,14 @@
       elevation="0"
       color="white"
     >
-      <v-toolbar-title to="/" class="pr-2" nuxt v-text="title" />
+      <nuxt-link to="/" class="toolbar-home-link">
+        <div class="brand-mark">
+          <span class="brand-name">Callum McClure</span>
+          <span class="brand-sub">Magician</span>
+        </div>
+      </nuxt-link>
+      <v-spacer></v-spacer>
+
       <template v-if="!$vuetify.breakpoint.smAndDown">
         <v-btn
           v-for="page in mainPages"
@@ -73,12 +80,11 @@
             </v-list-item>
           </v-list>
         </v-menu>
-        <v-btn to="/contact" large text nuxt plain :ripple="false"
+        <v-btn to="/contact" small outlined color="accent" nuxt class="ml-2 mr-2"
           >Get a Quote</v-btn
         >
       </template>
 
-      <v-spacer></v-spacer>
       <v-app-bar-nav-icon
         v-if="$vuetify.breakpoint.smAndDown"
         @click.stop="drawer = !drawer"
@@ -104,8 +110,6 @@ export default defineComponent({
     const mainPages = [
       { title: 'Weddings', to: '/wedding-magician' },
       { title: 'Corporate', to: '/corporate-magician' },
-      { title: 'Parties', to: '/party-magician' },
-      { title: 'About', to: '/about' },
     ]
 
     const occasionPages = [
@@ -152,3 +156,34 @@ export default defineComponent({
   },
 })
 </script>
+
+<style scoped>
+.toolbar-home-link {
+  text-decoration: none !important;
+  color: inherit !important;
+  margin-right: 8px;
+}
+.toolbar-home-link:hover {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+.brand-mark {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+  padding: 2px 0;
+}
+.brand-name {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #1a1a1a;
+}
+.brand-sub {
+  font-size: 0.6rem;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #b12827;
+}
+</style>

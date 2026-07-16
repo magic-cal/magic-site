@@ -1,22 +1,18 @@
 <template>
   <div>
-    <v-sheet color="grey darken-4" dark class="py-16">
-      <v-container>
-        <v-row justify="center">
-          <v-col cols="12" md="8" class="text-center">
-            <h1 class="display-2 mb-4">Awards Ceremony Magician — London &amp; Surrey</h1>
-            <p class="headline mb-6">
+    <page-hero src="/perf5.jpg">
+          <div>
+            <h1 class="display-2 mb-4 white--text">Awards Ceremony Magician - London &amp; Surrey</h1>
+            <p class="headline mb-6 white--text">
               Close-up magic for awards nights, industry dinners and recognition events.
               Makes the whole evening memorable, not just the trophy moment.
               Magic Circle member.
             </p>
-            <v-btn x-large color="accent" dark nuxt to="/contact">
+            <v-btn large color="accent" dark nuxt to="/contact">
               Enquire About Your Awards Night
             </v-btn>
-          </v-col>
-        </v-row>
-      </v-container>
-    </v-sheet>
+          </div>
+        </page-hero>
 
     <v-sheet color="white" class="py-12">
       <v-container>
@@ -25,14 +21,14 @@
             <p class="body-1 black--text">
               Every awards evening has two distinct acts: the dinner before the ceremony,
               and the drinks and dancing that follow. Both are perfect for close-up magic
-              — and together they transform a good evening into an extraordinary one.
+              - and together they transform a good evening into an extraordinary one.
             </p>
             <p class="body-1 black--text">
-              I'm Callum McClure — an award-winning close-up magician and member of
+              I'm Callum McClure - an award-winning close-up magician and member of
               <strong>The Magic Circle</strong>. I've performed at corporate awards
               evenings, industry dinner ceremonies and recognition events across London
               and Surrey for over a decade. My act is entirely table-to-table and
-              requires no stage, no PA, and no spot on the programme — I work around
+              requires no stage, no PA, and no spot on the programme - I work around
               your format, not instead of it.
             </p>
           </v-col>
@@ -85,7 +81,7 @@
             <p class="body-1 black--text">
               Awards ceremonies tend to have a problem: long gaps between things
               happening. Guests sit at their tables, watching a stage from a distance,
-              waiting for their category. Close-up magic fills that space perfectly —
+              waiting for their category. Close-up magic fills that space perfectly.
               it happens right where the guests are, it's immediate and personal, and
               it doesn't compete with the programme on stage.
             </p>
@@ -100,7 +96,7 @@
               <nuxt-link to="/after-dinner-magician">after dinner magician</nuxt-link>.
             </p>
             <div class="text-center mt-8">
-              <v-btn x-large color="accent" dark nuxt to="/contact">
+              <v-btn large color="accent" dark nuxt to="/contact">
                 Get a Quote for Your Awards Night
               </v-btn>
             </div>
@@ -145,12 +141,12 @@ const slots = [
   {
     title: 'During the dinner',
     detail:
-      'Table-to-table magic between courses — I work around service and the programme on stage.',
+      'Table-to-table magic between courses - I work around service and the programme on stage.',
   },
   {
     title: 'During the ceremony itself',
     detail:
-      "While the main stage is running categories, I move quietly through the room — tables that aren't on stage still have something extraordinary happening right in front of them.",
+      "While the main stage is running categories, I move quietly through the room - tables that aren't on stage still have something extraordinary happening right in front of them.",
   },
   {
     title: 'Post-ceremony networking / drinks',
@@ -173,7 +169,7 @@ const events = [
 const faqs = [
   {
     q: 'Can you perform during the awards ceremony as well as at dinner?',
-    a: "Yes — I can work during the drinks reception, between courses at dinner, and during the ceremony itself on tables that are waiting for their category to come up. We'll map out the best slots for your specific running order.",
+    a: "Yes - I can work during the drinks reception, between courses at dinner, and during the ceremony itself on tables that are waiting for their category to come up. We'll map out the best slots for your specific running order.",
   },
   {
     q: "What if some tables are focused on the stage? Won't the magic distract them?",
@@ -185,7 +181,7 @@ const faqs = [
   },
   {
     q: 'Do you cover London awards venues?',
-    a: "Yes — I perform at awards evenings across London, from Park Lane hotels and the Grosvenor House to City livery halls, the Guildhall and Battersea. Also regularly in Surrey at venues like Pennyhill Park and Wotton House.",
+    a: "Yes - I perform at awards evenings across London, from Park Lane hotels and the Grosvenor House to City livery halls, the Guildhall and Battersea. Also regularly in Surrey at venues like Pennyhill Park and Wotton House.",
   },
   {
     q: 'How much does an awards ceremony magician cost?',

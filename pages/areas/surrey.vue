@@ -1,21 +1,17 @@
 <template>
   <div>
-    <v-sheet color="grey darken-4" dark class="py-16">
-      <v-container>
-        <v-row justify="center">
-          <v-col cols="12" md="8" class="text-center">
-            <h1 class="display-2 mb-4">Magician in Surrey</h1>
-            <p class="headline mb-6">
+    <page-hero src="/perf2.jpg">
+          <div>
+            <h1 class="display-2 mb-4 white--text">Magician in Surrey</h1>
+            <p class="headline mb-6 white--text">
               Award-winning close-up magic for weddings, corporate events and parties
               across Surrey. Magic Circle member.
             </p>
-            <v-btn x-large color="accent" dark nuxt to="/contact">
+            <v-btn large color="accent" dark nuxt to="/contact">
               Get a Quote for Your Surrey Event
             </v-btn>
-          </v-col>
-        </v-row>
-      </v-container>
-    </v-sheet>
+          </div>
+        </page-hero>
 
     <v-sheet color="white" class="py-12">
       <v-container>
@@ -29,7 +25,7 @@
             </p>
             <p class="body-1 black--text">
               I grew up in the <nuxt-link to="/areas/guildford">Guildford</nuxt-link> area
-              and Surrey has been the foundation of my performing career — I know the
+              and Surrey has been the foundation of my performing career - I know the
               county, its venues and its events scene inside out.
             </p>
           </v-col>
@@ -45,7 +41,7 @@
             <p class="body-1 black--text">
               I regularly perform in <strong>Guildford, Woking, Farnham, Epsom,
               Dorking, Godalming</strong> and the surrounding towns. Surrey has some of
-              the finest event venues in the country and I know many well — the Italian
+              the finest event venues in the country and I know many well - the Italian
               Gardens at <strong>Wotton House</strong> near Dorking,
               <strong>Pennyhill Park</strong>, <strong>Denbies Wine Estate</strong>,
               <strong>Gorse Hill</strong> near Woking, and the historic estates dotted
@@ -66,9 +62,9 @@
                 <v-list-item-icon><v-icon color="accent">mdi-ring</v-icon></v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-subtitle class="text-wrap black--text">
-                    <strong>Weddings</strong> — close-up magic for your drinks reception,
+                    <strong>Weddings</strong> - close-up magic for your drinks reception,
                     wedding breakfast or evening.
-                    <nuxt-link to="/wedding-magician">Wedding magician →</nuxt-link>
+                    <nuxt-link to="/wedding-magician">Wedding magician</nuxt-link>
                   </v-list-item-subtitle>
                 </v-list-item-content>
               </v-list-item>
@@ -76,9 +72,9 @@
                 <v-list-item-icon><v-icon color="accent">mdi-briefcase</v-icon></v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-subtitle class="text-wrap black--text">
-                    <strong>Corporate events</strong> — conferences, trade shows and
+                    <strong>Corporate events</strong> - conferences, trade shows and
                     Christmas parties across Surrey and into London.
-                    <nuxt-link to="/corporate-magician">Corporate magician →</nuxt-link>
+                    <nuxt-link to="/corporate-magician">Corporate magician</nuxt-link>
                   </v-list-item-subtitle>
                 </v-list-item-content>
               </v-list-item>
@@ -86,15 +82,15 @@
                 <v-list-item-icon><v-icon color="accent">mdi-party-popper</v-icon></v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-subtitle class="text-wrap black--text">
-                    <strong>Parties</strong> — birthdays, anniversaries and private
+                    <strong>Parties</strong> - birthdays, anniversaries and private
                     celebrations.
-                    <nuxt-link to="/party-magician">Party magician →</nuxt-link>
+                    <nuxt-link to="/party-magician">Party magician</nuxt-link>
                   </v-list-item-subtitle>
                 </v-list-item-content>
               </v-list-item>
             </v-list>
             <div class="text-center mt-8">
-              <v-btn x-large color="accent" dark nuxt to="/contact">
+              <v-btn large color="accent" dark nuxt to="/contact">
                 Get a Quote for Your Surrey Event
               </v-btn>
             </div>

@@ -1,28 +1,24 @@
 <template>
   <div>
-    <v-sheet color="grey darken-4" dark class="py-16">
-      <v-container>
-        <v-row justify="center">
-          <v-col cols="12" md="8" class="text-center">
-            <h1 class="display-2 mb-4">Magician in London</h1>
-            <p class="headline mb-6">
+    <page-hero src="/perf1.jpg">
+          <div>
+            <h1 class="display-2 mb-4 white--text">Magician in London</h1>
+            <p class="headline mb-6 white--text">
               Award-winning London close-up magician for weddings, corporate events
               and private parties. Magic Circle member. 10+ years.
             </p>
-            <v-btn x-large color="accent" dark nuxt to="/contact">
+            <v-btn large color="accent" dark nuxt to="/contact">
               Enquire About Your London Event
             </v-btn>
-          </v-col>
-        </v-row>
-      </v-container>
-    </v-sheet>
+          </div>
+        </page-hero>
 
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
           <v-col cols="12" md="8">
             <p class="body-1 black--text">
-              I'm Callum McClure — an award-winning Magic Circle magician based in
+              I'm Callum McClure - an award-winning Magic Circle magician based in
               London. The capital is where I live and where I perform regularly, from
               private members' clubs and hotel ballrooms to trade show floors and
               riverside venues.
@@ -44,7 +40,7 @@
           <v-col cols="12" md="8">
             <h2 class="display-1 mb-6 black--text">London weddings, corporate events &amp; parties</h2>
             <p class="body-1 black--text">
-              Close-up magic suits London events perfectly — it needs no stage or setup,
+              Close-up magic suits London events perfectly - it needs no stage or setup,
               just guests to amaze. I perform at city venues, hotels and private members'
               spaces for all kinds of events:
             </p>
@@ -53,9 +49,9 @@
                 <v-list-item-icon><v-icon color="accent">mdi-ring</v-icon></v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-subtitle class="text-wrap black--text">
-                    <strong>London weddings</strong> — drinks receptions, wedding
+                    <strong>London weddings</strong> - drinks receptions, wedding
                     breakfasts and evening entertainment.
-                    <nuxt-link to="/wedding-magician">Wedding magician →</nuxt-link>
+                    <nuxt-link to="/wedding-magician">Wedding magician</nuxt-link>
                   </v-list-item-subtitle>
                 </v-list-item-content>
               </v-list-item>
@@ -63,9 +59,9 @@
                 <v-list-item-icon><v-icon color="accent">mdi-briefcase</v-icon></v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-subtitle class="text-wrap black--text">
-                    <strong>Corporate events</strong> — conferences, product launches,
+                    <strong>Corporate events</strong> - conferences, product launches,
                     trade shows and Christmas parties.
-                    <nuxt-link to="/corporate-magician">Corporate magician →</nuxt-link>
+                    <nuxt-link to="/corporate-magician">Corporate magician</nuxt-link>
                   </v-list-item-subtitle>
                 </v-list-item-content>
               </v-list-item>
@@ -73,9 +69,9 @@
                 <v-list-item-icon><v-icon color="accent">mdi-party-popper</v-icon></v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-subtitle class="text-wrap black--text">
-                    <strong>Private parties</strong> — birthdays, anniversaries and
+                    <strong>Private parties</strong> - birthdays, anniversaries and
                     private celebrations in London venues and homes.
-                    <nuxt-link to="/party-magician">Party magician →</nuxt-link>
+                    <nuxt-link to="/party-magician">Party magician</nuxt-link>
                   </v-list-item-subtitle>
                 </v-list-item-content>
               </v-list-item>
@@ -94,14 +90,14 @@
               My blend of classic sleight of hand and a technological twist lands
               especially well with London corporate audiences, and I can tailor branded
               routines for trade shows and product launches.
-              <nuxt-link to="/corporate-magician">Learn more about corporate magic →</nuxt-link>
+              <nuxt-link to="/corporate-magician">Learn more about corporate magic</nuxt-link>
             </p>
             <p class="body-1 black--text">
               Also covering <nuxt-link to="/areas/surrey">Surrey</nuxt-link> and
               <nuxt-link to="/areas/guildford">Guildford</nuxt-link> regularly.
             </p>
             <div class="text-center mt-8">
-              <v-btn x-large color="accent" dark nuxt to="/contact">
+              <v-btn large color="accent" dark nuxt to="/contact">
                 Enquire About Your London Event
               </v-btn>
             </div>
@@ -116,7 +112,7 @@
           <v-col cols="12" md="8">
             <h2 class="display-1 mb-4 black--text">London Christmas party magician</h2>
             <p class="body-1 black--text">
-              December is the busiest time of year for London events — and a magician
+              December is the busiest time of year for London events - and a magician
               is one of the most effective ways to make your corporate Christmas party,
               works night out or private celebration stand out.
             </p>
@@ -125,7 +121,7 @@
               ballrooms and Mayfair dining rooms to Southbank venues and Shoreditch
               warehouses.
               <nuxt-link to="/christmas-party-magician-london">
-                See my dedicated London Christmas party magician page →
+                See my dedicated London Christmas party magician page
               </nuxt-link>
             </p>
           </v-col>

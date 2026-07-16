@@ -1,36 +1,38 @@
 <template>
   <div>
-    <v-sheet color="grey darken-4" dark class="py-16">
-      <v-container>
-        <v-row justify="center">
-          <v-col cols="12" md="8" class="text-center">
-            <h1 class="display-2 mb-4">About Callum McClure</h1>
-            <p class="headline mb-4">
+    <page-hero src="/skill.jpg">
+          <div>
+            <h1 class="display-2 mb-4 white--text">About Callum McClure</h1>
+            <p class="headline mb-4 white--text">
               Magic Circle magician. Multi-award winner. 10+ years performing across the UK.
             </p>
-          </v-col>
-        </v-row>
-      </v-container>
-    </v-sheet>
+          </div>
+        </page-hero>
 
-    <v-sheet color="white" class="py-12">
+    <v-sheet color="white" class="py-14">
       <v-container>
-        <v-row justify="center">
-          <v-col cols="12" md="8">
-            <p class="body-1 black--text">
-              I've been hooked on magic for as long as I can remember — the coins behind
-              the ear, the chosen card that somehow finds its way back. I started learning
+        <v-row align="center">
+          <v-col cols="12" md="5" class="mb-8 mb-md-0">
+            <v-img
+              src="/headshot.jpg"
+              alt="Portrait of magician Callum McClure, Magic Circle member"
+              height="520"
+              cover
+              class="about-headshot elevation-5"
+            />
+          </v-col>
+          <v-col cols="12" md="6" offset-md="1">
+            <p class="body-1 black--text mb-4">
+              I've been hooked on magic for as long as I can remember. I started learning
               seriously at the age of ten through The Magic Circle's youth initiative,
-              turned professional at thirteen, and I've spent the decade since amazing
+              turned professional at thirteen, and have spent the decade since amazing
               and amusing audiences across the UK.
             </p>
-            <v-img
-              :src="require('@/static/shuffle/callum_mcclure_shuffle.jpg')"
-              alt="Portrait of magician Callum McClure, Magic Circle member based in London performing across Surrey"
-              max-height="400px"
-              contain
-              class="my-8"
-            />
+            <p class="body-1 black--text">
+              My style combines classic sleight of hand with a modern, technological
+              twist — magic that works equally well for a Fortune 500 conference and an
+              intimate dinner party, because the astonishment is the same either way.
+            </p>
           </v-col>
         </v-row>
       </v-container>
@@ -59,12 +61,12 @@
       <v-container>
         <v-row justify="center">
           <v-col cols="12" md="8">
-            <h2 class="display-1 mb-6 black--text">My style — classic magic, modern twist</h2>
+            <h2 class="display-1 mb-6 black--text">My style - classic magic, modern twist</h2>
             <p class="body-1 black--text">
               My speciality is <nuxt-link to="/close-up-magician">close-up magic</nuxt-link>:
               sleight of hand that happens inches from your eyes, in your own hands, with
               cards, coins and borrowed objects. It's the most powerful kind of magic
-              precisely because there's no stage to hide behind — the impossible happens
+              precisely because there's no stage to hide behind - the impossible happens
               right there in front of you.
             </p>
             <p class="body-1 black--text">
@@ -83,7 +85,7 @@
           <v-col cols="12" md="8">
             <h2 class="display-1 mb-6 black--text">Where it started</h2>
             <p class="body-1 black--text">
-              I grew up in the Guildford area and my career was launched locally — one
+              I grew up in the Guildford area and my career was launched locally - one
               of my first big bookings was performing at the Mayor of Guildford's ball
               at <strong>Loseley Park</strong>. From those early Surrey events I've gone
               on to perform at some of the UK's most prestigious venues, but I still love
@@ -112,7 +114,7 @@
               <nuxt-link to="/party-magician">party</nuxt-link>,
               I'd love to hear about it.
             </p>
-            <v-btn x-large color="accent" dark nuxt to="/contact" class="mt-4">
+            <v-btn large color="accent" dark nuxt to="/contact" class="mt-4">
               Check Availability &amp; Get a Quote
             </v-btn>
             <p class="body-2 grey--text mt-4">
@@ -156,7 +158,7 @@ export default defineComponent({
     return buildHead({
       title: 'About Callum McClure | Magic Circle Magician, Surrey & London',
       description:
-        'Meet Callum McClure — multi-award-winning close-up magician and Magic Circle member. Performed for BBC News and at the Royal Variety after-show party. Based in London.',
+        'Meet Callum McClure - multi-award-winning close-up magician and Magic Circle member. Performed for BBC News and at the Royal Variety after-show party. Based in London.',
       path: '/about',
       ogType: 'profile',
       jsonLd: [
@@ -167,3 +169,9 @@ export default defineComponent({
   },
 })
 </script>
+
+<style scoped>
+.about-headshot {
+  border-radius: 4px;
+}
+</style>

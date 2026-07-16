@@ -1,28 +1,24 @@
 <template>
   <div>
-    <v-sheet color="grey darken-4" dark class="py-16">
-      <v-container>
-        <v-row justify="center">
-          <v-col cols="12" md="8" class="text-center">
-            <h1 class="display-2 mb-4">Wedding Magician in Surrey &amp; Guildford</h1>
-            <p class="headline mb-6">
+    <page-hero src="/perf4.jpg">
+          <div>
+            <h1 class="display-2 mb-4 white--text">Wedding Magician in Surrey &amp; Guildford</h1>
+            <p class="headline mb-6 white--text">
               Award-winning close-up magic for your drinks reception, wedding breakfast
               and evening reception. Member of The Magic Circle.
             </p>
-            <v-btn x-large color="accent" dark nuxt to="/contact">
+            <v-btn large color="accent" dark nuxt to="/contact">
               Check My Availability
             </v-btn>
-          </v-col>
-        </v-row>
-      </v-container>
-    </v-sheet>
+          </div>
+        </page-hero>
 
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
           <v-col cols="12" md="8">
             <p class="body-1 black--text">
-              There's a moment at every wedding when your guests are between things —
+              There's a moment at every wedding when your guests are between things:
               photos are being taken, the receiving line has wound down, and people who've
               never met are standing in small, slightly awkward clusters. That's the
               moment I'm made for.
@@ -31,7 +27,7 @@
               I'm Callum McClure, an award-winning close-up magician and a member of
               <strong>The Magic Circle</strong>. For over a decade I've turned those
               in-between moments into the parts of the day your guests won't stop talking
-              about — weaving between groups with sleight of hand that happens inches from
+              about - weaving between groups with sleight of hand that happens inches from
               their eyes, in their own hands, with their own rings and borrowed objects.
             </p>
             <p class="body-1 black--text">
@@ -101,7 +97,7 @@
                 <v-list-item-icon><v-icon color="accent">mdi-star</v-icon></v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-subtitle class="text-wrap black--text">
-                    <strong>Member of The Magic Circle</strong> — the world's most
+                    <strong>Member of The Magic Circle</strong> - the world's most
                     prestigious magic society.
                   </v-list-item-subtitle>
                 </v-list-item-content>
@@ -110,7 +106,7 @@
                 <v-list-item-icon><v-icon color="accent">mdi-trophy</v-icon></v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-subtitle class="text-wrap black--text">
-                    <strong>Multi-award-winning</strong> — including national recognition
+                    <strong>Multi-award-winning</strong> - including national recognition
                     at the Magic Circle Young Magician of the Year competition.
                   </v-list-item-subtitle>
                 </v-list-item-content>
@@ -119,7 +115,7 @@
                 <v-list-item-icon><v-icon color="accent">mdi-calendar-check</v-icon></v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-subtitle class="text-wrap black--text">
-                    <strong>10+ years performing</strong> — at everything from intimate
+                    <strong>10+ years performing</strong> - at everything from intimate
                     parties to the Royal Variety Performance after-show party and for BBC
                     News.
                   </v-list-item-subtitle>
@@ -131,6 +127,8 @@
       </v-container>
     </v-sheet>
 
+    <v-img src="/perf5.jpg" height="280" cover />
+
     <v-sheet color="grey lighten-4" class="py-12">
       <v-container>
         <v-row justify="center">
@@ -138,13 +136,13 @@
             <h2 class="display-1 mb-6 black--text">Surrey weddings I know well</h2>
             <p class="body-1 black--text">
               I regularly perform across Surrey and the South East, and I know many of
-              the county's best venues inside out — from the Tithe Barn and walled garden
+              the county's best venues inside out - from the Tithe Barn and walled garden
               at <strong>Loseley Park</strong> just south of Guildford, to the Italian
               Gardens at <strong>Wotton House</strong> near Dorking, and country-house
               settings like <strong>Pennyhill Park</strong>,
               <strong>Great Fosters</strong> and <strong>Botley Hill Barn</strong>.
-              Wherever you're marrying — Guildford, Woking, Farnham, Dorking, Epsom or
-              further into London — I'll come to you.
+              Wherever you're marrying - Guildford, Woking, Farnham, Dorking, Epsom or
+              further into London - I'll come to you.
             </p>
             <p class="body-1 black--text mt-4">
               See also:
@@ -173,11 +171,11 @@
             </p>
             <p class="body-1 black--text">
               <nuxt-link to="/blog/how-much-does-a-wedding-magician-cost">
-                Read our full wedding magician pricing guide →
+                Read our full wedding magician pricing guide
               </nuxt-link>
             </p>
             <div class="text-center mt-6">
-              <v-btn x-large color="accent" dark nuxt to="/contact">
+              <v-btn outlined color="accent" nuxt to="/contact">
                 Get My No-Obligation Quote
               </v-btn>
             </div>
@@ -202,7 +200,7 @@
               </v-expansion-panel>
             </v-expansion-panels>
             <div class="text-center mt-8">
-              <v-btn x-large color="accent" dark nuxt to="/contact">
+              <v-btn large color="accent" dark nuxt to="/contact">
                 Tell Me About Your Wedding
               </v-btn>
             </div>
@@ -225,7 +223,7 @@ const faqs = [
   },
   {
     q: 'How many guests can you entertain?',
-    a: 'Close-up magic scales beautifully — I move between small groups, so it works just as well for an intimate 40-guest wedding as for 150+. For very large weddings I can advise on timing so no group gets missed.',
+    a: 'Close-up magic scales beautifully - I move between small groups, so it works just as well for an intimate 40-guest wedding as for 150+. For very large weddings I can advise on timing so no group gets missed.',
   },
   {
     q: 'Do you travel outside Surrey?',
@@ -233,7 +231,7 @@ const faqs = [
   },
   {
     q: 'How far in advance should we book?',
-    a: 'Summer Saturdays book up fastest, often 6–12 months ahead. If your date is close, still get in touch — I may well be free.',
+    a: 'Summer Saturdays book up fastest, often 6–12 months ahead. If your date is close, still get in touch - I may well be free.',
   },
 ]
 

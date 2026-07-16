@@ -1,17 +1,13 @@
 <template>
   <div>
-    <v-sheet color="grey darken-4" dark class="py-16">
-      <v-container>
-        <v-row justify="center">
-          <v-col cols="12" md="8" class="text-center">
-            <h1 class="display-2 mb-4">Magic Blog</h1>
-            <p class="headline mb-4">
+    <page-hero src="/perf2.jpg">
+          <div>
+            <h1 class="display-2 mb-4 white--text">Magic Blog</h1>
+            <p class="headline mb-4 white--text">
               Tips, guides and insider knowledge from a Magic Circle magician.
             </p>
-          </v-col>
-        </v-row>
-      </v-container>
-    </v-sheet>
+          </div>
+        </page-hero>
 
     <v-sheet color="white" class="py-12">
       <v-container>
@@ -23,7 +19,7 @@
                   <p class="caption grey--text mb-1">{{ post.date }}</p>
                   <h2 class="title black--text mb-2">{{ post.title }}</h2>
                   <p class="body-2 black--text mb-4">{{ post.excerpt }}</p>
-                  <nuxt-link :to="post.slug">Read more →</nuxt-link>
+                  <nuxt-link :to="post.slug">Read more</nuxt-link>
                 </v-card>
               </v-col>
             </v-row>
@@ -60,7 +56,7 @@ const posts = [
     slug: '/blog/how-much-does-a-wedding-magician-cost',
     date: 'June 2026',
     excerpt:
-      'An honest guide to UK wedding magician prices — typical ranges, what affects the cost, and what to look for when comparing quotes.',
+      'An honest guide to UK wedding magician prices - typical ranges, what affects the cost, and what to look for when comparing quotes.',
   },
 ]
 
@@ -72,7 +68,7 @@ export default defineComponent({
     return buildHead({
       title: 'Magic Blog | Callum McClure Magician',
       description:
-        'Guides and advice from a Magic Circle magician — wedding entertainment, corporate magic, pricing and more.',
+        'Guides and advice from a Magic Circle magician - wedding entertainment, corporate magic, pricing and more.',
       path: '/blog',
       jsonLd: [breadcrumb([{ name: 'Blog', item: '/blog' }])],
     })

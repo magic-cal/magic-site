@@ -26,7 +26,7 @@ export default defineComponent({
     return buildHead({
       title: 'FAQs | Callum McClure Magician',
       description:
-        'Answers to common questions about hiring Callum McClure — a Magic Circle close-up magician for weddings, corporate events and parties across London & Surrey.',
+        'Answers to common questions about hiring Callum McClure - a Magic Circle close-up magician for weddings, corporate events and parties across London & Surrey.',
       path: '/faqs',
       jsonLd: [
         faqPage(allFaqs.map((f) => ({ question: f.question, answer: f.answer }))),

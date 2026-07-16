@@ -1,18 +1,14 @@
 <template>
   <div>
-    <v-sheet color="grey darken-4" dark class="py-16">
-      <v-container>
-        <v-row justify="center">
-          <v-col cols="12" md="8" class="text-center">
-            <h1 class="display-2 mb-4">Reviews &amp; Testimonials</h1>
-            <p class="headline mb-4">
-              What clients say about Callum McClure — award-winning close-up magician,
+    <page-hero src="/perf2.jpg">
+          <div>
+            <h1 class="display-2 mb-4 white--text">Reviews &amp; Testimonials</h1>
+            <p class="headline mb-4 white--text">
+              What clients say about Callum McClure - award-winning close-up magician,
               Magic Circle member.
             </p>
-          </v-col>
-        </v-row>
-      </v-container>
-    </v-sheet>
+          </div>
+        </page-hero>
 
     <v-sheet color="white" class="py-12">
       <v-container>
@@ -29,7 +25,7 @@
                   <v-icon color="accent" large class="mb-2">mdi-format-quote-open</v-icon>
                   <p class="body-1 black--text font-italic mb-4">{{ review.quote }}</p>
                   <p class="body-2 grey--text text--darken-1 mb-0">
-                    — <strong>{{ review.source }}</strong>
+                    - <strong>{{ review.source }}</strong>
                     <span v-if="review.event">, {{ review.event }}</span>
                   </p>
                 </v-card>
@@ -53,7 +49,7 @@
               across <nuxt-link to="/areas/surrey">Surrey</nuxt-link> and
               <nuxt-link to="/areas/london">London</nuxt-link>.
             </p>
-            <v-btn x-large color="accent" dark nuxt to="/contact">
+            <v-btn large color="accent" dark nuxt to="/contact">
               Check My Availability
             </v-btn>
           </v-col>
@@ -76,7 +72,7 @@ const reviews = [
   },
   {
     quote:
-      'Callum performed at our wedding drinks reception and was absolutely brilliant — he had everyone amazed and talking all evening.',
+      'Callum performed at our wedding drinks reception and was absolutely brilliant - he had everyone amazed and talking all evening.',
     source: 'Wedding Client',
     event: 'Surrey Wedding',
   },
@@ -96,7 +92,7 @@ export default defineComponent({
     return buildHead({
       title: 'Reviews & Testimonials | Callum McClure Magician',
       description:
-        "Read what clients say about Callum McClure — award-winning Magic Circle magician for weddings, corporate events and parties across Surrey & London.",
+        "Read what clients say about Callum McClure - award-winning Magic Circle magician for weddings, corporate events and parties across Surrey & London.",
       path: '/testimonials',
       jsonLd: [breadcrumb([{ name: 'Testimonials', item: '/testimonials' }])],
     })

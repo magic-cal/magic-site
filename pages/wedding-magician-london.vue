@@ -1,32 +1,28 @@
 <template>
   <div>
-    <v-sheet color="grey darken-4" dark class="py-16">
-      <v-container>
-        <v-row justify="center">
-          <v-col cols="12" md="8" class="text-center">
-            <h1 class="display-2 mb-4">Wedding Magician in London</h1>
-            <p class="headline mb-6">
-              Award-winning close-up magic for London weddings — drinks receptions,
+    <page-hero src="/perf4.jpg">
+          <div>
+            <h1 class="display-2 mb-4 white--text">Wedding Magician in London</h1>
+            <p class="headline mb-6 white--text">
+              Award-winning close-up magic for London weddings - drinks receptions,
               wedding breakfasts and evening entertainment. Magic Circle member.
               Based in London.
             </p>
-            <v-btn x-large color="accent" dark nuxt to="/contact">
+            <v-btn large color="accent" dark nuxt to="/contact">
               Check My Availability
             </v-btn>
-          </v-col>
-        </v-row>
-      </v-container>
-    </v-sheet>
+          </div>
+        </page-hero>
 
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
           <v-col cols="12" md="8">
             <p class="body-1 black--text">
-              I'm Callum McClure — a London-based close-up magician and member of
+              I'm Callum McClure - a London-based close-up magician and member of
               <strong>The Magic Circle</strong>. London is where I live and where I
               perform regularly, and I've been making London weddings more magical for
-              over a decade — from Georgian ballrooms in Kensington to industrial
+              over a decade - from Georgian ballrooms in Kensington to industrial
               conversions in Bermondsey and rooftop venues above the City.
             </p>
             <p class="body-1 black--text">
@@ -49,7 +45,7 @@
             <h2 class="display-1 mb-6 black--text">London wedding venues I perform at</h2>
             <p class="body-1 black--text">
               London has an extraordinary range of wedding venues, and close-up magic
-              suits all of them — from grand hotel ballrooms to intimate warehouse
+              suits all of them - from grand hotel ballrooms to intimate warehouse
               spaces. Some of the London venue types and areas I cover regularly:
             </p>
             <v-list color="transparent">
@@ -95,7 +91,7 @@
                 <v-list-item-icon><v-icon color="accent">mdi-star</v-icon></v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-subtitle class="text-wrap black--text">
-                    <strong>Member of The Magic Circle</strong> — the world's most
+                    <strong>Member of The Magic Circle</strong> - the world's most
                     prestigious magic society. No travel fees for London venues.
                   </v-list-item-subtitle>
                 </v-list-item-content>
@@ -113,7 +109,7 @@
                 <v-list-item-icon><v-icon color="accent">mdi-calendar-check</v-icon></v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-subtitle class="text-wrap black--text">
-                    <strong>10+ years performing</strong> in London — at everything from
+                    <strong>10+ years performing</strong> in London - at everything from
                     intimate city weddings to the Royal Variety Performance after-show party.
                   </v-list-item-subtitle>
                 </v-list-item-content>
@@ -126,7 +122,7 @@
               <nuxt-link to="/wedding-magician-surrey">wedding magician Surrey</nuxt-link>.
             </p>
             <div class="text-center mt-6">
-              <v-btn x-large color="accent" dark nuxt to="/contact">
+              <v-btn large color="accent" dark nuxt to="/contact">
                 Tell Me About Your London Wedding
               </v-btn>
             </div>
@@ -146,12 +142,12 @@ const venues = [
   {
     area: 'Mayfair & Kensington',
     detail:
-      'Grand hotel ballrooms and private members clubs — The Dorchester, Claridges, The Milestone.',
+      'Grand hotel ballrooms and private members clubs - The Dorchester, Claridges, The Milestone.',
   },
   {
     area: 'Southbank & Bankside',
     detail:
-      'Industrial-chic and riverside venues — Tate Modern, Oxo Tower, Sea Containers.',
+      'Industrial-chic and riverside venues - Tate Modern, Oxo Tower, Sea Containers.',
   },
   {
     area: 'City of London',
@@ -179,7 +175,7 @@ const slots = [
   {
     title: 'Drinks reception & photos',
     detail:
-      "The most popular slot — while you're having portraits taken, I keep your guests entertained and the room warm.",
+      "The most popular slot - while you're having portraits taken, I keep your guests entertained and the room warm.",
   },
   {
     title: 'Wedding breakfast',
@@ -189,7 +185,7 @@ const slots = [
   {
     title: 'Evening reception',
     detail:
-      'As evening guests arrive, I help the room find its feet again — perfect for the gap before the band or DJ.',
+      'As evening guests arrive, I help the room find its feet again - perfect for the gap before the band or DJ.',
   },
 ]
 

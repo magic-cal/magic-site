@@ -78,6 +78,14 @@ export default defineComponent({
 </script>
 
 <style>
+a:not(.footer-link):not(.v-btn):not(.toolbar-home-link) {
+  color: #b12827;
+  text-decoration: none;
+}
+a:not(.footer-link):not(.v-btn):not(.toolbar-home-link):hover {
+  text-decoration: underline;
+}
+
 .footer-link {
   color: #bdbdbd !important;
   text-decoration: none;

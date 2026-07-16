@@ -1,22 +1,18 @@
 <template>
   <div>
-    <v-sheet color="grey darken-4" dark class="py-16">
-      <v-container>
-        <v-row justify="center">
-          <v-col cols="12" md="8" class="text-center">
-            <h1 class="display-2 mb-4">After Dinner Magician — London &amp; Surrey</h1>
-            <p class="headline mb-6">
-              Award-winning close-up magic between the courses and after the speeches —
+    <page-hero src="/perf2.jpg">
+          <div>
+            <h1 class="display-2 mb-4 white--text">After Dinner Magician - London &amp; Surrey</h1>
+            <p class="headline mb-6 white--text">
+              Award-winning close-up magic between the courses and after the speeches,
               for corporate dinners, gala evenings, wedding breakfasts and private
               celebrations. Magic Circle member.
             </p>
-            <v-btn x-large color="accent" dark nuxt to="/contact">
+            <v-btn large color="accent" dark nuxt to="/contact">
               Enquire About After Dinner Magic
             </v-btn>
-          </v-col>
-        </v-row>
-      </v-container>
-    </v-sheet>
+          </div>
+        </page-hero>
 
     <v-sheet color="white" class="py-12">
       <v-container>
@@ -24,16 +20,16 @@
           <v-col cols="12" md="8">
             <p class="body-1 black--text">
               After dinner is the golden window for close-up magic. The meal is done,
-              the speeches are over, the room is warm and relaxed — and that's exactly
+              the speeches are over, the room is warm and relaxed - and that's exactly
               when sleight of hand that happens an inch from someone's nose lands the
               hardest.
             </p>
             <p class="body-1 black--text">
-              I'm Callum McClure — an award-winning <strong>after dinner magician</strong>
+              I'm Callum McClure - an award-winning <strong>after dinner magician</strong>
               and member of <strong>The Magic Circle</strong>. I've performed after-dinner
               close-up magic at corporate gala dinners, charity balls, awards evenings and
               private celebrations across London and Surrey for over a decade. My act is
-              table-to-table and entirely self-contained: no stage, no PA, no setup — just
+              table-to-table and entirely self-contained: no stage, no PA, no setup - just
               astonishing sleight of hand with borrowed objects, right in your guests' hands.
             </p>
           </v-col>
@@ -88,17 +84,17 @@
               Walk-around magic at a drinks reception and after dinner magic are two
               different beasts. During drinks people are standing, moving, meeting.
               At the table they're settled, they're focused, and the person next to
-              them is about to watch the same thing they are — which multiplies the
+              them is about to watch the same thing they are - which multiplies the
               reaction significantly.
             </p>
             <p class="body-1 black--text">
-              I perform short, self-contained sets at each table — typically five to
-              ten minutes per group — so that the magic feels personal rather than
+              I perform short, self-contained sets at each table - typically five to
+              ten minutes per group - so that the magic feels personal rather than
               like a performance to the room. You choose whether I work the tables
               during dinner, between courses, after the speeches, or a combination.
             </p>
             <div class="text-center mt-8">
-              <v-btn x-large color="accent" dark nuxt to="/contact">
+              <v-btn large color="accent" dark nuxt to="/contact">
                 Get a Quote
               </v-btn>
             </div>
@@ -155,7 +151,7 @@ const slots = [
   {
     title: 'Drinks reception / pre-dinner',
     detail:
-      'As guests arrive and gather before being seated — the classic mix-and-mingle slot.',
+      'As guests arrive and gather before being seated - the classic mix-and-mingle slot.',
   },
   {
     title: 'Between courses',
@@ -178,7 +174,7 @@ const events = [
   {
     title: 'Corporate gala dinners',
     detail:
-      'Annual company dinners, awards evenings and client entertainment — the after dinner slot is the premium close-up magic opportunity at any corporate event.',
+      'Annual company dinners, awards evenings and client entertainment - the after dinner slot is the premium close-up magic opportunity at any corporate event.',
   },
   {
     title: 'Charity balls & fundraising dinners',
@@ -193,7 +189,7 @@ const events = [
   {
     title: 'Awards ceremonies',
     detail:
-      'Pre-dinner drinks and table magic at the dinner that follows — perfect for making the whole evening memorable, not just the trophy moment.',
+      'Pre-dinner drinks and table magic at the dinner that follows - perfect for making the whole evening memorable, not just the trophy moment.',
   },
   {
     title: 'Private dinner parties',
@@ -205,7 +201,7 @@ const events = [
 const faqs = [
   {
     q: 'What is an after dinner magician?',
-    a: "An after dinner magician is a close-up magician who performs at the table during or after a formal dinner. Rather than a stage show, the magic happens right in front of each group — in their own hands, with borrowed objects. I perform a series of short, self-contained sets table by table through the evening.",
+    a: "An after dinner magician is a close-up magician who performs at the table during or after a formal dinner. Rather than a stage show, the magic happens right in front of each group - in their own hands, with borrowed objects. I perform a series of short, self-contained sets table by table through the evening.",
   },
   {
     q: 'When is the best time for after dinner magic at a corporate dinner?',
@@ -213,7 +209,7 @@ const faqs = [
   },
   {
     q: 'How long do you perform for at a dinner event?',
-    a: "Typically one to two hours, depending on the number of tables and how long your event is. I can do a pure after-dinner set or combine drinks reception magic with table sets — your call.",
+    a: "Typically one to two hours, depending on the number of tables and how long your event is. I can do a pure after-dinner set or combine drinks reception magic with table sets - your call.",
   },
   {
     q: 'Do you need a stage, AV or any setup?',
@@ -225,7 +221,7 @@ const faqs = [
   },
   {
     q: 'Do you cover London and Surrey dinner events?',
-    a: "Yes — I'm London-based and regularly perform at dinner events across London and Surrey. I also travel nationwide for the right event.",
+    a: "Yes - I'm London-based and regularly perform at dinner events across London and Surrey. I also travel nationwide for the right event.",
   },
 ]
 

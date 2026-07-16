@@ -1,35 +1,31 @@
 <template>
   <div>
-    <v-sheet color="grey darken-4" dark class="py-16">
-      <v-container>
-        <v-row justify="center">
-          <v-col cols="12" md="8" class="text-center">
-            <h1 class="display-2 mb-4">Christmas Party Magician in London</h1>
-            <p class="headline mb-6">
+    <page-hero src="/action.jpg">
+          <div>
+            <h1 class="display-2 mb-4 white--text">Christmas Party Magician in London</h1>
+            <p class="headline mb-6 white--text">
               London-based close-up magician for corporate Christmas parties, works nights
               out and private festive celebrations across the capital. Magic Circle member.
             </p>
-            <v-btn x-large color="accent" dark nuxt to="/contact">
+            <v-btn large color="accent" dark nuxt to="/contact">
               Check London Christmas Availability
             </v-btn>
-          </v-col>
-        </v-row>
-      </v-container>
-    </v-sheet>
+          </div>
+        </page-hero>
 
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
           <v-col cols="12" md="8">
             <p class="body-1 black--text">
-              I'm Callum McClure — a <strong>London Christmas party magician</strong>
+              I'm Callum McClure - a <strong>London Christmas party magician</strong>
               and member of The Magic Circle. I'm based in the capital and perform at
               London Christmas parties year-round, from City hotel ballrooms and Mayfair
               venues to private members' clubs in Soho and riverside spaces on the Southbank.
             </p>
             <p class="body-1 black--text">
               Close-up magic is the most flexible entertainment you can add to a London
-              Christmas party: no stage, no PA, no setup — just sleight of hand that
+              Christmas party: no stage, no PA, no setup - just sleight of hand that
               happens in your guests' own hands, in the room you're already in. I've
               performed for multi-national companies at London venues, at the
               <strong>Royal Variety Performance after-show party</strong>, and on
@@ -46,7 +42,7 @@
           <v-col cols="12" md="8">
             <h2 class="display-1 mb-6 black--text">London Christmas party venues</h2>
             <p class="body-1 black--text mb-4">
-              I perform at Christmas parties all across London — these are some of the
+              I perform at Christmas parties all across London - these are some of the
               areas and venue types I cover regularly:
             </p>
             <v-list color="transparent">
@@ -79,7 +75,7 @@
               As a <nuxt-link to="/corporate-magician">corporate magician</nuxt-link>
               I understand what companies need from entertainment: someone who arrives on
               time, integrates seamlessly with the evening's programme, and makes every
-              guest feel like part of something — not just a spectator.
+              guest feel like part of something - not just a spectator.
             </p>
             <p class="body-1 black--text">
               For more on all the Christmas party events I cover, see my
@@ -94,7 +90,7 @@
       <v-container>
         <v-row justify="center">
           <v-col cols="12" md="8">
-            <h2 class="display-1 mb-4 black--text">Book early — London December fills fast</h2>
+            <h2 class="display-1 mb-4 black--text">Book early - London December fills fast</h2>
             <p class="body-1 black--text">
               London Christmas party season is the most competitive period of the year for
               professional entertainers. Fridays and Saturdays in December are usually
@@ -103,7 +99,7 @@
               the better your chance of securing your preferred date.
             </p>
             <div class="text-center mt-8">
-              <v-btn x-large color="accent" dark nuxt to="/contact">
+              <v-btn outlined color="accent" nuxt to="/contact">
                 Enquire About Your London Christmas Party
               </v-btn>
             </div>
@@ -128,7 +124,7 @@
               </v-expansion-panel>
             </v-expansion-panels>
             <div class="text-center mt-8">
-              <v-btn x-large color="accent" dark nuxt to="/contact">
+              <v-btn large color="accent" dark nuxt to="/contact">
                 Get a Quote for My London Christmas Party
               </v-btn>
             </div>
@@ -189,18 +185,18 @@ const venues = [
   {
     area: 'North & South London',
     detail:
-      'From Islington and Camden to Brixton and Greenwich — I cover all of London.',
+      'From Islington and Camden to Brixton and Greenwich - I cover all of London.',
   },
 ]
 
 const faqs = [
   {
     q: 'Are you based in London?',
-    a: "Yes — I'm London-based and perform at London events regularly. No travel surcharge applies for London venues.",
+    a: "Yes - I'm London-based and perform at London events regularly. No travel surcharge applies for London venues.",
   },
   {
     q: 'How early should I book for a London Christmas party?',
-    a: "December Fridays and Saturdays in London typically book up by September or October. I'd recommend getting in touch as soon as you have a date confirmed — even if the venue isn't finalised, I can provisionally hold your date.",
+    a: "December Fridays and Saturdays in London typically book up by September or October. I'd recommend getting in touch as soon as you have a date confirmed - even if the venue isn't finalised, I can provisionally hold your date.",
   },
   {
     q: 'What size of London Christmas party do you cover?',
@@ -212,7 +208,7 @@ const faqs = [
   },
   {
     q: 'Do you perform at works Christmas nights out or just big corporate events?',
-    a: "Both. Works nights out — 20 or 30 people at a restaurant — are some of my favourite gigs. The magic is more personal and the reaction is fantastic. I also perform at large all-company events with hundreds of guests.",
+    a: "Both. Works nights out - 20 or 30 people at a restaurant - are some of my favourite gigs. The magic is more personal and the reaction is fantastic. I also perform at large all-company events with hundreds of guests.",
   },
 ]
 
@@ -224,7 +220,7 @@ export default defineComponent({
     return buildHead({
       title: 'Christmas Party Magician London | Corporate Christmas Entertainment Hire | Callum McClure',
       description:
-        "London-based close-up magician for Christmas parties — corporate works dos, private dinners and venue celebrations across the capital. Magic Circle member. Check availability.",
+        "London-based close-up magician for Christmas parties - corporate works dos, private dinners and venue celebrations across the capital. Magic Circle member. Check availability.",
       path: '/christmas-party-magician-london',
       jsonLd: [
         service(

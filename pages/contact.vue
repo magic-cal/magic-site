@@ -5,7 +5,7 @@
         <v-container>
           <v-row justify="center">
             <v-col cols="12" md="8" class="text-center">
-              <h1 class="display-1 mb-2">Contact Callum — Get a Quote</h1>
+              <h1 class="display-1 mb-2">Contact Callum - Get a Quote</h1>
               <p class="headline">
                 Award-winning close-up magician for weddings, corporate events &amp;
                 parties. Check availability and get a no-obligation quote.
@@ -42,7 +42,7 @@
               </v-col>
               <v-col :cols="12">
                 <v-icon color="accent" small>mdi-map-marker</v-icon>
-                Based in London — available across Surrey, Guildford &amp; the South East
+                Based in London - available across Surrey, Guildford &amp; the South East
               </v-col>
               <v-col :cols="12">
                 <v-icon color="accent" small>mdi-facebook</v-icon>
@@ -89,9 +89,9 @@ import { localBusiness, breadcrumb } from '~/utils/schema'
 export default defineComponent({
   head() {
     return buildHead({
-      title: 'Contact | Callum McClure Magician — Get a Quote',
+      title: 'Contact | Callum McClure Magician - Get a Quote',
       description:
-        'Get in touch with Callum McClure — award-winning close-up magician for weddings, corporate events and parties. Call 07481 768042 or send a message.',
+        'Get in touch with Callum McClure - award-winning close-up magician for weddings, corporate events and parties. Call 07481 768042 or send a message.',
       path: '/contact',
       jsonLd: [
         localBusiness(),

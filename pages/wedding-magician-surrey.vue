@@ -1,38 +1,34 @@
 <template>
   <div>
-    <v-sheet color="grey darken-4" dark class="py-16">
-      <v-container>
-        <v-row justify="center">
-          <v-col cols="12" md="8" class="text-center">
-            <h1 class="display-2 mb-4">Wedding Magician in Surrey</h1>
-            <p class="headline mb-6">
-              Award-winning close-up magic for Surrey weddings — drinks receptions,
+    <page-hero src="/perf4.jpg">
+          <div>
+            <h1 class="display-2 mb-4 white--text">Wedding Magician in Surrey</h1>
+            <p class="headline mb-6 white--text">
+              Award-winning close-up magic for Surrey weddings - drinks receptions,
               wedding breakfasts and evening entertainment. I know Surrey's best
               wedding venues inside out. Magic Circle member.
             </p>
-            <v-btn x-large color="accent" dark nuxt to="/contact">
+            <v-btn large color="accent" dark nuxt to="/contact">
               Check My Availability
             </v-btn>
-          </v-col>
-        </v-row>
-      </v-container>
-    </v-sheet>
+          </div>
+        </page-hero>
 
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
           <v-col cols="12" md="8">
             <p class="body-1 black--text">
-              I'm Callum McClure — an award-winning <strong>Surrey wedding magician</strong>
+              I'm Callum McClure - an award-winning <strong>Surrey wedding magician</strong>
               and member of <strong>The Magic Circle</strong>. I grew up in Surrey,
               began my performing career here, and I know the county's wedding venues
               better than almost any other entertainer in the South East.
             </p>
             <p class="body-1 black--text">
-              Surrey has some of England's most beautiful wedding venues —
+              Surrey has some of England's most beautiful wedding venues,
               <strong>Loseley Park</strong>, <strong>Wotton House</strong>,
               <strong>Pennyhill Park</strong>, <strong>Great Fosters</strong>,
-              <strong>Botley Hill Barn</strong> — and I've performed at many of them.
+              <strong>Botley Hill Barn</strong> - and I've performed at many of them.
               I perform across the whole county: Guildford, Woking, Farnham, Dorking,
               Epsom, Reigate, Esher and beyond.
             </p>
@@ -92,7 +88,7 @@
             </p>
             <p class="body-1 black--text">
               <nuxt-link to="/blog/how-much-does-a-wedding-magician-cost">
-                Read the full wedding magician pricing guide →
+                Read the full wedding magician pricing guide
               </nuxt-link>
             </p>
             <p class="body-1 black--text">
@@ -102,7 +98,7 @@
               <nuxt-link to="/areas/guildford">magician in Guildford</nuxt-link>.
             </p>
             <div class="text-center mt-6">
-              <v-btn x-large color="accent" dark nuxt to="/contact">
+              <v-btn large color="accent" dark nuxt to="/contact">
                 Tell Me About Your Surrey Wedding
               </v-btn>
             </div>
@@ -122,22 +118,22 @@ const venues = [
   {
     name: 'Loseley Park, Guildford',
     detail:
-      'Elizabethan manor house with walled gardens and a tithe barn — I performed here at a mayoral event and know it well.',
+      'Elizabethan manor house with walled gardens and a tithe barn - I performed here at a mayoral event and know it well.',
   },
   {
     name: 'Wotton House, Dorking',
     detail:
-      'Country house hotel set in 13 acres near the North Downs — Italian gardens make for a stunning drinks reception setting.',
+      'Country house hotel set in 13 acres near the North Downs - Italian gardens make for a stunning drinks reception setting.',
   },
   {
     name: 'Pennyhill Park, Bagshot',
     detail:
-      'Five-star country estate near Bagshot — one of Surrey\'s most popular luxury wedding and corporate event venues.',
+      'Five-star country estate near Bagshot - one of Surrey\'s most popular luxury wedding and corporate event venues.',
   },
   {
     name: 'Great Fosters, Egham',
     detail:
-      'A Grade I listed Elizabethan manor close to Windsor — period rooms and formal gardens.',
+      'A Grade I listed Elizabethan manor close to Windsor - period rooms and formal gardens.',
   },
   {
     name: 'Botley Hill Barn, near Warlingham',
@@ -155,7 +151,7 @@ const slots = [
   {
     title: 'Drinks reception & photos',
     detail:
-      "The most popular slot. While you're having portraits taken, I fill the natural lull — breaking the ice and keeping your guests entertained.",
+      "The most popular slot. While you're having portraits taken, I fill the natural lull - breaking the ice and keeping your guests entertained.",
   },
   {
     title: 'Wedding breakfast',
@@ -177,7 +173,7 @@ export default defineComponent({
     return buildHead({
       title: 'Wedding Magician Surrey | Hire a Close-Up Wedding Magician in Surrey | Callum McClure',
       description:
-        'Award-winning Surrey wedding magician with deep local knowledge — Loseley Park, Wotton House, Pennyhill Park and beyond. Magic Circle member. Get a no-obligation quote.',
+        'Award-winning Surrey wedding magician with deep local knowledge - Loseley Park, Wotton House, Pennyhill Park and beyond. Magic Circle member. Get a no-obligation quote.',
       path: '/wedding-magician-surrey',
       jsonLd: [
         service(

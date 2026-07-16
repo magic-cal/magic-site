@@ -6,12 +6,12 @@
           <v-col align="center">
             <h1>
               <div class="display-4">Callum McClure</div>
-              <div class="display-1">Close-Up Magician — Surrey & London</div>
+              <div class="display-1">Close-Up Magician — Surrey &amp; London</div>
               <div class="display-5">Member of The Magic Circle</div>
             </h1>
             <div class="mt-6">
               <v-btn
-                x-large
+                large
                 color="accent"
                 dark
                 nuxt
@@ -25,51 +25,55 @@
         </v-row>
       </v-parallax>
 
-      <v-sheet color="white" class="py-10">
-        <v-container>
-          <v-row justify="center">
-            <v-col cols="12" md="8" class="text-center">
-              <p class="headline black--text">
-                Award-winning close-up magician for hire across Surrey, Guildford and London.
-                I'm Callum McClure — a member of <strong>The Magic Circle</strong> with
-                over a decade of performing experience — and I create moments of genuine
-                wonder at weddings, corporate events and private parties.
+      <credentials-bar />
+
+      <v-sheet color="white" class="py-0">
+        <v-row no-gutters align="stretch">
+          <v-col cols="12" md="6" order="2" order-md="1">
+            <v-img
+              src="/skill.jpg"
+              height="520"
+              cover
+              position="center top"
+            />
+          </v-col>
+          <v-col
+            cols="12"
+            md="6"
+            order="1"
+            order-md="2"
+            class="d-flex align-center pa-8 pa-md-12"
+            style="background: #fff"
+          >
+            <div>
+              <div class="overline accent--text mb-2 font-weight-bold">Member of The Magic Circle</div>
+              <p class="display-1 black--text mb-6 font-weight-light">
+                Award-winning close-up magic for hire — Surrey &amp; London
               </p>
-              <p class="body-1 grey--text text--darken-2 mt-4">
+              <p class="body-1 grey--text text--darken-2 mb-4">
                 From the drinks reception at a Surrey wedding to a trade show stand in
-                London, my sleight-of-hand magic happens inches from your guests' eyes —
-                in their own hands, with borrowed objects. No stage. No setup. Just
-                magic that gets everyone talking.
+                London, close-up magic that happens inches from your guests' eyes —
+                in their own hands, with borrowed objects. No stage. No setup.
               </p>
-              <v-btn
-                large
-                color="accent"
-                dark
-                nuxt
-                to="/contact"
-                class="mt-4"
-              >
+              <p class="body-1 grey--text text--darken-2 mb-6">
+                Over a decade of professional experience performing at weddings,
+                corporate events and private parties across the South East.
+              </p>
+              <v-btn outlined color="accent" nuxt to="/contact">
                 Get a No-Obligation Quote
               </v-btn>
-            </v-col>
-          </v-row>
-        </v-container>
+            </div>
+          </v-col>
+        </v-row>
       </v-sheet>
 
-      <section-break-img :size="125" />
       <about-snippet />
       <card-reveal />
 
-      <company-carousel
-        title="Some of the Companies Callum has performed for"
-        :logos="companyLogos"
-        color="white"
-      />
-
-      <v-sheet color="grey lighten-4" class="py-10">
+      <v-sheet color="grey lighten-4" class="py-14">
         <v-container>
           <v-row>
-            <v-col cols="12" class="text-center mb-4">
+            <v-col cols="12" class="text-center mb-8">
               <h2 class="display-1">Magic for Every Occasion</h2>
             </v-col>
           </v-row>
@@ -79,38 +83,67 @@
               :key="svc.subtitle"
               cols="12"
               sm="4"
-              class="text-center"
-              :class="{ 'd-none d-sm-block': svc.hideOnXs }"
+              :class="{ 'd-none d-sm-flex': svc.hideOnXs }"
+              class="d-flex flex-column"
             >
-              <v-img
-                class="service-img mx-auto"
-                :src="svc.src"
-                :alt="svc.alt"
-                max-height="200px"
-                max-width="200px"
-                contain
-                eager
-              />
-              <h3 class="pb-2 pt-4">{{ svc.subtitle }}</h3>
-              <p>{{ svc.details }}</p>
-              <v-btn text color="accent" nuxt :to="svc.href">Learn more</v-btn>
+              <v-card flat class="flex-grow-1 service-card">
+                <v-img
+                  :src="svc.src"
+                  :alt="svc.alt"
+                  height="220px"
+                  cover
+                  class="service-card-img"
+                />
+                <v-card-title class="black--text pb-1">{{ svc.subtitle }}</v-card-title>
+                <v-card-text class="black--text">{{ svc.details }}</v-card-text>
+                <v-card-actions>
+                  <v-btn text color="accent" nuxt :to="svc.href">Learn more</v-btn>
+                </v-card-actions>
+              </v-card>
             </v-col>
           </v-row>
         </v-container>
       </v-sheet>
 
-      <v-sheet color="white" class="py-8">
+      <v-img src="/action.jpg" height="460" cover position="center center">
+        <div
+          class="fill-height d-flex align-center"
+          style="background: linear-gradient(to right, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.15) 100%)"
+        >
+          <v-container>
+            <v-row>
+              <v-col cols="12" sm="7" md="5">
+                <p class="display-1 white--text font-weight-light mb-4">
+                  Close-up magic that happens in your guests' own hands
+                </p>
+                <nuxt-link to="/close-up-magician" class="white--text">
+                  What is close-up magic?
+                </nuxt-link>
+              </v-col>
+            </v-row>
+          </v-container>
+        </div>
+      </v-img>
+
+      <company-carousel
+        title="Some of the Companies Callum has performed for"
+        :logos="companyLogos"
+        color="white"
+      />
+
+      <v-sheet color="white" class="py-6">
         <v-container>
           <v-row justify="center">
             <v-col cols="12" md="8" class="text-center">
               <p class="body-1 grey--text text--darken-1">
-                I also perform across
+                Performing across
                 <nuxt-link to="/areas/guildford">Guildford</nuxt-link>,
                 <nuxt-link to="/areas/surrey">Surrey</nuxt-link> and
                 <nuxt-link to="/areas/london">London</nuxt-link>.
-                <nuxt-link to="/close-up-magician">Learn more about close-up magic</nuxt-link>
-                or read my
-                <nuxt-link to="/testimonials">client testimonials</nuxt-link>.
+                Read
+                <nuxt-link to="/testimonials">client testimonials</nuxt-link>
+                or
+                <nuxt-link to="/blog/how-much-does-a-wedding-magician-cost">find out what a magician costs</nuxt-link>.
               </p>
             </v-col>
           </v-row>
@@ -131,58 +164,18 @@ import { localBusiness } from '~/utils/schema'
 export default defineComponent({
   setup() {
     const companyLogos = [
-      {
-        src: require('@/static/Raddison.png'),
-        alt: 'Radisson Hotel Logo',
-        hideOnXs: true,
-      },
+      { src: require('@/static/Raddison.png'), alt: 'Radisson Hotel Logo', hideOnXs: true },
       { src: require('@/static/BBC.jpg'), alt: 'BBC Logo', hideOnXs: false },
-      {
-        src: require('@/static/Barclays.png'),
-        alt: 'Barclays Logo',
-        hideOnXs: false,
-      },
-      {
-        src: require('@/static/Disney.png'),
-        alt: 'Disney Logo',
-        hideOnXs: true,
-      },
-      {
-        src: require('@/static/Independent.png'),
-        alt: 'The Independent Logo',
-        hideOnXs: false,
-      },
-      {
-        src: require('@/static/Age-UK.jpg'),
-        alt: 'Age UK Logo',
-        hideOnXs: false,
-      },
-      {
-        src: require('@/static/Marriott.png'),
-        alt: 'Marriott Hotels Logo',
-        hideOnXs: false,
-      },
-      {
-        src: require('@/static/Lloyds.png'),
-        alt: 'Lloyds Bank Logo',
-        hideOnXs: false,
-      },
-      {
-        src: require('@/static/GLive.jpg'),
-        alt: 'G Live Guildford Logo',
-        hideOnXs: true,
-      },
+      { src: require('@/static/Barclays.png'), alt: 'Barclays Logo', hideOnXs: false },
+      { src: require('@/static/Disney.png'), alt: 'Disney Logo', hideOnXs: true },
+      { src: require('@/static/Independent.png'), alt: 'The Independent Logo', hideOnXs: false },
+      { src: require('@/static/Age-UK.jpg'), alt: 'Age UK Logo', hideOnXs: false },
+      { src: require('@/static/Marriott.png'), alt: 'Marriott Hotels Logo', hideOnXs: false },
+      { src: require('@/static/Lloyds.png'), alt: 'Lloyds Bank Logo', hideOnXs: false },
+      { src: require('@/static/GLive.jpg'), alt: 'G Live Guildford Logo', hideOnXs: true },
       { src: require('@/static/Btg.jpg'), alt: 'BTG Logo', hideOnXs: true },
-      {
-        src: require('@/static/CAM.jpg'),
-        alt: 'University of Cambridge Logo',
-        hideOnXs: true,
-      },
-      {
-        src: require('@/static/Arqiva.jpg'),
-        alt: 'Arqiva Logo',
-        hideOnXs: true,
-      },
+      { src: require('@/static/CAM.jpg'), alt: 'University of Cambridge Logo', hideOnXs: true },
+      { src: require('@/static/Arqiva.jpg'), alt: 'Arqiva Logo', hideOnXs: true },
     ]
 
     const services = [
@@ -190,8 +183,7 @@ export default defineComponent({
         src: require('@/static/square/wedding.jpg'),
         alt: 'Callum McClure performing close-up magic at a Surrey wedding reception',
         hideOnXs: false,
-        details:
-          'Award-winning close-up magic for your drinks reception, wedding breakfast or evening. Makes those in-between moments unforgettable.',
+        details: 'Award-winning close-up magic for your drinks reception, wedding breakfast or evening. Makes those in-between moments unforgettable.',
         href: '/wedding-magician',
         subtitle: 'Wedding Magician',
       },
@@ -199,8 +191,7 @@ export default defineComponent({
         src: require('@/static/square/corporate.jpg'),
         alt: 'Callum McClure performing close-up magic at a corporate networking event in Surrey',
         hideOnXs: false,
-        details:
-          'From conferences and trade shows to Christmas parties, close-up magic breaks the ice and gets rooms full of people genuinely enjoying themselves.',
+        details: 'From conferences and trade shows to Christmas parties, close-up magic breaks the ice and gets rooms full of people genuinely enjoying themselves.',
         href: '/corporate-magician',
         subtitle: 'Corporate Magician',
       },
@@ -208,8 +199,7 @@ export default defineComponent({
         src: require('@/static/square/magicShowcase.jpg'),
         alt: 'Callum McClure performing walkaround magic at a birthday party near Guildford',
         hideOnXs: true,
-        details:
-          'Birthdays, anniversaries, private dinners and garden parties — I mingle through your guests with magic that works for every age in the room.',
+        details: 'Birthdays, anniversaries, private dinners and garden parties — magic that works for every age in the room.',
         href: '/party-magician',
         subtitle: 'Party Magician',
       },
@@ -248,7 +238,13 @@ h1 {
   font-weight: normal;
 }
 
-.service-img {
-  border-radius: 25%;
+.service-card {
+  border-radius: 4px;
+  overflow: hidden;
+  background: white;
+}
+
+.service-card-img {
+  border-radius: 0;
 }
 </style>

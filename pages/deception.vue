@@ -141,7 +141,7 @@ export default defineComponent({
     return buildHead({
       title: 'Callum McClure: Deception | Magic & Technology Show',
       description:
-        'Callum McClure: Deception — a sell-out Edinburgh Fringe show blending classic sleight of hand with modern technology and robotics. Featured on BBC Newsbeat.',
+        'Callum McClure: Deception - a sell-out Edinburgh Fringe show blending classic sleight of hand with modern technology and robotics. Featured on BBC Newsbeat.',
       path: '/deception',
       jsonLd: [breadcrumb([{ name: 'Deception', item: '/deception' }])],
     })
