@@ -8,7 +8,7 @@
           :to="page.to"
           router
           exact
-          @click="drawer = !drawer"
+          @click="drawer = false"
         >
           <v-list-item-action>
             <v-icon>{{ page.icon }}</v-icon>

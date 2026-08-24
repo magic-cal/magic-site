@@ -20,8 +20,8 @@
             multi-national corporate events.
           </p>
           <p class="body-1 black--text mb-6">
-            His speciality is close-up sleight of hand — magic that happens
-            inches from your eyes, with borrowed objects, with no setup at all.
+            His speciality is close-up sleight of hand, magic that happens
+            inches from your eyes, with borrowed objects and no setup at all.
             He performs at weddings, corporate events, gala dinners, and private
             celebrations across Surrey and London.
           </p>

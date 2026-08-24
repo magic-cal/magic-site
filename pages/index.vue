@@ -6,7 +6,7 @@
           <v-col align="center">
             <h1>
               <div class="display-4">Callum McClure</div>
-              <div class="display-1">Close-Up Magician — Surrey &amp; London</div>
+              <div class="display-1">Close-Up Magician in Surrey &amp; London</div>
               <div class="display-5">Member of The Magic Circle</div>
             </h1>
             <div class="mt-6">
@@ -48,11 +48,11 @@
             <div>
               <div class="overline accent--text mb-2 font-weight-bold">Member of The Magic Circle</div>
               <p class="display-1 black--text mb-6 font-weight-light">
-                Award-winning close-up magic for hire — Surrey &amp; London
+                Award-winning close-up magic for hire in Surrey &amp; London
               </p>
               <p class="body-1 grey--text text--darken-2 mb-4">
                 From the drinks reception at a Surrey wedding to a trade show stand in
-                London, close-up magic that happens inches from your guests' eyes —
+                London, close-up magic that happens inches from your guests' eyes,
                 in their own hands, with borrowed objects. No stage. No setup.
               </p>
               <p class="body-1 grey--text text--darken-2 mb-6">
@@ -196,7 +196,7 @@ export default defineComponent({
         src: require('@/static/square/wedding-card-reveal.jpg'),
         alt: 'Callum McClure performing walkaround magic at a birthday party near Guildford',
         hideOnXs: true,
-        details: 'Birthdays, anniversaries, private dinners and garden parties — magic that works for every age in the room.',
+        details: 'Birthdays, anniversaries, private dinners and garden parties. Magic that works for every age in the room.',
         href: '/party-magician',
         subtitle: 'Party Magician',
       },
