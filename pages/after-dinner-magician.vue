@@ -44,7 +44,7 @@
             <h2 class="display-1 mb-6 black--text">When I perform at dinner events</h2>
             <v-list color="transparent">
               <v-list-item v-for="slot in slots" :key="slot.title">
-                <v-list-item-icon><v-icon color="accent">mdi-clock-outline</v-icon></v-list-item-icon>
+                <v-list-item-icon><v-icon color="accent">mdi-check-circle</v-icon></v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-title class="black--text font-weight-bold">{{ slot.title }}</v-list-item-title>
                   <v-list-item-subtitle class="text-wrap black--text">{{ slot.detail }}</v-list-item-subtitle>

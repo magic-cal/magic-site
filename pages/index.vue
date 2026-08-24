@@ -91,7 +91,7 @@
                   :alt="svc.alt"
                   height="220px"
                   cover
-                  :position="svc.position || 'center center'"
+                  :position="svc.position || 'top center'"
                   class="service-card-img"
                 />
                 <v-card-title class="black--text pb-1">{{ svc.subtitle }}</v-card-title>
