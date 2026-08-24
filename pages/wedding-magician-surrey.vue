@@ -1,6 +1,6 @@
 <template>
   <div>
-    <page-hero src="/perf4.jpg">
+    <page-hero src="/wedding-astonished-reaction.jpg" position="center 32%" height="560">
           <div>
             <h1 class="display-2 mb-4 white--text">Wedding Magician in Surrey</h1>
             <p class="headline mb-6 white--text">
@@ -85,11 +85,6 @@
               <strong>£350 and £1,500</strong> depending on how long you'd like me to
               perform, which parts of the day you want covered, and your date. I'll give
               you a clear, no-obligation quote tailored to your wedding.
-            </p>
-            <p class="body-1 black--text">
-              <nuxt-link to="/blog/how-much-does-a-wedding-magician-cost">
-                Read the full wedding magician pricing guide
-              </nuxt-link>
             </p>
             <p class="body-1 black--text">
               See also:

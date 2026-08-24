@@ -1,6 +1,6 @@
 <template>
   <div>
-    <page-hero src="/action.jpg">
+    <page-hero src="/action.jpg" position="center 25%">
           <div>
             <h1 class="display-2 mb-4 white--text">Christmas Party Magician in London</h1>
             <p class="headline mb-6 white--text">

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <page-hero src="/perf4.jpg">
+    <page-hero src="/wedding-card-reveal.jpg" position="center 35%">
           <div>
             <h1 class="display-2 mb-4 white--text">Wedding Magician in London</h1>
             <p class="headline mb-6 white--text">
@@ -100,8 +100,9 @@
                 <v-list-item-icon><v-icon color="accent">mdi-trophy</v-icon></v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-subtitle class="text-wrap black--text">
-                    <strong>Multi-award-winning</strong>, including recognition at the
-                    Magic Circle Young Magician of the Year competition.
+                    <strong>Multi-award-winning</strong>, including recognition as a
+                    runner-up in The Magic Circle's close-up magic competition, the
+                    Mark Leveridge Cup.
                   </v-list-item-subtitle>
                 </v-list-item-content>
               </v-list-item>

@@ -1,10 +1,10 @@
 <template>
   <div>
-    <page-hero src="/perf1.jpg">
+    <page-hero src="/wedding-card-reveal.jpg" position="center 35%">
           <div>
             <h1 class="display-2 mb-4 white--text">How Much Does a Wedding Magician Cost in the UK?</h1>
             <p class="headline mb-4 white--text">(2026 Guide)</p>
-            <p class="body-1">
+            <p class="body-1 white--text">
               By Callum McClure, Magic Circle magician - an honest guide with real UK price ranges.
             </p>
           </div>

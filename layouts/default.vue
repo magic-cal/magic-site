@@ -41,6 +41,14 @@
         <v-row>
           <v-col cols="12" class="text-center grey--text text--lighten-1 caption">
             &copy; {{ new Date().getFullYear() }} Callum McClure Magician. Member of The Magic Circle.
+            Photography by
+            <a
+              href="https://www.frames-by-brendan.com/"
+              target="_blank"
+              rel="noopener"
+              class="footer-link"
+              >Frames by Brendan</a
+            >.
           </v-col>
         </v-row>
       </v-container>
@@ -58,7 +66,6 @@ export default defineComponent({
         { text: 'Corporate Magician', to: '/corporate-magician' },
         { text: 'Party Magician', to: '/party-magician' },
         { text: 'Close-Up Magic', to: '/close-up-magician' },
-        { text: 'Testimonials', to: '/testimonials' },
       ],
       areaLinks: [
         { text: 'Magician in London', to: '/areas/london' },
@@ -67,8 +74,6 @@ export default defineComponent({
       ],
       infoLinks: [
         { text: 'About Callum', to: '/about' },
-        { text: 'How Much Does a Magician Cost?', to: '/blog/how-much-does-a-wedding-magician-cost' },
-        { text: 'Blog', to: '/blog' },
         { text: 'FAQs', to: '/faqs' },
         { text: 'Contact / Get a Quote', to: '/contact' },
       ],

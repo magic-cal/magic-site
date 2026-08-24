@@ -1,6 +1,6 @@
 <template>
   <div>
-    <page-hero src="/action.jpg">
+    <page-hero src="/action.jpg" position="center 25%">
           <div>
             <h1 class="display-2 mb-4 white--text">Christmas Party Magician - London &amp; Surrey</h1>
             <p class="headline mb-6 white--text">
@@ -138,11 +138,6 @@
               depending on the duration, number of guests, and your event date and location.
               December dates book up fast - I'd recommend enquiring by October to secure
               your preferred slot.
-            </p>
-            <p class="body-1 black--text">
-              <nuxt-link to="/blog/how-much-does-a-wedding-magician-cost">
-                Read the full magician pricing guide
-              </nuxt-link>
             </p>
           </v-col>
         </v-row>

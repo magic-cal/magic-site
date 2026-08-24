@@ -1,6 +1,6 @@
 <template>
   <div>
-    <page-hero src="/perf3.jpg">
+    <page-hero src="/headshot.jpg" position="center 20%">
           <div>
             <h1 class="display-2 mb-4 white--text">Magician in Guildford</h1>
             <p class="headline mb-6 white--text">

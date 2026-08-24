@@ -92,6 +92,7 @@
                   :alt="svc.alt"
                   height="220px"
                   cover
+                  :position="svc.position || 'center center'"
                   class="service-card-img"
                 />
                 <v-card-title class="black--text pb-1">{{ svc.subtitle }}</v-card-title>
@@ -105,7 +106,7 @@
         </v-container>
       </v-sheet>
 
-      <v-img src="/action.jpg" height="460" cover position="center center">
+      <v-img src="/reception-card-trick.jpg" height="460" cover position="center 30%">
         <div
           class="fill-height d-flex align-center"
           style="background: linear-gradient(to right, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.15) 100%)"
@@ -140,10 +141,6 @@
                 <nuxt-link to="/areas/guildford">Guildford</nuxt-link>,
                 <nuxt-link to="/areas/surrey">Surrey</nuxt-link> and
                 <nuxt-link to="/areas/london">London</nuxt-link>.
-                Read
-                <nuxt-link to="/testimonials">client testimonials</nuxt-link>
-                or
-                <nuxt-link to="/blog/how-much-does-a-wedding-magician-cost">find out what a magician costs</nuxt-link>.
               </p>
             </v-col>
           </v-row>
@@ -180,7 +177,8 @@ export default defineComponent({
 
     const services = [
       {
-        src: require('@/static/square/wedding.jpg'),
+        src: require('@/static/wedding-astonished-reaction.jpg'),
+        position: 'center 35%',
         alt: 'Callum McClure performing close-up magic at a Surrey wedding reception',
         hideOnXs: false,
         details: 'Award-winning close-up magic for your drinks reception, wedding breakfast or evening. Makes those in-between moments unforgettable.',

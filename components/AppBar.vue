@@ -139,9 +139,7 @@ export default defineComponent({
       ...mainPages.map((p) => ({ ...p, icon: mainIcons[p.to] || 'mdi-cards' })),
       ...occasionPages.map((p) => ({ ...p, icon: 'mdi-silverware-fork-knife' })),
       { title: 'Close-Up Magic', icon: 'mdi-cards', to: '/close-up-magician' },
-      { title: 'Testimonials', icon: 'mdi-star', to: '/testimonials' },
       ...areaPages.map((p) => ({ ...p, icon: 'mdi-map-marker' })),
-      { title: 'Pricing', icon: 'mdi-currency-gbp', to: '/blog/how-much-does-a-wedding-magician-cost' },
       { title: 'Contact', icon: 'mdi-email', to: '/contact' },
     ]
 

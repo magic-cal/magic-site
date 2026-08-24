@@ -1,6 +1,6 @@
 <template>
   <div>
-    <page-hero src="/perf4.jpg">
+    <page-hero src="/wedding-card-reveal.jpg" position="center 35%">
           <div>
             <h1 class="display-2 mb-4 white--text">Wedding Magician in Surrey &amp; Guildford</h1>
             <p class="headline mb-6 white--text">
@@ -107,7 +107,8 @@
                 <v-list-item-content>
                   <v-list-item-subtitle class="text-wrap black--text">
                     <strong>Multi-award-winning</strong> - including national recognition
-                    at the Magic Circle Young Magician of the Year competition.
+                    as a runner-up in The Magic Circle's close-up magic competition, the
+                    Mark Leveridge Cup.
                   </v-list-item-subtitle>
                 </v-list-item-content>
               </v-list-item>
@@ -127,7 +128,7 @@
       </v-container>
     </v-sheet>
 
-    <v-img src="/perf5.jpg" height="280" cover />
+    <v-img src="/wedding-astonished-reaction.jpg" height="400" cover position="center 32%" />
 
     <v-sheet color="grey lighten-4" class="py-12">
       <v-container>
@@ -168,11 +169,6 @@
               parts of the day you want covered, and your date and location. Rather than
               a fixed price list, I'll give you a clear, no-obligation quote tailored to
               your day.
-            </p>
-            <p class="body-1 black--text">
-              <nuxt-link to="/blog/how-much-does-a-wedding-magician-cost">
-                Read our full wedding magician pricing guide
-              </nuxt-link>
             </p>
             <div class="text-center mt-6">
               <v-btn outlined color="accent" nuxt to="/contact">

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <page-hero src="/perf2.jpg">
+    <page-hero src="/wedding-astonished-reaction.jpg" position="center 32%" height="560">
           <div>
             <h1 class="display-2 mb-4 white--text">Reviews &amp; Testimonials</h1>
             <p class="headline mb-4 white--text">
@@ -25,8 +25,7 @@
                   <v-icon color="accent" large class="mb-2">mdi-format-quote-open</v-icon>
                   <p class="body-1 black--text font-italic mb-4">{{ review.quote }}</p>
                   <p class="body-2 grey--text text--darken-1 mb-0">
-                    - <strong>{{ review.source }}</strong>
-                    <span v-if="review.event">, {{ review.event }}</span>
+                    - <strong>{{ review.source }}</strong><span v-if="review.event">, {{ review.event }}</span>
                   </p>
                 </v-card>
               </v-col>

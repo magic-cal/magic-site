@@ -1,6 +1,6 @@
 <template>
   <div>
-    <page-hero src="/perf5.jpg">
+    <page-hero src="/skill.jpg" position="center 28%">
           <div>
             <h1 class="display-2 mb-4 white--text">Awards Ceremony Magician - London &amp; Surrey</h1>
             <p class="headline mb-6 white--text">

@@ -1,7 +1,7 @@
-# SEO Owner Checklist — magic-cal.co.uk
+# SEO Owner Checklist - magic-cal.co.uk
 
 Everything in this repo is done. The items below are off-page or DNS tasks
-only you can complete. Work through them roughly in order — the first four
+only you can complete. Work through them roughly in order - the first four
 have the biggest impact.
 
 ---
@@ -16,7 +16,7 @@ curl -s https://www.magic-cal.co.uk/wedding-magician/ | grep "Magic Circle"
 ```
 
 Should return real copy. If it still returns `Loading...`, check the Pages
-settings — it may need to be set to deploy from `gh-pages` branch rather than
+settings - it may need to be set to deploy from `gh-pages` branch rather than
 `master` root.
 
 ---
@@ -28,7 +28,7 @@ settings — it may need to be set to deploy from `gh-pages` branch rather than
 3. Verify ownership (HTML file or DNS TXT record)
 4. Submit sitemap: **https://www.magic-cal.co.uk/sitemap.xml**
 5. Use "URL Inspection" on `/wedding-magician` and `/corporate-magician`
-   — click "Test Live URL" and confirm rendered HTML contains your copy
+   - click "Test Live URL" and confirm rendered HTML contains your copy
 6. Request indexing for each new page
 
 ---
@@ -51,10 +51,10 @@ settings — it may need to be set to deploy from `gh-pages` branch rather than
 Your Name / Address / Phone must be identical everywhere. Search for your
 business on the following and correct any differences:
 
-- **Bark.com** — update URL to `/wedding-magician` or `/contact`
-- **Yelp** — phone `07481 768042`, URL `www.magic-cal.co.uk`
-- **Yell.com** — same
-- **Magicshow.co.uk** (if listed) — same
+- **Bark.com** - update URL to `/wedding-magician` or `/contact`
+- **Yelp** - phone `07481 768042`, URL `www.magic-cal.co.uk`
+- **Yell.com** - same
+- **Magicshow.co.uk** (if listed) - same
 - Any directory listings from old address or old phone number
 
 ---
@@ -63,7 +63,7 @@ business on the following and correct any differences:
 
 Currently `magic-cal.co.uk` (no www) and `www.magic-cal.co.uk` serve
 independently. Pick one as canonical (the site uses `www`) and redirect the
-other. This is a DNS / GitHub Pages CNAME setting — add a CNAME record for
+other. This is a DNS / GitHub Pages CNAME setting - add a CNAME record for
 `www` pointing to `magic-cal.github.io` and enable "Enforce HTTPS" in
 Pages settings.
 
@@ -71,22 +71,22 @@ Pages settings.
 
 ## 6. Press and backlinks
 
-- **BBC Surrey quote** — if there's an online article, email them to link to
+- **BBC Surrey quote** - if there's an online article, email them to link to
   `https://www.magic-cal.co.uk` rather than any old URL.
-- **Surrey Live / GetSurrey** — reach out about a feature (local magician angle).
-- **Venue partnerships** — ask Loseley Park, Wotton House, Pennyhill Park etc.
+- **Surrey Live / GetSurrey** - reach out about a feature (local magician angle).
+- **Venue partnerships** - ask Loseley Park, Wotton House, Pennyhill Park etc.
   if they have a preferred suppliers page and request a link.
 
 ---
 
-## 7. Reviews — gather and then add schema
+## 7. Reviews - gather and then add schema
 
 The site currently shows quotes but no star ratings (no schema either, which
 is correct until you have real structured reviews).
 
 To unlock `AggregateRating` schema later:
 1. After each event, send a short follow-up email:
-   *"If you enjoyed the magic, a Google review would mean the world — [link]"*
+   *"If you enjoyed the magic, a Google review would mean the world - [link]"*
 2. Once you have 5+ Google reviews, add `AggregateRating` to `utils/schema.ts`
    `localBusiness()` and redeploy.
 

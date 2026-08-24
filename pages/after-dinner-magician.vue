@@ -1,6 +1,6 @@
 <template>
   <div>
-    <page-hero src="/perf2.jpg">
+    <page-hero src="/perf4.jpg" position="center 30%">
           <div>
             <h1 class="display-2 mb-4 white--text">After Dinner Magician - London &amp; Surrey</h1>
             <p class="headline mb-6 white--text">

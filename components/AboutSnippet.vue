@@ -4,7 +4,7 @@
       <v-row align="center">
         <v-col cols="12" md="5" class="mb-8 mb-md-0">
           <v-img
-            src="/about.jpg"
+            src="/promo-reaching.jpg"
             height="500"
             cover
             class="about-photo elevation-6"

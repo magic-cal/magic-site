@@ -12,19 +12,21 @@
         </v-col>
 
         <v-col :cols="12">
-          Call on: <a href="tel:07481768042">07481768042</a>
+          Call on: <a href="tel:+447481768042">07481 768042</a>
         </v-col>
         <v-col :cols="12">
           Email:
-          <a href="mailto:info@magic-cal.co.uk ">info@magic-cal.co.uk </a>
+          <a href="mailto:info@magic-cal.co.uk">info@magic-cal.co.uk</a>
         </v-col>
-        <v-col :cols="12"> Based In Surrey and Happy to travel </v-col>
+        <v-col :cols="12">
+          Based in London - available across Surrey, Guildford &amp; the South East
+        </v-col>
         <v-col :cols="12">
           Facebook: <a href="https://fb.me/MagicCal">fb.me/MagicCal</a>
         </v-col>
         <v-col :cols="12">
-          Twitter:
-          <a href="https://twitter.com/magic_cal">@Magic_Cal </a></v-col
+          Instagram:
+          <a href="https://www.instagram.com/mcclure_magic/">@mcclure_magic</a></v-col
         >
       </v-card>
     </v-col>

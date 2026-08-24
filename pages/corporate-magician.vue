@@ -1,6 +1,6 @@
 <template>
   <div>
-    <page-hero src="/perf5.jpg">
+    <page-hero src="/perf5.jpg" position="center 25%">
           <div>
             <h1 class="display-2 mb-4 white--text">Corporate Magician for Surrey &amp; London Events</h1>
             <p class="headline mb-6 white--text">

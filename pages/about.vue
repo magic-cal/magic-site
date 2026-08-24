@@ -1,6 +1,6 @@
 <template>
   <div>
-    <page-hero src="/skill.jpg">
+    <page-hero src="/skill.jpg" position="center 28%">
           <div>
             <h1 class="display-2 mb-4 white--text">About Callum McClure</h1>
             <p class="headline mb-4 white--text">
@@ -117,9 +117,6 @@
             <v-btn large color="accent" dark nuxt to="/contact" class="mt-4">
               Check Availability &amp; Get a Quote
             </v-btn>
-            <p class="body-2 grey--text mt-4">
-              Or read <nuxt-link to="/testimonials">client testimonials</nuxt-link>.
-            </p>
           </v-col>
         </v-row>
       </v-container>
