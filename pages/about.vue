@@ -30,7 +30,7 @@
             </p>
             <p class="body-1 black--text">
               My style combines classic sleight of hand with a modern, technological
-              twist — magic that works equally well for a Fortune 500 conference and an
+              twist. It works equally well for a Fortune 500 conference and an
               intimate dinner party, because the astonishment is the same either way.
             </p>
           </v-col>
