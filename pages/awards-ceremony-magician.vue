@@ -1,6 +1,8 @@
 <template>
   <div>
-    <page-hero src="/skill.jpg" position="center 28%">
+    <page-hero
+      src="/skill.jpg"
+      alt="Magician Callum McClure holding a fan of playing cards out to the audience on stage" position="center 28%">
           <div>
             <h1 class="display-2 mb-4 white--text">Awards Ceremony Magician - London &amp; Surrey</h1>
             <p class="headline mb-6 white--text">
@@ -195,7 +197,7 @@ export default defineComponent({
   },
   head() {
     return buildHead({
-      title: 'Awards Ceremony Magician London & Surrey | Awards Night Entertainment | Callum McClure',
+      title: 'Awards Ceremony Magician London & Surrey | Callum McClure',
       description:
         'Close-up magician for awards ceremonies, industry dinners and recognition events in London & Surrey. Magic Circle member. Table magic between courses and after the ceremony. Get a quote.',
       path: '/awards-ceremony-magician',

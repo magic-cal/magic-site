@@ -1,6 +1,8 @@
 <template>
   <div>
-    <page-hero src="/perf4.jpg" position="center 30%">
+    <page-hero
+      src="/perf4.jpg"
+      alt="Magician Callum McClure on stage with his arms outstretched in front of a blue theatre curtain" position="center 30%">
           <div>
             <h1 class="display-2 mb-4 white--text">Charity Ball Magician - London &amp; Surrey</h1>
             <p class="headline mb-6 white--text">
@@ -170,7 +172,7 @@ export default defineComponent({
   },
   head() {
     return buildHead({
-      title: 'Charity Ball Magician London & Surrey | Fundraising Gala Entertainment | Callum McClure',
+      title: 'Charity Ball Magician London & Surrey | Callum McClure',
       description:
         'Award-winning close-up magician for charity balls and fundraising galas in London & Surrey. Warms up the room and supports your auction. Magic Circle member. Get a quote.',
       path: '/charity-ball-magician',

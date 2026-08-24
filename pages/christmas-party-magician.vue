@@ -1,6 +1,8 @@
 <template>
   <div>
-    <page-hero src="/action.jpg" position="center 25%">
+    <page-hero
+      src="/action.jpg"
+      alt="Magician Callum McClure catching a playing card in mid-air on stage" position="center 25%">
           <div>
             <h1 class="display-2 mb-4 white--text">Christmas Party Magician - London &amp; Surrey</h1>
             <p class="headline mb-6 white--text">
@@ -271,7 +273,7 @@ export default defineComponent({
   },
   head() {
     return buildHead({
-      title: 'Christmas Party Magician London & Surrey | Corporate Christmas Entertainment | Callum McClure',
+      title: 'Christmas Party Magician London & Surrey | Callum McClure',
       description:
         'Award-winning close-up magician for corporate Christmas parties, works nights out and private celebrations in London & Surrey. Magic Circle member. Check availability.',
       path: '/christmas-party-magician',

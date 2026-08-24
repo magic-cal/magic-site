@@ -1,6 +1,8 @@
 <template>
   <div>
-    <page-hero src="/reception-guest-laughing.jpg" position="center 28%">
+    <page-hero
+      src="/reception-guest-laughing.jpg"
+      alt="A guest laughing as magician Callum McClure performs close-up magic at an outdoor drinks reception" position="center 28%">
           <div>
             <h1 class="display-2 mb-4 white--text">Magic Blog</h1>
             <p class="headline mb-4 white--text">

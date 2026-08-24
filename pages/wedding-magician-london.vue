@@ -1,6 +1,8 @@
 <template>
   <div>
-    <page-hero src="/wedding-card-reveal.jpg" position="center 35%">
+    <page-hero
+      src="/wedding-card-reveal.jpg"
+      alt="Magician Callum McClure revealing a playing card to two seated guests at an outdoor wedding reception" position="center 35%">
           <div>
             <h1 class="display-2 mb-4 white--text">Wedding Magician in London</h1>
             <p class="headline mb-6 white--text">
@@ -196,7 +198,7 @@ export default defineComponent({
   },
   head() {
     return buildHead({
-      title: 'Wedding Magician London | Hire a Close-Up Wedding Magician in London | Callum McClure',
+      title: 'Wedding Magician London | Close-Up Magic | Callum McClure',
       description:
         'London-based close-up wedding magician for drinks receptions, wedding breakfasts and evening entertainment. Magic Circle member. 10+ years at London venues. Get a quote.',
       path: '/wedding-magician-london',

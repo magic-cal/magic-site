@@ -1,6 +1,8 @@
 <template>
   <div>
-    <page-hero src="/skill.jpg" position="center 28%">
+    <page-hero
+      src="/skill.jpg"
+      alt="Magician Callum McClure holding a fan of playing cards out to the audience on stage" position="center 28%">
           <div>
             <h1 class="display-2 mb-4 white--text">About Callum McClure</h1>
             <p class="headline mb-4 white--text">

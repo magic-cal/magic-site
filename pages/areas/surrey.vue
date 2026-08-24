@@ -1,6 +1,8 @@
 <template>
   <div>
-    <page-hero src="/perf2.jpg" position="center 30%">
+    <page-hero
+      src="/perf2.jpg"
+      alt="Magician Callum McClure tossing the ace of hearts into the air on stage" position="center 30%">
           <div>
             <h1 class="display-2 mb-4 white--text">Magician in Surrey</h1>
             <p class="headline mb-6 white--text">

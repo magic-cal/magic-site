@@ -1,6 +1,8 @@
 <template>
   <div>
-    <page-hero src="/perf5.jpg" position="center 25%">
+    <page-hero
+      src="/perf5.jpg"
+      alt="Magician Callum McClure holding a stack of coins at his fingertips on stage" position="center 25%">
           <div>
             <h1 class="display-2 mb-4 white--text">Gala Dinner Magician - London &amp; Surrey</h1>
             <p class="headline mb-6 white--text">
@@ -185,7 +187,7 @@ export default defineComponent({
   },
   head() {
     return buildHead({
-      title: 'Gala Dinner Magician London & Surrey | Black Tie Close-Up Magic | Callum McClure',
+      title: 'Gala Dinner Magician London & Surrey | Callum McClure',
       description:
         'Award-winning close-up magician for gala dinners, black tie evenings and formal corporate entertaining in London & Surrey. Magic Circle member. Get a quote.',
       path: '/gala-dinner-magician',

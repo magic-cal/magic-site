@@ -1,6 +1,8 @@
 <template>
   <div>
-    <page-hero src="/perf4.jpg" position="center 30%">
+    <page-hero
+      src="/perf4.jpg"
+      alt="Magician Callum McClure on stage with his arms outstretched in front of a blue theatre curtain" position="center 30%">
           <div>
             <h1 class="display-2 mb-4 white--text">After Dinner Magician - London &amp; Surrey</h1>
             <p class="headline mb-6 white--text">
@@ -231,7 +233,7 @@ export default defineComponent({
   },
   head() {
     return buildHead({
-      title: 'After Dinner Magician London & Surrey | Close-Up Table Magic | Callum McClure',
+      title: 'After Dinner Magician London & Surrey | Callum McClure',
       description:
         'Award-winning after dinner magician for corporate gala dinners, charity balls, awards evenings and wedding breakfasts in London & Surrey. Magic Circle member. Get a quote.',
       path: '/after-dinner-magician',

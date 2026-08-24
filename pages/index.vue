@@ -1,7 +1,11 @@
 <template>
   <v-row justify="center" align="center" no-gutters>
     <v-col cols="12" pa-0>
-      <v-parallax id="dim" :src="require('@/static/shuffle-cropped1.jpg')">
+      <v-parallax
+        id="dim"
+        :src="require('@/static/shuffle-cropped1.jpg')"
+        alt="Close-up of a deck of playing cards being riffle shuffled in two hands"
+      >
         <v-row align="center">
           <v-col align="center">
             <h1>
