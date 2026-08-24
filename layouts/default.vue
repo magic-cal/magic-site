@@ -41,14 +41,6 @@
         <v-row>
           <v-col cols="12" class="text-center grey--text text--lighten-1 caption">
             &copy; {{ new Date().getFullYear() }} Callum McClure Magician. Member of The Magic Circle.
-            Photography by
-            <a
-              href="https://www.frames-by-brendan.com/"
-              target="_blank"
-              rel="noopener"
-              class="footer-link"
-              >Frames by Brendan</a
-            >.
           </v-col>
         </v-row>
       </v-container>

@@ -68,7 +68,6 @@
       </v-sheet>
 
       <about-snippet />
-      <card-reveal />
 
       <v-sheet color="grey lighten-4" class="py-14">
         <v-container>
@@ -194,7 +193,7 @@ export default defineComponent({
         subtitle: 'Corporate Magician',
       },
       {
-        src: require('@/static/square/magicShowcase.jpg'),
+        src: require('@/static/square/wedding-card-reveal.jpg'),
         alt: 'Callum McClure performing walkaround magic at a birthday party near Guildford',
         hideOnXs: true,
         details: 'Birthdays, anniversaries, private dinners and garden parties — magic that works for every age in the room.',

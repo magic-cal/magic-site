@@ -2,14 +2,6 @@
   <v-sheet class="py-16" color="white">
     <v-container>
       <v-row align="center">
-        <v-col cols="12" md="5" class="mb-8 mb-md-0">
-          <v-img
-            src="/promo-reaching.jpg"
-            height="500"
-            cover
-            class="about-photo elevation-6"
-          />
-        </v-col>
         <v-col cols="12" md="6" offset-md="1">
           <div class="overline accent--text mb-2 font-weight-bold">
             Member of The Magic Circle
@@ -36,6 +28,14 @@
           <v-btn outlined color="accent" nuxt to="/about">
             Learn more about Callum
           </v-btn>
+        </v-col>
+        <v-col cols="12" md="5" class="mb-8 mb-md-0">
+          <v-img
+            src="/promo-reaching.jpg"
+            height="500"
+            cover
+            class="about-photo elevation-6"
+          />
         </v-col>
       </v-row>
     </v-container>
