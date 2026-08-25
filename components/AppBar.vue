@@ -1,6 +1,10 @@
 <template>
   <div>
-    <v-navigation-drawer v-model="drawer" fixed app right>
+    <!-- `temporary` is load-bearing, not cosmetic. Without it Vuetify's
+         reactsToMobile is true, so the isMobile watcher runs `isActive = !val`
+         when the breakpoint resolves from SSR (width 0, mobile) to a real
+         desktop width, forcing the drawer open on first paint. -->
+    <v-navigation-drawer v-model="drawer" fixed app right temporary>
       <v-list>
         <v-list-item
           v-for="(page, i) in allPages"
