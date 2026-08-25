@@ -131,6 +131,24 @@
   </v-row>
 </template>
 
+<script lang="ts">
+import { defineComponent } from '@vue/composition-api'
+import { buildHead } from '~/utils/seo'
+import { breadcrumb } from '~/utils/schema'
+
+export default defineComponent({
+  head() {
+    return buildHead({
+      title: 'Callum McClure: Deception | Magic & Technology Show',
+      description:
+        'Callum McClure: Deception - a sell-out Edinburgh Fringe show blending classic sleight of hand with modern technology and robotics. Featured on BBC Newsbeat.',
+      path: '/deception',
+      jsonLd: [breadcrumb([{ name: 'Deception', item: '/deception' }])],
+    })
+  },
+})
+</script>
+
 <style>
 .thanks-logo,
 .instagram-grid-image {

@@ -17,7 +17,7 @@ const highlightedFaqs: Faq[] = [
   {
     question: 'How far do you travel?',
     answer:
-      'He regularly performs across the UK and happy to travel to entertain. Callum has performed around the world to thousands of people.',
+      'He regularly performs across the UK and is happy to travel to entertain. Callum has performed around the world to thousands of people.',
   },
   {
     question: 'How long do you perform for?',
@@ -53,12 +53,12 @@ const extraFaqs: Faq[] = [
   {
     question: 'How much does it cost?',
     answer:
-      'The cost depends on the type of event, location and duration. Please get in touch for a quote.',
+      'Fees typically range from £350 to £1,500 depending on duration, guest numbers, date and location. Get in touch and I’ll send you a clear, no-obligation quote.',
   },
   {
     question: "Do you perform for children's magic?",
     answer:
-      'Callum performs for children of all ages, however, he does not perform for children’s birthday parties.',
+      'If children are among your guests at a wedding, corporate event or party, they’re welcome to enjoy the magic along with everyone else. Callum doesn’t offer standalone kids’ shows or children’s birthday parties.',
   },
   {
     question: 'Do you perform magic for charity events?',

@@ -1,5 +1,3 @@
 User-agent: *
-Disallow:
-Sitemap: https://magic-cal.co.uk/sitemap.xml
-
-
+Allow: /
+Sitemap: https://www.magic-cal.co.uk/sitemap.xml

@@ -21,6 +21,9 @@
       ],
       "@/*": [
         "./*"
+      ],
+      "@vue/composition-api": [
+        "./node_modules/vue"
       ]
     },
     "types": [
