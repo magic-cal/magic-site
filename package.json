@@ -15,6 +15,7 @@
   "dependencies": {
     "@egjs/flicking-plugins": "^4.2.0",
     "@egjs/vue-flicking": "^3.7.4",
+    "@mdi/js": "^7.4.47",
     "@nuxt/content": "^1.15.1",
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/sitemap": "^2.4.0",
@@ -27,6 +28,10 @@
   "overrides": {
     "postcss": "^8.4.0"
   },
+  "browserslist": [
+    "supports es6-module",
+    "not dead"
+  ],
   "devDependencies": {
     "@babel/eslint-parser": "^7.14.7",
     "@nuxt/types": "^2.15.8",

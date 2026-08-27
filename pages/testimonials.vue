@@ -24,7 +24,7 @@
                 md="6"
               >
                 <v-card outlined class="pa-6 h-100">
-                  <v-icon color="accent" large class="mb-2">mdi-format-quote-open</v-icon>
+                  <v-icon color="accent" large class="mb-2">{{ mdiFormatQuoteOpen }}</v-icon>
                   <p class="body-1 black--text font-italic mb-4">{{ review.quote }}</p>
                   <p class="body-2 grey--text text--darken-1 mb-0">
                     - <strong>{{ review.source }}</strong><span v-if="review.event">, {{ review.event }}</span>
@@ -62,6 +62,7 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
+import { mdiFormatQuoteOpen } from '@mdi/js'
 import { buildHead } from '~/utils/seo'
 import { breadcrumb } from '~/utils/schema'
 
@@ -87,7 +88,7 @@ const reviews = [
 
 export default defineComponent({
   setup() {
-    return { reviews }
+    return { reviews, mdiFormatQuoteOpen }
   },
   head() {
     return buildHead({

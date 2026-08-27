@@ -49,7 +49,7 @@
         <v-menu offset-y>
           <template #activator="{ on, attrs }">
             <v-btn large text plain :ripple="false" v-bind="attrs" v-on="on">
-              Occasions <v-icon small>mdi-chevron-down</v-icon>
+              Occasions <v-icon small>{{ mdiChevronDown }}</v-icon>
             </v-btn>
           </template>
           <v-list>
@@ -66,7 +66,7 @@
         <v-menu offset-y>
           <template #activator="{ on, attrs }">
             <v-btn large text plain :ripple="false" v-bind="attrs" v-on="on">
-              Areas <v-icon small>mdi-chevron-down</v-icon>
+              Areas <v-icon small>{{ mdiChevronDown }}</v-icon>
             </v-btn>
           </template>
           <v-list>
@@ -87,6 +87,7 @@
 
       <v-app-bar-nav-icon
         v-if="$vuetify.breakpoint.smAndDown"
+        aria-label="Open navigation menu"
         @click.stop="drawer = !drawer"
       />
     </v-app-bar>
@@ -94,6 +95,7 @@
 </template>
 <script lang="ts">
 import { defineComponent, ref } from '@vue/composition-api'
+import { mdiBriefcase, mdiCards, mdiChevronDown, mdiEmail, mdiHome, mdiInformation, mdiMapMarker, mdiPartyPopper, mdiRing, mdiSilverwareForkKnife } from '@mdi/js'
 
 export default defineComponent({
   name: 'AppBar',
@@ -128,29 +130,27 @@ export default defineComponent({
     ]
 
     const mainIcons: Record<string, string> = {
-      '/wedding-magician': 'mdi-ring',
-      '/corporate-magician': 'mdi-briefcase',
-      '/party-magician': 'mdi-party-popper',
-      '/about': 'mdi-information',
+      '/wedding-magician': mdiRing,
+      '/corporate-magician': mdiBriefcase,
+      '/party-magician': mdiPartyPopper,
+      '/about': mdiInformation,
     }
 
     const allPages = [
-      { title: 'Home', icon: 'mdi-home', to: '/' },
-      ...mainPages.map((p) => ({ ...p, icon: mainIcons[p.to] || 'mdi-cards' })),
-      ...occasionPages.map((p) => ({ ...p, icon: 'mdi-silverware-fork-knife' })),
-      { title: 'Close-Up Magic', icon: 'mdi-cards', to: '/close-up-magician' },
-      ...areaPages.map((p) => ({ ...p, icon: 'mdi-map-marker' })),
-      { title: 'Contact', icon: 'mdi-email', to: '/contact' },
+      { title: 'Home', icon: mdiHome, to: '/' },
+      ...mainPages.map((p) => ({ ...p, icon: mainIcons[p.to] || mdiCards })),
+      ...occasionPages.map((p) => ({ ...p, icon: mdiSilverwareForkKnife })),
+      { title: 'Close-Up Magic', icon: mdiCards, to: '/close-up-magician' },
+      ...areaPages.map((p) => ({ ...p, icon: mdiMapMarker })),
+      { title: 'Contact', icon: mdiEmail, to: '/contact' },
     ]
 
-    return {
-      drawer,
+    return { drawer,
       title: 'Callum McClure Magician',
       mainPages,
       occasionPages,
       areaPages,
-      allPages,
-    }
+      allPages, mdiChevronDown }
   },
 })
 </script>

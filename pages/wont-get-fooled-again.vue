@@ -9,7 +9,7 @@
         <v-row justify="space-between">
           <v-col cols="12">
             <v-alert dark prominent class="text-h5" color="primary">
-              <v-icon left>mdi-ticket</v-icon>
+              <v-icon left>{{ mdiTicket }}</v-icon>
               <span>No need to book - just turn up! Free entry, though the artist may ask for a donation at the end.</span>
             </v-alert>
           </v-col>
@@ -31,15 +31,15 @@
                 <v-row>
                   <v-col cols="12" class="text-h5">Show Details</v-col>
                   <v-col cols="12" sm="6">
-                    <v-icon left>mdi-clock-outline</v-icon>
+                    <v-icon left>{{ mdiClockOutline }}</v-icon>
                     <strong>Time:</strong> 14:45 - 15:35
                   </v-col>
                   <v-col cols="12" sm="6">
-                    <v-icon left>mdi-calendar</v-icon>
+                    <v-icon left>{{ mdiCalendar }}</v-icon>
                     <strong>Dates:</strong> 8th - 12th August 2026
                   </v-col>
                   <v-col cols="12" sm="6">
-                    <v-icon left>mdi-map-marker</v-icon>
+                    <v-icon left>{{ mdiMapMarker }}</v-icon>
                     <strong>Venue:</strong>
                     <a
                       href="https://www.thevoodoorooms.com/"
@@ -50,7 +50,7 @@
                     - Ballroom (venue 68)
                   </v-col>
                   <v-col cols="12" sm="6">
-                    <v-icon left>mdi-account-alert</v-icon>
+                    <v-icon left>{{ mdiAccountAlert }}</v-icon>
                     <strong>Venue Restriction:</strong> 18 years+
                   </v-col>
                 </v-row>
@@ -99,10 +99,14 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
+import { mdiAccountAlert, mdiCalendar, mdiClockOutline, mdiMapMarker, mdiTicket } from '@mdi/js'
 import { buildHead } from '~/utils/seo'
 import { breadcrumb } from '~/utils/schema'
 
 export default defineComponent({
+  setup() {
+    return { mdiAccountAlert, mdiCalendar, mdiClockOutline, mdiMapMarker, mdiTicket }
+  },
   head() {
     return buildHead({
       title: "Won't Get Fooled Again | Edinburgh Fringe Magic Show",

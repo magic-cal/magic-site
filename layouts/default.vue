@@ -27,11 +27,11 @@
             </div>
             <div class="mt-4">
               <p class="grey--text text--lighten-1 mb-1 body-2">
-                <v-icon small color="grey lighten-1">mdi-phone</v-icon>
+                <v-icon small color="grey lighten-1">{{ mdiPhone }}</v-icon>
                 <a href="tel:+447481768042" class="footer-link ml-1">07481 768042</a>
               </p>
               <p class="grey--text text--lighten-1 mb-0 body-2">
-                <v-icon small color="grey lighten-1">mdi-email</v-icon>
+                <v-icon small color="grey lighten-1">{{ mdiEmail }}</v-icon>
                 <a href="mailto:info@magic-cal.co.uk" class="footer-link ml-1">info@magic-cal.co.uk</a>
               </p>
             </div>
@@ -50,9 +50,12 @@
 
 <script>
 import { defineComponent } from '@vue/composition-api'
+import { mdiEmail, mdiPhone } from '@mdi/js'
 export default defineComponent({
   data() {
     return {
+      mdiPhone,
+      mdiEmail,
       serviceLinks: [
         { text: 'Wedding Magician', to: '/wedding-magician' },
         { text: 'Corporate Magician', to: '/corporate-magician' },
@@ -77,7 +80,7 @@ export default defineComponent({
 <style>
 a:not(.footer-link):not(.v-btn):not(.toolbar-home-link) {
   color: #b12827;
-  text-decoration: none;
+  text-decoration: underline;
 }
 a:not(.footer-link):not(.v-btn):not(.toolbar-home-link):hover {
   text-decoration: underline;

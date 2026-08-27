@@ -6,6 +6,10 @@
     <img
       class="page-hero__img"
       :src="src"
+      :srcset="srcset"
+      sizes="100vw"
+      :width="dims && dims.width"
+      :height="dims && dims.height"
       :alt="alt"
       :style="{ objectPosition: position }"
       fetchpriority="high"
@@ -25,6 +29,7 @@
 
 <script lang="ts">
 import { computed, defineComponent } from '@vue/composition-api'
+import { heroImageDims, heroSrcset } from '~/utils/heroImages'
 
 export default defineComponent({
   props: {
@@ -55,7 +60,9 @@ export default defineComponent({
         ? `${props.height}px`
         : String(props.height)
     )
-    return { cssHeight }
+    const dims = computed(() => heroImageDims[props.src])
+    const srcset = computed(() => heroSrcset(props.src))
+    return { cssHeight, dims, srcset }
   },
 })
 </script>

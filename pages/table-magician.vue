@@ -70,7 +70,7 @@
             <h2 class="display-1 mb-6 black--text">Events where table magic works best</h2>
             <v-list color="transparent">
               <v-list-item v-for="ev in events" :key="ev.title">
-                <v-list-item-icon><v-icon color="accent">mdi-check-circle</v-icon></v-list-item-icon>
+                <v-list-item-icon><v-icon color="accent">{{ mdiCheckCircle }}</v-icon></v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-title class="black--text font-weight-bold">{{ ev.title }}</v-list-item-title>
                   <v-list-item-subtitle class="text-wrap black--text">{{ ev.detail }}</v-list-item-subtitle>
@@ -107,6 +107,7 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
+import { mdiCheckCircle } from '@mdi/js'
 import { buildHead } from '~/utils/seo'
 import { service, breadcrumb } from '~/utils/schema'
 
@@ -140,7 +141,7 @@ const events = [
 
 export default defineComponent({
   setup() {
-    return { events }
+    return { events, mdiCheckCircle }
   },
   head() {
     return buildHead({

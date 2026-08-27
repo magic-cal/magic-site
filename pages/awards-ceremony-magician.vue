@@ -45,7 +45,7 @@
             <h2 class="display-1 mb-6 black--text">Where the magic fits into an awards evening</h2>
             <v-list color="transparent">
               <v-list-item v-for="slot in slots" :key="slot.title">
-                <v-list-item-icon><v-icon color="accent">mdi-trophy</v-icon></v-list-item-icon>
+                <v-list-item-icon><v-icon color="accent">{{ mdiTrophy }}</v-icon></v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-title class="black--text font-weight-bold">{{ slot.title }}</v-list-item-title>
                   <v-list-item-subtitle class="text-wrap black--text">{{ slot.detail }}</v-list-item-subtitle>
@@ -64,7 +64,7 @@
             <h2 class="display-1 mb-6 black--text">Awards events I perform at</h2>
             <v-list color="transparent">
               <v-list-item v-for="ev in events" :key="ev">
-                <v-list-item-icon><v-icon color="accent">mdi-check-circle</v-icon></v-list-item-icon>
+                <v-list-item-icon><v-icon color="accent">{{ mdiCheckCircle }}</v-icon></v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-subtitle class="text-wrap black--text">{{ ev }}</v-list-item-subtitle>
                 </v-list-item-content>
@@ -131,6 +131,7 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
+import { mdiCheckCircle, mdiTrophy } from '@mdi/js'
 import { buildHead } from '~/utils/seo'
 import { service, faqPage, breadcrumb } from '~/utils/schema'
 
@@ -193,7 +194,7 @@ const faqs = [
 
 export default defineComponent({
   setup() {
-    return { slots, events, faqs }
+    return { slots, events, faqs, mdiCheckCircle, mdiTrophy }
   },
   head() {
     return buildHead({

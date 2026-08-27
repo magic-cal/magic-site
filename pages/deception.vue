@@ -9,7 +9,7 @@
         <v-row justify="space-between">
           <v-col cols="12">
             <v-alert dark prominent class="text-h5" color="primary">
-              <v-icon left>mdi-ticket</v-icon>
+              <v-icon left>{{ mdiTicket }}</v-icon>
               <span>Callum McClure: Deception was a sell out show</span>
             </v-alert>
           </v-col>
@@ -39,7 +39,7 @@
                       target="_blank"
                       href="https://www.bbc.co.uk/news/newsbeat-40847482"
                     >
-                      <v-icon left>mdi-newspaper</v-icon>
+                      <v-icon left>{{ mdiNewspaper }}</v-icon>
                       <span>BBC NewsBeat Article</span>
                     </v-btn>
                   </v-col>
@@ -49,7 +49,7 @@
                       target="_blank"
                       href="https://broadwaybaby.com/shows/callum-mcclure-deception/723484"
                     >
-                      <v-icon left>mdi-newspaper</v-icon>
+                      <v-icon left>{{ mdiNewspaper }}</v-icon>
                       <span>Broadway Baby</span>
                     </v-btn>
                   </v-col>
@@ -133,10 +133,14 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
+import { mdiNewspaper, mdiTicket } from '@mdi/js'
 import { buildHead } from '~/utils/seo'
 import { breadcrumb } from '~/utils/schema'
 
 export default defineComponent({
+  setup() {
+    return { mdiNewspaper, mdiTicket }
+  },
   head() {
     return buildHead({
       title: 'Callum McClure: Deception | Magic & Technology Show',

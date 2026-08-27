@@ -27,6 +27,7 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
+import { mdiCalendarCheck, mdiTrophy } from '@mdi/js'
 
 export default defineComponent({
   setup() {
@@ -38,11 +39,11 @@ export default defineComponent({
         text: 'Member of The Magic Circle',
       },
       {
-        icon: 'mdi-trophy',
+        icon: mdiTrophy,
         text: 'Multi-Award Winning Magician',
       },
       {
-        icon: 'mdi-calendar-check',
+        icon: mdiCalendarCheck,
         text: '10+ Years Professional Experience',
       },
     ]

@@ -46,7 +46,7 @@
             <h2 class="display-1 mb-6 black--text">Surrey wedding venues I know well</h2>
             <v-list color="transparent">
               <v-list-item v-for="venue in venues" :key="venue.name">
-                <v-list-item-icon><v-icon color="accent">mdi-map-marker</v-icon></v-list-item-icon>
+                <v-list-item-icon><v-icon color="accent">{{ mdiMapMarker }}</v-icon></v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-title class="black--text font-weight-bold">{{ venue.name }}</v-list-item-title>
                   <v-list-item-subtitle class="text-wrap black--text">{{ venue.detail }}</v-list-item-subtitle>
@@ -65,7 +65,7 @@
             <h2 class="display-1 mb-6 black--text">What I do at a Surrey wedding</h2>
             <v-list color="transparent">
               <v-list-item v-for="slot in slots" :key="slot.title">
-                <v-list-item-icon><v-icon color="accent">mdi-ring</v-icon></v-list-item-icon>
+                <v-list-item-icon><v-icon color="accent">{{ mdiRing }}</v-icon></v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-title class="black--text font-weight-bold">{{ slot.title }}</v-list-item-title>
                   <v-list-item-subtitle class="text-wrap black--text">{{ slot.detail }}</v-list-item-subtitle>
@@ -108,6 +108,7 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
+import { mdiMapMarker, mdiRing } from '@mdi/js'
 import { buildHead } from '~/utils/seo'
 import { service, localBusiness, breadcrumb } from '~/utils/schema'
 
@@ -164,7 +165,7 @@ const slots = [
 
 export default defineComponent({
   setup() {
-    return { venues, slots }
+    return { venues, slots, mdiMapMarker, mdiRing }
   },
   head() {
     return buildHead({

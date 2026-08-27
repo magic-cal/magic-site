@@ -40,7 +40,7 @@
             <h2 class="display-1 mb-6 black--text">Typical price ranges</h2>
             <v-list color="transparent">
               <v-list-item v-for="range in priceRanges" :key="range.slot">
-                <v-list-item-icon><v-icon color="accent">mdi-currency-gbp</v-icon></v-list-item-icon>
+                <v-list-item-icon><v-icon color="accent">{{ mdiCurrencyGbp }}</v-icon></v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-title class="black--text font-weight-bold text-wrap">{{ range.slot }}</v-list-item-title>
                   <v-list-item-subtitle class="text-wrap black--text">{{ range.detail }}</v-list-item-subtitle>
@@ -63,7 +63,7 @@
             <h2 class="display-1 mb-6 black--text">What affects the price?</h2>
             <v-list color="transparent">
               <v-list-item v-for="factor in factors" :key="factor.title">
-                <v-list-item-icon><v-icon color="accent">mdi-information-outline</v-icon></v-list-item-icon>
+                <v-list-item-icon><v-icon color="accent">{{ mdiInformationOutline }}</v-icon></v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-title class="black--text font-weight-bold">{{ factor.title }}</v-list-item-title>
                   <v-list-item-subtitle class="text-wrap black--text">{{ factor.detail }}</v-list-item-subtitle>
@@ -156,6 +156,7 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
+import { mdiCurrencyGbp, mdiInformationOutline } from '@mdi/js'
 import { buildHead } from '~/utils/seo'
 import { article, faqPage, breadcrumb } from '~/utils/schema'
 
@@ -218,7 +219,7 @@ const faqs = [
 
 export default defineComponent({
   setup() {
-    return { priceRanges, factors, faqs }
+    return { priceRanges, factors, faqs, mdiCurrencyGbp, mdiInformationOutline }
   },
   head() {
     return buildHead({

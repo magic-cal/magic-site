@@ -46,7 +46,7 @@
             <h2 class="display-1 mb-6 black--text">Why book a magician for your Christmas party?</h2>
             <v-list color="transparent">
               <v-list-item v-for="reason in reasons" :key="reason.title">
-                <v-list-item-icon><v-icon color="accent">mdi-check-circle</v-icon></v-list-item-icon>
+                <v-list-item-icon><v-icon color="accent">{{ mdiCheckCircle }}</v-icon></v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-title class="black--text font-weight-bold">{{ reason.title }}</v-list-item-title>
                   <v-list-item-subtitle class="text-wrap black--text">{{ reason.detail }}</v-list-item-subtitle>
@@ -65,7 +65,7 @@
             <h2 class="display-1 mb-6 black--text">Christmas events I perform at</h2>
             <v-list color="transparent">
               <v-list-item v-for="ev in events" :key="ev.title">
-                <v-list-item-icon><v-icon color="accent">mdi-snowflake</v-icon></v-list-item-icon>
+                <v-list-item-icon><v-icon color="accent">{{ mdiSnowflake }}</v-icon></v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-title class="black--text font-weight-bold">{{ ev.title }}</v-list-item-title>
                   <v-list-item-subtitle class="text-wrap black--text">{{ ev.detail }}</v-list-item-subtitle>
@@ -191,6 +191,7 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
+import { mdiCheckCircle, mdiSnowflake } from '@mdi/js'
 import { buildHead } from '~/utils/seo'
 import { service, faqPage, breadcrumb } from '~/utils/schema'
 
@@ -269,7 +270,7 @@ const faqs = [
 
 export default defineComponent({
   setup() {
-    return { reasons, events, faqs }
+    return { reasons, events, faqs, mdiCheckCircle, mdiSnowflake }
   },
   head() {
     return buildHead({

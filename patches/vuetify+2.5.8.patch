@@ -1,0 +1,40 @@
+diff --git a/node_modules/vuetify/dist/vuetify.js b/node_modules/vuetify/dist/vuetify.js
+index b00221a..5b14b67 100644
+--- a/node_modules/vuetify/dist/vuetify.js
++++ b/node_modules/vuetify/dist/vuetify.js
+@@ -15192,10 +15192,7 @@ var __assign = undefined && undefined.__assign || function () {
+   render: function render(h) {
+     return h('div', {
+       staticClass: 'v-expansion-panel',
+-      class: this.classes,
+-      attrs: {
+-        'aria-expanded': String(this.isActive)
+-      }
++      class: this.classes
+     }, Object(_util_helpers__WEBPACK_IMPORTED_MODULE_2__["getSlot"])(this));
+   }
+ }));
+@@ -21238,7 +21235,10 @@ var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_2__["default"])(_m
+       default: 500
+     },
+     src: String,
+-    srcset: String
++    srcset: String,
++    fetchpriority: String,
++    srcWidth: [String, Number],
++    srcHeight: [String, Number]
+   },
+   data: function data() {
+     return {
+@@ -21288,7 +21288,10 @@ var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_2__["default"])(_m
+       attrs: {
+         src: this.src,
+         srcset: this.srcset,
+-        alt: this.alt
++        alt: this.alt,
++        fetchpriority: this.fetchpriority,
++        width: this.srcWidth,
++        height: this.srcHeight
+       },
+       ref: 'img'
+     };

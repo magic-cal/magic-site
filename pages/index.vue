@@ -4,6 +4,11 @@
       <v-parallax
         id="dim"
         :src="require('@/static/shuffle-cropped1.jpg')"
+        :srcset="heroSrcset('/shuffle-cropped1.jpg')"
+        sizes="100vw"
+        :src-width="1920"
+        :src-height="1279"
+        fetchpriority="high"
         alt="Close-up of a deck of playing cards being riffle shuffled in two hands"
       >
         <v-row align="center">
@@ -101,7 +106,14 @@
                 <v-card-title class="black--text pb-1">{{ svc.subtitle }}</v-card-title>
                 <v-card-text class="black--text">{{ svc.details }}</v-card-text>
                 <v-card-actions>
-                  <v-btn text color="accent" nuxt :to="svc.href">Learn more</v-btn>
+                  <v-btn
+                    text
+                    color="accent"
+                    nuxt
+                    :to="svc.href"
+                    :aria-label="`Learn more about ${svc.subtitle}`"
+                    >Learn more</v-btn
+                  >
                 </v-card-actions>
               </v-card>
             </v-col>
@@ -160,6 +172,7 @@
 import { defineComponent } from '@vue/composition-api'
 import { buildHead } from '~/utils/seo'
 import { localBusiness } from '~/utils/schema'
+import { heroSrcset } from '~/utils/heroImages'
 
 export default defineComponent({
   setup() {
@@ -205,7 +218,7 @@ export default defineComponent({
         subtitle: 'Party Magician',
       },
     ]
-    return { companyLogos, services }
+    return { companyLogos, services, heroSrcset }
   },
   head() {
     return buildHead({

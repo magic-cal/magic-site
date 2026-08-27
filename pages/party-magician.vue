@@ -38,7 +38,7 @@
             <h2 class="display-1 mb-6 black--text">Parties I bring magic to</h2>
             <v-list color="transparent">
               <v-list-item v-for="ev in events" :key="ev">
-                <v-list-item-icon><v-icon color="accent">mdi-check-circle</v-icon></v-list-item-icon>
+                <v-list-item-icon><v-icon color="accent">{{ mdiCheckCircle }}</v-icon></v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-subtitle class="text-wrap black--text">{{ ev }}</v-list-item-subtitle>
                 </v-list-item-content>
@@ -56,7 +56,7 @@
             <h2 class="display-1 mb-6 black--text">Why I'm the right choice for your party</h2>
             <v-list color="transparent">
               <v-list-item>
-                <v-list-item-icon><v-icon color="accent">mdi-star</v-icon></v-list-item-icon>
+                <v-list-item-icon><v-icon color="accent">{{ mdiStar }}</v-icon></v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-subtitle class="text-wrap black--text">
                     <strong>Member of The Magic Circle</strong>, multi-award-winning,
@@ -65,7 +65,7 @@
                 </v-list-item-content>
               </v-list-item>
               <v-list-item>
-                <v-list-item-icon><v-icon color="accent">mdi-account-group</v-icon></v-list-item-icon>
+                <v-list-item-icon><v-icon color="accent">{{ mdiAccountGroup }}</v-icon></v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-subtitle class="text-wrap black--text">
                     <strong>Magic for all ages</strong> - close-up magic is interactive
@@ -74,7 +74,7 @@
                 </v-list-item-content>
               </v-list-item>
               <v-list-item>
-                <v-list-item-icon><v-icon color="accent">mdi-bag-personal</v-icon></v-list-item-icon>
+                <v-list-item-icon><v-icon color="accent">{{ mdiBagPersonal }}</v-icon></v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-subtitle class="text-wrap black--text">
                     <strong>No setup, no fuss</strong> - I bring everything in my pockets
@@ -137,6 +137,7 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
+import { mdiAccountGroup, mdiBagPersonal, mdiCheckCircle, mdiStar } from '@mdi/js'
 import { buildHead } from '~/utils/seo'
 import { service, faqPage, breadcrumb } from '~/utils/schema'
 
@@ -169,7 +170,7 @@ const faqs = [
 
 export default defineComponent({
   setup() {
-    return { events, faqs }
+    return { events, faqs, mdiAccountGroup, mdiBagPersonal, mdiCheckCircle, mdiStar }
   },
   head() {
     return buildHead({

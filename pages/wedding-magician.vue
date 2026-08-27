@@ -49,7 +49,7 @@
             <p class="body-1 black--text mb-4">I perform during whichever part of your day needs lifting:</p>
             <v-list color="transparent">
               <v-list-item>
-                <v-list-item-icon><v-icon color="accent">mdi-check-circle</v-icon></v-list-item-icon>
+                <v-list-item-icon><v-icon color="accent">{{ mdiCheckCircle }}</v-icon></v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-title class="black--text font-weight-bold">Drinks reception / photos</v-list-item-title>
                   <v-list-item-subtitle class="text-wrap black--text">
@@ -60,7 +60,7 @@
                 </v-list-item-content>
               </v-list-item>
               <v-list-item>
-                <v-list-item-icon><v-icon color="accent">mdi-check-circle</v-icon></v-list-item-icon>
+                <v-list-item-icon><v-icon color="accent">{{ mdiCheckCircle }}</v-icon></v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-title class="black--text font-weight-bold">Wedding breakfast</v-list-item-title>
                   <v-list-item-subtitle class="text-wrap black--text">
@@ -70,7 +70,7 @@
                 </v-list-item-content>
               </v-list-item>
               <v-list-item>
-                <v-list-item-icon><v-icon color="accent">mdi-check-circle</v-icon></v-list-item-icon>
+                <v-list-item-icon><v-icon color="accent">{{ mdiCheckCircle }}</v-icon></v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-title class="black--text font-weight-bold">Evening reception</v-list-item-title>
                   <v-list-item-subtitle class="text-wrap black--text">
@@ -96,7 +96,7 @@
             <h2 class="display-1 mb-6 black--text">Why couples book me</h2>
             <v-list color="transparent">
               <v-list-item>
-                <v-list-item-icon><v-icon color="accent">mdi-star</v-icon></v-list-item-icon>
+                <v-list-item-icon><v-icon color="accent">{{ mdiStar }}</v-icon></v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-subtitle class="text-wrap black--text">
                     <strong>Member of The Magic Circle</strong> - the world's most
@@ -105,7 +105,7 @@
                 </v-list-item-content>
               </v-list-item>
               <v-list-item>
-                <v-list-item-icon><v-icon color="accent">mdi-trophy</v-icon></v-list-item-icon>
+                <v-list-item-icon><v-icon color="accent">{{ mdiTrophy }}</v-icon></v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-subtitle class="text-wrap black--text">
                     <strong>Multi-award-winning</strong> - including national recognition
@@ -115,7 +115,7 @@
                 </v-list-item-content>
               </v-list-item>
               <v-list-item>
-                <v-list-item-icon><v-icon color="accent">mdi-calendar-check</v-icon></v-list-item-icon>
+                <v-list-item-icon><v-icon color="accent">{{ mdiCalendarCheck }}</v-icon></v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-subtitle class="text-wrap black--text">
                     <strong>10+ years performing</strong> - at everything from intimate
@@ -211,6 +211,7 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
+import { mdiCalendarCheck, mdiCheckCircle, mdiStar, mdiTrophy } from '@mdi/js'
 import { buildHead } from '~/utils/seo'
 import { service, faqPage, breadcrumb } from '~/utils/schema'
 
@@ -235,7 +236,7 @@ const faqs = [
 
 export default defineComponent({
   setup() {
-    return { faqs }
+    return { faqs, mdiCalendarCheck, mdiCheckCircle, mdiStar, mdiTrophy }
   },
   head() {
     return buildHead({

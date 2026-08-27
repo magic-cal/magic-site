@@ -47,7 +47,7 @@
             <h2 class="display-1 mb-6 black--text">The credentials</h2>
             <v-list color="transparent">
               <v-list-item v-for="cred in credentials" :key="cred.title">
-                <v-list-item-icon><v-icon color="accent">mdi-check-decagram</v-icon></v-list-item-icon>
+                <v-list-item-icon><v-icon color="accent">{{ mdiCheckDecagram }}</v-icon></v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-title class="black--text font-weight-bold">{{ cred.title }}</v-list-item-title>
                   <v-list-item-subtitle class="text-wrap black--text">{{ cred.detail }}</v-list-item-subtitle>
@@ -128,6 +128,7 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
+import { mdiCheckDecagram } from '@mdi/js'
 import { buildHead } from '~/utils/seo'
 import { personProfile, breadcrumb } from '~/utils/schema'
 
@@ -151,7 +152,7 @@ const credentials = [
 
 export default defineComponent({
   setup() {
-    return { credentials }
+    return { credentials, mdiCheckDecagram }
   },
   head() {
     return buildHead({

@@ -65,7 +65,7 @@
                   <v-icon color="accent" large>{{ svc.icon }}</v-icon>
                   <p class="black--text font-weight-bold mt-2 mb-1">{{ svc.title }}</p>
                   <p class="black--text body-2 mb-2">{{ svc.detail }}</p>
-                  <nuxt-link :to="svc.link">Learn more</nuxt-link>
+                  <nuxt-link :to="svc.link" :aria-label="`Learn more about ${svc.title}`">Learn more</nuxt-link>
                 </v-card>
               </v-col>
             </v-row>
@@ -87,24 +87,25 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
+import { mdiBriefcase, mdiPartyPopper, mdiRing } from '@mdi/js'
 import { buildHead } from '~/utils/seo'
 import { localBusiness, breadcrumb } from '~/utils/schema'
 
 const services = [
   {
-    icon: 'mdi-ring',
+    icon: mdiRing,
     title: 'Weddings',
     detail: 'Close-up magic for drinks receptions, wedding breakfasts and evening receptions.',
     link: '/wedding-magician',
   },
   {
-    icon: 'mdi-briefcase',
+    icon: mdiBriefcase,
     title: 'Corporate Events',
     detail: 'Conferences, trade shows and Christmas parties across Guildford.',
     link: '/corporate-magician',
   },
   {
-    icon: 'mdi-party-popper',
+    icon: mdiPartyPopper,
     title: 'Parties',
     detail: 'Birthdays, anniversaries and private celebrations in the GU area.',
     link: '/party-magician',

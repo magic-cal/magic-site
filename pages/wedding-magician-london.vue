@@ -52,7 +52,7 @@
             </p>
             <v-list color="transparent">
               <v-list-item v-for="venue in venues" :key="venue.area">
-                <v-list-item-icon><v-icon color="accent">mdi-map-marker</v-icon></v-list-item-icon>
+                <v-list-item-icon><v-icon color="accent">{{ mdiMapMarker }}</v-icon></v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-title class="black--text font-weight-bold">{{ venue.area }}</v-list-item-title>
                   <v-list-item-subtitle class="text-wrap black--text">{{ venue.detail }}</v-list-item-subtitle>
@@ -71,7 +71,7 @@
             <h2 class="display-1 mb-6 black--text">What I do at a London wedding</h2>
             <v-list color="transparent">
               <v-list-item v-for="slot in slots" :key="slot.title">
-                <v-list-item-icon><v-icon color="accent">mdi-ring</v-icon></v-list-item-icon>
+                <v-list-item-icon><v-icon color="accent">{{ mdiRing }}</v-icon></v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-title class="black--text font-weight-bold">{{ slot.title }}</v-list-item-title>
                   <v-list-item-subtitle class="text-wrap black--text">{{ slot.detail }}</v-list-item-subtitle>
@@ -90,7 +90,7 @@
             <h2 class="display-1 mb-4 black--text">Why London couples book me</h2>
             <v-list color="transparent">
               <v-list-item>
-                <v-list-item-icon><v-icon color="accent">mdi-star</v-icon></v-list-item-icon>
+                <v-list-item-icon><v-icon color="accent">{{ mdiStar }}</v-icon></v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-subtitle class="text-wrap black--text">
                     <strong>Member of The Magic Circle</strong> - the world's most
@@ -99,7 +99,7 @@
                 </v-list-item-content>
               </v-list-item>
               <v-list-item>
-                <v-list-item-icon><v-icon color="accent">mdi-trophy</v-icon></v-list-item-icon>
+                <v-list-item-icon><v-icon color="accent">{{ mdiTrophy }}</v-icon></v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-subtitle class="text-wrap black--text">
                     <strong>Multi-award-winning</strong>, including recognition as a
@@ -109,7 +109,7 @@
                 </v-list-item-content>
               </v-list-item>
               <v-list-item>
-                <v-list-item-icon><v-icon color="accent">mdi-calendar-check</v-icon></v-list-item-icon>
+                <v-list-item-icon><v-icon color="accent">{{ mdiCalendarCheck }}</v-icon></v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-subtitle class="text-wrap black--text">
                     <strong>10+ years performing</strong> in London - at everything from
@@ -138,6 +138,7 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
+import { mdiCalendarCheck, mdiMapMarker, mdiRing, mdiStar, mdiTrophy } from '@mdi/js'
 import { buildHead } from '~/utils/seo'
 import { service, localBusiness, breadcrumb } from '~/utils/schema'
 
@@ -194,7 +195,7 @@ const slots = [
 
 export default defineComponent({
   setup() {
-    return { venues, slots }
+    return { venues, slots, mdiCalendarCheck, mdiMapMarker, mdiRing, mdiStar, mdiTrophy }
   },
   head() {
     return buildHead({

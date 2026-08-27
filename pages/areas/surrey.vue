@@ -61,7 +61,7 @@
             <h2 class="display-1 mb-6 black--text">Every kind of event</h2>
             <v-list color="transparent">
               <v-list-item>
-                <v-list-item-icon><v-icon color="accent">mdi-ring</v-icon></v-list-item-icon>
+                <v-list-item-icon><v-icon color="accent">{{ mdiRing }}</v-icon></v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-subtitle class="text-wrap black--text">
                     <strong>Weddings</strong> - close-up magic for your drinks reception,
@@ -71,7 +71,7 @@
                 </v-list-item-content>
               </v-list-item>
               <v-list-item>
-                <v-list-item-icon><v-icon color="accent">mdi-briefcase</v-icon></v-list-item-icon>
+                <v-list-item-icon><v-icon color="accent">{{ mdiBriefcase }}</v-icon></v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-subtitle class="text-wrap black--text">
                     <strong>Corporate events</strong> - conferences, trade shows and
@@ -81,7 +81,7 @@
                 </v-list-item-content>
               </v-list-item>
               <v-list-item>
-                <v-list-item-icon><v-icon color="accent">mdi-party-popper</v-icon></v-list-item-icon>
+                <v-list-item-icon><v-icon color="accent">{{ mdiPartyPopper }}</v-icon></v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-subtitle class="text-wrap black--text">
                     <strong>Parties</strong> - birthdays, anniversaries and private
@@ -109,12 +109,13 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
+import { mdiBriefcase, mdiPartyPopper, mdiRing } from '@mdi/js'
 import { buildHead } from '~/utils/seo'
 import { localBusiness, breadcrumb } from '~/utils/schema'
 
 export default defineComponent({
   setup() {
-    return {}
+    return { mdiBriefcase, mdiPartyPopper, mdiRing }
   },
   head() {
     return buildHead({

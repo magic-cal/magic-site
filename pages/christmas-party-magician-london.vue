@@ -49,7 +49,7 @@
             </p>
             <v-list color="transparent">
               <v-list-item v-for="venue in venues" :key="venue.area">
-                <v-list-item-icon><v-icon color="accent">mdi-map-marker</v-icon></v-list-item-icon>
+                <v-list-item-icon><v-icon color="accent">{{ mdiMapMarker }}</v-icon></v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-title class="black--text font-weight-bold">{{ venue.area }}</v-list-item-title>
                   <v-list-item-subtitle class="text-wrap black--text">{{ venue.detail }}</v-list-item-subtitle>
@@ -155,6 +155,7 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
+import { mdiMapMarker } from '@mdi/js'
 import { buildHead } from '~/utils/seo'
 import { service, faqPage, breadcrumb, localBusiness } from '~/utils/schema'
 
@@ -216,7 +217,7 @@ const faqs = [
 
 export default defineComponent({
   setup() {
-    return { venues, faqs }
+    return { venues, faqs, mdiMapMarker }
   },
   head() {
     return buildHead({

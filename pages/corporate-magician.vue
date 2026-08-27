@@ -42,7 +42,7 @@
             <h2 class="display-1 mb-6 black--text">Events I perform at</h2>
             <v-list color="transparent">
               <v-list-item v-for="ev in events" :key="ev.title">
-                <v-list-item-icon><v-icon color="accent">mdi-check-circle</v-icon></v-list-item-icon>
+                <v-list-item-icon><v-icon color="accent">{{ mdiCheckCircle }}</v-icon></v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-title class="black--text font-weight-bold">{{ ev.title }}</v-list-item-title>
                   <v-list-item-subtitle class="text-wrap black--text">{{ ev.detail }}</v-list-item-subtitle>
@@ -61,7 +61,7 @@
             <h2 class="display-1 mb-6 black--text">Why companies book me</h2>
             <v-list color="transparent">
               <v-list-item>
-                <v-list-item-icon><v-icon color="accent">mdi-star</v-icon></v-list-item-icon>
+                <v-list-item-icon><v-icon color="accent">{{ mdiStar }}</v-icon></v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-subtitle class="text-wrap black--text">
                     <strong>Member of The Magic Circle</strong>, multi-award-winning,
@@ -71,18 +71,18 @@
                 </v-list-item-content>
               </v-list-item>
               <v-list-item>
-                <v-list-item-icon><v-icon color="accent">mdi-devices</v-icon></v-list-item-icon>
+                <v-list-item-icon><v-icon color="accent">{{ mdiDevices }}</v-icon></v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-subtitle class="text-wrap black--text">
                     <strong>A modern act with a technological twist</strong> - I blend
                     classic sleight of hand with technology, which lands especially well
                     with corporate audiences.
-                    <nuxt-link to="/close-up-magician">Learn more</nuxt-link>
+                    <nuxt-link to="/close-up-magician" aria-label="Learn more about close-up magic">Learn more</nuxt-link>
                   </v-list-item-subtitle>
                 </v-list-item-content>
               </v-list-item>
               <v-list-item>
-                <v-list-item-icon><v-icon color="accent">mdi-briefcase-check</v-icon></v-list-item-icon>
+                <v-list-item-icon><v-icon color="accent">{{ mdiBriefcaseCheck }}</v-icon></v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-subtitle class="text-wrap black--text">
                     <strong>Polished and low-maintenance</strong> - I arrive early, need
@@ -188,6 +188,7 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
+import { mdiBriefcaseCheck, mdiCheckCircle, mdiDevices, mdiStar } from '@mdi/js'
 import { buildHead } from '~/utils/seo'
 import { service, faqPage, breadcrumb } from '~/utils/schema'
 
@@ -239,7 +240,7 @@ const faqs = [
 
 export default defineComponent({
   setup() {
-    return { events, faqs }
+    return { events, faqs, mdiBriefcaseCheck, mdiCheckCircle, mdiDevices, mdiStar }
   },
   head() {
     return buildHead({

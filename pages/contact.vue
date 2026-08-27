@@ -32,24 +32,24 @@
               </v-col>
 
               <v-col :cols="12">
-                <v-icon color="accent" small>mdi-phone</v-icon>
+                <v-icon color="accent" small>{{ mdiPhone }}</v-icon>
                 Call: <a href="tel:+447481768042">07481 768042</a>
               </v-col>
               <v-col :cols="12">
-                <v-icon color="accent" small>mdi-email</v-icon>
+                <v-icon color="accent" small>{{ mdiEmail }}</v-icon>
                 Email:
                 <a href="mailto:info@magic-cal.co.uk">info@magic-cal.co.uk</a>
               </v-col>
               <v-col :cols="12">
-                <v-icon color="accent" small>mdi-map-marker</v-icon>
+                <v-icon color="accent" small>{{ mdiMapMarker }}</v-icon>
                 Based in London - available across Surrey, Guildford &amp; the South East
               </v-col>
               <v-col :cols="12">
-                <v-icon color="accent" small>mdi-facebook</v-icon>
+                <v-icon color="accent" small>{{ mdiFacebook }}</v-icon>
                 <a href="https://www.facebook.com/MagicCal/" target="_blank" rel="noopener">facebook.com/MagicCal</a>
               </v-col>
               <v-col :cols="12">
-                <v-icon color="accent" small>mdi-instagram</v-icon>
+                <v-icon color="accent" small>{{ mdiInstagram }}</v-icon>
                 <a href="https://www.instagram.com/mcclure_magic/" target="_blank" rel="noopener">@mcclure_magic</a>
               </v-col>
 
@@ -83,10 +83,14 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
+import { mdiEmail, mdiFacebook, mdiInstagram, mdiMapMarker, mdiPhone } from '@mdi/js'
 import { buildHead } from '~/utils/seo'
 import { localBusiness, breadcrumb } from '~/utils/schema'
 
 export default defineComponent({
+  setup() {
+    return { mdiEmail, mdiFacebook, mdiInstagram, mdiMapMarker, mdiPhone }
+  },
   head() {
     return buildHead({
       title: 'Contact | Callum McClure Magician - Get a Quote',

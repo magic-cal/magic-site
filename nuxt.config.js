@@ -83,6 +83,9 @@ export default {
   content: {},
 
   vuetify: {
+    defaultAssets: {
+      icons: 'mdiSvg',
+    },
     theme: {
       dark: false,
       themes: {

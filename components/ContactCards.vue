@@ -65,7 +65,7 @@
                 <v-text-field
                   v-model="formattedDate"
                   label="Date of Event"
-                  prepend-icon="mdi-calendar"
+                  :prepend-icon="mdiCalendar"
                   readonly
                   v-bind="attrs"
                   v-on="on"
@@ -89,6 +89,7 @@
 
 <script lang="ts">
 import { computed, defineComponent, ref } from '@vue/composition-api'
+import { mdiCalendar } from '@mdi/js'
 import { send as emailSend } from 'emailjs-com'
 
 export default defineComponent({
@@ -154,8 +155,7 @@ export default defineComponent({
       )
     }
 
-    return {
-      name,
+    return { name,
       phone,
       email,
       venue,
@@ -168,8 +168,7 @@ export default defineComponent({
       sendEmail,
       form,
       validate,
-      reset,
-    }
+      reset, mdiCalendar }
   },
 })
 </script>
