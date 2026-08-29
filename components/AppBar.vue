@@ -5,23 +5,93 @@
          when the breakpoint resolves from SSR (width 0, mobile) to a real
          desktop width, forcing the drawer open on first paint. -->
     <v-navigation-drawer v-model="drawer" fixed app right temporary>
-      <v-list>
+      <v-list nav dense>
         <v-list-item
-          v-for="(page, i) in allPages"
-          :key="i"
+          v-for="page in drawerPrimaryPages"
+          :key="page.to"
           :to="page.to"
           router
           exact
           @click="drawer = false"
         >
-          <v-list-item-action>
+          <v-list-item-icon>
             <v-icon>{{ page.icon }}</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title v-text="page.title" />
-          </v-list-item-content>
+          </v-list-item-icon>
+          <v-list-item-title>{{ page.title }}</v-list-item-title>
+        </v-list-item>
+
+        <v-divider class="my-2" />
+
+        <!-- `eager` renders the nested links into the SSR HTML even while the
+             group is collapsed, so collapsing them costs nothing for crawlers.
+             `group` auto-opens whichever section holds the current route. -->
+        <v-list-group
+          :prepend-icon="mdiSilverwareForkKnife"
+          :group="occasionsGroup"
+          eager
+        >
+          <template #activator>
+            <v-list-item-title>Occasions</v-list-item-title>
+          </template>
+          <v-list-item
+            v-for="page in occasionPages"
+            :key="page.to"
+            :to="page.to"
+            router
+            exact
+            @click="drawer = false"
+          >
+            <v-list-item-title>{{ page.title }}</v-list-item-title>
+          </v-list-item>
+        </v-list-group>
+
+        <v-list-group :prepend-icon="mdiMapMarker" group="/areas" eager>
+          <template #activator>
+            <v-list-item-title>Areas</v-list-item-title>
+          </template>
+          <v-list-item
+            v-for="page in areaPages"
+            :key="page.to"
+            :to="page.to"
+            router
+            exact
+            @click="drawer = false"
+          >
+            <v-list-item-title>{{ page.title }}</v-list-item-title>
+          </v-list-item>
+        </v-list-group>
+
+        <v-divider class="my-2" />
+
+        <v-list-item
+          v-for="page in drawerInfoPages"
+          :key="page.to"
+          :to="page.to"
+          router
+          exact
+          @click="drawer = false"
+        >
+          <v-list-item-icon>
+            <v-icon>{{ page.icon }}</v-icon>
+          </v-list-item-icon>
+          <v-list-item-title>{{ page.title }}</v-list-item-title>
         </v-list-item>
       </v-list>
+
+      <template #append>
+        <div class="pa-3">
+          <v-btn
+            block
+            color="accent"
+            dark
+            nuxt
+            to="/contact"
+            @click="drawer = false"
+          >
+            Get a Quote
+          </v-btn>
+        </div>
+      </template>
     </v-navigation-drawer>
     <v-app-bar
       app
@@ -99,7 +169,18 @@
 </template>
 <script lang="ts">
 import { defineComponent, ref } from '@vue/composition-api'
-import { mdiBriefcase, mdiCards, mdiChevronDown, mdiEmail, mdiHome, mdiInformation, mdiMapMarker, mdiPartyPopper, mdiRing, mdiSilverwareForkKnife } from '@mdi/js'
+import {
+  mdiBriefcase,
+  mdiCards,
+  mdiChevronDown,
+  mdiFrequentlyAskedQuestions,
+  mdiHome,
+  mdiInformation,
+  mdiMapMarker,
+  mdiPartyPopper,
+  mdiRing,
+  mdiSilverwareForkKnife,
+} from '@mdi/js'
 
 export default defineComponent({
   name: 'AppBar',
@@ -133,28 +214,36 @@ export default defineComponent({
       { title: 'Guildford', to: '/areas/guildford' },
     ]
 
-    const mainIcons: Record<string, string> = {
-      '/wedding-magician': mdiRing,
-      '/corporate-magician': mdiBriefcase,
-      '/party-magician': mdiPartyPopper,
-      '/about': mdiInformation,
-    }
-
-    const allPages = [
+    const drawerPrimaryPages = [
       { title: 'Home', icon: mdiHome, to: '/' },
-      ...mainPages.map((p) => ({ ...p, icon: mainIcons[p.to] || mdiCards })),
-      ...occasionPages.map((p) => ({ ...p, icon: mdiSilverwareForkKnife })),
+      { title: 'Weddings', icon: mdiRing, to: '/wedding-magician' },
+      { title: 'Corporate', icon: mdiBriefcase, to: '/corporate-magician' },
+      { title: 'Parties', icon: mdiPartyPopper, to: '/party-magician' },
       { title: 'Close-Up Magic', icon: mdiCards, to: '/close-up-magician' },
-      ...areaPages.map((p) => ({ ...p, icon: mdiMapMarker })),
-      { title: 'Contact', icon: mdiEmail, to: '/contact' },
     ]
 
-    return { drawer,
+    const drawerInfoPages = [
+      { title: 'About Callum', icon: mdiInformation, to: '/about' },
+      { title: 'FAQs', icon: mdiFrequentlyAskedQuestions, to: '/faqs' },
+    ]
+
+    // Matched against the current path so the section holding the active page
+    // opens on load rather than the user having to hunt for it.
+    const occasionsGroup = occasionPages.map((p) => p.to).join('|')
+
+    return {
+      drawer,
       title: 'Callum McClure Magician',
       mainPages,
       occasionPages,
       areaPages,
-      allPages, mdiChevronDown }
+      drawerPrimaryPages,
+      drawerInfoPages,
+      occasionsGroup,
+      mdiChevronDown,
+      mdiMapMarker,
+      mdiSilverwareForkKnife,
+    }
   },
 })
 </script>

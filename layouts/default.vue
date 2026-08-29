@@ -78,11 +78,11 @@ export default defineComponent({
 </script>
 
 <style>
-a:not(.footer-link):not(.v-btn):not(.toolbar-home-link) {
+a:not(.footer-link):not(.v-btn):not(.toolbar-home-link):not(.v-list-item) {
   color: #b12827;
   text-decoration: underline;
 }
-a:not(.footer-link):not(.v-btn):not(.toolbar-home-link):hover {
+a:not(.footer-link):not(.v-btn):not(.toolbar-home-link):not(.v-list-item):hover {
   text-decoration: underline;
 }
 

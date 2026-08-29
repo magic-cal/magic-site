@@ -3,6 +3,7 @@
     <v-col cols="12" pa-0>
       <v-parallax
         id="dim"
+        ref="hero"
         :src="require('@/static/shuffle-cropped1.jpg')"
         :srcset="heroSrcset('/shuffle-cropped1.jpg')"
         sizes="100vw"
@@ -13,7 +14,7 @@
       >
         <v-row align="center">
           <v-col align="center">
-            <h1>
+            <h1 class="hero-heading">
               <div class="display-4">Callum McClure</div>
               <div class="display-1">Close-Up Magician in Surrey &amp; London</div>
               <div class="display-5">Member of The Magic Circle</div>
@@ -169,7 +170,12 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@vue/composition-api'
+import {
+  defineComponent,
+  onBeforeUnmount,
+  onMounted,
+  ref,
+} from '@vue/composition-api'
 import { buildHead } from '~/utils/seo'
 import { localBusiness } from '~/utils/schema'
 import { heroSrcset } from '~/utils/heroImages'
@@ -218,7 +224,55 @@ export default defineComponent({
         subtitle: 'Party Magician',
       },
     ]
-    return { companyLogos, services, heroSrcset }
+    // Vuetify's own parallax derives its travel from the image's naturalHeight,
+    // which now varies per srcset candidate (and goes negative on mobile, where
+    // the 640w variant is shorter than the container). Driving the offset from
+    // the element's position instead keeps it correct at every breakpoint.
+    const hero = ref<{ $el: HTMLElement } | null>(null)
+    let frame = 0
+
+    const applyOffset = () => {
+      frame = 0
+      const el = hero.value && hero.value.$el
+      if (!el) return
+      // Read the travel from the stylesheet so the clamp here can never drift
+      // out of sync with the headroom the CSS reserves above and below.
+      const travel =
+        parseFloat(
+          getComputedStyle(el).getPropertyValue('--parallax-travel')
+        ) || 0
+      const rect = el.getBoundingClientRect()
+      const progress =
+        (rect.top + rect.height / 2 - window.innerHeight / 2) /
+        window.innerHeight
+      const y = Math.max(-travel, Math.min(travel, -progress * travel))
+      el.style.setProperty('--parallax-y', `${y.toFixed(1)}px`)
+    }
+
+    const onScroll = () => {
+      if (frame) return
+      frame = window.requestAnimationFrame(applyOffset)
+    }
+
+    // Registered client-side only: on the server these hooks have no instance
+    // to bind to (the composition API resolves through the Nuxt module there),
+    // and a scroll effect has nothing to do during SSR anyway.
+    if (process.client) {
+      onMounted(() => {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+        applyOffset()
+        window.addEventListener('scroll', onScroll, { passive: true })
+        window.addEventListener('resize', onScroll, { passive: true })
+      })
+
+      onBeforeUnmount(() => {
+        if (frame) window.cancelAnimationFrame(frame)
+        window.removeEventListener('scroll', onScroll)
+        window.removeEventListener('resize', onScroll)
+      })
+    }
+
+    return { companyLogos, services, heroSrcset, hero }
   },
   head() {
     return buildHead({
@@ -233,23 +287,58 @@ export default defineComponent({
 </script>
 
 <style scoped>
+/* Vuetify sizes the parallax image from its intrinsic dimensions and anchors it
+   bottom-centre, which over-zooms badly on narrow viewports. Sizing it with
+   object-fit instead keeps the hands/cards framed at every width; the extra
+   height above and below is the headroom the parallax slides within. */
+/* min-height, not height: the hero is overflow:hidden, so a fixed height clips
+   the heading off the top and the CTA off the bottom once the text wraps on a
+   narrow screen. Growing to fit keeps the whole block visible; the image is
+   absolutely positioned so it covers whatever height results. */
 .v-parallax {
-  transform: none !important;
-  width: 100% !important;
-  object-fit: cover;
-  height: 85vh !important;
+  height: auto !important;
+  min-height: clamp(340px, 56vh, 600px);
+  --parallax-travel: 90px;
+  --parallax-y: 0px;
 }
 
-.v-parallax__image {
-  margin: -100px 0px 0px -180px !important;
+.v-parallax >>> .v-parallax__image {
+  left: 0;
+  right: 0;
+  top: calc(-1 * var(--parallax-travel));
+  bottom: auto;
+  width: 100%;
+  height: calc(100% + 2 * var(--parallax-travel));
+  margin: 0 !important;
+  object-fit: cover;
+  object-position: center 42%;
+  transform: translateY(var(--parallax-y)) !important;
+  /* Vuetify holds the image at opacity 0 until mounted() sets isBooted, which
+     stops the LCP element painting until hydration. It's the largest element
+     on the page and already preloaded, so paint it immediately. */
+  opacity: 1 !important;
 }
 
 * >>> .v-parallax__content {
   background: linear-gradient(45deg, black, transparent) !important;
+  padding: 56px 16px !important;
 }
 
 h1 {
   font-weight: normal;
+}
+
+/* display-4 is 6rem, which wraps to several lines and swamps a phone screen. */
+@media (max-width: 600px) {
+  .hero-heading .display-4 {
+    font-size: 2.75rem !important;
+    line-height: 1.05 !important;
+  }
+
+  .hero-heading .display-1 {
+    font-size: 1.35rem !important;
+    line-height: 1.35 !important;
+  }
 }
 
 .service-card {
