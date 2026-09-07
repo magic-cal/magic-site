@@ -15,9 +15,9 @@
         <v-row align="center">
           <v-col align="center">
             <h1 class="hero-heading">
-              <div class="display-4">Callum McClure</div>
-              <div class="display-1">Close-Up Magician in Surrey &amp; London</div>
-              <div class="display-5">Member of The Magic Circle</div>
+              <span class="hero-heading__name">Callum McClure</span>
+              <span class="hero-heading__tagline">Close-Up Magician in Surrey &amp; London</span>
+              <span class="hero-heading__credential">Member of The Magic Circle</span>
             </h1>
             <div class="mt-6">
               <v-btn
@@ -296,8 +296,12 @@ export default defineComponent({
    narrow screen. Growing to fit keeps the whole block visible; the image is
    absolutely positioned so it covers whatever height results. */
 .v-parallax {
+  /* flex + a stretching content child so the scrim covers the full hero box;
+     with the default block layout the content is only as tall as the text and
+     leaves an undimmed strip along the bottom. */
+  display: flex;
   height: auto !important;
-  min-height: clamp(340px, 56vh, 600px);
+  min-height: clamp(400px, 58vh, 620px);
   --parallax-travel: 90px;
   --parallax-y: 0px;
 }
@@ -320,25 +324,60 @@ export default defineComponent({
 }
 
 * >>> .v-parallax__content {
-  background: linear-gradient(45deg, black, transparent) !important;
-  padding: 56px 16px !important;
+  flex: 1 1 auto;
+  height: auto;
+  /* Even scrim across the whole image, deepening at the top (so the app bar
+     stays readable) and at the bottom (so the hero settles into the dark
+     credentials bar below it) rather than a diagonal that leaves one corner
+     of the text on bare highlights. */
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.68) 0%,
+    rgba(0, 0, 0, 0.45) 35%,
+    rgba(0, 0, 0, 0.5) 65%,
+    rgba(0, 0, 0, 0.78) 100%
+  ) !important;
+  padding: clamp(48px, 8vh, 88px) 24px !important;
 }
 
-h1 {
+.hero-heading {
   font-weight: normal;
+  display: block;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.55);
 }
 
-/* display-4 is 6rem, which wraps to several lines and swamps a phone screen. */
-@media (max-width: 600px) {
-  .hero-heading .display-4 {
-    font-size: 2.75rem !important;
-    line-height: 1.05 !important;
-  }
+/* Fluid sizing instead of Vuetify's display-* classes: display-4 is a fixed
+   6rem, which swamps a phone screen, and there is no display-5 at all. */
+.hero-heading__name,
+.hero-heading__tagline,
+.hero-heading__credential {
+  display: block;
+}
 
-  .hero-heading .display-1 {
-    font-size: 1.35rem !important;
-    line-height: 1.35 !important;
-  }
+.hero-heading__name {
+  font-size: clamp(2.5rem, 8vw, 5.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+}
+
+.hero-heading__tagline {
+  /* Wide enough for one line on a desktop, narrow enough that a phone breaks
+     it into two balanced lines rather than one orphaned word. */
+  max-width: 38ch;
+  text-wrap: balance;
+  margin: 0.5em auto 0;
+  font-size: clamp(1.05rem, 2.2vw, 1.6rem);
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+}
+
+.hero-heading__credential {
+  margin-top: 0.75em;
+  font-size: clamp(0.75rem, 1.1vw, 0.875rem);
+  line-height: 1.4;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.82);
 }
 
 .service-card {
