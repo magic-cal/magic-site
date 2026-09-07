@@ -38,3 +38,47 @@ index b00221a..5b14b67 100644
        },
        ref: 'img'
      };
+diff --git a/node_modules/vuetify/lib/components/VExpansionPanel/VExpansionPanel.js b/node_modules/vuetify/lib/components/VExpansionPanel/VExpansionPanel.js
+index 17c42b8..563af5e 100644
+--- a/node_modules/vuetify/lib/components/VExpansionPanel/VExpansionPanel.js
++++ b/node_modules/vuetify/lib/components/VExpansionPanel/VExpansionPanel.js
+@@ -73,10 +73,7 @@ export default mixins(GroupableFactory('expansionPanels', 'v-expansion-panel', '
+   render(h) {
+     return h('div', {
+       staticClass: 'v-expansion-panel',
+-      class: this.classes,
+-      attrs: {
+-        'aria-expanded': String(this.isActive)
+-      }
++      class: this.classes
+     }, getSlot(this));
+   }
+ 
+diff --git a/node_modules/vuetify/lib/components/VParallax/VParallax.js b/node_modules/vuetify/lib/components/VParallax/VParallax.js
+index 6f2cec2..2029669 100644
+--- a/node_modules/vuetify/lib/components/VParallax/VParallax.js
++++ b/node_modules/vuetify/lib/components/VParallax/VParallax.js
+@@ -18,7 +18,10 @@ export default baseMixins.extend().extend({
+       default: 500
+     },
+     src: String,
+-    srcset: String
++    srcset: String,
++    fetchpriority: String,
++    srcWidth: [String, Number],
++    srcHeight: [String, Number]
+   },
+   data: () => ({
+     isBooted: false
+@@ -69,7 +72,10 @@ export default baseMixins.extend().extend({
+       attrs: {
+         src: this.src,
+         srcset: this.srcset,
+-        alt: this.alt
++        alt: this.alt,
++        fetchpriority: this.fetchpriority,
++        width: this.srcWidth,
++        height: this.srcHeight
+       },
+       ref: 'img'
+     };
