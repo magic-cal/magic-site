@@ -18,8 +18,8 @@
             <h1 class="hero-heading">
               <span class="hero-heading__name">Callum McClure</span>
               <span class="hero-heading__tagline">Close-Up Magician in Surrey &amp; London</span>
-              <span class="hero-heading__credential">Member of The Magic Circle</span>
             </h1>
+            <p class="hero-heading__credential">Member of The Magic Circle</p>
             <div class="mt-6">
               <v-btn
                 large
@@ -334,7 +334,8 @@ export default defineComponent({
   color: #fff;
 }
 
-.hero-heading {
+.hero-heading,
+.hero-heading__credential {
   font-weight: normal;
   display: block;
   text-shadow: 0 2px 18px rgba(0, 0, 0, 0.55);
@@ -366,7 +367,8 @@ export default defineComponent({
 }
 
 .hero-heading__credential {
-  margin-top: 0.75em;
+  /* Outside the h1 so the heading stays under 70 characters. */
+  margin: 0.75em 0 0;
   font-size: clamp(0.75rem, 1.1vw, 0.875rem);
   line-height: 1.4;
   letter-spacing: 0.18em;
