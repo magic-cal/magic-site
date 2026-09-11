@@ -1,18 +1,19 @@
 <template>
   <v-row justify="center" align="center" no-gutters>
     <v-col cols="12" pa-0>
-      <v-parallax
-        id="dim"
-        ref="hero"
-        :src="require('@/static/shuffle-cropped1.jpg')"
-        :srcset="heroSrcset('/shuffle-cropped1.jpg')"
-        sizes="100vw"
-        :src-width="1920"
-        :src-height="1279"
-        fetchpriority="high"
-        alt="Close-up of a deck of playing cards being riffle shuffled in two hands"
-      >
-        <v-row align="center">
+      <div ref="hero" class="hero">
+        <img
+          class="hero__img"
+          src="/shuffle-cropped1.jpg"
+          :srcset="heroSrcset('/shuffle-cropped1.jpg')"
+          sizes="100vw"
+          width="1920"
+          height="1279"
+          alt="Close-up of a deck of playing cards being riffle shuffled in two hands"
+          fetchpriority="high"
+          decoding="async"
+        />
+        <v-row align="center" no-gutters class="hero__content">
           <v-col align="center">
             <h1 class="hero-heading">
               <span class="hero-heading__name">Callum McClure</span>
@@ -33,7 +34,7 @@
             </div>
           </v-col>
         </v-row>
-      </v-parallax>
+      </div>
 
       <credentials-bar />
 
@@ -224,16 +225,15 @@ export default defineComponent({
         subtitle: 'Party Magician',
       },
     ]
-    // Vuetify's own parallax derives its travel from the image's naturalHeight,
-    // which now varies per srcset candidate (and goes negative on mobile, where
-    // the 640w variant is shorter than the container). Driving the offset from
-    // the element's position instead keeps it correct at every breakpoint.
-    const hero = ref<{ $el: HTMLElement } | null>(null)
+    // The offset is driven from the element's position on screen rather than
+    // from the image's intrinsic height: naturalHeight varies per srcset
+    // candidate, and on mobile the 640w variant is shorter than the container.
+    const hero = ref<HTMLElement | null>(null)
     let frame = 0
 
     const applyOffset = () => {
       frame = 0
-      const el = hero.value && hero.value.$el
+      const el = hero.value
       if (!el) return
       // Read the travel from the stylesheet so the clamp here can never drift
       // out of sync with the headroom the CSS reserves above and below.
@@ -287,45 +287,38 @@ export default defineComponent({
 </script>
 
 <style scoped>
-/* Vuetify sizes the parallax image from its intrinsic dimensions and anchors it
-   bottom-centre, which over-zooms badly on narrow viewports. Sizing it with
-   object-fit instead keeps the hands/cards framed at every width; the extra
-   height above and below is the headroom the parallax slides within. */
+/* The image is sized with object-fit rather than from its intrinsic dimensions,
+   which keeps the hands/cards framed at every width; the extra height above and
+   below is the headroom the parallax slides within. */
 /* min-height, not height: the hero is overflow:hidden, so a fixed height clips
    the heading off the top and the CTA off the bottom once the text wraps on a
    narrow screen. Growing to fit keeps the whole block visible; the image is
    absolutely positioned so it covers whatever height results. */
-.v-parallax {
-  /* flex + a stretching content child so the scrim covers the full hero box;
-     with the default block layout the content is only as tall as the text and
-     leaves an undimmed strip along the bottom. */
+.hero {
+  position: relative;
   display: flex;
-  height: auto !important;
+  overflow: hidden;
   min-height: clamp(400px, 58vh, 620px);
   --parallax-travel: 90px;
   --parallax-y: 0px;
 }
 
-.v-parallax >>> .v-parallax__image {
+.hero__img {
+  position: absolute;
   left: 0;
   right: 0;
   top: calc(-1 * var(--parallax-travel));
-  bottom: auto;
   width: 100%;
   height: calc(100% + 2 * var(--parallax-travel));
-  margin: 0 !important;
   object-fit: cover;
   object-position: center 42%;
-  transform: translateY(var(--parallax-y)) !important;
-  /* Vuetify holds the image at opacity 0 until mounted() sets isBooted, which
-     stops the LCP element painting until hydration. It's the largest element
-     on the page and already preloaded, so paint it immediately. */
-  opacity: 1 !important;
+  transform: translateY(var(--parallax-y));
 }
 
-* >>> .v-parallax__content {
+.hero__content {
+  position: relative;
   flex: 1 1 auto;
-  height: auto;
+  align-content: center;
   /* Even scrim across the whole image, deepening at the top (so the app bar
      stays readable) and at the bottom (so the hero settles into the dark
      credentials bar below it) rather than a diagonal that leaves one corner
@@ -336,8 +329,9 @@ export default defineComponent({
     rgba(0, 0, 0, 0.45) 35%,
     rgba(0, 0, 0, 0.5) 65%,
     rgba(0, 0, 0, 0.78) 100%
-  ) !important;
-  padding: clamp(48px, 8vh, 88px) 24px !important;
+  );
+  padding: clamp(48px, 8vh, 88px) 24px;
+  color: #fff;
 }
 
 .hero-heading {
