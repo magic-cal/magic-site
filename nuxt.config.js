@@ -14,6 +14,10 @@ export default {
 
   generate: {
     fallback: '404.html',
+    // Emit /about.html rather than /about/index.html. GitHub Pages serves the
+    // former at /about directly; the latter 301s /about -> /about/, which
+    // contradicts the no-slash URLs in the sitemap and canonical tags.
+    subFolders: false,
   },
 
   sitemap: {

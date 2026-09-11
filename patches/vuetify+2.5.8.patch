@@ -1,5 +1,5 @@
 diff --git a/node_modules/vuetify/dist/vuetify.js b/node_modules/vuetify/dist/vuetify.js
-index b00221a..5b14b67 100644
+index b00221a..6a261c8 100644
 --- a/node_modules/vuetify/dist/vuetify.js
 +++ b/node_modules/vuetify/dist/vuetify.js
 @@ -15192,10 +15192,7 @@ var __assign = undefined && undefined.__assign || function () {
@@ -14,27 +14,19 @@ index b00221a..5b14b67 100644
      }, Object(_util_helpers__WEBPACK_IMPORTED_MODULE_2__["getSlot"])(this));
    }
  }));
-@@ -21238,7 +21235,10 @@ var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_2__["default"])(_m
-       default: 500
-     },
-     src: String,
--    srcset: String
-+    srcset: String,
-+    fetchpriority: String,
-+    srcWidth: [String, Number],
-+    srcHeight: [String, Number]
-   },
-   data: function data() {
-     return {
-@@ -21288,7 +21288,10 @@ var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_2__["default"])(_m
-       attrs: {
-         src: this.src,
-         srcset: this.srcset,
--        alt: this.alt
-+        alt: this.alt,
-+        fetchpriority: this.fetchpriority,
-+        width: this.srcWidth,
-+        height: this.srcHeight
-       },
-       ref: 'img'
-     };
+diff --git a/node_modules/vuetify/lib/components/VExpansionPanel/VExpansionPanel.js b/node_modules/vuetify/lib/components/VExpansionPanel/VExpansionPanel.js
+index 17c42b8..563af5e 100644
+--- a/node_modules/vuetify/lib/components/VExpansionPanel/VExpansionPanel.js
++++ b/node_modules/vuetify/lib/components/VExpansionPanel/VExpansionPanel.js
+@@ -73,10 +73,7 @@ export default mixins(GroupableFactory('expansionPanels', 'v-expansion-panel', '
+   render(h) {
+     return h('div', {
+       staticClass: 'v-expansion-panel',
+-      class: this.classes,
+-      attrs: {
+-        'aria-expanded': String(this.isActive)
+-      }
++      class: this.classes
+     }, getSlot(this));
+   }
+ 
