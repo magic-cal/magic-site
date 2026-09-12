@@ -3,10 +3,12 @@
     <v-container>
       <v-row justify="center" align="center" class="py-4">
         <v-col
-          v-for="cred in credentials"
+          v-for="(cred, i) in credentials"
           :key="cred.text"
+          v-reveal
           cols="12"
           sm="4"
+          :class="`reveal reveal--d${i + 1}`"
           class="d-flex align-center justify-center py-2"
         >
           <v-img

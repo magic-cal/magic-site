@@ -18,7 +18,7 @@
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <p class="body-1 black--text">
               Christmas parties are the biggest event of most companies' year - and a
               <strong>Christmas party magician</strong> is the single addition that
@@ -42,7 +42,7 @@
     <v-sheet color="grey lighten-4" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-6 black--text">Why book a magician for your Christmas party?</h2>
             <v-list color="transparent">
               <v-list-item v-for="reason in reasons" :key="reason.title">
@@ -61,7 +61,7 @@
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-6 black--text">Christmas events I perform at</h2>
             <v-list color="transparent">
               <v-list-item v-for="ev in events" :key="ev.title">
@@ -80,7 +80,7 @@
     <v-sheet color="grey lighten-4" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-4 black--text">London &amp; Surrey Christmas party venues</h2>
             <p class="body-1 black--text">
               I perform at <strong>Christmas parties in London</strong> regularly - from
@@ -103,7 +103,7 @@
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-4 black--text">What to expect</h2>
             <p class="body-1 black--text">
               I arrive early, need no stage, no setup and no AV. During your drinks
@@ -133,7 +133,7 @@
     <v-sheet color="grey lighten-4" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-4 black--text">How much does a Christmas party magician cost?</h2>
             <p class="body-1 black--text">
               Christmas party magicians typically cost between <strong>£350 and £1,500</strong>
@@ -149,7 +149,7 @@
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-6 black--text">Frequently asked questions</h2>
             <v-expansion-panels light>
               <v-expansion-panel v-for="faq in faqs" :key="faq.q">
@@ -174,7 +174,7 @@
     <v-sheet color="grey lighten-4" class="py-10">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8" class="text-center">
+          <v-col v-reveal cols="12" md="8" class="text-center reveal">
             <p class="body-2 grey--text">
               See also:
               <nuxt-link to="/corporate-magician">Corporate magician for hire</nuxt-link> ·

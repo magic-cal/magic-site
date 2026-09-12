@@ -19,7 +19,7 @@
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <p class="body-1 black--text">
               I'm Callum McClure - an award-winning <strong>Surrey wedding magician</strong>
               and member of <strong>The Magic Circle</strong>. I grew up in Surrey,
@@ -42,7 +42,7 @@
     <v-sheet color="grey lighten-4" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-6 black--text">Surrey wedding venues I know well</h2>
             <v-list color="transparent">
               <v-list-item v-for="venue in venues" :key="venue.name">
@@ -61,7 +61,7 @@
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-6 black--text">What I do at a Surrey wedding</h2>
             <v-list color="transparent">
               <v-list-item v-for="slot in slots" :key="slot.title">
@@ -80,7 +80,7 @@
     <v-sheet color="grey lighten-4" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-4 black--text">How much does a Surrey wedding magician cost?</h2>
             <p class="body-1 black--text">
               Most professional wedding magicians in Surrey charge between

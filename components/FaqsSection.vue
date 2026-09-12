@@ -5,8 +5,9 @@
         <v-col :cols="12">
           <v-row>
             <v-col
+              v-reveal
               :cols="12"
-              class="d-flex"
+              class="d-flex reveal"
               style="flex-direction: column"
               align="center"
             >
@@ -15,7 +16,15 @@
           </v-row>
         </v-col>
         <v-expansion-panels light :multiple="!$vuetify.breakpoint.xs">
-          <v-col v-for="(faq, i) in faqs" :key="i" :cols="12" :sm="6" :md="4">
+          <v-col
+            v-for="(faq, i) in faqs"
+            :key="i"
+            v-reveal
+            :cols="12"
+            :sm="6"
+            :md="4"
+            :class="`reveal reveal--d${(i % 3) + 1}`"
+          >
             <v-expansion-panel light elevation="6">
               <v-expansion-panel-header class="accent--text">
                 {{ faq.question }}

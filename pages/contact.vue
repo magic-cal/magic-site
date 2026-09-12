@@ -4,9 +4,11 @@
       <v-sheet color="grey darken-4" dark class="py-12">
         <v-container>
           <v-row justify="center">
+            <!-- The h1 here is the page's largest contentful paint, so this
+                 block stays put; the line under it is what moves. -->
             <v-col cols="12" md="8" class="text-center">
               <h1 class="display-1 mb-2">Contact Callum - Get a Quote</h1>
-              <p class="headline">
+              <p v-reveal class="headline reveal reveal--d1">
                 Award-winning close-up magician for weddings, corporate events &amp;
                 parties. Check availability and get a no-obligation quote.
               </p>
@@ -18,8 +20,10 @@
       <v-container py-12>
         <v-row justify="space-between">
           <v-col
+            v-reveal
             cols="auto"
             :md="4"
+            class="reveal"
             :order="$vuetify.breakpoint.smAndDown ? 2 : 0"
           >
             <v-row>
@@ -69,8 +73,10 @@
           </v-col>
 
           <v-col
+            v-reveal
             :cols="12"
             :md="7"
+            class="reveal reveal--d1"
             :order="$vuetify.breakpoint.smAndDown ? 0 : 2"
           >
             <contact-form />

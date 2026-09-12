@@ -1,7 +1,7 @@
 <template>
   <v-row justify="center" align="center" no-gutters>
     <v-col cols="12" pa-0>
-      <div ref="hero" class="hero">
+      <div v-parallax-scroll class="hero">
         <img
           class="hero__img"
           src="/shuffle-cropped1.jpg"
@@ -40,7 +40,7 @@
 
       <v-sheet color="white" class="py-0">
         <v-row no-gutters align="stretch">
-          <v-col cols="12" md="6" order="2" order-md="1">
+          <v-col cols="12" md="6" order="2" order-md="1" class="hover-zoom">
             <v-img
               src="/skill.jpg"
               height="520"
@@ -56,7 +56,7 @@
             class="d-flex align-center pa-8 pa-md-12"
             style="background: #fff"
           >
-            <div>
+            <div v-reveal class="reveal">
               <div class="overline accent--text mb-2 font-weight-bold">Member of The Magic Circle</div>
               <p class="display-1 black--text mb-6 font-weight-light">
                 Award-winning close-up magic for hire in Surrey &amp; London
@@ -83,17 +83,21 @@
       <v-sheet color="grey lighten-4" class="py-14">
         <v-container>
           <v-row>
-            <v-col cols="12" class="text-center mb-8">
+            <v-col v-reveal cols="12" class="text-center mb-8 reveal">
               <h2 class="display-1">Magic for Every Occasion</h2>
             </v-col>
           </v-row>
           <v-row>
             <v-col
-              v-for="svc in services"
+              v-for="(svc, i) in services"
               :key="svc.subtitle"
+              v-reveal
               cols="12"
               sm="4"
-              :class="{ 'd-none d-sm-flex': svc.hideOnXs }"
+              :class="[
+                { 'd-none d-sm-flex': svc.hideOnXs },
+                `reveal reveal--d${i + 1}`,
+              ]"
               class="d-flex flex-column"
             >
               <v-card flat class="flex-grow-1 service-card">
@@ -123,25 +127,26 @@
         </v-container>
       </v-sheet>
 
-      <v-img src="/reception-card-trick.jpg" height="460" cover position="center 30%">
-        <div
-          class="fill-height d-flex align-center"
-          style="background: linear-gradient(to right, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.15) 100%)"
-        >
-          <v-container>
-            <v-row>
-              <v-col cols="12" sm="7" md="5">
-                <p class="display-1 white--text font-weight-light mb-4">
-                  Close-up magic that happens in your guests' own hands
-                </p>
-                <nuxt-link to="/close-up-magician" class="white--text">
-                  What is close-up magic?
-                </nuxt-link>
-              </v-col>
-            </v-row>
-          </v-container>
-        </div>
-      </v-img>
+      <parallax-band
+        src="/reception-card-trick.jpg"
+        alt="Guests gathered around a table watching a card trick at a drinks reception"
+        :height="460"
+        position="center 30%"
+        scrim="linear-gradient(to right, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.15) 100%)"
+      >
+        <v-container>
+          <v-row>
+            <v-col v-reveal cols="12" sm="7" md="5" class="reveal">
+              <p class="display-1 white--text font-weight-light mb-4">
+                Close-up magic that happens in your guests' own hands
+              </p>
+              <nuxt-link to="/close-up-magician" class="white--text">
+                What is close-up magic?
+              </nuxt-link>
+            </v-col>
+          </v-row>
+        </v-container>
+      </parallax-band>
 
       <company-carousel
         title="Some of the Companies Callum has performed for"
@@ -152,7 +157,7 @@
       <v-sheet color="white" class="py-6">
         <v-container>
           <v-row justify="center">
-            <v-col cols="12" md="8" class="text-center">
+            <v-col v-reveal cols="12" md="8" class="text-center reveal">
               <p class="body-1 grey--text text--darken-1">
                 Performing across
                 <nuxt-link to="/areas/guildford">Guildford</nuxt-link>,
@@ -171,12 +176,7 @@
 </template>
 
 <script lang="ts">
-import {
-  defineComponent,
-  onBeforeUnmount,
-  onMounted,
-  ref,
-} from '@vue/composition-api'
+import { defineComponent } from '@vue/composition-api'
 import { buildHead } from '~/utils/seo'
 import { localBusiness } from '~/utils/schema'
 import { heroSrcset } from '~/utils/heroImages'
@@ -225,54 +225,8 @@ export default defineComponent({
         subtitle: 'Party Magician',
       },
     ]
-    // The offset is driven from the element's position on screen rather than
-    // from the image's intrinsic height: naturalHeight varies per srcset
-    // candidate, and on mobile the 640w variant is shorter than the container.
-    const hero = ref<HTMLElement | null>(null)
-    let frame = 0
 
-    const applyOffset = () => {
-      frame = 0
-      const el = hero.value
-      if (!el) return
-      // Read the travel from the stylesheet so the clamp here can never drift
-      // out of sync with the headroom the CSS reserves above and below.
-      const travel =
-        parseFloat(
-          getComputedStyle(el).getPropertyValue('--parallax-travel')
-        ) || 0
-      const rect = el.getBoundingClientRect()
-      const progress =
-        (rect.top + rect.height / 2 - window.innerHeight / 2) /
-        window.innerHeight
-      const y = Math.max(-travel, Math.min(travel, -progress * travel))
-      el.style.setProperty('--parallax-y', `${y.toFixed(1)}px`)
-    }
-
-    const onScroll = () => {
-      if (frame) return
-      frame = window.requestAnimationFrame(applyOffset)
-    }
-
-    // Registered client-side only: on the server these hooks have no instance
-    // to bind to (the composition API resolves through the Nuxt module there),
-    // and a scroll effect has nothing to do during SSR anyway.
-    if (process.client) {
-      onMounted(() => {
-        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
-        applyOffset()
-        window.addEventListener('scroll', onScroll, { passive: true })
-        window.addEventListener('resize', onScroll, { passive: true })
-      })
-
-      onBeforeUnmount(() => {
-        if (frame) window.cancelAnimationFrame(frame)
-        window.removeEventListener('scroll', onScroll)
-        window.removeEventListener('resize', onScroll)
-      })
-    }
-
-    return { companyLogos, services, heroSrcset, hero }
+    return { companyLogos, services, heroSrcset }
   },
   head() {
     return buildHead({
@@ -312,7 +266,7 @@ export default defineComponent({
   height: calc(100% + 2 * var(--parallax-travel));
   object-fit: cover;
   object-position: center 42%;
-  transform: translateY(var(--parallax-y));
+  transform: translate3d(0, var(--parallax-y), 0);
 }
 
 .hero__content {

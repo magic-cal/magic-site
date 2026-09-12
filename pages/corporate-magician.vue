@@ -18,7 +18,7 @@
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <p class="body-1 black--text">
               Corporate events live and die on one thing: whether people actually talk
               to each other. A magician fixes that faster than anything on the agenda.
@@ -38,7 +38,7 @@
     <v-sheet color="grey lighten-4" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-6 black--text">Events I perform at</h2>
             <v-list color="transparent">
               <v-list-item v-for="ev in events" :key="ev.title">
@@ -57,7 +57,7 @@
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-6 black--text">Why companies book me</h2>
             <v-list color="transparent">
               <v-list-item>
@@ -100,7 +100,7 @@
     <v-sheet color="grey lighten-4" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-4 black--text">Branded &amp; bespoke magic</h2>
             <p class="body-1 black--text">
               For trade shows and launches I can tailor routines around your brand,
@@ -116,11 +116,11 @@
     <v-sheet color="grey darken-4" dark class="py-0">
       <v-container fluid class="pa-0">
         <v-row no-gutters>
-          <v-col cols="12" md="6">
+          <v-col cols="12" md="6" class="hover-zoom">
             <v-img src="/vr.jpg" height="420" cover />
           </v-col>
           <v-col cols="12" md="6" class="d-flex align-center pa-10">
-            <div>
+            <div v-reveal class="reveal">
               <div class="overline accent--text mb-2">Modern &amp; Unique</div>
               <h2 class="display-1 white--text mb-4">A contemporary twist on close-up magic</h2>
               <p class="body-1 grey--text text--lighten-2">
@@ -138,7 +138,7 @@
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-4 black--text">Covering Surrey, London &amp; beyond</h2>
             <p class="body-1 black--text">
               Based in London, I regularly perform at corporate events across Surrey and
@@ -167,7 +167,7 @@
     <v-sheet color="grey lighten-4" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-6 black--text">Frequently asked questions</h2>
             <v-expansion-panels light>
               <v-expansion-panel v-for="faq in faqs" :key="faq.q">

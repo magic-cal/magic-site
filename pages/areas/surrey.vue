@@ -18,7 +18,7 @@
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <p class="body-1 black--text">
               I'm Callum McClure, an award-winning close-up magician and Magic Circle
               member performing right across Surrey and the South East. From the Surrey
@@ -38,7 +38,7 @@
     <v-sheet color="grey lighten-4" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-6 black--text">Covering all of Surrey</h2>
             <p class="body-1 black--text">
               I regularly perform in <strong>Guildford, Woking, Farnham, Epsom,
@@ -57,7 +57,7 @@
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-6 black--text">Every kind of event</h2>
             <v-list color="transparent">
               <v-list-item>

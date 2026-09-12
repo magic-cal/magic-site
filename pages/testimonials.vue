@@ -15,13 +15,15 @@
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <v-row>
               <v-col
-                v-for="review in reviews"
+                v-for="(review, i) in reviews"
                 :key="review.source"
+                v-reveal
                 cols="12"
                 md="6"
+                :class="`reveal reveal--d${(i % 2) + 1}`"
               >
                 <v-card outlined class="pa-6 h-100">
                   <v-icon color="accent" large class="mb-2">{{ mdiFormatQuoteOpen }}</v-icon>
@@ -40,7 +42,7 @@
     <v-sheet color="grey lighten-4" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8" class="text-center">
+          <v-col v-reveal cols="12" md="8" class="text-center reveal">
             <h2 class="display-1 mb-4 black--text">Ready to create your own moment?</h2>
             <p class="body-1 black--text mb-6">
               I perform at

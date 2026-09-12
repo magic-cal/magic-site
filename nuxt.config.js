@@ -68,11 +68,26 @@ export default {
         href: 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap',
       },
     ],
+    script: [
+      {
+        // Sets the flag every scroll animation in assets/motion.css is gated
+        // on, before the first paint rather than after hydration - the CSS
+        // hides a .reveal block only when the flag is present, so a visitor
+        // with scripting off (or reduced motion on) gets the fully visible,
+        // static page instead of one waiting on JavaScript to un-hide it.
+        hid: 'motion-flag',
+        innerHTML:
+          "try{if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.setAttribute('data-motion','on')}}catch(e){}",
+      },
+    ],
+    // vue-meta escapes innerHTML by default, which would turn the quotes in
+    // the snippet above into entities and leave an unparseable script.
+    __dangerouslyDisableSanitizers: ['innerHTML'],
   },
 
-  css: [],
+  css: ['~/assets/motion.css'],
 
-  plugins: ['~/content/faqs.ts'],
+  plugins: ['~/content/faqs.ts', '~/plugins/motion.ts'],
 
   components: true,
 

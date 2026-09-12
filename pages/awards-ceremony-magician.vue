@@ -19,7 +19,7 @@
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <p class="body-1 black--text">
               Every awards evening has two distinct acts: the dinner before the ceremony,
               and the drinks and dancing that follow. Both are perfect for close-up magic
@@ -41,7 +41,7 @@
     <v-sheet color="grey lighten-4" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-6 black--text">Where the magic fits into an awards evening</h2>
             <v-list color="transparent">
               <v-list-item v-for="slot in slots" :key="slot.title">
@@ -60,7 +60,7 @@
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-6 black--text">Awards events I perform at</h2>
             <v-list color="transparent">
               <v-list-item v-for="ev in events" :key="ev">
@@ -78,7 +78,7 @@
     <v-sheet color="grey lighten-4" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-4 black--text">Why close-up magic works at awards nights</h2>
             <p class="body-1 black--text">
               Awards ceremonies tend to have a problem: long gaps between things
@@ -110,7 +110,7 @@
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-6 black--text">Frequently asked questions</h2>
             <v-expansion-panels light>
               <v-expansion-panel v-for="faq in faqs" :key="faq.q">

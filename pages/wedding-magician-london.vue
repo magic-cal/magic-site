@@ -19,7 +19,7 @@
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <p class="body-1 black--text">
               I'm Callum McClure - a London-based close-up magician and member of
               <strong>The Magic Circle</strong>. London is where I live and where I
@@ -43,7 +43,7 @@
     <v-sheet color="grey lighten-4" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-6 black--text">London wedding venues I perform at</h2>
             <p class="body-1 black--text">
               London has an extraordinary range of wedding venues, and close-up magic
@@ -67,7 +67,7 @@
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-6 black--text">What I do at a London wedding</h2>
             <v-list color="transparent">
               <v-list-item v-for="slot in slots" :key="slot.title">
@@ -86,7 +86,7 @@
     <v-sheet color="grey lighten-4" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-4 black--text">Why London couples book me</h2>
             <v-list color="transparent">
               <v-list-item>

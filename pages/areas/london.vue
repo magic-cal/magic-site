@@ -18,7 +18,7 @@
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <p class="body-1 black--text">
               I'm Callum McClure - an award-winning Magic Circle magician based in
               London. The capital is where I live and where I perform regularly, from
@@ -39,7 +39,7 @@
     <v-sheet color="grey lighten-4" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-6 black--text">London weddings, corporate events &amp; parties</h2>
             <p class="body-1 black--text">
               Close-up magic suits London events perfectly - it needs no stage or setup,
@@ -86,7 +86,7 @@
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-4 black--text">A modern act for a modern city</h2>
             <p class="body-1 black--text">
               My blend of classic sleight of hand and a technological twist lands
@@ -111,7 +111,7 @@
     <v-sheet color="grey lighten-4" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-4 black--text">London Christmas party magician</h2>
             <p class="body-1 black--text">
               December is the busiest time of year for London events - and a magician

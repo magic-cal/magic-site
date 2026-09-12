@@ -19,7 +19,7 @@
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <p class="body-1 black--text">
               Table magic is close-up magic performed at seated dining tables - and
               it's among the most impressive and personal forms of entertainment you
@@ -43,7 +43,7 @@
     <v-sheet color="grey lighten-4" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-6 black--text">What table magic looks like in practice</h2>
             <p class="body-1 black--text">
               I arrive at the table, introduce myself briefly, and then perform a
@@ -66,7 +66,7 @@
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-6 black--text">Events where table magic works best</h2>
             <v-list color="transparent">
               <v-list-item v-for="ev in events" :key="ev.title">
@@ -90,7 +90,7 @@
     <v-sheet color="grey lighten-4" class="py-10">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8" class="text-center">
+          <v-col v-reveal cols="12" md="8" class="text-center reveal">
             <p class="body-2 grey--text">
               See also:
               <nuxt-link to="/after-dinner-magician">After dinner magician</nuxt-link> ·

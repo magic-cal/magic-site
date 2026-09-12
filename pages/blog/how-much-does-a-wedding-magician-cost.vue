@@ -15,7 +15,7 @@
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <p class="body-1 black--text">
               Here's a straight answer, because most guides on this dance around it: a
               professional <nuxt-link to="/wedding-magician">wedding magician</nuxt-link>
@@ -36,7 +36,7 @@
     <v-sheet color="grey lighten-4" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-6 black--text">Typical price ranges</h2>
             <v-list color="transparent">
               <v-list-item v-for="range in priceRanges" :key="range.slot">
@@ -59,7 +59,7 @@
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-6 black--text">What affects the price?</h2>
             <v-list color="transparent">
               <v-list-item v-for="factor in factors" :key="factor.title">
@@ -78,7 +78,7 @@
     <v-sheet color="grey lighten-4" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-4 black--text">A word on very cheap quotes</h2>
             <p class="body-1 black--text">
               If you're quoted under about £300, be cautious. That price point usually
@@ -94,7 +94,7 @@
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-4 black--text">What should be included?</h2>
             <p class="body-1 black--text">
               A professional booking should cover all props and preparation, travel
@@ -130,7 +130,7 @@
     <v-sheet color="grey lighten-4" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-6 black--text">Frequently asked questions</h2>
             <v-expansion-panels light>
               <v-expansion-panel v-for="faq in faqs" :key="faq.q">

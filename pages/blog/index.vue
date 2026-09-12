@@ -14,10 +14,17 @@
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <v-row>
-              <v-col v-for="post in posts" :key="post.slug" cols="12" sm="6">
-                <v-card outlined class="pa-6 h-100">
+              <v-col
+                v-for="(post, i) in posts"
+                :key="post.slug"
+                v-reveal
+                cols="12"
+                sm="6"
+                :class="`reveal reveal--d${(i % 3) + 1}`"
+              >
+                <v-card outlined class="pa-6 h-100 hover-lift">
                   <p class="caption grey--text mb-1">{{ post.date }}</p>
                   <h2 class="title black--text mb-2">{{ post.title }}</h2>
                   <p class="body-2 black--text mb-4">{{ post.excerpt }}</p>
@@ -33,7 +40,7 @@
     <v-sheet color="grey lighten-4" class="py-8">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8" class="text-center">
+          <v-col v-reveal cols="12" md="8" class="text-center reveal">
             <p class="body-1 black--text">
               Looking to hire a magician?
               <nuxt-link to="/wedding-magician">Wedding magician</nuxt-link> ·

@@ -1,0 +1,190 @@
+/* ---------------------------------------------------------------------------
+   Motion
+   ---------------------------------------------------------------------------
+   Two gates, deliberately different:
+
+   - Scroll reveals and entrance animations sit under html[data-motion], a flag
+     set by a two-line inline script in nuxt.config.js before the first paint,
+     and only when IntersectionObserver exists and the visitor has not asked for
+     reduced motion. They need JavaScript to un-hide themselves, so without the
+     flag they must not hide anything in the first place: with scripting off the
+     page renders exactly as it did before any of this existed.
+
+   - Hover polish sits under prefers-reduced-motion: no-preference plus a real
+     hover-capable pointer. It needs no JavaScript, and gating it on a fine
+     pointer stops a phone from latching a card into its hover state on tap.
+
+   Only opacity and transform are animated anywhere below, so the work stays on
+   the compositor rather than triggering layout on the main thread.
+   ------------------------------------------------------------------------ */
+
+/* --- Reveal on scroll -------------------------------------------------- */
+
+html[data-motion] .reveal {
+  opacity: 0;
+  transform: translateY(22px);
+}
+
+html[data-motion] .reveal.is-revealed {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.65s cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 0.65s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+/* For blocks where the rise would be distracting - a tall photo beside body
+   copy, say - fade alone. */
+html[data-motion] .reveal--fade {
+  transform: none;
+}
+
+/* Stagger steps for a row of cards or logos. Kept short: past about a third of
+   a second the last item in a row reads as lagging rather than as a sequence. */
+html[data-motion] .reveal--d1.is-revealed {
+  --reveal-delay: 70ms;
+}
+html[data-motion] .reveal--d2.is-revealed {
+  --reveal-delay: 140ms;
+}
+html[data-motion] .reveal--d3.is-revealed {
+  --reveal-delay: 210ms;
+}
+html[data-motion] .reveal--d4.is-revealed {
+  --reveal-delay: 280ms;
+}
+html[data-motion] .reveal--d5.is-revealed {
+  --reveal-delay: 350ms;
+}
+
+/* --- Hero entrance ------------------------------------------------------ */
+
+@keyframes motion-rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Only the call to action and the small credential line, never the heading or
+   the hero image: those are the largest-contentful-paint candidates on most
+   pages, and an element that starts at opacity 0 does not count as painted
+   until it has faded in. */
+html[data-motion] .page-hero__overlay .v-btn,
+html[data-motion] .hero__content .v-btn {
+  animation: motion-rise 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) 0.25s both;
+}
+
+html[data-motion] .hero-heading__credential {
+  animation: motion-rise 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) 0.12s both;
+}
+
+/* --- Anchor scrolling --------------------------------------------------- */
+
+html {
+  /* An anchored URL (or a keyboard focus jump) lands clear of the fixed app
+     bar rather than underneath it.
+
+     Deliberately no scroll-behavior: smooth here. Vue Router scrolls to the
+     top through the same window.scrollTo, so it would animate every route
+     change - a long page would spool all the way back up before the next one
+     appeared - and the site has no in-page anchor links to gain from it. */
+  scroll-padding-top: 80px;
+}
+
+/* --- Safety nets -------------------------------------------------------- */
+
+/* Printing never scrolls, so nothing would ever trigger a reveal and whole
+   sections would come out of the printer blank. */
+@media print {
+  html[data-motion] .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* The flag is set once, at load. If the visitor turns reduced motion on after
+   that - or the system flips it - stop animating immediately rather than
+   waiting for the next page load. */
+@media (prefers-reduced-motion: reduce) {
+  html[data-motion] .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  html[data-motion] .page-hero__overlay .v-btn,
+  html[data-motion] .hero__content .v-btn,
+  html[data-motion] .hero-heading__credential {
+    animation: none;
+  }
+}
+
+/* --- Hover polish ------------------------------------------------------- */
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .service-card,
+  .hover-lift {
+    transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1),
+      box-shadow 0.35s ease;
+  }
+
+  .service-card:hover,
+  .hover-lift:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.16) !important;
+  }
+
+  /* The photo inside the card creeps in a little as the card lifts. v-img
+     clips to its own bounds, so the overflow never escapes the card. */
+  .service-card .v-image__image,
+  .hover-zoom .v-image__image,
+  .hover-zoom img {
+    transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+
+  .service-card:hover .v-image__image,
+  .hover-zoom:hover .v-image__image,
+  .hover-zoom:hover img {
+    transform: scale(1.06);
+  }
+
+  /* Solid and outlined buttons only: the app bar's text buttons stay put. */
+  .v-btn:not(.v-btn--text):not(.v-btn--plain):not(.v-btn--icon):not(.v-btn--fab) {
+    transition: transform 0.2s ease, box-shadow 0.25s ease,
+      background-color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .v-btn:not(.v-btn--text):not(.v-btn--plain):not(.v-btn--icon):not(.v-btn--fab):hover {
+    transform: translateY(-2px);
+  }
+
+  .v-btn:not(.v-btn--text):not(.v-btn--plain):not(.v-btn--icon):not(.v-btn--fab):active {
+    transform: translateY(0);
+    transition-duration: 0.08s;
+  }
+
+  .footer-link {
+    transition: color 0.2s ease, transform 0.25s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+
+  .footer-link:hover {
+    transform: translateX(3px);
+  }
+
+  /* A logo leans forward slightly when pointed at - no dimming of the resting
+     state, so a phone and a desktop show the same row of logos. */
+  .logo-tile .v-image__image,
+  .logo-tile img {
+    transition: transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+
+  .logo-tile:hover .v-image__image,
+  .logo-tile:hover img {
+    transform: scale(1.08);
+  }
+}

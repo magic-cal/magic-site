@@ -14,7 +14,12 @@
     <v-sheet color="white" class="py-14">
       <v-container>
         <v-row align="center">
-          <v-col cols="12" md="5" class="mb-8 mb-md-0">
+          <v-col
+            v-reveal
+            cols="12"
+            md="5"
+            class="mb-8 mb-md-0 reveal reveal--fade hover-zoom"
+          >
             <v-img
               src="/headshot.jpg"
               alt="Portrait of magician Callum McClure, Magic Circle member"
@@ -23,7 +28,7 @@
               class="about-headshot elevation-5"
             />
           </v-col>
-          <v-col cols="12" md="6" offset-md="1">
+          <v-col v-reveal cols="12" md="6" offset-md="1" class="reveal reveal--d2">
             <p class="body-1 black--text mb-4">
               I've been hooked on magic for as long as I can remember. I started learning
               seriously at the age of ten through The Magic Circle's youth initiative,
@@ -43,7 +48,7 @@
     <v-sheet color="grey lighten-4" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-6 black--text">The credentials</h2>
             <v-list color="transparent">
               <v-list-item v-for="cred in credentials" :key="cred.title">
@@ -62,7 +67,7 @@
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-6 black--text">My style - classic magic, modern twist</h2>
             <p class="body-1 black--text">
               My speciality is <nuxt-link to="/close-up-magician">close-up magic</nuxt-link>:
@@ -84,7 +89,7 @@
     <v-sheet color="grey lighten-4" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-6 black--text">Where it started</h2>
             <p class="body-1 black--text">
               I grew up in the Guildford area and my career was launched locally - one
@@ -107,7 +112,7 @@
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8" class="text-center">
+          <v-col v-reveal cols="12" md="8" class="text-center reveal">
             <h2 class="display-1 mb-4 black--text">Booking me</h2>
             <p class="body-1 black--text">
               If you'd like award-winning close-up magic for your

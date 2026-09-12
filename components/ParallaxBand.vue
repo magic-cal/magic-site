@@ -1,10 +1,10 @@
 <template>
-  <div v-parallax-scroll class="page-hero" :style="{ height: cssHeight }">
-    <!-- A plain <img> rather than <v-img> on purpose. v-img applies its source
-         client-side, so the hero (the LCP element on every page that uses this)
-         was invisible to the preload scanner and carried no alt text. -->
+  <div v-parallax-scroll class="parallax-band" :style="{ height: cssHeight }">
+    <!-- A plain <img> rather than <v-img>, for the same reason as PageHero:
+         v-img paints a background-image client-side, so the photo carries no
+         alt text and stays invisible to the preload scanner. -->
     <img
-      class="page-hero__img"
+      class="parallax-band__img"
       :src="src"
       :srcset="srcset"
       sizes="100vw"
@@ -12,17 +12,15 @@
       :height="dims && dims.height"
       :alt="alt"
       :style="{ objectPosition: position }"
-      fetchpriority="high"
+      loading="lazy"
       decoding="async"
     />
-    <div class="page-hero__overlay d-flex align-center">
-      <v-container>
-        <v-row justify="center">
-          <v-col cols="12" md="8" class="text-center">
-            <slot />
-          </v-col>
-        </v-row>
-      </v-container>
+    <div
+      v-if="$slots.default"
+      class="parallax-band__overlay d-flex align-center"
+      :style="scrim ? { background: scrim } : null"
+    >
+      <slot />
     </div>
   </div>
 </template>
@@ -31,6 +29,9 @@
 import { computed, defineComponent } from '@vue/composition-api'
 import { heroImageDims, heroSrcset } from '~/utils/heroImages'
 
+// A full-bleed photo that breaks up a run of text sections, drifting gently
+// against the scroll. Pass a slot to lay copy over it; without one the photo
+// is decorative and alt should be left empty.
 export default defineComponent({
   props: {
     src: {
@@ -39,19 +40,25 @@ export default defineComponent({
     },
     alt: {
       type: String,
-      required: true,
+      required: false,
+      default: '',
     },
     position: {
       type: String,
       required: false,
-      // Bias the crop toward the upper portion where the face/hands sit,
-      // rather than the default center-center (which crops through the torso).
-      default: 'center 25%',
+      default: 'center 30%',
     },
     height: {
       type: [String, Number],
       required: false,
-      default: 440,
+      default: 420,
+    },
+    // Gradient laid over the photo so overlaid copy stays readable. Left off
+    // for a decorative band.
+    scrim: {
+      type: String,
+      required: false,
+      default: '',
     },
   },
   setup(props) {
@@ -68,29 +75,27 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.page-hero {
+.parallax-band {
   position: relative;
   overflow: hidden;
-  /* No travel unless the motion flag is set: with scripting off, or reduced
-     motion on, --parallax-y never changes and the extra headroom below would
-     only crop the photo differently for no reason. */
+  /* Nothing drifts unless the motion flag is set - see assets/motion.css. */
   --parallax-travel: 0px;
   --parallax-y: 0px;
 }
 
-html[data-motion] .page-hero {
-  --parallax-travel: 36px;
+html[data-motion] .parallax-band {
+  --parallax-travel: 40px;
 }
 
 @media (min-width: 960px) {
-  html[data-motion] .page-hero {
-    --parallax-travel: 56px;
+  html[data-motion] .parallax-band {
+    --parallax-travel: 64px;
   }
 }
 
-/* The image is taller than the box by the travel at each end, so it can drift
-   within the crop without ever exposing an edge. */
-.page-hero__img {
+/* Taller than the box by the travel at each end, so the photo can drift
+   inside the crop without ever exposing an edge. */
+.parallax-band__img {
   position: absolute;
   top: calc(-1 * var(--parallax-travel));
   left: 0;
@@ -100,9 +105,8 @@ html[data-motion] .page-hero {
   transform: translate3d(0, var(--parallax-y), 0);
 }
 
-.page-hero__overlay {
+.parallax-band__overlay {
   position: relative;
   height: 100%;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.35) 100%);
 }
 </style>

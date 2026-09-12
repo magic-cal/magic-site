@@ -8,7 +8,7 @@
             class="pricing-card mx-auto mb-16"
             elevation="0"
           >       -->
-          <v-row align="center">
+          <v-row v-reveal align="center" class="reveal">
             <v-col :cols="3">
               <v-img :src="require('@/static/laurel-left.png')"></v-img>
             </v-col>

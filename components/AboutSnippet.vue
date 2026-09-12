@@ -2,7 +2,7 @@
   <v-sheet class="py-16" color="white">
     <v-container>
       <v-row align="center">
-        <v-col cols="12" md="6" offset-md="1">
+        <v-col v-reveal cols="12" md="6" offset-md="1" class="reveal">
           <div class="overline accent--text mb-2 font-weight-bold">
             Member of The Magic Circle
           </div>
@@ -29,7 +29,12 @@
             Learn more about Callum
           </v-btn>
         </v-col>
-        <v-col cols="12" md="5" class="mb-8 mb-md-0">
+        <v-col
+          v-reveal
+          cols="12"
+          md="5"
+          class="mb-8 mb-md-0 reveal reveal--fade reveal--d2 hover-zoom"
+        >
           <v-img
             src="/promo-reaching.jpg"
             height="500"

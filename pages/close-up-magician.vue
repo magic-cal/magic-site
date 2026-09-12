@@ -18,7 +18,7 @@
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <p class="body-1 black--text">
               Close-up magic - also called table magic, walkaround magic or mix-and-mingle
               magic - is magic that happens right there in front of you. No stage, no
@@ -40,7 +40,7 @@
     <v-sheet color="grey lighten-4" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-6 black--text">Why close-up magic works so well at events</h2>
             <v-list color="transparent">
               <v-list-item v-for="point in points" :key="point.title">
@@ -59,7 +59,7 @@
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-6 black--text">Where close-up magic works best</h2>
             <p class="body-1 black--text">
               Close-up magic is uniquely versatile because it needs nothing but guests:
@@ -86,7 +86,7 @@
     <v-sheet color="grey lighten-4" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8" class="text-center">
+          <v-col v-reveal cols="12" md="8" class="text-center reveal">
             <h2 class="display-1 mb-4 black--text">Hire a close-up magician</h2>
             <p class="body-1 black--text">
               Based in London and performing across Surrey, Guildford and the South East.

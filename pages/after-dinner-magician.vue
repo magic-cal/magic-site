@@ -19,7 +19,7 @@
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <p class="body-1 black--text">
               After dinner is the golden window for close-up magic. The meal is done,
               the speeches are over, the room is warm and relaxed - and that's exactly
@@ -42,7 +42,7 @@
     <v-sheet color="grey lighten-4" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-6 black--text">When I perform at dinner events</h2>
             <v-list color="transparent">
               <v-list-item v-for="slot in slots" :key="slot.title">
@@ -61,7 +61,7 @@
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-6 black--text">Events I perform at</h2>
             <v-list color="transparent">
               <v-list-item v-for="ev in events" :key="ev.title">
@@ -80,7 +80,7 @@
     <v-sheet color="grey lighten-4" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-4 black--text">What makes after dinner magic different</h2>
             <p class="body-1 black--text">
               Walk-around magic at a drinks reception and after dinner magic are two
@@ -108,7 +108,7 @@
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-6 black--text">Frequently asked questions</h2>
             <v-expansion-panels light>
               <v-expansion-panel v-for="faq in faqs" :key="faq.q">
@@ -128,7 +128,7 @@
     <v-sheet color="grey lighten-4" class="py-10">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8" class="text-center">
+          <v-col v-reveal cols="12" md="8" class="text-center reveal">
             <p class="body-2 grey--text">
               See also:
               <nuxt-link to="/gala-dinner-magician">Gala dinner magician</nuxt-link> ·

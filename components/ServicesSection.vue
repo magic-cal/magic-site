@@ -10,10 +10,12 @@
       </v-row>
       <v-row class="mx-auto pb-8">
         <v-col
-          v-for="service in services"
+          v-for="(service, i) in services"
           :key="service.src"
+          v-reveal
           :cols="12"
           :sm="4"
+          :class="`reveal reveal--d${i + 1}`"
           justify="center"
           align="center"
         >
