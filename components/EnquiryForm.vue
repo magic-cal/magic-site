@@ -34,13 +34,9 @@
           v-on="on"
         />
       </template>
-      <v-date-picker
-        v-model="date"
-        no-title
-        @input="menu2 = false"
-      ></v-date-picker>
+      <v-date-picker v-model="date" no-title @input="menu2 = false" />
     </v-menu>
-    <v-textarea v-model="details" label="Event Details"> </v-textarea>
+    <v-textarea v-model="details" label="Event Details" />
 
     <v-btn color="accent" class="mr-4" @click="sendEmail"> Send </v-btn>
   </v-form>
@@ -52,7 +48,7 @@ import { mdiCalendar } from '@mdi/js'
 import { send as emailSend } from 'emailjs-com'
 
 export default defineComponent({
-  name: 'Contact',
+  name: 'EnquiryForm',
   setup() {
     const form = ref<any>(null)
     const name = ref('')
@@ -65,14 +61,14 @@ export default defineComponent({
     const valid = ref(true)
     const datePopup = ref(false)
 
-    const formattedDate = computed(() => formatDate(date.value))
-
     const formatDate = (date: string) => {
       if (!date) return null
 
       const [year, month, day] = date.split('-')
       return `${day}-${month}-${year}`
     }
+
+    const formattedDate = computed(() => formatDate(date.value))
 
     const emailRules = [
       (v: string) => !!v || 'E-mail is required',
@@ -86,6 +82,7 @@ export default defineComponent({
     const reset = () => {
       return form.value.reset()
     }
+
     const sendEmail = () => {
       if (!validate()) {
         return
@@ -104,7 +101,6 @@ export default defineComponent({
         'user_B76eyVlaAaisRGhim1W5r'
       ).then(
         () => {
-          console.log('SUCCESS!')
           alert('Sent')
           reset()
         },
@@ -114,7 +110,8 @@ export default defineComponent({
       )
     }
 
-    return { name,
+    return {
+      name,
       phone,
       email,
       venue,
@@ -127,7 +124,9 @@ export default defineComponent({
       sendEmail,
       form,
       validate,
-      reset, mdiCalendar }
+      reset,
+      mdiCalendar,
+    }
   },
 })
 </script>
