@@ -39,22 +39,22 @@ html[data-motion] .reveal--fade {
   transform: none;
 }
 
-/* Stagger steps for a row of cards or logos. Kept short: past about a third of
-   a second the last item in a row reads as lagging rather than as a sequence. */
+/* Stagger steps for a row of cards or logos: enough space between them to read
+   as one thing after another rather than as a single block with soft edges. */
 html[data-motion] .reveal--d1.is-revealed {
-  --reveal-delay: 70ms;
+  --reveal-delay: 110ms;
 }
 html[data-motion] .reveal--d2.is-revealed {
-  --reveal-delay: 140ms;
+  --reveal-delay: 220ms;
 }
 html[data-motion] .reveal--d3.is-revealed {
-  --reveal-delay: 210ms;
+  --reveal-delay: 330ms;
 }
 html[data-motion] .reveal--d4.is-revealed {
-  --reveal-delay: 280ms;
+  --reveal-delay: 440ms;
 }
 html[data-motion] .reveal--d5.is-revealed {
-  --reveal-delay: 350ms;
+  --reveal-delay: 550ms;
 }
 
 /* Staggered children: a list whose items arrive one after another rather than
@@ -77,25 +77,50 @@ html[data-motion] .reveal-stagger.is-revealed > * {
   transform: none;
   transition: opacity 0.5s cubic-bezier(0.22, 0.61, 0.36, 1),
     transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
-  transition-delay: 150ms;
+  transition-delay: 180ms;
 }
 
 html[data-motion] .reveal-stagger.is-revealed > *:nth-child(2) {
-  transition-delay: 240ms;
+  transition-delay: 300ms;
 }
 html[data-motion] .reveal-stagger.is-revealed > *:nth-child(3) {
-  transition-delay: 330ms;
-}
-html[data-motion] .reveal-stagger.is-revealed > *:nth-child(4) {
   transition-delay: 420ms;
 }
-html[data-motion] .reveal-stagger.is-revealed > *:nth-child(5) {
-  transition-delay: 510ms;
+html[data-motion] .reveal-stagger.is-revealed > *:nth-child(4) {
+  transition-delay: 540ms;
 }
-/* Anything past the sixth arrives with it: a longer cascade than about half a
-   second stops reading as a sequence and starts reading as a slow page. */
+html[data-motion] .reveal-stagger.is-revealed > *:nth-child(5) {
+  transition-delay: 660ms;
+}
+/* Anything past the sixth arrives with it: beyond about three quarters of a
+   second the cascade stops reading as a sequence and starts reading as a slow
+   page. */
 html[data-motion] .reveal-stagger.is-revealed > *:nth-child(n + 6) {
-  transition-delay: 600ms;
+  transition-delay: 760ms;
+}
+
+/* --- Photographs -------------------------------------------------------- */
+
+/* Every standing photograph on the site opens the same way: the frame widens
+   out from the centre while the picture fades up. Photographs that sit inside
+   a card are left out on purpose - the card already carries them in, and a
+   second animation over the same pixels reads as fussy.
+
+   clip-path rather than a transform: the parallax photographs are already
+   being translated by the scroll loop, and a second transform on the same
+   element would fight it. */
+html[data-motion] .reveal-img {
+  opacity: 0;
+  clip-path: inset(0 9% 0 9%);
+}
+
+html[data-motion] .reveal-img.is-revealed {
+  opacity: 1;
+  clip-path: inset(0 0 0 0);
+  /* The frame finishes opening a little after the picture has faded up, so the
+     movement settles rather than stopping dead. */
+  transition: opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1),
+    clip-path 0.95s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
 /* --- Hero entrance ------------------------------------------------------ */
@@ -143,9 +168,11 @@ html {
    sections would come out of the printer blank. */
 @media print {
   html[data-motion] .reveal,
-  html[data-motion] .reveal-stagger > * {
+  html[data-motion] .reveal-stagger > *,
+  html[data-motion] .reveal-img {
     opacity: 1 !important;
     transform: none !important;
+    clip-path: none !important;
   }
 }
 
@@ -154,9 +181,11 @@ html {
    waiting for the next page load. */
 @media (prefers-reduced-motion: reduce) {
   html[data-motion] .reveal,
-  html[data-motion] .reveal-stagger > * {
+  html[data-motion] .reveal-stagger > *,
+  html[data-motion] .reveal-img {
     opacity: 1;
     transform: none;
+    clip-path: none;
     transition: none;
   }
 

@@ -14,18 +14,14 @@
     <v-sheet color="white" class="py-14">
       <v-container>
         <v-row align="center">
-          <v-col
-            v-reveal
-            cols="12"
-            md="5"
-            class="mb-8 mb-md-0 reveal reveal--fade hover-zoom"
-          >
+          <v-col cols="12" md="5" class="mb-8 mb-md-0 hover-zoom">
             <v-img
+              v-reveal
               src="/headshot.jpg"
               alt="Portrait of magician Callum McClure, Magic Circle member"
               height="520"
               cover
-              class="about-headshot elevation-5"
+              class="about-headshot elevation-5 reveal-img"
             />
           </v-col>
           <v-col v-reveal cols="12" md="6" offset-md="1" class="reveal reveal--d2">

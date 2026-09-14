@@ -32,6 +32,17 @@ Scroll animations live in `assets/motion.css` and `utils/motion.ts`:
   `reveal--fade` to drop the upward movement. Never put it on a block containing
   the page's `<h1>` - that is the largest-contentful paint, and starting it at
   opacity 0 delays it.
+- `class="reveal-img"` + `v-reveal` is the entrance every standing photograph
+  shares: the frame opens out from the centre while the picture fades up. It
+  uses `clip-path` rather than a transform, so it can sit on a parallax image
+  that the scroll loop is already translating. Photos inside a card are left
+  out - the card's own reveal carries them. To change the direction for the
+  whole site, change the one `inset()` pair in `assets/motion.css`
+  (`inset(0 9% 0 9%)` opens from the centre; `inset(0 18% 0 0)` would wipe
+  left to right).
+- `class="reveal-stagger"` + `v-reveal` on a list brings its items in one after
+  another; the delays hang off `:nth-child`, so adding a bullet needs no markup
+  change.
 - `v-parallax-scroll` on a clipping container drifts its image against the
   scroll; see `components/PageHero.vue` and `components/ParallaxBand.vue` for
   the `--parallax-travel` / `--parallax-y` pair it drives. One shared scroll

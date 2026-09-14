@@ -2,13 +2,14 @@
   <v-sheet color="grey darken-3" dark class="credentials-bar">
     <v-container>
       <v-row justify="center" align="center" class="py-4">
+        <!-- Deliberately static: these three sit immediately under the hero and
+             are the first thing a visitor reads, so they are there on arrival
+             rather than arriving. -->
         <v-col
-          v-for="(cred, i) in credentials"
+          v-for="cred in credentials"
           :key="cred.text"
-          v-reveal
           cols="12"
           sm="4"
-          :class="`reveal reveal--d${i + 1}`"
           class="d-flex align-center justify-center py-2"
         >
           <v-img

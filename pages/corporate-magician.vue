@@ -117,7 +117,7 @@
       <v-container fluid class="pa-0">
         <v-row no-gutters>
           <v-col cols="12" md="6" class="hover-zoom">
-            <v-img src="/vr.jpg" height="420" cover />
+            <v-img v-reveal src="/vr.jpg" height="420" cover class="reveal-img" />
           </v-col>
           <v-col cols="12" md="6" class="d-flex align-center pa-10">
             <div v-reveal class="reveal">

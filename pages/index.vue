@@ -42,10 +42,12 @@
         <v-row no-gutters align="stretch">
           <v-col cols="12" md="6" order="2" order-md="1" class="hover-zoom">
             <v-img
+              v-reveal
               src="/skill.jpg"
               height="520"
               cover
               position="center top"
+              class="reveal-img"
             />
           </v-col>
           <v-col
