@@ -99,30 +99,6 @@ html[data-motion] .reveal-stagger.is-revealed > *:nth-child(n + 6) {
   transition-delay: 760ms;
 }
 
-/* --- Photographs -------------------------------------------------------- */
-
-/* Every standing photograph on the site opens the same way: the frame widens
-   out from the centre while the picture fades up. Photographs that sit inside
-   a card are left out on purpose - the card already carries them in, and a
-   second animation over the same pixels reads as fussy.
-
-   clip-path rather than a transform: the parallax photographs are already
-   being translated by the scroll loop, and a second transform on the same
-   element would fight it. */
-html[data-motion] .reveal-img {
-  opacity: 0;
-  clip-path: inset(0 9% 0 9%);
-}
-
-html[data-motion] .reveal-img.is-revealed {
-  opacity: 1;
-  clip-path: inset(0 0 0 0);
-  /* The frame finishes opening a little after the picture has faded up, so the
-     movement settles rather than stopping dead. */
-  transition: opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1),
-    clip-path 0.95s cubic-bezier(0.22, 0.61, 0.36, 1);
-}
-
 /* --- Hero entrance ------------------------------------------------------ */
 
 @keyframes motion-rise {
@@ -168,11 +144,9 @@ html {
    sections would come out of the printer blank. */
 @media print {
   html[data-motion] .reveal,
-  html[data-motion] .reveal-stagger > *,
-  html[data-motion] .reveal-img {
+  html[data-motion] .reveal-stagger > * {
     opacity: 1 !important;
     transform: none !important;
-    clip-path: none !important;
   }
 }
 
@@ -181,11 +155,9 @@ html {
    waiting for the next page load. */
 @media (prefers-reduced-motion: reduce) {
   html[data-motion] .reveal,
-  html[data-motion] .reveal-stagger > *,
-  html[data-motion] .reveal-img {
+  html[data-motion] .reveal-stagger > * {
     opacity: 1;
     transform: none;
-    clip-path: none;
     transition: none;
   }
 

@@ -8,13 +8,17 @@
       </v-col>
     </v-row>
     <v-row class="mx-auto pb-8" justify="center" align="center">
+      <!-- The delay is per logo rather than one of the five reveal--dN steps, so
+           the row fades in as a single sweep from left to right instead of
+           restarting the cascade every fifth logo. -->
       <v-col
         v-for="(logo, i) in logos"
         :key="logo.src"
         v-reveal
         cols="2"
         sm="1"
-        :class="`reveal reveal--fade reveal--d${(i % 5) + 1} logo-tile`"
+        class="reveal reveal--fade logo-tile"
+        :style="{ '--reveal-delay': `${i * 70}ms` }"
       >
         <v-img
           :src="logo.src"

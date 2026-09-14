@@ -29,13 +29,17 @@
             Learn more about Callum
           </v-btn>
         </v-col>
-        <v-col cols="12" md="5" class="mb-8 mb-md-0 hover-zoom">
+        <v-col
+          v-reveal
+          cols="12"
+          md="5"
+          class="mb-8 mb-md-0 reveal reveal--fade reveal--d2 hover-zoom"
+        >
           <v-img
-            v-reveal
             src="/promo-reaching.jpg"
-            class="about-photo elevation-6 reveal-img"
             height="500"
             cover
+            class="about-photo elevation-6"
           />
         </v-col>
       </v-row>

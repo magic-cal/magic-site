@@ -4,8 +4,7 @@
          v-img paints a background-image client-side, so the photo carries no
          alt text and stays invisible to the preload scanner. -->
     <img
-      v-reveal
-      class="parallax-band__img reveal-img"
+      class="parallax-band__img"
       :src="src"
       :srcset="srcset"
       sizes="100vw"
