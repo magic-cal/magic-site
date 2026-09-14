@@ -4,7 +4,13 @@
       If you are looking to make your next event extra special, just leave some
       details and Callum will get back to you
     </div>
-    <v-text-field v-model="name" label="Name *" required />
+    <v-text-field
+      v-model="name"
+      :rules="nameRules"
+      label="Name *"
+      required
+      validate-on-blur
+    />
 
     <v-text-field
       v-model="email"
@@ -70,6 +76,10 @@ export default defineComponent({
 
     const formattedDate = computed(() => formatDate(date.value))
 
+    // `required` on v-text-field only renders the HTML attribute, and the form
+    // never submits natively (Send is a click handler), so nothing enforced it.
+    const nameRules = [(v: string) => !!(v && v.trim()) || 'Name is required']
+
     const emailRules = [
       (v: string) => !!v || 'E-mail is required',
       (v: string) => /.+@.+\..+/.test(v) || 'Please enter a valid email',
@@ -117,6 +127,7 @@ export default defineComponent({
       venue,
       date,
       valid,
+      nameRules,
       emailRules,
       datePopup,
       formattedDate,
