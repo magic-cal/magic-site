@@ -2,7 +2,7 @@
   <div>
     <page-hero
       src="/wedding-astonished-reaction.jpg"
-      alt="A bride and groom reacting in astonishment to close-up magic at their wedding reception" position="center 32%" height="560">
+      alt="A bride and groom reacting in astonishment to close-up magic at their wedding reception" position="center 10%" height="560">
           <div>
             <h1 class="display-2 mb-4 white--text">Wedding Magician in Surrey</h1>
             <p class="headline mb-6 white--text">

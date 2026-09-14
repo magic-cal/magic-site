@@ -2,7 +2,7 @@
   <div>
     <page-hero
       src="/wedding-card-reveal.jpg"
-      alt="Magician Callum McClure revealing a playing card to two seated guests at an outdoor wedding reception" position="center 35%">
+      alt="Magician Callum McClure revealing a playing card to two seated guests at an outdoor wedding reception" position="center 10%">
           <div>
             <h1 class="display-2 mb-4 white--text">How Much Does a Wedding Magician Cost in the UK?</h1>
             <p class="headline mb-4 white--text">(2026 Guide)</p>

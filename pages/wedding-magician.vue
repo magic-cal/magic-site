@@ -2,7 +2,7 @@
   <div>
     <page-hero
       src="/wedding-card-reveal.jpg"
-      alt="Magician Callum McClure revealing a playing card to two seated guests at an outdoor wedding reception" position="center 35%">
+      alt="Magician Callum McClure revealing a playing card to two seated guests at an outdoor wedding reception" position="center 10%">
           <div>
             <h1 class="display-2 mb-4 white--text">Wedding Magician in Surrey &amp; Guildford</h1>
             <p class="headline mb-6 white--text">
@@ -134,7 +134,7 @@
       src="/wedding-astonished-reaction.jpg"
       alt=""
       :height="400"
-      position="center 32%"
+      position="center 10%"
     />
 
     <v-sheet color="grey lighten-4" class="py-12">

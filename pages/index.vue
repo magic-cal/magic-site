@@ -130,8 +130,8 @@
       <parallax-band
         src="/reception-card-trick.jpg"
         alt="Guests gathered around a table watching a card trick at a drinks reception"
-        :height="460"
-        position="center 30%"
+        :height="560"
+        position="center 15%"
         scrim="linear-gradient(to right, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.15) 100%)"
       >
         <v-container>
