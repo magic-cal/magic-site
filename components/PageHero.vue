@@ -71,9 +71,6 @@ export default defineComponent({
 .page-hero {
   position: relative;
   overflow: hidden;
-  /* No travel unless the motion flag is set: with scripting off, or reduced
-     motion on, --parallax-y never changes and the extra headroom below would
-     only crop the photo differently for no reason. */
   --parallax-travel: 0px;
   --parallax-y: 0px;
 }
@@ -88,8 +85,6 @@ html[data-motion] .page-hero {
   }
 }
 
-/* The image is taller than the box by the travel at each end, so it can drift
-   within the crop without ever exposing an edge. */
 .page-hero__img {
   position: absolute;
   top: calc(-1 * var(--parallax-travel));

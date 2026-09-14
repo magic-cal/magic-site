@@ -4,8 +4,6 @@
       <v-sheet color="grey darken-4" dark class="py-12">
         <v-container>
           <v-row justify="center">
-            <!-- The h1 here is the page's largest contentful paint, so this
-                 block stays put; the line under it is what moves. -->
             <v-col cols="12" md="8" class="text-center">
               <h1 class="display-1 mb-2">Contact Callum - Get a Quote</h1>
               <p v-reveal class="headline reveal reveal--d1">

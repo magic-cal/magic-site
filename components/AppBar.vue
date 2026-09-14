@@ -93,9 +93,6 @@
         </div>
       </template>
     </v-navigation-drawer>
-    <!-- elevate-on-scroll: flat while the page sits at the top, then a soft
-         shadow once content starts passing underneath, so the bar reads as
-         lifted off the page rather than as a permanent band. -->
     <v-app-bar
       app
       light

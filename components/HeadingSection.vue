@@ -2,9 +2,6 @@
   <v-sheet class="pa-12 header-sheet" light>
     <v-container>
       <v-row>
-        <!-- Deliberately not revealed: this h1 is the page's largest
-             contentful paint, and a block that starts at opacity 0 does not
-             count as painted until it has faded in. -->
         <v-col :cols="12" py-12>
           <h1 class="display-3 flex-grow-1">
             {{ title }}

@@ -1,24 +1,6 @@
-/* ---------------------------------------------------------------------------
-   Motion
-   ---------------------------------------------------------------------------
-   Two gates, deliberately different:
-
-   - Scroll reveals and entrance animations sit under html[data-motion], a flag
-     set by a two-line inline script in nuxt.config.js before the first paint,
-     and only when IntersectionObserver exists and the visitor has not asked for
-     reduced motion. They need JavaScript to un-hide themselves, so without the
-     flag they must not hide anything in the first place: with scripting off the
-     page renders exactly as it did before any of this existed.
-
-   - Hover polish sits under prefers-reduced-motion: no-preference plus a real
-     hover-capable pointer. It needs no JavaScript, and gating it on a fine
-     pointer stops a phone from latching a card into its hover state on tap.
-
-   Only opacity and transform are animated anywhere below, so the work stays on
-   the compositor rather than triggering layout on the main thread.
-   ------------------------------------------------------------------------ */
-
-/* --- Reveal on scroll -------------------------------------------------- */
+/* html[data-motion] is set in nuxt.config.js before first paint, and only when
+   the browser can reveal these elements again. Without it nothing here hides
+   anything: no script, no reveal, no blank page. */
 
 html[data-motion] .reveal {
   opacity: 0;
@@ -33,14 +15,10 @@ html[data-motion] .reveal.is-revealed {
   transition-delay: var(--reveal-delay, 0ms);
 }
 
-/* For blocks where the rise would be distracting - a tall photo beside body
-   copy, say - fade alone. */
 html[data-motion] .reveal--fade {
   transform: none;
 }
 
-/* Stagger steps for a row of cards or logos: enough space between them to read
-   as one thing after another rather than as a single block with soft edges. */
 html[data-motion] .reveal--d1.is-revealed {
   --reveal-delay: 110ms;
 }
@@ -57,18 +35,8 @@ html[data-motion] .reveal--d5.is-revealed {
   --reveal-delay: 550ms;
 }
 
-/* Staggered children: a list whose items arrive one after another rather than
-   as a single block. The class goes on the list, not the items, so the markup
-   stays a list; the delays are attached to :nth-child rather than to per-item
-   classes so adding a bullet needs no template change.
-
-   The first step is held back far enough that the items read as following the
-   section they sit in (which is fading in over 0.65s of its own) rather than
-   racing it. */
 html[data-motion] .reveal-stagger > * {
   opacity: 0;
-  /* Shorter than a block reveal: these are lines inside a block that is itself
-     moving, and a full 22px each would read as two separate animations. */
   transform: translateY(12px);
 }
 
@@ -92,14 +60,9 @@ html[data-motion] .reveal-stagger.is-revealed > *:nth-child(4) {
 html[data-motion] .reveal-stagger.is-revealed > *:nth-child(5) {
   transition-delay: 660ms;
 }
-/* Anything past the sixth arrives with it: beyond about three quarters of a
-   second the cascade stops reading as a sequence and starts reading as a slow
-   page. */
 html[data-motion] .reveal-stagger.is-revealed > *:nth-child(n + 6) {
   transition-delay: 760ms;
 }
-
-/* --- Hero entrance ------------------------------------------------------ */
 
 @keyframes motion-rise {
   from {
@@ -112,10 +75,8 @@ html[data-motion] .reveal-stagger.is-revealed > *:nth-child(n + 6) {
   }
 }
 
-/* Only the call to action and the small credential line, never the heading or
-   the hero image: those are the largest-contentful-paint candidates on most
-   pages, and an element that starts at opacity 0 does not count as painted
-   until it has faded in. */
+/* Headings and hero images are left out: they are the largest-contentful paint,
+   and an element at opacity 0 does not count as painted. */
 html[data-motion] .page-hero__overlay .v-btn,
 html[data-motion] .hero__content .v-btn {
   animation: motion-rise 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) 0.25s both;
@@ -125,23 +86,13 @@ html[data-motion] .hero-heading__credential {
   animation: motion-rise 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) 0.12s both;
 }
 
-/* --- Anchor scrolling --------------------------------------------------- */
-
 html {
-  /* An anchored URL (or a keyboard focus jump) lands clear of the fixed app
-     bar rather than underneath it.
-
-     Deliberately no scroll-behavior: smooth here. Vue Router scrolls to the
-     top through the same window.scrollTo, so it would animate every route
-     change - a long page would spool all the way back up before the next one
-     appeared - and the site has no in-page anchor links to gain from it. */
+  /* No scroll-behavior: smooth - Vue Router's scroll-to-top goes through the
+     same window.scrollTo and would spool a long page back up on every route. */
   scroll-padding-top: 80px;
 }
 
-/* --- Safety nets -------------------------------------------------------- */
-
-/* Printing never scrolls, so nothing would ever trigger a reveal and whole
-   sections would come out of the printer blank. */
+/* Printing never scrolls, so nothing would trigger a reveal. */
 @media print {
   html[data-motion] .reveal,
   html[data-motion] .reveal-stagger > * {
@@ -150,9 +101,6 @@ html {
   }
 }
 
-/* The flag is set once, at load. If the visitor turns reduced motion on after
-   that - or the system flips it - stop animating immediately rather than
-   waiting for the next page load. */
 @media (prefers-reduced-motion: reduce) {
   html[data-motion] .reveal,
   html[data-motion] .reveal-stagger > * {
@@ -168,8 +116,6 @@ html {
   }
 }
 
-/* --- Hover polish ------------------------------------------------------- */
-
 @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
   .service-card,
   .hover-lift {
@@ -183,8 +129,6 @@ html {
     box-shadow: 0 14px 30px rgba(0, 0, 0, 0.16) !important;
   }
 
-  /* The photo inside the card creeps in a little as the card lifts. v-img
-     clips to its own bounds, so the overflow never escapes the card. */
   .service-card .v-image__image,
   .hover-zoom .v-image__image,
   .hover-zoom img {
@@ -197,7 +141,6 @@ html {
     transform: scale(1.06);
   }
 
-  /* Solid and outlined buttons only: the app bar's text buttons stay put. */
   .v-btn:not(.v-btn--text):not(.v-btn--plain):not(.v-btn--icon):not(.v-btn--fab) {
     transition: transform 0.2s ease, box-shadow 0.25s ease,
       background-color 0.2s ease, border-color 0.2s ease;
@@ -213,15 +156,14 @@ html {
   }
 
   .footer-link {
-    transition: color 0.2s ease, transform 0.25s cubic-bezier(0.22, 0.61, 0.36, 1);
+    transition: color 0.2s ease,
+      transform 0.25s cubic-bezier(0.22, 0.61, 0.36, 1);
   }
 
   .footer-link:hover {
     transform: translateX(3px);
   }
 
-  /* A logo leans forward slightly when pointed at - no dimming of the resting
-     state, so a phone and a desktop show the same row of logos. */
   .logo-tile .v-image__image,
   .logo-tile img {
     transition: transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);

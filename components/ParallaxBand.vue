@@ -1,8 +1,5 @@
 <template>
   <div v-parallax-scroll class="parallax-band" :style="{ height: cssHeight }">
-    <!-- A plain <img> rather than <v-img>, for the same reason as PageHero:
-         v-img paints a background-image client-side, so the photo carries no
-         alt text and stays invisible to the preload scanner. -->
     <img
       class="parallax-band__img"
       :src="src"
@@ -29,9 +26,6 @@
 import { computed, defineComponent } from '@vue/composition-api'
 import { heroImageDims, heroSrcset } from '~/utils/heroImages'
 
-// A full-bleed photo that breaks up a run of text sections, drifting gently
-// against the scroll. Pass a slot to lay copy over it; without one the photo
-// is decorative and alt should be left empty.
 export default defineComponent({
   props: {
     src: {
@@ -53,8 +47,6 @@ export default defineComponent({
       required: false,
       default: 420,
     },
-    // Gradient laid over the photo so overlaid copy stays readable. Left off
-    // for a decorative band.
     scrim: {
       type: String,
       required: false,
@@ -78,7 +70,6 @@ export default defineComponent({
 .parallax-band {
   position: relative;
   overflow: hidden;
-  /* Nothing drifts unless the motion flag is set - see assets/motion.css. */
   --parallax-travel: 0px;
   --parallax-y: 0px;
 }
@@ -93,8 +84,6 @@ html[data-motion] .parallax-band {
   }
 }
 
-/* Taller than the box by the travel at each end, so the photo can drift
-   inside the crop without ever exposing an edge. */
 .parallax-band__img {
   position: absolute;
   top: calc(-1 * var(--parallax-travel));
