@@ -70,7 +70,15 @@
       <a href="mailto:info@magic-cal.co.uk">info@magic-cal.co.uk</a>.
     </v-alert>
 
-    <v-btn color="accent" class="mr-4" @click="sendEmail"> Send </v-btn>
+    <v-btn
+      color="accent"
+      class="mr-4"
+      :loading="sending"
+      :disabled="sending"
+      @click="sendEmail"
+    >
+      Send
+    </v-btn>
   </v-form>
 </template>
 
@@ -93,6 +101,7 @@ export default defineComponent({
     const valid = ref(true)
     const datePopup = ref(false)
     const failed = ref(false)
+    const sending = ref(false)
 
     const formatDate = (date: string) => {
       if (!date) return null
@@ -124,8 +133,14 @@ export default defineComponent({
       if (!validate()) {
         return
       }
+      // Guard against a second click landing while the first is still in
+      // flight, which would send the enquiry twice.
+      if (sending.value) {
+        return
+      }
       // Clear any previous failure so a retry does not show a stale error.
       failed.value = false
+      sending.value = true
       try {
         await emailSend(
           'default_service',
@@ -147,6 +162,8 @@ export default defineComponent({
         // visible: previously this was a console.log and the visitor was left
         // looking at an unchanged form, assuming it had sent.
         failed.value = true
+      } finally {
+        sending.value = false
       }
     }
 
@@ -158,6 +175,7 @@ export default defineComponent({
       date,
       valid,
       failed,
+      sending,
       nameRules,
       emailRules,
       datePopup,
