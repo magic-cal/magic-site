@@ -8,6 +8,8 @@
       v-model="name"
       :rules="nameRules"
       label="Name *"
+      name="name"
+      autocomplete="name"
       required
       validate-on-blur
     />
@@ -16,12 +18,23 @@
       v-model="email"
       :rules="emailRules"
       label="E-mail *"
+      type="email"
+      name="email"
+      autocomplete="email"
+      inputmode="email"
       required
       validate-on-blur
     />
 
-    <v-text-field v-model="phone" label="Phone" />
-    <v-text-field v-model="venue" label="Venue" />
+    <v-text-field
+      v-model="phone"
+      label="Phone"
+      type="tel"
+      name="phone"
+      autocomplete="tel"
+      inputmode="tel"
+    />
+    <v-text-field v-model="venue" label="Venue" name="venue" />
     <v-menu
       v-model="datePopup"
       :close-on-content-click="false"
