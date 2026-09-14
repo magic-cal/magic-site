@@ -57,6 +57,19 @@
     </v-menu>
     <v-textarea v-model="details" label="Event Details" />
 
+    <v-alert
+      v-if="failed"
+      type="error"
+      role="alert"
+      dense
+      text
+      class="mb-4 body-2"
+    >
+      Your message could not be sent. Please try again, or reach Callum
+      directly on <a href="tel:+447481768042">07481 768042</a> or
+      <a href="mailto:info@magic-cal.co.uk">info@magic-cal.co.uk</a>.
+    </v-alert>
+
     <v-btn color="accent" class="mr-4" @click="sendEmail"> Send </v-btn>
   </v-form>
 </template>
@@ -79,6 +92,7 @@ export default defineComponent({
 
     const valid = ref(true)
     const datePopup = ref(false)
+    const failed = ref(false)
 
     const formatDate = (date: string) => {
       if (!date) return null
@@ -106,31 +120,34 @@ export default defineComponent({
       return form.value.reset()
     }
 
-    const sendEmail = () => {
+    const sendEmail = async () => {
       if (!validate()) {
         return
       }
-      emailSend(
-        'default_service',
-        'template_vsrvm7q',
-        {
-          name: name.value,
-          phone: phone.value,
-          email: email.value,
-          venue: venue.value,
-          date: formattedDate.value,
-          details: details.value,
-        },
-        'user_B76eyVlaAaisRGhim1W5r'
-      ).then(
-        () => {
-          alert('Sent')
-          reset()
-        },
-        (error) => {
-          console.log('FAILED', error)
-        }
-      )
+      // Clear any previous failure so a retry does not show a stale error.
+      failed.value = false
+      try {
+        await emailSend(
+          'default_service',
+          'template_vsrvm7q',
+          {
+            name: name.value,
+            phone: phone.value,
+            email: email.value,
+            venue: venue.value,
+            date: formattedDate.value,
+            details: details.value,
+          },
+          'user_B76eyVlaAaisRGhim1W5r'
+        )
+        alert('Sent')
+        reset()
+      } catch (error) {
+        // The enquiry is the entire point of the site, so a failure has to be
+        // visible: previously this was a console.log and the visitor was left
+        // looking at an unchanged form, assuming it had sent.
+        failed.value = true
+      }
     }
 
     return {
@@ -140,6 +157,7 @@ export default defineComponent({
       venue,
       date,
       valid,
+      failed,
       nameRules,
       emailRules,
       datePopup,
