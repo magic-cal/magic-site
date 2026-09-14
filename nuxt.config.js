@@ -63,9 +63,20 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      // Roboto is loaded here rather than by @nuxtjs/vuetify's defaultAssets,
+      // which hardcodes six weights. Only these four are rendered: 300/400/500
+      // from Vuetify's typography, 700 from font-weight-bold.
+      { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+      // crossorigin is required here: fonts are fetched in CORS mode, and
+      // without it the preconnect is ignored.
+      {
+        rel: 'preconnect',
+        href: 'https://fonts.gstatic.com',
+        crossorigin: 'anonymous',
+      },
       {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap',
+        href: 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap',
       },
     ],
     script: [
@@ -103,6 +114,8 @@ export default {
 
   vuetify: {
     defaultAssets: {
+      // Disabled; Roboto is loaded from head.link above instead.
+      font: false,
       icons: 'mdiSvg',
     },
     theme: {
@@ -139,6 +152,9 @@ export default {
   },
 
   build: {
+    // Otherwise ~364KB of mostly-Vuetify CSS is inlined into every page.
+    // Extracting it drops each page's HTML from ~410KB to ~61KB.
+    extractCSS: true,
     extend(config) {
       config.resolve.alias['@vue/composition-api'] = 'vue'
     },
