@@ -47,7 +47,7 @@
               I perform at Christmas parties all across London - these are some of the
               areas and venue types I cover regularly:
             </p>
-            <v-list color="transparent">
+            <v-list v-reveal color="transparent" class="reveal-stagger">
               <v-list-item v-for="venue in venues" :key="venue.area">
                 <v-list-item-icon><v-icon color="accent">{{ mdiMapMarker }}</v-icon></v-list-item-icon>
                 <v-list-item-content>

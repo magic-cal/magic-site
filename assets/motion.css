@@ -57,6 +57,47 @@ html[data-motion] .reveal--d5.is-revealed {
   --reveal-delay: 350ms;
 }
 
+/* Staggered children: a list whose items arrive one after another rather than
+   as a single block. The class goes on the list, not the items, so the markup
+   stays a list; the delays are attached to :nth-child rather than to per-item
+   classes so adding a bullet needs no template change.
+
+   The first step is held back far enough that the items read as following the
+   section they sit in (which is fading in over 0.65s of its own) rather than
+   racing it. */
+html[data-motion] .reveal-stagger > * {
+  opacity: 0;
+  /* Shorter than a block reveal: these are lines inside a block that is itself
+     moving, and a full 22px each would read as two separate animations. */
+  transform: translateY(12px);
+}
+
+html[data-motion] .reveal-stagger.is-revealed > * {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.5s cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition-delay: 150ms;
+}
+
+html[data-motion] .reveal-stagger.is-revealed > *:nth-child(2) {
+  transition-delay: 240ms;
+}
+html[data-motion] .reveal-stagger.is-revealed > *:nth-child(3) {
+  transition-delay: 330ms;
+}
+html[data-motion] .reveal-stagger.is-revealed > *:nth-child(4) {
+  transition-delay: 420ms;
+}
+html[data-motion] .reveal-stagger.is-revealed > *:nth-child(5) {
+  transition-delay: 510ms;
+}
+/* Anything past the sixth arrives with it: a longer cascade than about half a
+   second stops reading as a sequence and starts reading as a slow page. */
+html[data-motion] .reveal-stagger.is-revealed > *:nth-child(n + 6) {
+  transition-delay: 600ms;
+}
+
 /* --- Hero entrance ------------------------------------------------------ */
 
 @keyframes motion-rise {
@@ -101,7 +142,8 @@ html {
 /* Printing never scrolls, so nothing would ever trigger a reveal and whole
    sections would come out of the printer blank. */
 @media print {
-  html[data-motion] .reveal {
+  html[data-motion] .reveal,
+  html[data-motion] .reveal-stagger > * {
     opacity: 1 !important;
     transform: none !important;
   }
@@ -111,7 +153,8 @@ html {
    that - or the system flips it - stop animating immediately rather than
    waiting for the next page load. */
 @media (prefers-reduced-motion: reduce) {
-  html[data-motion] .reveal {
+  html[data-motion] .reveal,
+  html[data-motion] .reveal-stagger > * {
     opacity: 1;
     transform: none;
     transition: none;

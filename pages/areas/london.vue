@@ -46,7 +46,7 @@
               just guests to amaze. I perform at city venues, hotels and private members'
               spaces for all kinds of events:
             </p>
-            <v-list color="transparent">
+            <v-list v-reveal color="transparent" class="reveal-stagger">
               <v-list-item>
                 <v-list-item-icon><v-icon color="accent">{{ mdiRing }}</v-icon></v-list-item-icon>
                 <v-list-item-content>

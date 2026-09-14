@@ -50,7 +50,7 @@
         <v-row justify="center">
           <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-6 black--text">The credentials</h2>
-            <v-list color="transparent">
+            <v-list v-reveal color="transparent" class="reveal-stagger">
               <v-list-item v-for="cred in credentials" :key="cred.title">
                 <v-list-item-icon><v-icon color="accent">{{ mdiCheckDecagram }}</v-icon></v-list-item-icon>
                 <v-list-item-content>

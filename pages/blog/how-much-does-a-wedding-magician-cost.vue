@@ -38,7 +38,7 @@
         <v-row justify="center">
           <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-6 black--text">Typical price ranges</h2>
-            <v-list color="transparent">
+            <v-list v-reveal color="transparent" class="reveal-stagger">
               <v-list-item v-for="range in priceRanges" :key="range.slot">
                 <v-list-item-icon><v-icon color="accent">{{ mdiCurrencyGbp }}</v-icon></v-list-item-icon>
                 <v-list-item-content>
@@ -61,7 +61,7 @@
         <v-row justify="center">
           <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-6 black--text">What affects the price?</h2>
-            <v-list color="transparent">
+            <v-list v-reveal color="transparent" class="reveal-stagger">
               <v-list-item v-for="factor in factors" :key="factor.title">
                 <v-list-item-icon><v-icon color="accent">{{ mdiInformationOutline }}</v-icon></v-list-item-icon>
                 <v-list-item-content>

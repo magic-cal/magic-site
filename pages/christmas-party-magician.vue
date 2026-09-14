@@ -44,7 +44,7 @@
         <v-row justify="center">
           <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-6 black--text">Why book a magician for your Christmas party?</h2>
-            <v-list color="transparent">
+            <v-list v-reveal color="transparent" class="reveal-stagger">
               <v-list-item v-for="reason in reasons" :key="reason.title">
                 <v-list-item-icon><v-icon color="accent">{{ mdiCheckCircle }}</v-icon></v-list-item-icon>
                 <v-list-item-content>
@@ -63,7 +63,7 @@
         <v-row justify="center">
           <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-6 black--text">Christmas events I perform at</h2>
-            <v-list color="transparent">
+            <v-list v-reveal color="transparent" class="reveal-stagger">
               <v-list-item v-for="ev in events" :key="ev.title">
                 <v-list-item-icon><v-icon color="accent">{{ mdiSnowflake }}</v-icon></v-list-item-icon>
                 <v-list-item-content>
