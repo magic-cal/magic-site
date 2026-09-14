@@ -34,7 +34,7 @@
           v-on="on"
         />
       </template>
-      <v-date-picker v-model="date" no-title @input="menu2 = false" />
+      <v-date-picker v-model="date" no-title @input="datePopup = false" />
     </v-menu>
     <v-textarea v-model="details" label="Event Details" />
 
