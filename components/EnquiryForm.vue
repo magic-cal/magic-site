@@ -84,12 +84,17 @@
 
 <script lang="ts">
 import { computed, defineComponent, ref } from '@vue/composition-api'
+// useRouter comes from @nuxtjs/composition-api rather than the aliased
+// @vue/composition-api: build.extend maps that specifier onto vue itself, and
+// Vue 2.7's getCurrentInstance() returns null under this setup.
+import { useRouter } from '@nuxtjs/composition-api'
 import { mdiCalendar } from '@mdi/js'
 import { send as emailSend } from 'emailjs-com'
 
 export default defineComponent({
   name: 'EnquiryForm',
   setup() {
+    const router = useRouter()
     const form = ref<any>(null)
     const name = ref('')
     const phone = ref('')
@@ -125,10 +130,6 @@ export default defineComponent({
       return form.value.validate()
     }
 
-    const reset = () => {
-      return form.value.reset()
-    }
-
     const sendEmail = async () => {
       if (!validate()) {
         return
@@ -155,8 +156,7 @@ export default defineComponent({
           },
           'user_B76eyVlaAaisRGhim1W5r'
         )
-        alert('Sent')
-        reset()
+        router.push('/thank-you')
       } catch (error) {
         // The enquiry is the entire point of the site, so a failure has to be
         // visible: previously this was a console.log and the visitor was left
@@ -183,8 +183,6 @@ export default defineComponent({
       details,
       sendEmail,
       form,
-      validate,
-      reset,
       mdiCalendar,
     }
   },

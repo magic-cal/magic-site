@@ -23,9 +23,10 @@ export default {
   sitemap: {
     hostname: 'https://www.magic-cal.co.uk',
     gzip: false,
-    // /show is a noindex meta-refresh alias for /wont-get-fooled-again.
-    // Submitting a noindex URL in the sitemap sends contradictory signals.
-    exclude: ['/show'],
+    // /show is a noindex meta-refresh alias for /wont-get-fooled-again, and
+    // /thank-you is only reachable by sending the enquiry form. Both are
+    // noindex, and submitting a noindex URL sends contradictory signals.
+    exclude: ['/show', '/thank-you'],
   },
 
   // Global page headers
