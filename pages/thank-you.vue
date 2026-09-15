@@ -9,8 +9,8 @@
             }}</v-icon>
             <h1 class="display-1 mb-3">Thanks - your message is on its way</h1>
             <p class="headline mb-0">
-              Callum aims to reply to every enquiry within 24 hours, with
-              availability and a quote for your event.
+              You will get a reply within 24 hours. Depending on the event, that
+              may come from Callum or from his agent.
             </p>
           </v-col>
         </v-row>
@@ -57,9 +57,6 @@
               Have a look at what close-up magic actually looks like on the
               night.
             </p>
-            <v-btn outlined color="accent" nuxt to="/testimonials" class="ma-1">
-              Read reviews
-            </v-btn>
             <v-btn outlined color="accent" nuxt to="/close-up-magician" class="ma-1">
               What is close-up magic?
             </v-btn>
@@ -81,21 +78,21 @@ import { buildHead } from '~/utils/seo'
 const steps = [
   {
     icon: mdiEmailFast,
-    title: 'Your enquiry has reached Callum',
+    title: 'Your enquiry has been received',
     detail:
-      'It goes straight to his inbox, along with the date, venue and details you entered.',
+      'The date, venue and details you entered go straight through. Depending on the event, it may be handled by Callum or by his agent.',
   },
   {
     icon: mdiCalendarCheck,
-    title: 'He checks the date',
+    title: 'You will hear back within 24 hours',
     detail:
-      'You will get a reply within 24 hours confirming whether the date is free, and what it would cost.',
+      'The first reply covers availability for your date. A full quote may follow separately, once the details of the event are clear.',
   },
   {
     icon: mdiCheckCircleOutline,
     title: 'No obligation',
     detail:
-      'A quote is just a quote - nothing is booked until you say so, and there is no deposit to pay to ask.',
+      'Nothing is booked until you confirm. If you go ahead, a deposit may be needed to hold the date.',
   },
 ]
 
@@ -107,7 +104,7 @@ export default defineComponent({
     const head = buildHead({
       title: 'Thank You | Callum McClure Magician',
       description:
-        'Thanks for getting in touch. Callum aims to reply to every enquiry within 24 hours with availability and a quote.',
+        'Thanks for getting in touch. You will get a reply within 24 hours about availability for your date.',
       path: '/thank-you',
     })
     // Only ever reached by sending the form, so there is nothing here for
