@@ -18,7 +18,7 @@
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <p class="body-1 black--text">
               Every great party needs a moment people remember the next morning. I'm
               Callum McClure - an award-winning <strong>party magician in Surrey</strong>
@@ -34,9 +34,9 @@
     <v-sheet color="grey lighten-4" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-6 black--text">Parties I bring magic to</h2>
-            <v-list color="transparent">
+            <v-list v-reveal color="transparent" class="reveal-stagger">
               <v-list-item v-for="ev in events" :key="ev">
                 <v-list-item-icon><v-icon color="accent">{{ mdiCheckCircle }}</v-icon></v-list-item-icon>
                 <v-list-item-content>
@@ -52,9 +52,9 @@
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-6 black--text">Why I'm the right choice for your party</h2>
-            <v-list color="transparent">
+            <v-list v-reveal color="transparent" class="reveal-stagger">
               <v-list-item>
                 <v-list-item-icon><v-icon color="accent">{{ mdiStar }}</v-icon></v-list-item-icon>
                 <v-list-item-content>
@@ -91,7 +91,7 @@
     <v-sheet color="grey lighten-4" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-4 black--text">Available across Surrey &amp; London</h2>
             <p class="body-1 black--text">
               Based in London and performing at parties across Surrey - Guildford,
@@ -116,7 +116,7 @@
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-6 black--text">Frequently asked questions</h2>
             <v-expansion-panels light>
               <v-expansion-panel v-for="faq in faqs" :key="faq.q">

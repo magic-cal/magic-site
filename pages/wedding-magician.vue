@@ -2,7 +2,7 @@
   <div>
     <page-hero
       src="/wedding-card-reveal.jpg"
-      alt="Magician Callum McClure revealing a playing card to two seated guests at an outdoor wedding reception" position="center 35%">
+      alt="Magician Callum McClure revealing a playing card to two seated guests at an outdoor wedding reception" position="center 10%">
           <div>
             <h1 class="display-2 mb-4 white--text">Wedding Magician in Surrey &amp; Guildford</h1>
             <p class="headline mb-6 white--text">
@@ -18,7 +18,7 @@
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <p class="body-1 black--text">
               There's a moment at every wedding when your guests are between things:
               photos are being taken, the receiving line has wound down, and people who've
@@ -44,10 +44,10 @@
     <v-sheet color="grey lighten-4" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-6 black--text">Magic that fits your day, not the other way around</h2>
             <p class="body-1 black--text mb-4">I perform during whichever part of your day needs lifting:</p>
-            <v-list color="transparent">
+            <v-list v-reveal color="transparent" class="reveal-stagger">
               <v-list-item>
                 <v-list-item-icon><v-icon color="accent">{{ mdiCheckCircle }}</v-icon></v-list-item-icon>
                 <v-list-item-content>
@@ -92,9 +92,9 @@
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-6 black--text">Why couples book me</h2>
-            <v-list color="transparent">
+            <v-list v-reveal color="transparent" class="reveal-stagger">
               <v-list-item>
                 <v-list-item-icon><v-icon color="accent">{{ mdiStar }}</v-icon></v-list-item-icon>
                 <v-list-item-content>
@@ -130,12 +130,17 @@
       </v-container>
     </v-sheet>
 
-    <v-img src="/wedding-astonished-reaction.jpg" height="400" cover position="center 32%" />
+    <parallax-band
+      src="/wedding-astonished-reaction.jpg"
+      alt=""
+      :height="400"
+      position="center 10%"
+    />
 
     <v-sheet color="grey lighten-4" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-6 black--text">Surrey weddings I know well</h2>
             <p class="body-1 black--text">
               I regularly perform across Surrey and the South East, and I know many of
@@ -163,7 +168,7 @@
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-4 black--text">How much does a wedding magician cost?</h2>
             <p class="body-1 black--text">
               Most professional wedding magicians in the UK charge somewhere between
@@ -185,7 +190,7 @@
     <v-sheet color="grey lighten-4" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-6 black--text">Frequently asked questions</h2>
             <v-expansion-panels light>
               <v-expansion-panel v-for="faq in faqs" :key="faq.q">

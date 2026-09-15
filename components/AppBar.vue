@@ -97,6 +97,7 @@
       app
       light
       :inverted-scroll="hideOnScroll"
+      elevate-on-scroll
       elevation="0"
       color="white"
     >

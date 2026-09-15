@@ -1,9 +1,9 @@
 <template>
   <v-row id="contact">
-    <v-col :cols="12">
+    <v-col v-reveal :cols="12" class="reveal">
       <h2 class="accent--text display-1">Contact Me</h2>
     </v-col>
-    <v-col :cols="12" :md="6">
+    <v-col v-reveal :cols="12" :md="6" class="reveal reveal--d1">
       <v-card light>
         <v-col>
           For more information about Callum's performances, feel free to drop
@@ -30,7 +30,7 @@
         >
       </v-card>
     </v-col>
-    <v-col :cols="12" :md="6">
+    <v-col v-reveal :cols="12" :md="6" class="reveal reveal--d2">
       <v-card light>
         <v-card-title>Contact</v-card-title>
         <v-card-text>

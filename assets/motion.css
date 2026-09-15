@@ -1,0 +1,176 @@
+/* html[data-motion] is set in nuxt.config.js before first paint, and only when
+   the browser can reveal these elements again. Without it nothing here hides
+   anything: no script, no reveal, no blank page. */
+
+html[data-motion] .reveal {
+  opacity: 0;
+  transform: translateY(22px);
+}
+
+html[data-motion] .reveal.is-revealed {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.65s cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 0.65s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+html[data-motion] .reveal--fade {
+  transform: none;
+}
+
+html[data-motion] .reveal--d1.is-revealed {
+  --reveal-delay: 110ms;
+}
+html[data-motion] .reveal--d2.is-revealed {
+  --reveal-delay: 220ms;
+}
+html[data-motion] .reveal--d3.is-revealed {
+  --reveal-delay: 330ms;
+}
+html[data-motion] .reveal--d4.is-revealed {
+  --reveal-delay: 440ms;
+}
+html[data-motion] .reveal--d5.is-revealed {
+  --reveal-delay: 550ms;
+}
+
+html[data-motion] .reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+html[data-motion] .reveal-stagger.is-revealed > * {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.5s cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition-delay: 180ms;
+}
+
+html[data-motion] .reveal-stagger.is-revealed > *:nth-child(2) {
+  transition-delay: 300ms;
+}
+html[data-motion] .reveal-stagger.is-revealed > *:nth-child(3) {
+  transition-delay: 420ms;
+}
+html[data-motion] .reveal-stagger.is-revealed > *:nth-child(4) {
+  transition-delay: 540ms;
+}
+html[data-motion] .reveal-stagger.is-revealed > *:nth-child(5) {
+  transition-delay: 660ms;
+}
+html[data-motion] .reveal-stagger.is-revealed > *:nth-child(n + 6) {
+  transition-delay: 760ms;
+}
+
+@keyframes motion-rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Headings and hero images are left out: they are the largest-contentful paint,
+   and an element at opacity 0 does not count as painted. */
+html[data-motion] .page-hero__overlay .v-btn,
+html[data-motion] .hero__content .v-btn {
+  animation: motion-rise 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) 0.25s both;
+}
+
+html[data-motion] .hero-heading__credential {
+  animation: motion-rise 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) 0.12s both;
+}
+
+html {
+  /* No scroll-behavior: smooth - Vue Router's scroll-to-top goes through the
+     same window.scrollTo and would spool a long page back up on every route. */
+  scroll-padding-top: 80px;
+}
+
+/* Printing never scrolls, so nothing would trigger a reveal. */
+@media print {
+  html[data-motion] .reveal,
+  html[data-motion] .reveal-stagger > * {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-motion] .reveal,
+  html[data-motion] .reveal-stagger > * {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  html[data-motion] .page-hero__overlay .v-btn,
+  html[data-motion] .hero__content .v-btn,
+  html[data-motion] .hero-heading__credential {
+    animation: none;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .service-card,
+  .hover-lift {
+    transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1),
+      box-shadow 0.35s ease;
+  }
+
+  .service-card:hover,
+  .hover-lift:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.16) !important;
+  }
+
+  .service-card .v-image__image,
+  .hover-zoom .v-image__image,
+  .hover-zoom img {
+    transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+
+  .service-card:hover .v-image__image,
+  .hover-zoom:hover .v-image__image,
+  .hover-zoom:hover img {
+    transform: scale(1.06);
+  }
+
+  .v-btn:not(.v-btn--text):not(.v-btn--plain):not(.v-btn--icon):not(.v-btn--fab) {
+    transition: transform 0.2s ease, box-shadow 0.25s ease,
+      background-color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .v-btn:not(.v-btn--text):not(.v-btn--plain):not(.v-btn--icon):not(.v-btn--fab):hover {
+    transform: translateY(-2px);
+  }
+
+  .v-btn:not(.v-btn--text):not(.v-btn--plain):not(.v-btn--icon):not(.v-btn--fab):active {
+    transform: translateY(0);
+    transition-duration: 0.08s;
+  }
+
+  .footer-link {
+    transition: color 0.2s ease,
+      transform 0.25s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+
+  .footer-link:hover {
+    transform: translateX(3px);
+  }
+
+  .logo-tile .v-image__image,
+  .logo-tile img {
+    transition: transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+
+  .logo-tile:hover .v-image__image,
+  .logo-tile:hover img {
+    transform: scale(1.08);
+  }
+}

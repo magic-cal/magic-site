@@ -6,7 +6,7 @@
           <h1 class="display-3 flex-grow-1">
             {{ title }}
           </h1>
-          <div v-if="subtitle" class="accent--text">
+          <div v-if="subtitle" v-reveal class="accent--text reveal reveal--d1">
             {{ subtitle }}
           </div>
         </v-col>

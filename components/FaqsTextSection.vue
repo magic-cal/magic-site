@@ -2,7 +2,13 @@
   <v-sheet class="pb-6 pt-12" color="white">
     <v-container>
       <v-row>
-        <v-col v-for="(faq, i) in faqs" :key="i" :cols="12">
+        <v-col
+          v-for="(faq, i) in faqs"
+          :key="i"
+          v-reveal
+          :cols="12"
+          class="reveal"
+        >
           <div class="display-1">
             {{ faq.question }}
           </div>

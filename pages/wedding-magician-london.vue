@@ -2,7 +2,7 @@
   <div>
     <page-hero
       src="/wedding-card-reveal.jpg"
-      alt="Magician Callum McClure revealing a playing card to two seated guests at an outdoor wedding reception" position="center 35%">
+      alt="Magician Callum McClure revealing a playing card to two seated guests at an outdoor wedding reception" position="center 10%">
           <div>
             <h1 class="display-2 mb-4 white--text">Wedding Magician in London</h1>
             <p class="headline mb-6 white--text">
@@ -19,7 +19,7 @@
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <p class="body-1 black--text">
               I'm Callum McClure - a London-based close-up magician and member of
               <strong>The Magic Circle</strong>. London is where I live and where I
@@ -43,14 +43,14 @@
     <v-sheet color="grey lighten-4" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-6 black--text">London wedding venues I perform at</h2>
             <p class="body-1 black--text">
               London has an extraordinary range of wedding venues, and close-up magic
               suits all of them - from grand hotel ballrooms to intimate warehouse
               spaces. Some of the London venue types and areas I cover regularly:
             </p>
-            <v-list color="transparent">
+            <v-list v-reveal color="transparent" class="reveal-stagger">
               <v-list-item v-for="venue in venues" :key="venue.area">
                 <v-list-item-icon><v-icon color="accent">{{ mdiMapMarker }}</v-icon></v-list-item-icon>
                 <v-list-item-content>
@@ -67,9 +67,9 @@
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-6 black--text">What I do at a London wedding</h2>
-            <v-list color="transparent">
+            <v-list v-reveal color="transparent" class="reveal-stagger">
               <v-list-item v-for="slot in slots" :key="slot.title">
                 <v-list-item-icon><v-icon color="accent">{{ mdiRing }}</v-icon></v-list-item-icon>
                 <v-list-item-content>
@@ -86,9 +86,9 @@
     <v-sheet color="grey lighten-4" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-4 black--text">Why London couples book me</h2>
-            <v-list color="transparent">
+            <v-list v-reveal color="transparent" class="reveal-stagger">
               <v-list-item>
                 <v-list-item-icon><v-icon color="accent">{{ mdiStar }}</v-icon></v-list-item-icon>
                 <v-list-item-content>

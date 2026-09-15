@@ -1,14 +1,22 @@
 <template>
   <v-sheet :color="color" class="text-center mt-0">
     <v-row>
-      <v-col cols="12">
+      <v-col v-reveal cols="12" class="reveal">
         <h3 class="brand1--text py-8 accent--text">
           {{ title }}
         </h3>
       </v-col>
     </v-row>
     <v-row class="mx-auto pb-8" justify="center" align="center">
-      <v-col v-for="logo in logos" :key="logo.src" cols="2" sm="1">
+      <v-col
+        v-for="(logo, i) in logos"
+        :key="logo.src"
+        v-reveal
+        cols="2"
+        sm="1"
+        class="reveal reveal--fade logo-tile"
+        :style="{ '--reveal-delay': `${i * 70}ms` }"
+      >
         <v-img
           :src="logo.src"
           :alt="logo.alt"

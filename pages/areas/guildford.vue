@@ -18,7 +18,7 @@
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <p class="body-1 black--text">
               I'm Callum McClure - an award-winning close-up magician and Magic Circle
               member. Guildford is where my story started: I grew up in the area, I
@@ -39,7 +39,7 @@
     <v-sheet color="grey lighten-4" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-6 black--text">Guildford venues I know well</h2>
             <p class="body-1 black--text">
               I've performed across Guildford's best-loved settings - from the Tithe
@@ -57,7 +57,7 @@
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-6 black--text">Magic for any Guildford occasion</h2>
             <v-row>
               <v-col v-for="svc in services" :key="svc.title" cols="12" sm="4" class="text-center">

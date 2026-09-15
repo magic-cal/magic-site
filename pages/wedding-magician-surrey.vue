@@ -2,7 +2,7 @@
   <div>
     <page-hero
       src="/wedding-astonished-reaction.jpg"
-      alt="A bride and groom reacting in astonishment to close-up magic at their wedding reception" position="center 32%" height="560">
+      alt="A bride and groom reacting in astonishment to close-up magic at their wedding reception" position="center 10%" height="560">
           <div>
             <h1 class="display-2 mb-4 white--text">Wedding Magician in Surrey</h1>
             <p class="headline mb-6 white--text">
@@ -19,7 +19,7 @@
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <p class="body-1 black--text">
               I'm Callum McClure - an award-winning <strong>Surrey wedding magician</strong>
               and member of <strong>The Magic Circle</strong>. I grew up in Surrey,
@@ -42,9 +42,9 @@
     <v-sheet color="grey lighten-4" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-6 black--text">Surrey wedding venues I know well</h2>
-            <v-list color="transparent">
+            <v-list v-reveal color="transparent" class="reveal-stagger">
               <v-list-item v-for="venue in venues" :key="venue.name">
                 <v-list-item-icon><v-icon color="accent">{{ mdiMapMarker }}</v-icon></v-list-item-icon>
                 <v-list-item-content>
@@ -61,9 +61,9 @@
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-6 black--text">What I do at a Surrey wedding</h2>
-            <v-list color="transparent">
+            <v-list v-reveal color="transparent" class="reveal-stagger">
               <v-list-item v-for="slot in slots" :key="slot.title">
                 <v-list-item-icon><v-icon color="accent">{{ mdiRing }}</v-icon></v-list-item-icon>
                 <v-list-item-content>
@@ -80,7 +80,7 @@
     <v-sheet color="grey lighten-4" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-4 black--text">How much does a Surrey wedding magician cost?</h2>
             <p class="body-1 black--text">
               Most professional wedding magicians in Surrey charge between

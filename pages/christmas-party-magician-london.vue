@@ -18,7 +18,7 @@
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <p class="body-1 black--text">
               I'm Callum McClure - a <strong>London Christmas party magician</strong>
               and member of The Magic Circle. I'm based in the capital and perform at
@@ -41,13 +41,13 @@
     <v-sheet color="grey lighten-4" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-6 black--text">London Christmas party venues</h2>
             <p class="body-1 black--text mb-4">
               I perform at Christmas parties all across London - these are some of the
               areas and venue types I cover regularly:
             </p>
-            <v-list color="transparent">
+            <v-list v-reveal color="transparent" class="reveal-stagger">
               <v-list-item v-for="venue in venues" :key="venue.area">
                 <v-list-item-icon><v-icon color="accent">{{ mdiMapMarker }}</v-icon></v-list-item-icon>
                 <v-list-item-content>
@@ -64,7 +64,7 @@
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-6 black--text">Corporate Christmas parties in London</h2>
             <p class="body-1 black--text">
               London's corporate Christmas season runs hard from late November to
@@ -91,7 +91,7 @@
     <v-sheet color="grey lighten-4" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-4 black--text">Book early - London December fills fast</h2>
             <p class="body-1 black--text">
               London Christmas party season is the most competitive period of the year for
@@ -113,7 +113,7 @@
     <v-sheet color="white" class="py-12">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col v-reveal cols="12" md="8" class="reveal">
             <h2 class="display-1 mb-6 black--text">Frequently asked questions</h2>
             <v-expansion-panels light>
               <v-expansion-panel v-for="faq in faqs" :key="faq.q">
@@ -138,7 +138,7 @@
     <v-sheet color="grey lighten-4" class="py-10">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" md="8" class="text-center">
+          <v-col v-reveal cols="12" md="8" class="text-center reveal">
             <p class="body-2 grey--text">
               See also:
               <nuxt-link to="/christmas-party-magician">Christmas party magician</nuxt-link> ·

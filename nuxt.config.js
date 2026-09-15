@@ -79,11 +79,20 @@ export default {
         href: 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap',
       },
     ],
+    script: [
+      {
+        hid: 'motion-flag',
+        innerHTML:
+          "try{if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.setAttribute('data-motion','on')}}catch(e){}",
+      },
+    ],
+    // vue-meta escapes innerHTML, which would break the script above.
+    __dangerouslyDisableSanitizers: ['innerHTML'],
   },
 
-  css: [],
+  css: ['~/assets/motion.css'],
 
-  plugins: ['~/content/faqs.ts'],
+  plugins: ['~/content/faqs.ts', '~/plugins/motion.ts'],
 
   components: true,
 
