@@ -9,8 +9,8 @@
             }}</v-icon>
             <h1 class="display-1 mb-3">Thanks - your message is on its way</h1>
             <p class="headline mb-0">
-              You will get a reply within 24 hours. Depending on the event, that
-              may come from Callum or from his agent.
+              Callum will get back to you within 24 hours about availability for
+              your date.
             </p>
           </v-col>
         </v-row>
@@ -78,21 +78,21 @@ import { buildHead } from '~/utils/seo'
 const steps = [
   {
     icon: mdiEmailFast,
-    title: 'Your enquiry has been received',
+    title: 'Your enquiry has reached Callum',
     detail:
-      'The date, venue and details you entered go straight through. Depending on the event, it may be handled by Callum or by his agent.',
+      'It goes straight to him, along with the date, venue and details you entered.',
   },
   {
     icon: mdiCalendarCheck,
     title: 'You will hear back within 24 hours',
     detail:
-      'The first reply covers availability for your date. A full quote may follow separately, once the details of the event are clear.',
+      'The first reply covers availability for your date. A full quote will be provided once all the details are clear.',
   },
   {
     icon: mdiCheckCircleOutline,
     title: 'No obligation',
     detail:
-      'Nothing is booked until you confirm. If you go ahead, a deposit may be needed to hold the date.',
+      'Asking commits you to nothing, and nothing is booked until you confirm.',
   },
 ]
 
