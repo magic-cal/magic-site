@@ -66,9 +66,9 @@
           >
             <div v-reveal class="reveal">
               <div class="overline accent--text mb-2 font-weight-bold">Member of The Magic Circle</div>
-              <p class="display-1 black--text mb-6 font-weight-light">
+              <h2 class="display-1 black--text mb-6 font-weight-light">
                 Award-winning close-up magic for hire in Surrey &amp; London
-              </p>
+              </h2>
               <p class="body-1 grey--text text--darken-2 mb-4">
                 From the drinks reception at a Surrey wedding to a trade show stand in
                 London, close-up magic that happens inches from your guests' eyes,
@@ -116,7 +116,9 @@
                   :position="svc.position || 'top center'"
                   sizes="(min-width: 960px) 33vw, (min-width: 600px) 50vw, 100vw"
                 />
-                <v-card-title class="black--text pb-1">{{ svc.subtitle }}</v-card-title>
+                <v-card-title class="black--text pb-1">
+                  <h3 class="service-card-title">{{ svc.subtitle }}</h3>
+                </v-card-title>
                 <v-card-text class="black--text">{{ svc.details }}</v-card-text>
                 <v-card-actions>
                   <v-btn
@@ -144,9 +146,9 @@
         <v-container>
           <v-row>
             <v-col v-reveal cols="12" sm="7" md="5" class="reveal">
-              <p class="display-1 white--text font-weight-light mb-4">
+              <h2 class="display-1 white--text font-weight-light mb-4">
                 Close-up magic that happens in your guests' own hands
-              </p>
+              </h2>
               <nuxt-link to="/close-up-magician" class="white--text">
                 What is close-up magic?
               </nuxt-link>
@@ -345,5 +347,10 @@ picture {
   border-radius: 4px;
   overflow: hidden;
   background: white;
+}
+
+.service-card-title {
+  font: inherit;
+  margin: 0;
 }
 </style>

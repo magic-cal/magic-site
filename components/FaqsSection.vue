@@ -11,7 +11,7 @@
               style="flex-direction: column"
               align="center"
             >
-              <div class="display-1 mb-1 flex-grow-1 accent--text">FAQs</div>
+              <h2 class="display-1 mb-1 flex-grow-1 accent--text">FAQs</h2>
             </v-col>
           </v-row>
         </v-col>

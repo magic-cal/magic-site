@@ -2,9 +2,9 @@
   <v-sheet :color="color" class="text-center mt-0">
     <v-row>
       <v-col v-reveal cols="12" class="reveal">
-        <h3 class="brand1--text py-8 accent--text">
+        <h2 class="brand1--text py-8 accent--text">
           {{ title }}
-        </h3>
+        </h2>
       </v-col>
     </v-row>
     <v-row class="mx-auto pb-8" justify="center" align="center">
