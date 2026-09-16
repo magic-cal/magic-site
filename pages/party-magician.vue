@@ -176,7 +176,7 @@ export default defineComponent({
     return buildHead({
       title: 'Party Magician Surrey | Birthdays, Private Parties & More',
       description:
-        'Hire an award-winning party magician in Surrey for birthdays, anniversaries and private parties. Close-up magic that gets every guest involved. Get a quick quote.',
+        'Hire an award-winning party magician in Surrey for birthdays, anniversaries and private parties. Close-up magic that gets every guest involved.',
       path: '/party-magician',
       jsonLd: [
         service('Party Magician', 'Party Magician Surrey', '/party-magician'),

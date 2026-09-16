@@ -200,7 +200,7 @@ export default defineComponent({
     return buildHead({
       title: 'Awards Ceremony Magician London & Surrey | Callum McClure',
       description:
-        'Close-up magician for awards ceremonies, industry dinners and recognition events in London & Surrey. Magic Circle member. Table magic between courses and after the ceremony. Get a quote.',
+        'Close-up magician for awards ceremonies and industry dinners across London & Surrey. Magic Circle member. Table magic between courses. Get a quote.',
       path: '/awards-ceremony-magician',
       jsonLd: [
         service(

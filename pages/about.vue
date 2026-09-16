@@ -163,7 +163,7 @@ export default defineComponent({
     return buildHead({
       title: 'About Callum McClure | Magic Circle Magician, Surrey & London',
       description:
-        'Meet Callum McClure - multi-award-winning close-up magician and Magic Circle member. Performed for BBC News and at the Royal Variety after-show party. Based in London.',
+        'Meet Callum McClure - multi-award-winning close-up magician and Magic Circle member. Seen on BBC News and at the Royal Variety after-show party.',
       path: '/about',
       ogType: 'profile',
       jsonLd: [

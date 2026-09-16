@@ -247,7 +247,7 @@ export default defineComponent({
     return buildHead({
       title: 'Wedding Magician Surrey | Award-Winning Close-Up Magic',
       description:
-        'Award-winning Magic Circle wedding magician covering Surrey, Guildford & the South East. Mix-and-mingle close-up magic that gets your guests talking. Get a quote.',
+        'Award-winning Magic Circle wedding magician covering Surrey, Guildford and the South East. Close-up magic that gets your guests talking. Get a quote.',
       path: '/wedding-magician',
       jsonLd: [
         service('Wedding Magician', 'Wedding Magician Surrey', '/wedding-magician'),

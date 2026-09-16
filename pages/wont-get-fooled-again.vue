@@ -129,7 +129,7 @@ export default defineComponent({
     return buildHead({
       title: "Won't Get Fooled Again | Edinburgh Fringe Magic Show",
       description:
-        'Classic magic enters the 21st century. Award-winning magician Callum McClure blends technology and timeless sleight of hand at The Voodoo Rooms, Edinburgh. Free entry, no booking required.',
+        'Classic magic meets modern technology. Award-winning magician Callum McClure at The Voodoo Rooms, Edinburgh. Free entry, no booking required.',
       path: '/wont-get-fooled-again',
       jsonLd: [
         breadcrumb([{ name: "Won't Get Fooled Again", item: '/wont-get-fooled-again' }]),

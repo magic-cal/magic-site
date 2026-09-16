@@ -201,7 +201,7 @@ export default defineComponent({
     return buildHead({
       title: 'Wedding Magician London | Close-Up Magic | Callum McClure',
       description:
-        'London-based close-up wedding magician for drinks receptions, wedding breakfasts and evening entertainment. Magic Circle member. 10+ years at London venues. Get a quote.',
+        'London wedding magician for drinks receptions, wedding breakfasts and evening entertainment. Magic Circle member, 10+ years at London venues.',
       path: '/wedding-magician-london',
       jsonLd: [
         service(

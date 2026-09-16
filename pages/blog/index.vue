@@ -77,7 +77,7 @@ export default defineComponent({
     return buildHead({
       title: 'Magic Blog | Callum McClure Magician',
       description:
-        'Guides and advice from a Magic Circle magician - wedding entertainment, corporate magic, pricing and more.',
+        'Guides and advice from a Magic Circle magician - what a wedding magician costs, how to plan your entertainment, and what close-up magic actually is.',
       path: '/blog',
       jsonLd: [breadcrumb([{ name: 'Blog', item: '/blog' }])],
     })

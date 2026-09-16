@@ -147,7 +147,7 @@ export default defineComponent({
     return buildHead({
       title: 'London Magician | Close-Up & Wedding Magic | Callum McClure',
       description:
-        'London-based close-up magician for weddings, corporate events, Christmas parties and private celebrations. Magic Circle member. BBC News. Royal Variety after-show party. Get a quote.',
+        'London close-up magician for weddings, corporate events and parties. Magic Circle member, seen on BBC News and at the Royal Variety after-show party.',
       path: '/areas/london',
       jsonLd: [
         localBusiness({ areaServed: 'London', idSuffix: 'london' }),
