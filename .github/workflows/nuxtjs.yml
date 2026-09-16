@@ -28,6 +28,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # Full history: the sitemap takes each page's lastmod from its last
+          # commit, and a shallow clone dates every file the same.
+          fetch-depth: 0
       - name: Detect package manager
         id: detect-package-manager
         run: |

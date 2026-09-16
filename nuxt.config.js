@@ -1,4 +1,5 @@
 import colors from 'vuetify/es5/util/colors'
+import { pageLastmod } from './utils/pageLastmod'
 
 export default {
   ssr: true,
@@ -26,6 +27,11 @@ export default {
     // /show is a noindex meta-refresh alias for /wont-get-fooled-again.
     // Submitting a noindex URL in the sitemap sends contradictory signals.
     exclude: ['/show'],
+    filter: ({ routes }) =>
+      routes.map((route) => {
+        const lastmod = pageLastmod(route.url)
+        return lastmod ? { ...route, lastmod } : route
+      }),
   },
 
   // Global page headers
