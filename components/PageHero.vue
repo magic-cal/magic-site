@@ -3,18 +3,21 @@
     <!-- A plain <img> rather than <v-img> on purpose. v-img applies its source
          client-side, so the hero (the LCP element on every page that uses this)
          was invisible to the preload scanner and carried no alt text. -->
-    <img
-      class="page-hero__img"
-      :src="src"
-      :srcset="srcset || null"
-      :sizes="srcset ? '100vw' : null"
-      :width="dims && dims.width"
-      :height="dims && dims.height"
-      :alt="alt"
-      :style="{ objectPosition: position }"
-      fetchpriority="high"
-      decoding="async"
-    />
+    <picture>
+      <source v-if="webpSrcset" :srcset="webpSrcset" sizes="100vw" type="image/webp" />
+      <img
+        class="page-hero__img"
+        :src="src"
+        :srcset="srcset || null"
+        :sizes="srcset ? '100vw' : null"
+        :width="dims && dims.width"
+        :height="dims && dims.height"
+        :alt="alt"
+        :style="{ objectPosition: position }"
+        fetchpriority="high"
+        decoding="async"
+      />
+    </picture>
     <div class="page-hero__overlay d-flex align-center">
       <v-container>
         <v-row justify="center">
@@ -29,7 +32,7 @@
 
 <script lang="ts">
 import { computed, defineComponent } from '@vue/composition-api'
-import { heroImageDims, heroSrcset } from '~/utils/heroImages'
+import { imageDims, srcsetFor, webpSrcsetFor } from '~/utils/responsiveImages'
 
 export default defineComponent({
   props: {
@@ -60,14 +63,19 @@ export default defineComponent({
         ? `${props.height}px`
         : String(props.height)
     )
-    const dims = computed(() => heroImageDims[props.src])
-    const srcset = computed(() => heroSrcset(props.src))
-    return { cssHeight, dims, srcset }
+    const dims = computed(() => imageDims[props.src])
+    const srcset = computed(() => srcsetFor(props.src))
+    const webpSrcset = computed(() => webpSrcsetFor(props.src))
+    return { cssHeight, dims, srcset, webpSrcset }
   },
 })
 </script>
 
 <style scoped>
+picture {
+  display: contents;
+}
+
 .page-hero {
   position: relative;
   overflow: hidden;

@@ -2,17 +2,24 @@
   <v-row justify="center" align="center" no-gutters>
     <v-col cols="12" pa-0>
       <div v-parallax-scroll class="hero">
-        <img
-          class="hero__img"
-          src="/shuffle-cropped1.jpg"
-          :srcset="heroSrcset('/shuffle-cropped1.jpg')"
-          sizes="100vw"
-          width="1920"
-          height="1279"
-          alt="Close-up of a deck of playing cards being riffle shuffled in two hands"
-          fetchpriority="high"
-          decoding="async"
-        />
+        <picture>
+          <source
+            :srcset="webpSrcsetFor('/shuffle-cropped1.jpg')"
+            sizes="100vw"
+            type="image/webp"
+          />
+          <img
+            class="hero__img"
+            src="/shuffle-cropped1.jpg"
+            :srcset="srcsetFor('/shuffle-cropped1.jpg')"
+            sizes="100vw"
+            width="1920"
+            height="1279"
+            alt="Close-up of a deck of playing cards being riffle shuffled in two hands"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </picture>
         <v-row align="center" no-gutters class="hero__content">
           <v-col align="center">
             <h1 class="hero-heading">
@@ -179,28 +186,28 @@
 import { defineComponent } from '@vue/composition-api'
 import { buildHead } from '~/utils/seo'
 import { localBusiness } from '~/utils/schema'
-import { heroSrcset } from '~/utils/heroImages'
+import { srcsetFor, webpSrcsetFor } from '~/utils/responsiveImages'
 
 export default defineComponent({
   setup() {
     const companyLogos = [
-      { src: require('@/static/Raddison.png'), width: 1024, height: 1024, alt: 'Radisson Hotel Logo', hideOnXs: true },
-      { src: require('@/static/BBC.jpg'), width: 600, height: 600, alt: 'BBC Logo', hideOnXs: false },
-      { src: require('@/static/Barclays.png'), width: 960, height: 960, alt: 'Barclays Logo', hideOnXs: false },
-      { src: require('@/static/Disney.png'), width: 1280, height: 538, alt: 'Disney Logo', hideOnXs: true },
-      { src: require('@/static/Independent.png'), width: 1620, height: 1621, alt: 'The Independent Logo', hideOnXs: false },
-      { src: require('@/static/Age-UK.jpg'), width: 1772, height: 900, alt: 'Age UK Logo', hideOnXs: false },
-      { src: require('@/static/Marriott.png'), width: 1280, height: 518, alt: 'Marriott Hotels Logo', hideOnXs: false },
-      { src: require('@/static/Lloyds.png'), width: 645, height: 339, alt: 'Lloyds Bank Logo', hideOnXs: false },
-      { src: require('@/static/GLive.jpg'), width: 969, height: 378, alt: 'G Live Guildford Logo', hideOnXs: true },
-      { src: require('@/static/Btg.jpg'), width: 700, height: 400, alt: 'BTG Logo', hideOnXs: true },
-      { src: require('@/static/CAM.jpg'), width: 900, height: 900, alt: 'University of Cambridge Logo', hideOnXs: true },
-      { src: require('@/static/Arqiva.jpg'), width: 1612, height: 640, alt: 'Arqiva Logo', hideOnXs: true },
+      { src: '/Raddison.png', width: 1024, height: 1024, alt: 'Radisson Hotel Logo', hideOnXs: true },
+      { src: '/BBC.jpg', width: 600, height: 600, alt: 'BBC Logo', hideOnXs: false },
+      { src: '/Barclays.png', width: 960, height: 960, alt: 'Barclays Logo', hideOnXs: false },
+      { src: '/Disney.png', width: 1280, height: 538, alt: 'Disney Logo', hideOnXs: true },
+      { src: '/Independent.png', width: 1620, height: 1621, alt: 'The Independent Logo', hideOnXs: false },
+      { src: '/Age-UK.jpg', width: 1772, height: 900, alt: 'Age UK Logo', hideOnXs: false },
+      { src: '/Marriott.png', width: 1280, height: 518, alt: 'Marriott Hotels Logo', hideOnXs: false },
+      { src: '/Lloyds.png', width: 645, height: 339, alt: 'Lloyds Bank Logo', hideOnXs: false },
+      { src: '/GLive.jpg', width: 969, height: 378, alt: 'G Live Guildford Logo', hideOnXs: true },
+      { src: '/Btg.jpg', width: 700, height: 400, alt: 'BTG Logo', hideOnXs: true },
+      { src: '/CAM.jpg', width: 900, height: 900, alt: 'University of Cambridge Logo', hideOnXs: true },
+      { src: '/Arqiva.jpg', width: 1612, height: 640, alt: 'Arqiva Logo', hideOnXs: true },
     ]
 
     const services = [
       {
-        src: require('@/static/wedding-astonished-reaction.jpg'),
+        src: '/wedding-astonished-reaction.jpg',
         position: 'center 35%',
         alt: 'Callum McClure performing close-up magic at a Surrey wedding reception',
         hideOnXs: false,
@@ -209,7 +216,7 @@ export default defineComponent({
         subtitle: 'Wedding Magician',
       },
       {
-        src: require('@/static/square/corporate.jpg'),
+        src: '/square/corporate.jpg',
         alt: 'Callum McClure performing close-up magic at a corporate networking event in Surrey',
         hideOnXs: false,
         details: 'From conferences and trade shows to Christmas parties, close-up magic breaks the ice and gets rooms full of people genuinely enjoying themselves.',
@@ -217,7 +224,7 @@ export default defineComponent({
         subtitle: 'Corporate Magician',
       },
       {
-        src: require('@/static/square/wedding-card-reveal.jpg'),
+        src: '/square/wedding-card-reveal.jpg',
         alt: 'Callum McClure performing walkaround magic at a birthday party near Guildford',
         hideOnXs: true,
         details: 'Birthdays, anniversaries, private dinners and garden parties. Magic that works for every age in the room.',
@@ -226,7 +233,7 @@ export default defineComponent({
       },
     ]
 
-    return { companyLogos, services, heroSrcset }
+    return { companyLogos, services, srcsetFor, webpSrcsetFor }
   },
   head() {
     return buildHead({
@@ -248,6 +255,10 @@ export default defineComponent({
    the heading off the top and the CTA off the bottom once the text wraps on a
    narrow screen. Growing to fit keeps the whole block visible; the image is
    absolutely positioned so it covers whatever height results. */
+picture {
+  display: contents;
+}
+
 .hero {
   position: relative;
   display: flex;

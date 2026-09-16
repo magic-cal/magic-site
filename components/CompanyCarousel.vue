@@ -17,15 +17,24 @@
         class="reveal reveal--fade logo-tile"
         :style="{ '--reveal-delay': `${i * 70}ms` }"
       >
-        <img
-          class="logo-img"
-          :src="logo.src"
-          :alt="logo.alt"
-          :width="logo.width"
-          :height="logo.height"
-          loading="lazy"
-          decoding="async"
-        />
+        <picture>
+          <source
+            :srcset="logoWebpSrcsetFor(logo.src)"
+            sizes="90px"
+            type="image/webp"
+          />
+          <img
+            class="logo-img"
+            :src="logo.src"
+            :srcset="logoSrcsetFor(logo.src)"
+            sizes="90px"
+            :alt="logo.alt"
+            :width="logo.width"
+            :height="logo.height"
+            loading="lazy"
+            decoding="async"
+          />
+        </picture>
       </v-col>
     </v-row>
   </v-sheet>
@@ -34,6 +43,7 @@
 <script lang="ts">
 import { PropType } from '@nuxtjs/composition-api'
 import { defineComponent } from '@vue/composition-api'
+import { logoSrcsetFor, logoWebpSrcsetFor } from '~/utils/responsiveImages'
 
 export interface ImageItem {
   alt?: String
@@ -59,6 +69,9 @@ export default defineComponent({
       type: Array as PropType<ImageItem[]>,
       default: () => [],
     },
+  },
+  setup() {
+    return { logoSrcsetFor, logoWebpSrcsetFor }
   },
 })
 </script>

@@ -10,6 +10,7 @@
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
     "lint": "npm run lint:js",
     "images:optimize": "node scripts/optimize-images.js",
+    "images:variants": "node scripts/generate-image-variants.js",
     "postinstall": "patch-package"
   },
   "dependencies": {

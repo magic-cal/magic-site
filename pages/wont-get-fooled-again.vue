@@ -61,7 +61,7 @@
           <v-col cols="12" md="6">
             <img
                           class="flow-img"
-                          :src="require('@/static/perf3.jpg')"
+                          src="/perf3.jpg"
                           alt="Callum McClure performing on stage at the Edinburgh Fringe"
                           width="1920"
                           height="2880"
@@ -81,7 +81,7 @@
                       <a href="https://freefringe.org.uk/">
                         <img
                           class="flow-img thanks-logo"
-                          :src="require('@/static/PBHFreeFringeLogo.jpg')"
+                          src="/PBHFreeFringeLogo.jpg"
                           alt="PBH Free Fringe logo"
                           width="727"
                           height="727"
@@ -95,7 +95,7 @@
                       <a href="https://www.thevoodoorooms.com/">
                         <img
                           class="flow-img thanks-logo"
-                          :src="require('@/static/VoodooRoomsLogo.jpg')"
+                          src="/VoodooRoomsLogo.jpg"
                           alt="The Voodoo Rooms logo"
                           width="438"
                           height="438"

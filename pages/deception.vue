@@ -65,7 +65,7 @@
                       <v-col cols="4">
                         <img
                           class="flow-img"
-                          :src="require('@/static/DeceptionSquare.png')"
+                          src="/DeceptionSquare.png"
                           alt="Deception show artwork"
                           width="719"
                           height="719"
@@ -76,7 +76,7 @@
                       <v-col cols="4">
                         <img
                           class="flow-img"
-                          :src="require('@/static/RoyalMileFlyering.jpg')"
+                          src="/RoyalMileFlyering.jpg"
                           alt="Callum McClure flyering for the show on the Royal Mile"
                           width="1920"
                           height="1920"
@@ -87,7 +87,7 @@
                       <v-col cols="4">
                         <img
                           class="flow-img"
-                          :src="require('@/static/CloseUpPerformance.jpg')"
+                          src="/CloseUpPerformance.jpg"
                           alt="Callum McClure performing close-up magic during the show"
                           width="549"
                           height="549"
@@ -105,7 +105,7 @@
           <v-col cols="12" md="6">
             <img
                           class="flow-img"
-                          :src="require('@/static/CallumMcClureDeceptionPoster.jpg')"
+                          src="/CallumMcClureDeceptionPoster.jpg"
                           alt="Poster for Callum McClure: Deception"
                           width="1920"
                           height="2718"
@@ -124,7 +124,7 @@
                       <a href="https://www.blackfishproductions.co.uk/">
                         <img
                           class="flow-img thanks-logo"
-                          :src="require('@/static/BlackFishProductions.png')"
+                          src="/BlackFishProductions.png"
                           alt="Blackfish Productions logo"
                           width="225"
                           height="225"
@@ -138,7 +138,7 @@
                       <a href="https://freefringe.org.uk/">
                         <img
                           class="flow-img thanks-logo"
-                          :src="require('@/static/PBHFreeFringeLogo.jpg')"
+                          src="/PBHFreeFringeLogo.jpg"
                           alt="PBH Free Fringe logo"
                           width="727"
                           height="727"
@@ -152,7 +152,7 @@
                       <a href="https://www.thevoodoorooms.com/">
                         <img
                           class="flow-img thanks-logo"
-                          :src="require('@/static/VoodooRoomsLogo.jpg')"
+                          src="/VoodooRoomsLogo.jpg"
                           alt="The Voodoo Rooms logo"
                           width="438"
                           height="438"
