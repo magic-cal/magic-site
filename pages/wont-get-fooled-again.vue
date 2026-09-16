@@ -59,7 +59,15 @@
           </v-col>
 
           <v-col cols="12" md="6">
-            <v-img :src="require('@/static/perf3.jpg')" />
+            <img
+                          class="flow-img"
+                          :src="require('@/static/perf3.jpg')"
+                          alt="Callum McClure performing on stage at the Edinburgh Fringe"
+                          width="1920"
+                          height="2880"
+                          loading="lazy"
+                          decoding="async"
+                        />
           </v-col>
 
           <v-col :cols="12">
@@ -71,18 +79,28 @@
                     <v-col cols="auto">
                       <div>PBH Free Fringe</div>
                       <a href="https://freefringe.org.uk/">
-                        <v-img
+                        <img
+                          class="flow-img thanks-logo"
                           :src="require('@/static/PBHFreeFringeLogo.jpg')"
-                          class="thanks-logo"
+                          alt="PBH Free Fringe logo"
+                          width="727"
+                          height="727"
+                          loading="lazy"
+                          decoding="async"
                         />
                       </a>
                     </v-col>
                     <v-col cols="auto">
                       <div>The Voodoo Rooms</div>
                       <a href="https://www.thevoodoorooms.com/">
-                        <v-img
+                        <img
+                          class="flow-img thanks-logo"
                           :src="require('@/static/VoodooRoomsLogo.jpg')"
-                          class="thanks-logo"
+                          alt="The Voodoo Rooms logo"
+                          width="438"
+                          height="438"
+                          loading="lazy"
+                          decoding="async"
                         />
                       </a>
                     </v-col>
@@ -122,6 +140,12 @@ export default defineComponent({
 </script>
 
 <style>
+.flow-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .thanks-logo,
 .instagram-grid-image {
   max-width: 150px;

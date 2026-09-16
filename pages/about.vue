@@ -20,11 +20,11 @@
             md="5"
             class="mb-8 mb-md-0 reveal reveal--fade hover-zoom"
           >
-            <v-img
+            <cover-image
               src="/headshot.jpg"
               alt="Portrait of magician Callum McClure, Magic Circle member"
               height="520"
-              cover
+              sizes="(min-width: 960px) 42vw, 100vw"
               class="about-headshot elevation-5"
             />
           </v-col>

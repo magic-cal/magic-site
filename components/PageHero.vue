@@ -6,8 +6,8 @@
     <img
       class="page-hero__img"
       :src="src"
-      :srcset="srcset"
-      sizes="100vw"
+      :srcset="srcset || null"
+      :sizes="srcset ? '100vw' : null"
       :width="dims && dims.width"
       :height="dims && dims.height"
       :alt="alt"

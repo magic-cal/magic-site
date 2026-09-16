@@ -35,10 +35,11 @@
           md="5"
           class="mb-8 mb-md-0 reveal reveal--fade reveal--d2 hover-zoom"
         >
-          <v-img
+          <cover-image
             src="/promo-reaching.jpg"
+            alt="Callum McClure reaching out to offer a fanned deck of cards"
             height="500"
-            cover
+            sizes="(min-width: 960px) 42vw, 100vw"
             class="about-photo elevation-6"
           />
         </v-col>

@@ -17,12 +17,14 @@
         class="reveal reveal--fade logo-tile"
         :style="{ '--reveal-delay': `${i * 70}ms` }"
       >
-        <v-img
+        <img
+          class="logo-img"
           :src="logo.src"
           :alt="logo.alt"
-          max-height="90px"
-          contain
-          eager
+          :width="logo.width"
+          :height="logo.height"
+          loading="lazy"
+          decoding="async"
         />
       </v-col>
     </v-row>
@@ -36,6 +38,8 @@ import { defineComponent } from '@vue/composition-api'
 export interface ImageItem {
   alt?: String
   src: String
+  width?: number
+  height?: number
   hideOnXs?: boolean
 }
 
@@ -56,13 +60,15 @@ export default defineComponent({
       default: () => [],
     },
   },
-  setup() {
-    // const filteredLogos = computed(() => {
-    //   return props.logos.filter((logo) => !logo.hideOnXs)
-    // })
-    return {
-      // filteredLogos,
-    }
-  },
 })
 </script>
+
+<style scoped>
+.logo-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 90px;
+  object-fit: contain;
+}
+</style>

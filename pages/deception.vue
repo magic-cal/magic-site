@@ -63,16 +63,36 @@
                   <v-col cols="12">
                     <v-row>
                       <v-col cols="4">
-                        <v-img :src="require('@/static/DeceptionSquare.png')" />
-                      </v-col>
-                      <v-col cols="4">
-                        <v-img
-                          :src="require('@/static/RoyalMileFlyering.jpg')"
+                        <img
+                          class="flow-img"
+                          :src="require('@/static/DeceptionSquare.png')"
+                          alt="Deception show artwork"
+                          width="719"
+                          height="719"
+                          loading="lazy"
+                          decoding="async"
                         />
                       </v-col>
                       <v-col cols="4">
-                        <v-img
+                        <img
+                          class="flow-img"
+                          :src="require('@/static/RoyalMileFlyering.jpg')"
+                          alt="Callum McClure flyering for the show on the Royal Mile"
+                          width="1920"
+                          height="1920"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      </v-col>
+                      <v-col cols="4">
+                        <img
+                          class="flow-img"
                           :src="require('@/static/CloseUpPerformance.jpg')"
+                          alt="Callum McClure performing close-up magic during the show"
+                          width="549"
+                          height="549"
+                          loading="lazy"
+                          decoding="async"
                         />
                       </v-col>
                     </v-row>
@@ -83,9 +103,15 @@
           </v-col>
 
           <v-col cols="12" md="6">
-            <v-img
-              :src="require('@/static/CallumMcClureDeceptionPoster.jpg')"
-            />
+            <img
+                          class="flow-img"
+                          :src="require('@/static/CallumMcClureDeceptionPoster.jpg')"
+                          alt="Poster for Callum McClure: Deception"
+                          width="1920"
+                          height="2718"
+                          loading="lazy"
+                          decoding="async"
+                        />
           </v-col>
           <v-col :cols="12">
             <v-row>
@@ -96,27 +122,42 @@
                     <v-col cols="auto">
                       <div>Blackfish Productions</div>
                       <a href="https://www.blackfishproductions.co.uk/">
-                        <v-img
+                        <img
+                          class="flow-img thanks-logo"
                           :src="require('@/static/BlackFishProductions.png')"
-                          class="thanks-logo"
+                          alt="Blackfish Productions logo"
+                          width="225"
+                          height="225"
+                          loading="lazy"
+                          decoding="async"
                         />
                       </a>
                     </v-col>
                     <v-col cols="auto">
                       <div>PBH Free Fringe</div>
                       <a href="https://freefringe.org.uk/">
-                        <v-img
+                        <img
+                          class="flow-img thanks-logo"
                           :src="require('@/static/PBHFreeFringeLogo.jpg')"
-                          class="thanks-logo"
+                          alt="PBH Free Fringe logo"
+                          width="727"
+                          height="727"
+                          loading="lazy"
+                          decoding="async"
                         />
                       </a>
                     </v-col>
                     <v-col cols="auto">
                       <div>The Voodoo Rooms</div>
                       <a href="https://www.thevoodoorooms.com/">
-                        <v-img
+                        <img
+                          class="flow-img thanks-logo"
                           :src="require('@/static/VoodooRoomsLogo.jpg')"
-                          class="thanks-logo"
+                          alt="The Voodoo Rooms logo"
+                          width="438"
+                          height="438"
+                          loading="lazy"
+                          decoding="async"
                         />
                       </a>
                     </v-col>
@@ -154,6 +195,12 @@ export default defineComponent({
 </script>
 
 <style>
+.flow-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .thanks-logo,
 .instagram-grid-image {
   max-width: 150px;

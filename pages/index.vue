@@ -41,11 +41,12 @@
       <v-sheet color="white" class="py-0">
         <v-row no-gutters align="stretch">
           <v-col cols="12" md="6" order="2" order-md="1" class="hover-zoom">
-            <v-img
+            <cover-image
               src="/skill.jpg"
+              alt="Callum McClure performing a sleight-of-hand card move at close quarters"
               height="520"
-              cover
               position="center top"
+              sizes="(min-width: 960px) 50vw, 100vw"
             />
           </v-col>
           <v-col
@@ -101,13 +102,12 @@
               class="d-flex flex-column"
             >
               <v-card flat class="flex-grow-1 service-card">
-                <v-img
+                <cover-image
                   :src="svc.src"
                   :alt="svc.alt"
-                  height="220px"
-                  cover
+                  height="220"
                   :position="svc.position || 'top center'"
-                  class="service-card-img"
+                  sizes="(min-width: 960px) 33vw, (min-width: 600px) 50vw, 100vw"
                 />
                 <v-card-title class="black--text pb-1">{{ svc.subtitle }}</v-card-title>
                 <v-card-text class="black--text">{{ svc.details }}</v-card-text>
@@ -184,18 +184,18 @@ import { heroSrcset } from '~/utils/heroImages'
 export default defineComponent({
   setup() {
     const companyLogos = [
-      { src: require('@/static/Raddison.png'), alt: 'Radisson Hotel Logo', hideOnXs: true },
-      { src: require('@/static/BBC.jpg'), alt: 'BBC Logo', hideOnXs: false },
-      { src: require('@/static/Barclays.png'), alt: 'Barclays Logo', hideOnXs: false },
-      { src: require('@/static/Disney.png'), alt: 'Disney Logo', hideOnXs: true },
-      { src: require('@/static/Independent.png'), alt: 'The Independent Logo', hideOnXs: false },
-      { src: require('@/static/Age-UK.jpg'), alt: 'Age UK Logo', hideOnXs: false },
-      { src: require('@/static/Marriott.png'), alt: 'Marriott Hotels Logo', hideOnXs: false },
-      { src: require('@/static/Lloyds.png'), alt: 'Lloyds Bank Logo', hideOnXs: false },
-      { src: require('@/static/GLive.jpg'), alt: 'G Live Guildford Logo', hideOnXs: true },
-      { src: require('@/static/Btg.jpg'), alt: 'BTG Logo', hideOnXs: true },
-      { src: require('@/static/CAM.jpg'), alt: 'University of Cambridge Logo', hideOnXs: true },
-      { src: require('@/static/Arqiva.jpg'), alt: 'Arqiva Logo', hideOnXs: true },
+      { src: require('@/static/Raddison.png'), width: 1024, height: 1024, alt: 'Radisson Hotel Logo', hideOnXs: true },
+      { src: require('@/static/BBC.jpg'), width: 600, height: 600, alt: 'BBC Logo', hideOnXs: false },
+      { src: require('@/static/Barclays.png'), width: 960, height: 960, alt: 'Barclays Logo', hideOnXs: false },
+      { src: require('@/static/Disney.png'), width: 1280, height: 538, alt: 'Disney Logo', hideOnXs: true },
+      { src: require('@/static/Independent.png'), width: 1620, height: 1621, alt: 'The Independent Logo', hideOnXs: false },
+      { src: require('@/static/Age-UK.jpg'), width: 1772, height: 900, alt: 'Age UK Logo', hideOnXs: false },
+      { src: require('@/static/Marriott.png'), width: 1280, height: 518, alt: 'Marriott Hotels Logo', hideOnXs: false },
+      { src: require('@/static/Lloyds.png'), width: 645, height: 339, alt: 'Lloyds Bank Logo', hideOnXs: false },
+      { src: require('@/static/GLive.jpg'), width: 969, height: 378, alt: 'G Live Guildford Logo', hideOnXs: true },
+      { src: require('@/static/Btg.jpg'), width: 700, height: 400, alt: 'BTG Logo', hideOnXs: true },
+      { src: require('@/static/CAM.jpg'), width: 900, height: 900, alt: 'University of Cambridge Logo', hideOnXs: true },
+      { src: require('@/static/Arqiva.jpg'), width: 1612, height: 640, alt: 'Arqiva Logo', hideOnXs: true },
     ]
 
     const services = [
@@ -334,9 +334,5 @@ export default defineComponent({
   border-radius: 4px;
   overflow: hidden;
   background: white;
-}
-
-.service-card-img {
-  border-radius: 0;
 }
 </style>

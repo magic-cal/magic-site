@@ -19,15 +19,19 @@ export const heroImageDims: Record<string, { width: number; height: number }> = 
 
 const RESPONSIVE_WIDTHS = [640, 960, 1440]
 
+// Empty for anything absent from heroImageDims: only those files have
+// generated variants, so guessing the names would point srcset at 404s.
 export function heroSrcset(src: string): string {
   const dims = heroImageDims[src]
+  if (!dims) return ''
+
   const dot = src.lastIndexOf('.')
   const base = src.slice(0, dot)
   const ext = src.slice(dot)
 
-  const entries = RESPONSIVE_WIDTHS.filter((w) => !dims || w < dims.width).map(
+  const entries = RESPONSIVE_WIDTHS.filter((w) => w < dims.width).map(
     (w) => `${base}-${w}w${ext} ${w}w`
   )
-  entries.push(`${src} ${dims ? dims.width : 1920}w`)
+  entries.push(`${src} ${dims.width}w`)
   return entries.join(', ')
 }

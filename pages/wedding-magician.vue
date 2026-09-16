@@ -132,7 +132,7 @@
 
     <parallax-band
       src="/wedding-astonished-reaction.jpg"
-      alt=""
+      alt="A bride and groom reacting in astonishment to close-up magic at their wedding reception"
       :height="400"
       position="center 10%"
     />
