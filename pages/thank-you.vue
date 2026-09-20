@@ -78,9 +78,9 @@ import { buildHead } from '~/utils/seo'
 const steps = [
   {
     icon: mdiEmailFast,
-    title: 'Your enquiry has reached Callum',
+    title: 'Your enquiry has been sent to Callum',
     detail:
-      'It goes straight to him, along with the date, venue and details you entered.',
+      'Your enquiry has been send to Callum and his team, along with the date, venue and details you entered.',
   },
   {
     icon: mdiCalendarCheck,
@@ -107,9 +107,6 @@ export default defineComponent({
         'Thanks for getting in touch. You will get a reply within 24 hours about availability for your date.',
       path: '/thank-you',
     })
-    // Only ever reached by sending the form, so there is nothing here for
-    // search results - and indexing it would let people arrive without having
-    // enquired, which would make it useless as a conversion signal later.
     head.meta.push({ hid: 'robots', name: 'robots', content: 'noindex, follow' })
     return head
   },
