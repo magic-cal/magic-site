@@ -26,7 +26,7 @@ export default {
     gzip: false,
     // /show is a noindex meta-refresh alias for /wont-get-fooled-again.
     // Submitting a noindex URL in the sitemap sends contradictory signals.
-    exclude: ['/show'],
+    exclude: ['/show', '/thank-you'],
     filter: ({ routes }) =>
       routes.map((route) => {
         const lastmod = pageLastmod(route.url)

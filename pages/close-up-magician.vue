@@ -170,7 +170,7 @@ export default defineComponent({
     return buildHead({
       title: 'Close-Up Magician for Hire | Callum McClure',
       description:
-        'Hire an award-winning close-up magician in London & Surrey. Magic Circle member, 10+ years. Table magic, walkaround and mix-and-mingle for any event. Get a quote.',
+        'Hire an award-winning close-up magician in London & Surrey. Magic Circle member, 10+ years. Table, walkaround and mix-and-mingle magic. Get a quote.',
       path: '/close-up-magician',
       jsonLd: [
         service(

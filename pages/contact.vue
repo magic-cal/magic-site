@@ -77,7 +77,7 @@
             class="reveal reveal--d1"
             :order="$vuetify.breakpoint.smAndDown ? 0 : 2"
           >
-            <contact-form />
+            <enquiry-form />
           </v-col>
         </v-row>
       </v-container>

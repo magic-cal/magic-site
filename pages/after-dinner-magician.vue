@@ -236,7 +236,7 @@ export default defineComponent({
     return buildHead({
       title: 'After Dinner Magician London & Surrey | Callum McClure',
       description:
-        'Award-winning after dinner magician for corporate gala dinners, charity balls, awards evenings and wedding breakfasts in London & Surrey. Magic Circle member. Get a quote.',
+        'Award-winning after dinner magician for gala dinners, charity balls and awards evenings in London & Surrey. Magic Circle member. Get a quote.',
       path: '/after-dinner-magician',
       jsonLd: [
         service(

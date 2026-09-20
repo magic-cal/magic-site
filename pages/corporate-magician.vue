@@ -117,7 +117,12 @@
       <v-container fluid class="pa-0">
         <v-row no-gutters>
           <v-col cols="12" md="6" class="hover-zoom">
-            <v-img src="/vr.jpg" height="420" cover />
+            <cover-image
+              src="/vr.jpg"
+              alt="Callum McClure performing close-up magic for guests at a corporate event"
+              height="420"
+              sizes="(min-width: 960px) 50vw, 100vw"
+            />
           </v-col>
           <v-col cols="12" md="6" class="d-flex align-center pa-10">
             <div v-reveal class="reveal">
@@ -246,7 +251,7 @@ export default defineComponent({
     return buildHead({
       title: 'Corporate Magician London & Surrey | Callum McClure',
       description:
-        'Award-winning corporate magician for London & Surrey - conferences, trade shows, client dinners & Christmas parties. Magic Circle member. Close-up magic that gets people talking.',
+        'Award-winning corporate magician for London & Surrey conferences, trade shows and Christmas parties. Close-up magic that gets people talking.',
       path: '/corporate-magician',
       jsonLd: [
         service(

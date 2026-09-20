@@ -2,17 +2,24 @@
   <v-row justify="center" align="center" no-gutters>
     <v-col cols="12" pa-0>
       <div v-parallax-scroll class="hero">
-        <img
-          class="hero__img"
-          src="/shuffle-cropped1.jpg"
-          :srcset="heroSrcset('/shuffle-cropped1.jpg')"
-          sizes="100vw"
-          width="1920"
-          height="1279"
-          alt="Close-up of a deck of playing cards being riffle shuffled in two hands"
-          fetchpriority="high"
-          decoding="async"
-        />
+        <picture>
+          <source
+            :srcset="webpSrcsetFor('/shuffle-cropped1.jpg')"
+            sizes="100vw"
+            type="image/webp"
+          />
+          <img
+            class="hero__img"
+            src="/shuffle-cropped1.jpg"
+            :srcset="srcsetFor('/shuffle-cropped1.jpg')"
+            sizes="100vw"
+            width="1920"
+            height="1279"
+            alt="Close-up of a deck of playing cards being riffle shuffled in two hands"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </picture>
         <v-row align="center" no-gutters class="hero__content">
           <v-col align="center">
             <h1 class="hero-heading">
@@ -41,11 +48,12 @@
       <v-sheet color="white" class="py-0">
         <v-row no-gutters align="stretch">
           <v-col cols="12" md="6" order="2" order-md="1" class="hover-zoom">
-            <v-img
+            <cover-image
               src="/skill.jpg"
+              alt="Callum McClure performing a sleight-of-hand card move at close quarters"
               height="520"
-              cover
               position="center top"
+              sizes="(min-width: 960px) 50vw, 100vw"
             />
           </v-col>
           <v-col
@@ -58,9 +66,9 @@
           >
             <div v-reveal class="reveal">
               <div class="overline accent--text mb-2 font-weight-bold">Member of The Magic Circle</div>
-              <p class="display-1 black--text mb-6 font-weight-light">
+              <h2 class="display-1 black--text mb-6 font-weight-light">
                 Award-winning close-up magic for hire in Surrey &amp; London
-              </p>
+              </h2>
               <p class="body-1 grey--text text--darken-2 mb-4">
                 From the drinks reception at a Surrey wedding to a trade show stand in
                 London, close-up magic that happens inches from your guests' eyes,
@@ -101,15 +109,16 @@
               class="d-flex flex-column"
             >
               <v-card flat class="flex-grow-1 service-card">
-                <v-img
+                <cover-image
                   :src="svc.src"
                   :alt="svc.alt"
-                  height="220px"
-                  cover
+                  height="220"
                   :position="svc.position || 'top center'"
-                  class="service-card-img"
+                  sizes="(min-width: 960px) 33vw, (min-width: 600px) 50vw, 100vw"
                 />
-                <v-card-title class="black--text pb-1">{{ svc.subtitle }}</v-card-title>
+                <v-card-title class="black--text pb-1">
+                  <h3 class="service-card-title">{{ svc.subtitle }}</h3>
+                </v-card-title>
                 <v-card-text class="black--text">{{ svc.details }}</v-card-text>
                 <v-card-actions>
                   <v-btn
@@ -137,9 +146,9 @@
         <v-container>
           <v-row>
             <v-col v-reveal cols="12" sm="7" md="5" class="reveal">
-              <p class="display-1 white--text font-weight-light mb-4">
+              <h2 class="display-1 white--text font-weight-light mb-4">
                 Close-up magic that happens in your guests' own hands
-              </p>
+              </h2>
               <nuxt-link to="/close-up-magician" class="white--text">
                 What is close-up magic?
               </nuxt-link>
@@ -179,28 +188,28 @@
 import { defineComponent } from '@vue/composition-api'
 import { buildHead } from '~/utils/seo'
 import { localBusiness } from '~/utils/schema'
-import { heroSrcset } from '~/utils/heroImages'
+import { srcsetFor, webpSrcsetFor } from '~/utils/responsiveImages'
 
 export default defineComponent({
   setup() {
     const companyLogos = [
-      { src: require('@/static/Raddison.png'), alt: 'Radisson Hotel Logo', hideOnXs: true },
-      { src: require('@/static/BBC.jpg'), alt: 'BBC Logo', hideOnXs: false },
-      { src: require('@/static/Barclays.png'), alt: 'Barclays Logo', hideOnXs: false },
-      { src: require('@/static/Disney.png'), alt: 'Disney Logo', hideOnXs: true },
-      { src: require('@/static/Independent.png'), alt: 'The Independent Logo', hideOnXs: false },
-      { src: require('@/static/Age-UK.jpg'), alt: 'Age UK Logo', hideOnXs: false },
-      { src: require('@/static/Marriott.png'), alt: 'Marriott Hotels Logo', hideOnXs: false },
-      { src: require('@/static/Lloyds.png'), alt: 'Lloyds Bank Logo', hideOnXs: false },
-      { src: require('@/static/GLive.jpg'), alt: 'G Live Guildford Logo', hideOnXs: true },
-      { src: require('@/static/Btg.jpg'), alt: 'BTG Logo', hideOnXs: true },
-      { src: require('@/static/CAM.jpg'), alt: 'University of Cambridge Logo', hideOnXs: true },
-      { src: require('@/static/Arqiva.jpg'), alt: 'Arqiva Logo', hideOnXs: true },
+      { src: '/Raddison.png', width: 1024, height: 1024, alt: 'Radisson Hotel Logo', hideOnXs: true },
+      { src: '/BBC.jpg', width: 600, height: 600, alt: 'BBC Logo', hideOnXs: false },
+      { src: '/Barclays.png', width: 960, height: 960, alt: 'Barclays Logo', hideOnXs: false },
+      { src: '/Disney.png', width: 1280, height: 538, alt: 'Disney Logo', hideOnXs: true },
+      { src: '/Independent.png', width: 1620, height: 1621, alt: 'The Independent Logo', hideOnXs: false },
+      { src: '/Age-UK.jpg', width: 1772, height: 900, alt: 'Age UK Logo', hideOnXs: false },
+      { src: '/Marriott.png', width: 1280, height: 518, alt: 'Marriott Hotels Logo', hideOnXs: false },
+      { src: '/Lloyds.png', width: 645, height: 339, alt: 'Lloyds Bank Logo', hideOnXs: false },
+      { src: '/GLive.jpg', width: 969, height: 378, alt: 'G Live Guildford Logo', hideOnXs: true },
+      { src: '/Btg.jpg', width: 700, height: 400, alt: 'BTG Logo', hideOnXs: true },
+      { src: '/CAM.jpg', width: 900, height: 900, alt: 'University of Cambridge Logo', hideOnXs: true },
+      { src: '/Arqiva.jpg', width: 1612, height: 640, alt: 'Arqiva Logo', hideOnXs: true },
     ]
 
     const services = [
       {
-        src: require('@/static/wedding-astonished-reaction.jpg'),
+        src: '/wedding-astonished-reaction.jpg',
         position: 'center 35%',
         alt: 'Callum McClure performing close-up magic at a Surrey wedding reception',
         hideOnXs: false,
@@ -209,7 +218,7 @@ export default defineComponent({
         subtitle: 'Wedding Magician',
       },
       {
-        src: require('@/static/square/corporate.jpg'),
+        src: '/square/corporate.jpg',
         alt: 'Callum McClure performing close-up magic at a corporate networking event in Surrey',
         hideOnXs: false,
         details: 'From conferences and trade shows to Christmas parties, close-up magic breaks the ice and gets rooms full of people genuinely enjoying themselves.',
@@ -217,7 +226,7 @@ export default defineComponent({
         subtitle: 'Corporate Magician',
       },
       {
-        src: require('@/static/square/wedding-card-reveal.jpg'),
+        src: '/square/wedding-card-reveal.jpg',
         alt: 'Callum McClure performing walkaround magic at a birthday party near Guildford',
         hideOnXs: true,
         details: 'Birthdays, anniversaries, private dinners and garden parties. Magic that works for every age in the room.',
@@ -226,7 +235,7 @@ export default defineComponent({
       },
     ]
 
-    return { companyLogos, services, heroSrcset }
+    return { companyLogos, services, srcsetFor, webpSrcsetFor }
   },
   head() {
     return buildHead({
@@ -248,6 +257,10 @@ export default defineComponent({
    the heading off the top and the CTA off the bottom once the text wraps on a
    narrow screen. Growing to fit keeps the whole block visible; the image is
    absolutely positioned so it covers whatever height results. */
+picture {
+  display: contents;
+}
+
 .hero {
   position: relative;
   display: flex;
@@ -336,7 +349,8 @@ export default defineComponent({
   background: white;
 }
 
-.service-card-img {
-  border-radius: 0;
+.service-card-title {
+  font: inherit;
+  margin: 0;
 }
 </style>

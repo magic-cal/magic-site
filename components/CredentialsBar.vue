@@ -9,13 +9,16 @@
           sm="4"
           class="d-flex align-center justify-center py-2"
         >
-          <v-img
+          <img
             v-if="cred.logo"
+            class="cred-logo mr-3 flex-grow-0"
             :src="cred.logo"
-            contain
-            :max-height="cred.logoHeight || 36"
-            :max-width="cred.logoWidth || 36"
-            class="mr-3 flex-grow-0"
+            :srcset="logoSrcsetFor(cred.logo)"
+            sizes="40px"
+            :alt="cred.logoAlt"
+            :width="cred.logoWidth || 36"
+            :height="cred.logoHeight || 36"
+            decoding="async"
           />
           <v-icon v-else small class="mr-2 accent--text">{{ cred.icon }}</v-icon>
           <span class="body-2 white--text">{{ cred.text }}</span>
@@ -28,12 +31,14 @@
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
 import { mdiCalendarCheck, mdiTrophy } from '@mdi/js'
+import { logoSrcsetFor } from '~/utils/responsiveImages'
 
 export default defineComponent({
   setup() {
     const credentials = [
       {
-        logo: require('@/static/the-magic-circle.png'),
+        logo: '/the-magic-circle.png',
+        logoAlt: 'The Magic Circle emblem',
         logoHeight: 40,
         logoWidth: 40,
         text: 'Member of The Magic Circle',
@@ -47,7 +52,7 @@ export default defineComponent({
         text: '10+ Years Professional Experience',
       },
     ]
-    return { credentials }
+    return { credentials, logoSrcsetFor }
   },
 })
 </script>
@@ -55,5 +60,9 @@ export default defineComponent({
 <style scoped>
 .credentials-bar {
   border-top: 2px solid #b12827;
+}
+
+.cred-logo {
+  object-fit: contain;
 }
 </style>

@@ -121,7 +121,7 @@ export default defineComponent({
     return buildHead({
       title: 'Magician in Surrey | Weddings, Corporate Events & Parties',
       description:
-        'Award-winning Surrey magician covering Guildford, Woking, Farnham, Epsom, Dorking & beyond. Magic Circle close-up magic for weddings, corporate events and parties.',
+        'Award-winning Surrey magician covering Guildford, Woking, Farnham, Epsom and Dorking. Magic Circle close-up magic for weddings, parties and corporate events.',
       path: '/areas/surrey',
       jsonLd: [
         localBusiness({ areaServed: 'Surrey', idSuffix: 'surrey' }),
