@@ -49,23 +49,34 @@ export default {
         content:
           'Award-winning Magic Circle magician for weddings, corporate events & parties across Surrey. 10+ years\' experience. Check availability & get a quote.',
       },
-      { property: 'og:type', content: 'website' },
-      { property: 'og:url', content: 'https://www.magic-cal.co.uk/' },
+      { hid: 'og:type', property: 'og:type', content: 'website' },
       {
+        hid: 'og:url',
+        property: 'og:url',
+        content: 'https://www.magic-cal.co.uk/',
+      },
+      {
+        hid: 'og:title',
         property: 'og:title',
         content: 'Close-Up Magician Surrey & Guildford | Callum McClure',
       },
       {
+        hid: 'og:description',
         property: 'og:description',
         content:
           'Award-winning Magic Circle magician for weddings, corporate events & parties across Surrey. 10+ years\' experience.',
       },
       {
+        hid: 'og:image',
         property: 'og:image',
         content:
           'https://www.magic-cal.co.uk/shuffle/callum_mcclure_shuffle.jpg',
       },
-      { property: 'twitter:card', content: 'summary_large_image' },
+      {
+        hid: 'twitter:card',
+        property: 'twitter:card',
+        content: 'summary_large_image',
+      },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
