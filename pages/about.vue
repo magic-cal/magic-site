@@ -20,11 +20,11 @@
             md="5"
             class="mb-8 mb-md-0 reveal reveal--fade hover-zoom"
           >
-            <v-img
+            <cover-image
               src="/headshot.jpg"
               alt="Portrait of magician Callum McClure, Magic Circle member"
               height="520"
-              cover
+              sizes="(min-width: 960px) 42vw, 100vw"
               class="about-headshot elevation-5"
             />
           </v-col>
@@ -163,7 +163,7 @@ export default defineComponent({
     return buildHead({
       title: 'About Callum McClure | Magic Circle Magician, Surrey & London',
       description:
-        'Meet Callum McClure - multi-award-winning close-up magician and Magic Circle member. Performed for BBC News and at the Royal Variety after-show party. Based in London.',
+        'Meet Callum McClure - multi-award-winning close-up magician and Magic Circle member. Seen on BBC News and at the Royal Variety after-show party.',
       path: '/about',
       ogType: 'profile',
       jsonLd: [

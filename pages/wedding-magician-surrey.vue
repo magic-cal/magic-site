@@ -171,7 +171,7 @@ export default defineComponent({
     return buildHead({
       title: 'Wedding Magician Surrey | Close-Up Magic | Callum McClure',
       description:
-        'Award-winning Surrey wedding magician with deep local knowledge - Loseley Park, Wotton House, Pennyhill Park and beyond. Magic Circle member. Get a no-obligation quote.',
+        'Surrey wedding magician who knows the venues - Loseley Park, Wotton House, Pennyhill Park and beyond. Magic Circle member. Get a no-obligation quote.',
       path: '/wedding-magician-surrey',
       jsonLd: [
         service(

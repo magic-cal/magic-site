@@ -147,7 +147,7 @@ export default defineComponent({
     return buildHead({
       title: 'Table Magician for Hire | London & Surrey | Callum McClure',
       description:
-        'Award-winning table magician for corporate dinners, gala evenings, wedding breakfasts and private dinner parties in London & Surrey. Magic Circle member. Get a quote.',
+        'Award-winning table magician for corporate dinners, gala evenings and wedding breakfasts in London & Surrey. Magic Circle member. Get a quote.',
       path: '/table-magician',
       jsonLd: [
         service(

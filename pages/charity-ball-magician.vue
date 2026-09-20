@@ -175,7 +175,7 @@ export default defineComponent({
     return buildHead({
       title: 'Charity Ball Magician London & Surrey | Callum McClure',
       description:
-        'Award-winning close-up magician for charity balls and fundraising galas in London & Surrey. Warms up the room and supports your auction. Magic Circle member. Get a quote.',
+        'Award-winning close-up magician for charity balls and fundraising galas in London & Surrey. Warms up the room before your auction. Get a quote.',
       path: '/charity-ball-magician',
       jsonLd: [
         service(

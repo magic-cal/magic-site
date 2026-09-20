@@ -9,9 +9,9 @@
           :cols="12"
           class="reveal"
         >
-          <div class="display-1">
+          <h2 class="display-1">
             {{ faq.question }}
-          </div>
+          </h2>
           <div class="py-4" v-html="faq.answer" />
         </v-col>
       </v-row>

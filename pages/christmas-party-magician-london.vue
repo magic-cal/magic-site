@@ -223,7 +223,7 @@ export default defineComponent({
     return buildHead({
       title: 'Christmas Party Magician London | Callum McClure',
       description:
-        "London-based close-up magician for Christmas parties - corporate works dos, private dinners and venue celebrations across the capital. Magic Circle member. Check availability.",
+        'London close-up magician for Christmas parties - corporate works dos, private dinners and venue celebrations. Magic Circle member. Check availability.',
       path: '/christmas-party-magician-london',
       jsonLd: [
         service(
