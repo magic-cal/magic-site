@@ -158,7 +158,8 @@
               <nuxt-link to="/wedding-magician-london">wedding magician London</nuxt-link>,
               <nuxt-link to="/areas/surrey">magician in Surrey</nuxt-link>,
               <nuxt-link to="/areas/guildford">magician in Guildford</nuxt-link>,
-              <nuxt-link to="/close-up-magician">close-up magic explained</nuxt-link>.
+              <nuxt-link to="/close-up-magician">close-up magic explained</nuxt-link>,
+              <nuxt-link to="/blog/how-much-does-a-wedding-magician-cost">how much a wedding magician costs</nuxt-link>.
             </p>
           </v-col>
         </v-row>

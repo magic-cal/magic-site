@@ -69,7 +69,11 @@ export default defineComponent({
       ],
       infoLinks: [
         { text: 'About Callum', to: '/about' },
+        { text: 'Testimonials', to: '/testimonials' },
         { text: 'FAQs', to: '/faqs' },
+        { text: 'Blog', to: '/blog' },
+        { text: "Won't Get Fooled Again", to: '/wont-get-fooled-again' },
+        { text: 'Deception', to: '/deception' },
         { text: 'Contact / Get a Quote', to: '/contact' },
       ],
     }

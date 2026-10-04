@@ -122,7 +122,8 @@
               See also:
               <nuxt-link to="/wedding-magician">Wedding magician (full page)</nuxt-link>,
               <nuxt-link to="/areas/london">magician in London</nuxt-link>,
-              <nuxt-link to="/wedding-magician-surrey">wedding magician Surrey</nuxt-link>.
+              <nuxt-link to="/wedding-magician-surrey">wedding magician Surrey</nuxt-link>,
+              <nuxt-link to="/blog/how-much-does-a-wedding-magician-cost">how much a wedding magician costs</nuxt-link>.
             </p>
             <div class="text-center mt-6">
               <v-btn large color="accent" dark nuxt to="/contact">

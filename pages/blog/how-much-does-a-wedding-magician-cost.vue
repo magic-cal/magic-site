@@ -143,7 +143,9 @@
               </v-expansion-panel>
             </v-expansion-panels>
             <p class="body-1 black--text mt-8">
-              Read more: <nuxt-link to="/wedding-magician">wedding magician Surrey</nuxt-link>
+              Read more: <nuxt-link to="/wedding-magician">wedding magician</nuxt-link>
+              · <nuxt-link to="/wedding-magician-surrey">wedding magician Surrey</nuxt-link>
+              · <nuxt-link to="/wedding-magician-london">wedding magician London</nuxt-link>
               · <nuxt-link to="/about">about Callum</nuxt-link>
               · <nuxt-link to="/contact">get a quote</nuxt-link>
             </p>
